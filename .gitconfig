@@ -1,0 +1,8 @@
+[user]
+	email = elgendy1204@gmail.com
+	name = khaled
+[push]
+	default = simple
+[core]
+	editor = vim
+	autocrlf = input
