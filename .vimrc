@@ -309,8 +309,11 @@ nnoremap <leader>c :bd<CR>
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
-" Save mapping
-nnoremap ZZ :update<cr>
+" Updating mapping
+nnoremap <leader>u :update<cr>
+
+" Saving mapping
+nnoremap <leader>w :w<cr>
 
 " Paste and indent text
 nnoremap gp p`[v`]=
