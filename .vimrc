@@ -248,11 +248,17 @@ let g:airline_theme='papercolor'
 " let ayucolor="mirage"
 " colorscheme ayu
 
-" Toggle nerd tree with ctrl + space
+" Toggle nerd tree
 noremap <leader>ne :NERDTreeToggle<CR>
 
+" view the current buffer in NERDTree:
+nnoremap <leader>nf :NERDTreeFind<cr>
+
+" toggle nerdtree in the dir of the current buffer
+nnoremap <leader>nn :NERDTreeToggle %<CR>
+
 " Remove highlights for search
-nnoremap <silent> <leader><space> :nohlsearch<cr>
+nnoremap <silent> <leader>s :nohlsearch<cr>
 
 " Easily create a new tab.
 noremap <Leader>tn :tabnew<CR>
@@ -262,9 +268,6 @@ noremap <Leader>tc :tabclose<CR>
 
 " Easily move a tab.
 noremap <Leader>tm :tabmove<CR>
-
-" Toggle Relative Number
-nnoremap <silent> <leader>nb :set relativenumber!<CR>
 
 " Show all buffers
 nnoremap <silent> <leader>b :buffers<CR>:buffer<Space>
