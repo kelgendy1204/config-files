@@ -58,6 +58,9 @@ set splitright
 " always set autoindenting on
 set autoindent
 
+" smart indent
+set smartindent
+
 " copy the previous indentation on autoindenting
 set copyindent
 
@@ -285,11 +288,6 @@ nnoremap <leader>k <C-W><C-K>
 nnoremap <leader>l <C-W><C-L>
 nnoremap <leader>h <C-W><C-H>
 
-" Change git gutter mapping to avoid conflicts with changing buffers
-nmap ghp <Plug>GitGutterPreviewHunk
-nmap ghs <Plug>GitGutterStageHunk
-nmap ghu <Plug>GitGutterUndoHunk
-
 " Navigate between buffers
 noremap <C-l> :bn<CR>
 noremap <C-h> :bp<CR>
@@ -335,4 +333,6 @@ vnoremap <Leader>t :Tab<Space>/
 " Enter paste mode
 set pastetoggle=<leader>p
 
-filetype plugin on
+" Reflowing Text
+nnoremap Q gqap
+vnoremap Q gq
