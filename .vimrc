@@ -8,6 +8,9 @@ filetype off
 
 set encoding=utf-8
 
+" Saving strategy
+set backupcopy=yes
+
 " Set color to 256 colors
 set t_Co=256
 
