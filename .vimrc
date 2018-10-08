@@ -329,6 +329,9 @@ nnoremap Y y$
 nnoremap <Leader>t :Tab<Space>/
 vnoremap <Leader>t :Tab<Space>/
 
+nnoremap vv :vs<CR>
+nnoremap ss :sp<CR>
+
 " TODO
 " Toggle tagbar
 " nnoremap <leader>t :TagbarToggle<CR>
