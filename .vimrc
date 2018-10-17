@@ -329,8 +329,13 @@ nnoremap Y y$
 nnoremap <Leader>t :Tab<Space>/
 vnoremap <Leader>t :Tab<Space>/
 
+" split screen vertically
 nnoremap vv :vs<CR>
+
+" split screen horizontally
 nnoremap ss :sp<CR>
+
+nnoremap <leader>r viwpyiw
 
 " TODO
 " Toggle tagbar
