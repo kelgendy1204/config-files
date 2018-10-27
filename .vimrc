@@ -293,7 +293,7 @@ noremap <Leader>tm :tabmove<CR>
 nnoremap <silent> <leader>b :buffers<CR>:buffer<Space>
 
 " map escape key
-inoremap jj <Esc>
+inoremap jk <Esc>
 
 " Scrolling
 nnoremap <C-e> j<C-e>
