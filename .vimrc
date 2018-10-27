@@ -344,11 +344,12 @@ nnoremap <Leader>t :Tab<Space>/
 vnoremap <Leader>t :Tab<Space>/
 
 " split screen vertically
-nnoremap vv :vs<CR>
+nnoremap <leader>vv :vs<CR>
 
 " split screen horizontally
-nnoremap ss :sp<CR>
+nnoremap <leader>ss :sp<CR>
 
+" Repalce word with a yanked word without replacing it
 nnoremap <leader>r viwpyiw
 
 " TODO
