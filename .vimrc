@@ -187,12 +187,12 @@ Plugin 'epilande/vim-react-snippets'
 " Auto completion plugin
 Plugin 'Valloric/YouCompleteMe'
 
+" For buffers handling, extracting them to tabs, name the tabs and moving them
+Plugin 'vim-ctrlspace/vim-ctrlspace'
+
 " TODO
 " Tabbar plugin
 " Plugin 'majutsushi/tagbar'
-
-" Perform all your vim insert mode completions with Tab
-" Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -253,6 +253,20 @@ let g:airline_theme='papercolor'
 " let ayucolor="light"
 " let ayucolor="mirage"
 " colorscheme ayu
+
+" ctrl-space setup
+if has("gui_running")
+    " Settings for MacVim and Inconsolata font
+    let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
+endif
+
+if executable("ag")
+    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+else
+    echo "silversearcher-ag package (ag command) is Required"
+endif
+
+let g:CtrlSpaceSearchTiming = 500
 
 " Toggle nerd tree
 noremap <leader>ne :NERDTreeToggle<CR>
