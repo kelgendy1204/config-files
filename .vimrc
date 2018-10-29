@@ -352,6 +352,15 @@ nnoremap <leader>ss :sp<CR>
 " Repalce word with a yanked word without replacing it
 nnoremap <leader>r viwpyiw
 
+" Black hole delete in normal mode
+nnoremap <leader>d "_d
+
+" Black hole delete to the end of the line
+nnoremap <leader>D "_D
+
+" Black hole delete in visual mode
+vnoremap <leader>d "_d
+
 " TODO
 " Toggle tagbar
 " nnoremap <leader>t :TagbarToggle<CR>
