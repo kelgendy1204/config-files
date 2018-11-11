@@ -1,8 +1,8 @@
 [user]
-	email = elgendy1204@gmail.com
-	name = khaled
+    email = elgendy1204@gmail.com
+    name = Khaled Saad
 [push]
-	default = simple
+    default = simple
 [core]
-	editor = vim
-	autocrlf = input
+    editor = vim
+    autocrlf = input
