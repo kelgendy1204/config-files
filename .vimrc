@@ -349,8 +349,11 @@ nnoremap <leader>vv :vs<CR>
 " split screen horizontally
 nnoremap <leader>ss :sp<CR>
 
-" Repalce word with a yanked word without replacing it
-nnoremap <leader>r viwpyiw
+" Repalce word with a yanked words without replacing it
+nnoremap <leader>r viwp`[v`]y
+
+" Repalce a selected paragraph with a yanked words without replacing it
+vnoremap <leader>r p`[v`]y
 
 " Black hole delete in normal mode
 nnoremap <leader>d "_d
