@@ -395,3 +395,15 @@ autocmd InsertLeave * set iminsert=0
 let b:keymap_name = "CAPS"
 " Show b:keymap_name in status line.
 set statusline^=%k
+
+" Toggle the highlight of the current line
+nnoremap <Leader><Leader>l :set cursorline!<CR>
+
+" Move normally between wrapped lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" Redraw page
+nnoremap <Leader><Leader>r :redraw!<CR>
