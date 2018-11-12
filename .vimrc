@@ -17,9 +17,6 @@ set t_Co=256
 " Always show line numbers
 set number
 
-" How the line numbers relative to the current line
-" set relativenumber
-
 set list
 
 " set listchars=space:.,tab:>-
@@ -100,6 +97,12 @@ set ruler
 
 " Possibility to have more than one unsaved buffers.
 set hidden
+
+" How the line numbers relative to the current line
+" set relativenumber
+
+" Highlight the current line
+" set cursorline
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
