@@ -80,6 +80,11 @@ set updatetime=1000
 set ttyfast
 set timeout timeoutlen=1000 ttimeoutlen=50
 
+" Change swap files, backup files and undo files to another directory
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 " Change the mapleader from \ to ,
 let mapleader=","
 
