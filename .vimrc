@@ -19,9 +19,16 @@ set number
 
 set list
 
+" For breaking a line not a word
+set linebreak
+
+" Wrap lines
+set wrap
+
 " set listchars=space:.,tab:>-
 set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
+" To display the status line always
 set laststatus=2
 
 " Enable Highlight Search
