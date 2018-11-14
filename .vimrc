@@ -386,10 +386,10 @@ vnoremap <leader>d "_d
 " Enter paste mode
 set pastetoggle=<leader>p
 
-" Reflowing Text
-nnoremap Q gqap
-vnoremap Q gq
+" Apply Q macro record
+nnoremap Q @q
 
+" Use (ctrl + ^) to toggle the uppercase of the letters
 " Fixing caps lock problem in normal mode
 " Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
 for c in range(char2nr('A'), char2nr('Z'))
@@ -414,3 +414,12 @@ vnoremap k gk
 
 " Redraw page
 nnoremap <Leader><Leader>r :redraw!<CR>
+
+" Don't want to jump to the first result automatically.
+cnoreabbrev Ack Ack!
+" Map Ack
+nnoremap <Leader>a :Ack!<Space>
+
+" Search will center on the line it's found in.
+nnoremap n nzz
+nnoremap N Nzz
