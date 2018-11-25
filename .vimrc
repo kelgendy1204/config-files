@@ -88,9 +88,9 @@ set ttyfast
 set timeout timeoutlen=1000 ttimeoutlen=50
 
 " Change swap files, backup files and undo files to another directory
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
+set backupdir=~/.vim/temp//
+set directory=~/.vim/temp//
+set undodir=~/.vim/temp//
 
 " Change the mapleader from \ to ,
 let mapleader=","
@@ -208,6 +208,9 @@ Plugin 'Valloric/YouCompleteMe'
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 
+" Prettier plugin
+Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 " TODO
 " Tabbar plugin
 " Plugin 'majutsushi/tagbar'
@@ -241,7 +244,22 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore     = ['\.swp$']
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
+
+" Indent lines configurations
+let g:indentLine_char    = '┆'
+let g:indentLine_enabled = 0
+
+" Prettier configuration
+let g:prettier#config#print_width           = 100
+let g:prettier#config#tab_width             = 4
+let g:prettier#config#use_tabs              = 'false'
+let g:prettier#config#semi                  = 'true'
+let g:prettier#config#single_quote          = 'true'
+let g:prettier#config#bracket_spacing       = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#arrow_parens          = 'avoid'
+let g:prettier#config#trailing_comma        = 'none'
 
 " colorscheme solarized
 " set background=dark
@@ -264,7 +282,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 " PaperColor theme
 set background=dark
 colorscheme PaperColor
-let g:airline_theme='papercolor'
+let g:airline_theme = 'papercolor'
 
 " set termguicolors
 " let ayucolor="dark"
