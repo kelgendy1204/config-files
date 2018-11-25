@@ -120,6 +120,9 @@ set hidden
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Indent lines
+Plugin 'Yggdroot/indentLine'
+
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
@@ -404,7 +407,10 @@ let b:keymap_name = "CAPS"
 set statusline^=%k
 
 " Toggle the highlight of the current line
-nnoremap <Leader><Leader>l :set cursorline!<CR>
+nnoremap <Leader><Leader>h :set cursorline!<CR>
+
+" Toggle indent lines, should be disabled in json files
+nnoremap <Leader><Leader>i :IndentLinesToggle<CR>
 
 " Move normally between wrapped lines
 nnoremap j gj
