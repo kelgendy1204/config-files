@@ -1,0 +1,208 @@
+" It turns on 'detection', 'plugin' and 'indent' at once.
+filetype plugin indent on
+
+set nocompatible
+
+" set syntax on for all files
+syntax on
+
+" set all .vim* file to vim syntax
+au BufReadPost *.vim* set syntax=vim
+
+set showmode
+
+" To do automatically load changes
+set autoread
+
+set encoding=utf-8
+
+" Saving strategy
+set backupcopy=yes
+
+" Set color to 256 colors
+set t_Co=256
+
+" Always show line numbers
+set number
+
+set list
+
+" For breaking a line not a word
+set linebreak
+
+" Wrap lines
+set wrap
+
+" set listchars=space:.,tab:>-
+set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
+
+" To display the status line always
+set laststatus=2
+
+" Enable Highlight Search
+set hlsearch
+
+" Highlight while search
+set incsearch
+
+" Case Insensitivity Pattern Matching
+set ignorecase
+
+" Overrides ignorecase if pattern contains upcase
+set smartcase
+
+" insert tabs on the start of a line according to
+set smarttab
+
+" Width of tab character
+set tabstop=4
+
+" Fine tunes the amount of white space to be added
+set softtabstop=4
+
+" Determines the amount of whitespace to add in normal mode
+set shiftwidth=4
+
+" When on uses space instead of tabs
+set expandtab
+
+" Splitting locations
+set splitbelow
+set splitright
+
+" always set autoindenting on
+set autoindent
+
+" smart indent
+set smartindent
+
+" copy the previous indentation on autoindenting
+set copyindent
+
+" set show matching parenthesis
+set showmatch
+
+" search/replace globally (on a line) by default
+set gdefault
+
+" automatically reload files changed outside of Vim
+set autoread
+
+" Speed up the updatetime so gitgutter and friends are quicker
+set updatetime=1000
+
+" Make the keyboard fast
+set ttyfast
+set timeout timeoutlen=1000 ttimeoutlen=50
+
+" Change swap files, backup files and undo files to another directory
+set backupdir=~/.vim/temp//
+set directory=~/.vim/temp//
+set undodir=~/.vim/temp//
+
+" remember more commands and search history
+set history=1000
+
+" use many muchos levels of undo
+set undolevels=1000
+
+" Great command-line completion, use '<Tab>' to move around and '<CR>' to validate"
+set wildmenu
+
+" Shows the current line number at the bottom. right of the screen.
+set ruler
+
+" Possibility to have more than one unsaved buffers.
+set hidden
+
+" Turn off tabline
+set showtabline=0
+
+" Highlight the current line
+set cursorline
+
+" ===================================================================== "
+" Plugin settings
+" ===================================================================== "
+
+" airline config
+let g:airline_powerline_fonts            = 1
+" let g:airline#extensions#tabline#enabled = 1
+
+" enable bold and italic
+let g:enable_bold_font   = 1
+let g:enable_italic_font = 1
+
+" gitgutter configuration
+let g:gitgutter_enabled       = 1
+let g:gitgutter_signs_enabled = 1
+
+" ctrlp configuration
+let g:ctrlp_show_hidden   = 1
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_max_files     = 0
+
+" nerdtree configuration
+let g:NERDSpaceDelims    = 1
+let g:NERDTreeQuitOnOpen = 0
+let g:NERDTreeChDirMode  = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore     = ['\.swp$']
+
+" Indent lines configurations
+let g:indentLine_char    = '┆'
+let g:indentLine_enabled = 0
+
+" Prettier configuration
+let g:prettier#config#print_width           = 100
+let g:prettier#config#tab_width             = 4
+let g:prettier#config#use_tabs              = 'false'
+let g:prettier#config#semi                  = 'true'
+let g:prettier#config#single_quote          = 'true'
+let g:prettier#config#bracket_spacing       = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#arrow_parens          = 'avoid'
+let g:prettier#config#trailing_comma        = 'none'
+
+" colorscheme solarized
+" set background=dark
+" let g:solarized_contrast='high'
+" let g:solarized_termcolors=256
+" let g:airline_solarized_bg='dark'
+
+" hybrid theme
+" set background=dark
+" colorscheme hybrid_material
+" let g:airline_theme = 'hybrid'
+
+" gruvbox theme
+" colorscheme gruvbox
+" set background=dark
+" let g:gruvbox_bold = 1
+" let g:gruvbox_italic = 1
+" let g:gruvbox_contrast_dark = 'hard'
+
+" PaperColor theme
+set background=dark
+colorscheme PaperColor
+let g:airline_theme = 'papercolor'
+
+" set termguicolors
+" let ayucolor="dark"
+" let ayucolor="light"
+" let ayucolor="mirage"
+" colorscheme ayu
+
+" ctrl-space setup
+if has("gui_running")
+    " Settings for MacVim and Inconsolata font
+    let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
+endif
+
+if executable("ag")
+    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+else
+    echo "silversearcher-ag package (ag command) is Required"
+endif
+
+let g:CtrlSpaceSearchTiming = 500

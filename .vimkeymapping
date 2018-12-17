@@ -1,0 +1,164 @@
+" Change the mapleader from \ to ,
+let mapleader=","
+
+" Apply Q macro record
+nnoremap Q @q
+
+" Use (ctrl + ^) to toggle the uppercase of the letters
+" Fixing caps lock problem in normal mode
+" Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
+for c in range(char2nr('A'), char2nr('Z'))
+    execute 'lnoremap ' . nr2char(c+32) . ' ' . nr2char(c)
+    execute 'lnoremap ' . nr2char(c) . ' ' . nr2char(c+32)
+endfor
+" Kill the capslock when leaving insert mode.
+autocmd InsertLeave * set iminsert=0
+" Set following to show "<CAPS>" in the status line when "Caps Lock" is on.
+let b:keymap_name = "CAPS"
+" Show b:keymap_name in status line.
+set statusline^=%k
+
+" Toggle the highlight of the current line
+nnoremap <Leader><Leader>h :set cursorline!<CR>
+
+" Toggle indent lines, should be disabled in json files
+nnoremap <Leader><Leader>i :IndentLinesToggle<CR>
+
+" Move normally between wrapped lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" Redraw page
+nnoremap <Leader><Leader>r :redraw!<CR>
+
+" Don't want to jump to the first result automatically.
+cnoreabbrev Ack Ack!
+" Map Ack
+nnoremap <Leader>a :Ack!<Space>
+
+" Search will center on the line it's found in.
+nnoremap n nzz
+nnoremap N Nzz
+
+" Easily create a new tab.
+noremap <Leader>tn :tabnew<CR>
+
+" Easily close a tab.
+noremap <Leader>tc :tabclose<CR>
+
+" Easily move a tab.
+noremap <Leader>tm :tabmove<CR>
+
+" Show all buffers
+nnoremap <silent> <leader>b :buffers<CR>:buffer<Space>
+
+" map escape key
+inoremap jk <Esc>
+
+" Remove highlights for search
+nnoremap <silent> <leader>s :nohlsearch<cr>
+
+" Scrolling
+nnoremap <C-e> j<C-e>
+nnoremap <C-y> k<C-y>
+
+" Navigate between panes
+nnoremap <leader>j <C-W><C-J>
+nnoremap <leader>k <C-W><C-K>
+nnoremap <leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
+
+" Navigate between buffers
+noremap <C-l> :bn<CR>
+noremap <C-h> :bp<CR>
+
+" Moving lines in all modes
+nnoremap <C-j> :m .+1<CR>
+nnoremap <C-k> :m .-2<CR>
+inoremap <C-j> <Esc>:m .+1<CR>gi
+inoremap <C-k> <Esc>:m .-2<CR>gi
+vnoremap <C-j> :m '>+1<CR>gv
+vnoremap <C-k> :m '<-2<CR>gv
+
+" Resize splitting windows vertically
+nnoremap <C-Right> :resize +5<CR>
+nnoremap <C-Left> :resize -5<CR>
+
+" Resize splitting windows horizontally
+nnoremap + :vertical resize +5<CR>
+nnoremap - :vertical resize -5<CR>
+
+" Quickly close the current window
+nnoremap <leader>q :q<CR>
+
+" Quickly close the current buffer
+nnoremap <leader>c :bd<CR>
+
+" Speed up scrolling of the viewport slightly
+nnoremap <C-e> 2<C-e>
+nnoremap <C-y> 2<C-y>
+
+" Updating mapping
+nnoremap <leader>u :update<cr>
+
+" Saving mapping
+nnoremap <leader>w :w<cr>
+
+" Paste and indent text
+nnoremap gp p`[v`]=
+
+" Yank to the end of the line
+nnoremap Y y$
+
+" split screen vertically
+nnoremap <leader>vv :vs<CR>
+
+" split screen horizontally
+nnoremap <leader>ss :sp<CR>
+
+" Repalce word with a yanked words without replacing it
+nnoremap <leader>r viwp`[v`]y
+
+" Repalce a selected paragraph with a yanked words without replacing it
+vnoremap <leader>r p`[v`]y
+
+" Black hole delete in normal mode
+nnoremap <leader>d "_d
+
+" Black hole delete to the end of the line
+nnoremap <leader>D "_D
+
+" Black hole delete in visual mode
+vnoremap <leader>d "_d
+
+" Enter paste mode
+set pastetoggle=<leader>p
+
+" ===================================================================== "
+" Key mapping for plugins
+" ===================================================================== "
+
+" Toggle nerd tree
+noremap <leader>ne :NERDTreeToggle<CR>
+
+" view the current buffer in NERDTree:
+nnoremap <leader>nf :NERDTreeFind<cr>
+
+" toggle nerdtree in the dir of the current buffer
+nnoremap <leader>nn :NERDTreeToggle %<CR>
+
+" Tabularize -^-
+nnoremap <Leader>t :Tab<Space>/
+vnoremap <Leader>t :Tab<Space>/
+
+" TODO
+" Toggle tagbar
+" nnoremap <leader>t :TagbarToggle<CR>
+
+" Prettier key map
+nmap <Leader><Leader>p <Plug>(Prettier)
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<c-j>"
