@@ -351,6 +351,14 @@ nnoremap <leader>h <C-W><C-H>
 noremap <C-l> :bn<CR>
 noremap <C-h> :bp<CR>
 
+" Moving lines in all modes
+nnoremap <C-j> :m .+1<CR>
+nnoremap <C-k> :m .-2<CR>
+inoremap <C-j> <Esc>:m .+1<CR>gi
+inoremap <C-k> <Esc>:m .-2<CR>gi
+vnoremap <C-j> :m '>+1<CR>gv
+vnoremap <C-k> :m '<-2<CR>gv
+
 " Resize splitting windows vertically
 nnoremap <C-Right> :resize +5<CR>
 nnoremap <C-Left> :resize -5<CR>
@@ -412,6 +420,9 @@ vnoremap <leader>d "_d
 
 " Enter paste mode
 set pastetoggle=<leader>p
+
+" Prettier key map
+nmap <Leader><Leader>p <Plug>(Prettier)
 
 " Apply Q macro record
 nnoremap Q @q
