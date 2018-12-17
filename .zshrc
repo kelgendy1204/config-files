@@ -100,6 +100,10 @@ safemerge() { git pull && git merge "$1"; git push; }
 list_port() { sudo netstat -peanut | grep ":$1 " }
 kill_port() { sudo fuser -n tcp -k $1 }
 
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # redefine prompt_context for hiding user@hostname
 prompt_context () { }
 
