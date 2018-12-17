@@ -135,30 +135,3 @@ vnoremap <leader>d "_d
 
 " Enter paste mode
 set pastetoggle=<leader>p
-
-" ===================================================================== "
-" Key mapping for plugins
-" ===================================================================== "
-
-" Toggle nerd tree
-noremap <leader>ne :NERDTreeToggle<CR>
-
-" view the current buffer in NERDTree:
-nnoremap <leader>nf :NERDTreeFind<cr>
-
-" toggle nerdtree in the dir of the current buffer
-nnoremap <leader>nn :NERDTreeToggle %<CR>
-
-" Tabularize -^-
-nnoremap <Leader>t :Tab<Space>/
-vnoremap <Leader>t :Tab<Space>/
-
-" TODO
-" Toggle tagbar
-" nnoremap <leader>t :TagbarToggle<CR>
-
-" Prettier key map
-nmap <Leader><Leader>p <Plug>(Prettier)
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<c-j>"
