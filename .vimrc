@@ -6,6 +6,9 @@ set showmode
 
 filetype off
 
+" To do automatically load changes
+set autoread
+
 set encoding=utf-8
 
 " Saving strategy
@@ -110,11 +113,14 @@ set ruler
 " Possibility to have more than one unsaved buffers.
 set hidden
 
+" Turn off tabline
+set showtabline=0
+
 " How the line numbers relative to the current line
 " set relativenumber
 
 " Highlight the current line
-" set cursorline
+set cursorline
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -221,7 +227,7 @@ filetype plugin indent on
 
 " airline config
 let g:airline_powerline_fonts            = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 " enable bold and italic
 let g:enable_bold_font   = 1
