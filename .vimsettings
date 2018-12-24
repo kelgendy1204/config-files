@@ -1,13 +1,14 @@
+" set all .vim* file to vim syntax
+au BufReadPost *.vim* set syntax=vim
+
 " It turns on 'detection', 'plugin' and 'indent' at once.
+" Allows auto-indenting depending on file type
 filetype plugin indent on
 
 set nocompatible
 
 " set syntax on for all files
 syntax on
-
-" set all .vim* file to vim syntax
-au BufReadPost *.vim* set syntax=vim
 
 set showmode
 
@@ -107,6 +108,7 @@ set history=1000
 set undolevels=1000
 
 " Great command-line completion, use '<Tab>' to move around and '<CR>' to validate"
+" Make use of the 'status line' to show possible completions of command line commands, file names, and more
 set wildmenu
 
 " Shows the current line number at the bottom. right of the screen.
@@ -120,3 +122,6 @@ set showtabline=0
 
 " Highlight the current line
 set cursorline
+
+" Enable the use of the mouse in all modes
+set mouse=a
