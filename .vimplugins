@@ -51,6 +51,9 @@ Plugin 'NLKNguyen/papercolor-theme'
 " ayu theme
 Plugin 'ayu-theme/ayu-vim'
 
+" Onehalf theme
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+
 " Surround code with anything
 Plugin 'tpope/vim-surround'
 
@@ -128,7 +131,7 @@ let g:ctrlp_max_files     = 0
 
 " nerdtree configuration
 let g:NERDSpaceDelims    = 1
-let g:NERDTreeQuitOnOpen = 0
+let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeChDirMode  = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore     = ['\.swp$']
@@ -158,13 +161,6 @@ let g:prettier#config#trailing_comma        = 'none'
 " set background=dark
 " colorscheme hybrid_material
 " let g:airline_theme = 'hybrid'
-
-" gruvbox theme
-" colorscheme gruvbox
-" set background=dark
-" let g:gruvbox_bold = 1
-" let g:gruvbox_italic = 1
-" let g:gruvbox_contrast_dark = 'hard'
 
 " PaperColor theme
 set background=dark

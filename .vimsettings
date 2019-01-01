@@ -12,9 +12,14 @@ syntax on
 
 set showmode
 
-" To do automatically load changes
+" To do automatically load changes set autoread then
+" Triger `autoread` when files changes on disk then
+" Notification after file change
 set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
+" Files encoding
 set encoding=utf-8
 
 " Saving strategy

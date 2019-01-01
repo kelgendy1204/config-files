@@ -1,3 +1,6 @@
+" Also check vimplugins file for plugins keymapping
+" ================================================ "
+
 " Change the mapleader from \ to ,
 let mapleader=","
 
@@ -106,6 +109,9 @@ nnoremap <leader>u :update<cr>
 " Saving mapping
 nnoremap <leader>w :w<cr>
 
+" Write all buffers
+nnoremap <leader>W :wall<cr>
+
 " Paste and indent text
 nnoremap gp p`[v`]=
 
@@ -135,3 +141,7 @@ vnoremap <leader>d "_d
 
 " Enter paste mode
 set pastetoggle=<leader>p
+
+" 'cd' towards the dir in which the current file is edited
+" but only change the path for the current window
+map <silent> <leader>cd :lcd %:h<CR>
