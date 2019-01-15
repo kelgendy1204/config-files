@@ -139,8 +139,29 @@ nnoremap <leader>D "_D
 " Black hole delete in visual mode
 vnoremap <leader>d "_d
 
+" Handling clipboard coping - vim-gnome is required
+" Copy to clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+
+" Copy to clipboard in normal mode to the end of the line
+nnoremap <leader>Y "+y$
+
+" Handling clipboard pasting - vim-gnome is required
+" Copy to clipboard
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
+" Copy to clipboard in normal mode before cursor
+nnoremap <leader>P "+P
+vnoremap <leader>P "+P
+
+" Copy to clipboard in normal mode before cursor and make the cursor after the text
+nnoremap <leader>gP "+gP
+vnoremap <leader>gP "+gP
+
 " Enter paste mode
-set pastetoggle=<leader>p
+set pastetoggle=<leader><leader>p
 
 " 'cd' towards the dir in which the current file is edited
 " but only change the path for the current window
