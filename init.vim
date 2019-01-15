@@ -11,6 +11,13 @@ source ~/.vimplugins
 " Neovim settings
 " ====================================================== "
 
+" Set true colors for specific terminals
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 " Return cursor to its default style
 set guicursor=
 
@@ -18,15 +25,16 @@ set guicursor=
 " Neovim Keymapping
 " ====================================================== "
 
-" Normal mode switch for termial mode
-tnoremap <Esc> <C-\><C-n>
-
 " ====================================================== "
 " Neovim Plugins settings
 " ====================================================== "
 
 " CtrlSpace plugin fix for neovim
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
+
+" ====================================================== "
+" Neovim themes
+" ====================================================== "
 
 " gruvbox theme
 " set termguicolors
@@ -44,9 +52,3 @@ set t_Co=256
 set cursorline
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
-
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif

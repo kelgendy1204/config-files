@@ -145,3 +145,15 @@ set pastetoggle=<leader>p
 " 'cd' towards the dir in which the current file is edited
 " but only change the path for the current window
 map <silent> <leader>cd :lcd %:h<CR>
+
+" Remove all other splits and focus on this one
+map <silent>fo :only<CR>
+
+" Normal mode switch for termial mode
+tnoremap <Esc> <C-\><C-n>
+
+" Corrections
+nnoremap <Up> :echo "C'mon man you are not using sublime"<CR>
+nnoremap <Right> :echo "C'mon man you are not using sublime"<CR>
+nnoremap <Down> :echo "C'mon man you are not using sublime"<CR>
+nnoremap <Left> :echo "C'mon man you are not using sublime"<CR>

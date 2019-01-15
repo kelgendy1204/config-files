@@ -1,4 +1,4 @@
-" set all .vim* file to vim syntax
+" Set all .vim* file to vim syntax
 au BufReadPost *.vim* set syntax=vim
 
 " It turns on 'detection', 'plugin' and 'indent' at once.
@@ -7,9 +7,10 @@ filetype plugin indent on
 
 set nocompatible
 
-" set syntax on for all files
+" Set syntax on for all files
 syntax on
 
+" Show vim mode
 set showmode
 
 " To do automatically load changes set autoread then
@@ -76,22 +77,22 @@ set expandtab
 set splitbelow
 set splitright
 
-" always set autoindenting on
+" Always set autoindenting on
 set autoindent
 
-" smart indent
+" Smart indent
 set smartindent
 
-" copy the previous indentation on autoindenting
+" Copy the previous indentation on autoindenting
 set copyindent
 
-" set show matching parenthesis
+" Set show matching parenthesis
 set showmatch
 
-" search/replace globally (on a line) by default
+" Search/replace globally (on a line) by default
 set gdefault
 
-" automatically reload files changed outside of Vim
+" Automatically reload files changed outside of Vim
 set autoread
 
 " Speed up the updatetime so gitgutter and friends are quicker
@@ -106,10 +107,10 @@ set backupdir=~/.vim/temp//
 set directory=~/.vim/temp//
 set undodir=~/.vim/temp//
 
-" remember more commands and search history
+" Remember more commands and search history
 set history=1000
 
-" use many muchos levels of undo
+" Use many muchos levels of undo
 set undolevels=1000
 
 " Great command-line completion, use '<Tab>' to move around and '<CR>' to validate"
@@ -128,5 +129,8 @@ set showtabline=0
 " Highlight the current line
 set cursorline
 
-" Enable the use of the mouse in all modes
-set mouse=a
+" Disable the use of the mouse in all modes
+set mouse=
+
+" For arabic support for bidi support terminals i.e. Konsole
+" set arabicshape!

@@ -30,6 +30,9 @@ Plugin 'vim-syntastic/syntastic'
 " For javascript syntax
 Plugin 'pangloss/vim-javascript'
 
+" For typescript syntax
+Plugin 'leafgarland/typescript-vim'
+
 " For react syntax
 Plugin 'mxw/vim-jsx'
 
