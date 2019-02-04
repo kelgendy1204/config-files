@@ -37,18 +37,11 @@ let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 " ====================================================== "
 
 " gruvbox theme
-" set termguicolors
-" set background=dark
-" colorscheme gruvbox
-" let g:gruvbox_bold           = 1
-" let g:gruvbox_italic         = 1
-" let g:gruvbox_contrast_dark  = 'medium'
-" let g:gruvbox_contrast_light = 'medium'
-" let g:airline_theme          = 'gruvbox'
-
-" onehalf theme
-syntax on
-set t_Co=256
-set cursorline
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+set termguicolors
+set background=dark
+colorscheme gruvbox
+let g:gruvbox_bold           = 1
+let g:gruvbox_italic         = 1
+let g:gruvbox_contrast_dark  = 'medium'
+let g:gruvbox_contrast_light = 'medium'
+let g:airline_theme          = 'gruvbox'

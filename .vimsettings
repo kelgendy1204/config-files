@@ -98,9 +98,17 @@ set autoread
 " Speed up the updatetime so gitgutter and friends are quicker
 set updatetime=1000
 
+" Workaround solution to make alt key works
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
 " Make the keyboard fast
 set ttyfast
-set timeout timeoutlen=1000 ttimeoutlen=50
+set timeout ttimeoutlen=50
 
 " Change swap files, backup files and undo files to another directory
 set backupdir=~/.vim/temp//
@@ -124,7 +132,7 @@ set ruler
 set hidden
 
 " Turn off tabline
-set showtabline=0
+set showtabline=1
 
 " Highlight the current line
 set cursorline
