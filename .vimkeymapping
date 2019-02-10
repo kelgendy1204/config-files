@@ -176,12 +176,6 @@ map <silent>fo :only<CR>
 " Normal mode switch for termial mode
 tnoremap <Esc> <C-\><C-n>
 
-" Corrections
-nnoremap <Up> :echo "C'mon man you are not using sublime"<CR>
-nnoremap <Right> :echo "C'mon man you are not using sublime"<CR>
-nnoremap <Down> :echo "C'mon man you are not using sublime"<CR>
-nnoremap <Left> :echo "C'mon man you are not using sublime"<CR>
-
 " ===================================================================== "
 " Key mapping for plugins
 " ===================================================================== "
