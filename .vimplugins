@@ -105,6 +105,9 @@ Plugin 'majutsushi/tagbar'
 " auto closing tags
 Plugin 'alvan/vim-closetag'
 
+" Allow to move between Vim panes and tmux splits seamlessly.
+Plugin 'christoomey/vim-tmux-navigator'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 
@@ -138,6 +141,8 @@ let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeChDirMode  = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore     = ['\.swp$']
+let g:NERDTreeMapJumpNextSibling = '<Nop>'
+let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 
 " Indent lines configurations
 let g:indentLine_char    = '┆'
@@ -236,3 +241,7 @@ let g:closetag_shortcut = '>'
 
 " Add > at current position without closing the current tag, default is ''
 let g:closetag_close_shortcut = '<leader>>'
+
+" Tmux navigator
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
