@@ -100,7 +100,7 @@ nnoremap - :vertical resize -5<CR>
 nnoremap <leader>q :q<CR>
 
 " Quickly close the current buffer
-nnoremap <leader>c :bd<CR>
+" nnoremap <leader>c :bd<CR>
 
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
