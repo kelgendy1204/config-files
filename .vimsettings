@@ -142,3 +142,6 @@ set mouse=
 
 " For arabic support for bidi support terminals i.e. Konsole
 " set arabicshape!
+
+" Fix ctrl arrow issue with tmux
+set term=xterm-256color
