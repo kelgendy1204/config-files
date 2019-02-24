@@ -36,12 +36,17 @@ let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 " Neovim themes
 " ====================================================== "
 
-" gruvbox theme
-set termguicolors
+" PaperColor theme
 set background=dark
-colorscheme gruvbox
-let g:gruvbox_bold           = 1
-let g:gruvbox_italic         = 1
-let g:gruvbox_contrast_dark  = 'medium'
-let g:gruvbox_contrast_light = 'medium'
-let g:airline_theme          = 'gruvbox'
+colorscheme PaperColor
+let g:airline_theme = 'papercolor'
+
+" gruvbox theme
+" set termguicolors
+" set background=dark
+" colorscheme gruvbox
+" let g:gruvbox_bold           = 1
+" let g:gruvbox_italic         = 1
+" let g:gruvbox_contrast_dark  = 'medium'
+" let g:gruvbox_contrast_light = 'medium'
+" let g:airline_theme          = 'gruvbox'

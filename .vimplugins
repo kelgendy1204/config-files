@@ -146,7 +146,7 @@ let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 
 " Indent lines configurations
 let g:indentLine_char    = '┆'
-let g:indentLine_enabled = 0
+let g:indentLine_enabled = 1
 
 " Prettier configuration
 let g:prettier#config#print_width           = 100

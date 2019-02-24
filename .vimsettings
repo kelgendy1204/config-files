@@ -98,14 +98,6 @@ set autoread
 " Speed up the updatetime so gitgutter and friends are quicker
 set updatetime=1000
 
-" Workaround solution to make alt key works
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
 " Make the keyboard fast
 set ttyfast
 set timeout ttimeoutlen=50
@@ -143,5 +135,5 @@ set mouse=
 " For arabic support for bidi support terminals i.e. Konsole
 " set arabicshape!
 
-" Fix ctrl arrow issue with tmux
-set term=xterm-256color
+" no visual bell & flash
+set vb t_vb=
