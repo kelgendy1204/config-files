@@ -207,3 +207,7 @@ let g:UltiSnipsExpandTrigger = "<c-j>"
 
 " Toggle tagbar
 nmap <Leader><Leader>t :TagbarToggle<CR>
+
+" Start and end of line
+nnoremap H ^
+nnoremap L $

@@ -1,4 +1,6 @@
 #!/bin/bash
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
 apt-get update
 apt-get install vim-gnome -y
 
@@ -10,27 +12,28 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 apt-get install tmux
 
 # install neovim
-apt-get install software-properties-common
-add-apt-repository ppa:neovim-ppa/stable
-apt-get update
-apt-get install neovim
-apt-get install python-dev python-pip python3-dev python3-pip
+# apt-get install software-properties-common
+# add-apt-repository ppa:neovim-ppa/stable
+# apt-get update
+# apt-get install neovim
+# apt-get install python-dev python-pip python3-dev python3-pip
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # clean up previous config
-rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim*
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig
+# rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim*
 
 # Add directories for nvim
-mkdir -p ~/.config ~/.config/nvim
+# mkdir -p ~/.config ~/.config/nvim
 
 ### add config files ###
-ln -s ~/Dropbox/config-files/.gitconfig ~/.gitconfig
-ln -s ~/Dropbox/config-files/.zshrc ~/.zshrc
-ln -s ~/Dropbox/config-files/.tmux.conf ~/.tmux.conf
-ln -s ~/Dropbox/config-files/.vimrc ~/.vimrc
-ln -s ~/Dropbox/config-files/.vimplugins ~/.vimplugins
-ln -s ~/Dropbox/config-files/.vimkeymapping ~/.vimkeymapping
-ln -s ~/Dropbox/config-files/.vimsettings ~/.vimsettings
-ln -s ~/Dropbox/config-files/init.vim ~/.config/nvim/init.vim
+ln -s $DIR/.gitconfig ~/.gitconfig
+ln -s $DIR/.zshrc ~/.zshrc
+ln -s $DIR/.tmux.conf ~/.tmux.conf
+ln -s $DIR/.vimrc ~/.vimrc
+ln -s $DIR/.vimplugins ~/.vimplugins
+ln -s $DIR/.vimkeymapping ~/.vimkeymapping
+ln -s $DIR/.vimsettings ~/.vimsettings
+# ln -s $DIR/init.vim ~/.config/nvim/init.vim

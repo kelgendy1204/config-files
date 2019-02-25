@@ -136,4 +136,6 @@ set mouse=
 " set arabicshape!
 
 " no visual bell & flash
+set noerrorbells
 set vb t_vb=
+set belloff=all
