@@ -5,7 +5,9 @@ apt-get update
 apt-get install vim-gnome -y
 
 # setup zsh, oh my zsh and git
-apt-get install zsh curl git
+apt-get install zsh curl git -y
+
+# setup ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # install tmux
@@ -20,6 +22,9 @@ apt-get install tmux
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Vim plugin manager
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # clean up previous config
 rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig
