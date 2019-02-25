@@ -1,17 +1,17 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
+# clean up previous config
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig
+# rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim*
+
+# setup zsh, tumx, oh my zsh, git and vim
 apt-get update
 apt-get install vim-gnome -y
-
-# setup zsh, oh my zsh and git
-apt-get install zsh curl git -y
+apt-get install zsh curl git tmux -y
 
 # setup ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# install tmux
-apt-get install tmux
 
 # install neovim
 # apt-get install software-properties-common
@@ -25,10 +25,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Vim plugin manager
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-# clean up previous config
-rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig
-# rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim*
 
 # Add directories for nvim
 # mkdir -p ~/.config ~/.config/nvim
