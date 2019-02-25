@@ -7,8 +7,7 @@ rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig
 
 # setup zsh, tumx, oh my zsh, git and vim
 apt-get update
-apt-get install vim-gnome -y
-apt-get install zsh curl git tmux -y
+apt-get install vim-gnome zsh curl git tmux silversearcher-ag build-essential cmake python3-dev ack-grep -y
 
 # setup ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
