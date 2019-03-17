@@ -179,7 +179,7 @@ nnoremap <leader>gP "+gP
 vnoremap <leader>gP "+gP
 
 " Enter paste mode
-set pastetoggle=<Leader><leader>pt
+set pastetoggle=<F10>
 
 " 'cd' towards the dir in which the current file is edited
 " but only change the path for the current window
