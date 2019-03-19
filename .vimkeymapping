@@ -219,4 +219,6 @@ nmap <Leader><Leader>t :TagbarToggle<CR>
 
 " Start and end of line
 nnoremap H ^
+vnoremap H ^
 nnoremap L $
+vnoremap L $

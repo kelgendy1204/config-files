@@ -108,6 +108,9 @@ Plugin 'alvan/vim-closetag'
 " Allow to move between Vim panes and tmux splits seamlessly.
 Plugin 'christoomey/vim-tmux-navigator'
 
+" better searching
+Plugin 'mhinz/vim-grepper'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 
@@ -245,3 +248,7 @@ let g:closetag_close_shortcut = '<leader>>'
 " Tmux navigator
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
+
+" In normal and visual mode, the operator gs takes any motion and uses that selection to populate the search prompt. The query is quoted automatically.
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
