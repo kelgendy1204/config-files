@@ -116,6 +116,7 @@ set undolevels=1000
 " Great command-line completion, use '<Tab>' to move around and '<CR>' to validate"
 " Make use of the 'status line' to show possible completions of command line commands, file names, and more
 set wildmenu
+set wildmode=longest,list,full
 
 " Shows the current line number at the bottom. right of the screen.
 set ruler
