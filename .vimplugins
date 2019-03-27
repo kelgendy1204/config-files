@@ -250,7 +250,3 @@ let g:closetag_close_shortcut = '<leader>>'
 " Tmux navigator
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
-
-" In normal and visual mode, the operator gs takes any motion and uses that selection to populate the search prompt. The query is quoted automatically.
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
