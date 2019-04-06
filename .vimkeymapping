@@ -80,14 +80,6 @@ nnoremap <C-h> <C-W><C-H>
 " noremap <leader>l :bn<CR>
 " noremap <leader>h :bp<CR>
 
-" Workaround solution to make alt key works
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-
 " Moving lines in all modes
 nnoremap <A-j> :m .+1<CR>
 nnoremap <A-k> :m .-2<CR>
