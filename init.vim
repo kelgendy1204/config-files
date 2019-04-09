@@ -42,11 +42,18 @@ let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 " let g:airline_theme = 'papercolor'
 
 " gruvbox theme
-set termguicolors
-set background=dark
-colorscheme gruvbox
-let g:gruvbox_bold           = 1
-let g:gruvbox_italic         = 1
-let g:gruvbox_contrast_dark  = 'medium'
-let g:gruvbox_contrast_light = 'medium'
-let g:airline_theme          = 'gruvbox'
+" set termguicolors
+" set background=dark
+" colorscheme gruvbox
+" let g:gruvbox_bold           = 1
+" let g:gruvbox_italic         = 1
+" let g:gruvbox_contrast_dark  = 'medium'
+" let g:gruvbox_contrast_light = 'medium'
+" let g:airline_theme          = 'gruvbox'
+
+" Ayu Theme
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
