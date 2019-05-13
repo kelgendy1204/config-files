@@ -111,6 +111,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " better searching
 Plugin 'mhinz/vim-grepper'
 
+" better searching
+Plugin 'tacahiroy/ctrlp-funky'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 
@@ -250,3 +253,7 @@ let g:closetag_close_shortcut = '<leader>>'
 " Tmux navigator
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
+
+" Ctrlp-funky config
+" highlight feature
+let g:ctrlp_funky_matchtype = 'path'
