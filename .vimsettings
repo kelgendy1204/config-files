@@ -5,7 +5,8 @@ au BufReadPost *.vim* set syntax=vim
 " Allows auto-indenting depending on file type
 filetype plugin indent on
 
-set nocompatible
+" Vim already set it
+" set nocompatible
 
 " Set syntax on for all files
 syntax on

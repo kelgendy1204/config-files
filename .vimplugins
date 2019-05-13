@@ -136,6 +136,9 @@ let g:enable_italic_font = 1
 let g:gitgutter_enabled       = 1
 let g:gitgutter_signs_enabled = 1
 
+" Update the signs when a file is saved
+autocmd BufWritePost * GitGutter
+
 " ctrlp configuration
 let g:ctrlp_show_hidden   = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
