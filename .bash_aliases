@@ -6,3 +6,8 @@ commit_push() { git commit -m "$1"; git push; }
 safemerge() { git pull && git merge "$1"; git push; }
 list_port() { sudo netstat -peanut | grep ":$1 " }
 kill_port() { sudo fuser -n tcp -k $1 }
+
+alias forasna_migration='docker exec -it forasna-php php index.php migrations/migrate'
+alias wuzzuf_migration='docker exec -it docker.web-5 bash -c "cd wuzzuf/.build-wuzzuf; php vendor/bin/doctrine-migrations migrations:migrate" && docker exec -it docker.web-7 bash -c "cd wuzzuf-platform && php artisan doctrine:migrations:migrate"'
+alias fup='sh ~/bash/fup'
+alias fdown='sh ~/bash/fdown'
