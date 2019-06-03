@@ -32,6 +32,8 @@ Plugin 'pangloss/vim-javascript'
 
 " For typescript syntax
 Plugin 'leafgarland/typescript-vim'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'Quramy/tsuquyomi'
 
 " For react syntax
 Plugin 'mxw/vim-jsx'
@@ -229,6 +231,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+let g:ale_completion_enabled = 1
 
 " ===== Vim close tag
 " These are the file extensions where this plugin is enabled.
@@ -252,10 +257,20 @@ let g:closetag_shortcut = '>'
 " Add > at current position without closing the current tag, default is ''
 let g:closetag_close_shortcut = '<leader>>'
 
-" Tmux navigator
+" ===== Tmux navigator
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
 
-" Ctrlp-funky config
+" ===== Ctrlp-funky config
 " highlight feature
 let g:ctrlp_funky_matchtype = 'path'
+
+" ===== YCM configuration
+" YCM with typescript
+if !exists("g:ycm_semantic_triggers")
+  let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
+" ===== Tsuquyomi Plugin
+autocmd FileType typescript setlocal completeopt+=menu,preview
