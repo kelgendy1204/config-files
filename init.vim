@@ -36,24 +36,47 @@ let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 " Neovim themes
 " ====================================================== "
 
-" PaperColor theme
+" ===== PaperColor theme
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" set termguicolors
 " set background=dark
 " colorscheme PaperColor
 " let g:airline_theme = 'papercolor'
 
-" gruvbox theme
-" set termguicolors
-" set background=dark
-" colorscheme gruvbox
-" let g:gruvbox_bold           = 1
-" let g:gruvbox_italic         = 1
-" let g:gruvbox_contrast_dark  = 'medium'
-" let g:gruvbox_contrast_light = 'medium'
-" let g:airline_theme          = 'gruvbox'
+" ===== gruvbox theme
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+set background=dark
+colorscheme gruvbox
+let g:gruvbox_bold           = 1
+let g:gruvbox_italic         = 1
+let g:gruvbox_contrast_dark  = 'medium'
+let g:gruvbox_contrast_light = 'medium'
+let g:airline_theme          = 'gruvbox'
 
-" Ayu Theme
-set termguicolors     " enable true colors support
-" let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-" let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+" ===== OceanicNext theme
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" if (has("termguicolors"))
+    " set termguicolors
+" endif
+" syntax enable
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
+" let g:airline_theme='oceanicnext'
+
+" ===== One theme
+
+" if (empty($TMUX))
+    " if (has("nvim"))
+        " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    " endif
+    " if (has("termguicolors"))
+        " set termguicolors
+    " endif
+" endif
+
+" set background=dark
+" let g:airline_theme='one'
+" let g:one_allow_italics = 1
+" colorscheme one

@@ -116,6 +116,12 @@ Plugin 'mhinz/vim-grepper'
 " better searching
 Plugin 'tacahiroy/ctrlp-funky'
 
+" Oceanic theme
+Plugin 'mhartington/oceanic-next'
+
+" One theme
+Plugin 'rakr/vim-one'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 
