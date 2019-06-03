@@ -124,7 +124,7 @@ filetype plugin indent on
 " Plugin settings
 " ===================================================================== "
 
-" airline config
+" ===== Airline config
 let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -132,19 +132,19 @@ let g:airline#extensions#tabline#enabled = 1
 let g:enable_bold_font   = 1
 let g:enable_italic_font = 1
 
-" gitgutter configuration
+" ===== Gitgutter configuration
 let g:gitgutter_enabled       = 1
 let g:gitgutter_signs_enabled = 1
 
 " Update the signs when a file is saved
 autocmd BufWritePost * GitGutter
 
-" ctrlp configuration
+" ===== Ctrlp configuration
 let g:ctrlp_show_hidden   = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_max_files     = 0
 
-" nerdtree configuration
+" ===== Nerdtree configuration
 let g:NERDSpaceDelims    = 1
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeChDirMode  = 1
@@ -153,11 +153,11 @@ let g:NERDTreeIgnore     = ['\.swp$']
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
 
-" Indent lines configurations
+" ===== Indent lines configurations
 let g:indentLine_char    = '┆'
 let g:indentLine_enabled = 1
 
-" Prettier configuration
+" ===== Prettier configuration
 let g:prettier#config#print_width           = 100
 let g:prettier#config#tab_width             = 4
 let g:prettier#config#use_tabs              = 'false'
@@ -179,7 +179,7 @@ let g:prettier#config#trailing_comma        = 'none'
 " colorscheme hybrid_material
 " let g:airline_theme = 'hybrid'
 
-" PaperColor theme
+" ===== PaperColor theme
 set background=dark
 colorscheme PaperColor
 let g:airline_theme = 'papercolor'
@@ -190,7 +190,7 @@ let g:airline_theme = 'papercolor'
 " let ayucolor="mirage"
 " colorscheme ayu
 
-" ctrl-space setup
+" ===== Ctrl-space setup
 if has("gui_running")
     " Settings for MacVim and Inconsolata font
     let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
@@ -206,7 +206,7 @@ let g:CtrlSpaceSearchTiming = 500
 let g:CtrlSpaceUseTabline = 1
 let g:airline_exclude_preview = 1
 
-" Syntastic configuration
+" ===== Syntastic configuration
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -216,12 +216,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Vim javascript configuration
+" ===== Vim javascript configuration
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
-" Ale configuration
+" ===== Ale configuration
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
@@ -230,8 +230,7 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-" Vim close tag
-
+" ===== Vim close tag
 " These are the file extensions where this plugin is enabled.
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
 

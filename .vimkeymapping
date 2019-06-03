@@ -10,6 +10,9 @@ let mapleader=","
 " Apply Q macro record
 nnoremap Q @q
 
+" Easier bookmarking
+nnoremap M `m
+
 " Use (ctrl + ^) to toggle the uppercase of the letters
 " Fixing caps lock problem in normal mode
 " Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
@@ -105,6 +108,9 @@ inoremap <right> <nop>
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
+" close all except the current window
+nnoremap <leader>o :only<CR>
+
 " Quickly close the current buffer
 " nnoremap <leader>c :bd<CR>
 
@@ -176,9 +182,6 @@ set pastetoggle=<F10>
 " 'cd' towards the dir in which the current file is edited
 " but only change the path for the current window
 map <silent> <leader>cd :lcd %:h<CR>
-
-" Remove all other splits and focus on this one
-map <silent>fo :only<CR>
 
 " Normal mode switch for termial mode
 tnoremap <Esc> <C-\><C-n>
