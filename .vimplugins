@@ -277,6 +277,7 @@ if !exists("g:ycm_semantic_triggers")
   let g:ycm_semantic_triggers = {}
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
+let g:ycm_auto_trigger=0
 
 " ===== Tsuquyomi Plugin
 autocmd FileType typescript setlocal completeopt+=menu,preview
