@@ -34,6 +34,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'peitalin/vim-jsx-typescript'
 
 " For react syntax
 Plugin 'mxw/vim-jsx'
@@ -85,6 +86,9 @@ Plugin 'honza/vim-snippets'
 
 " Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
+
+" Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
+Plugin 'plasticboy/vim-markdown'
 
 " Vim snippets
 Plugin 'SirVer/ultisnips'
@@ -240,6 +244,18 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " Enable completion where available.
 " This setting must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver', 'eslint'],
+\   'vue': ['eslint']
+\}
+let g:ale_fixers = {
+\    'javascript': ['prettier'],
+\    'typescript': ['prettier'],
+\    'vue': ['prettier'],
+\    'scss': ['prettier'],
+\    'html': ['prettier']
+\}
 
 " ===== Vim close tag
 " These are the file extensions where this plugin is enabled.

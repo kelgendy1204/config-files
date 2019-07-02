@@ -11,6 +11,9 @@ source ~/.vimplugins
 " Neovim settings
 " ====================================================== "
 
+" Fix slow scroll issue in nvim
+set lazyredraw
+
 " Set true colors for specific terminals
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

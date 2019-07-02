@@ -133,7 +133,9 @@ set showtabline=1
 set cursorline
 
 " Disable the use of the mouse in all modes
-set mouse=
+" set mouse=
+" Mouse use all modes
+set mouse=a
 
 " For arabic support for bidi support terminals i.e. Konsole
 " set arabicshape!
