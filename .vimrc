@@ -23,3 +23,12 @@ while c <= 'z'
   exec "imap \e".c." <A-".c.">"
   let c = nr2char(1+char2nr(c))
 endw
+
+" ====================================================== "
+" Vim Plugins settings
+" ====================================================== "
+
+" Display tooltip window about symbol under the mouse cursor
+set ballooneval
+autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+autocmd FileType typescript nmap <buffer> <Leader>sy : <C-u>echo tsuquyomi#hint()<CR>
