@@ -126,6 +126,9 @@ Plugin 'mhartington/oceanic-next'
 " One theme
 Plugin 'rakr/vim-one'
 
+" Window swapping
+Plugin 'wesQ3/vim-windowswap'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 
@@ -250,12 +253,14 @@ let g:ale_linters = {
 \   'vue': ['eslint']
 \}
 let g:ale_fixers = {
-\    'javascript': ['prettier'],
+\    'javascript': ['prettier', 'eslint'],
 \    'typescript': ['prettier'],
 \    'vue': ['prettier'],
 \    'scss': ['prettier'],
 \    'html': ['prettier']
 \}
+let g:ale_linters_ignore = {'typescript': ['tslint']}
+let g:ale_typescript_tsserver_use_global = 0
 
 " ===== Vim close tag
 " These are the file extensions where this plugin is enabled.
@@ -298,6 +303,7 @@ let g:ycm_auto_trigger=0
 " ===== Tsuquyomi Plugin
 autocmd FileType typescript setlocal completeopt+=menu,preview
 let g:tsuquyomi_disable_default_mappings = 1
+let g:tsuquyomi_use_local_typescript = 1
 
 " Integrate with syntastic
 let g:tsuquyomi_disable_quickfix = 1
@@ -308,6 +314,7 @@ let g:typescript_indent_disable = 1
 " highlight host specific keywords for typescript
 let g:yats_host_keyword = 1
 
-" =====
-" For Prettier with typescript
+" ===== Prettier
+" For Prettier
+autocmd FileType javascript set formatprg=prettier\ --stdin
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
