@@ -92,18 +92,18 @@ vnoremap <A-j> :m '>+1<CR>gv
 vnoremap <A-k> :m '<-2<CR>gv
 
 " Resize splitting windows vertically
-nnoremap <Left> :vertical resize -5<CR>
-nnoremap <Right> :vertical resize +5<CR>
+nnoremap <C-Left> :vertical resize -5<CR>
+nnoremap <C-Right> :vertical resize +5<CR>
 
 " Resize splitting windows horizontally
-nnoremap <Up> :resize +5<CR>
-nnoremap <Down> :resize -5<CR>
+nnoremap <C-Up> :resize +5<CR>
+nnoremap <C-Down> :resize -5<CR>
 
 " Disable arrow keys completely in Insert Mode
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
