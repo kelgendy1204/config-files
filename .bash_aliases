@@ -11,4 +11,5 @@ alias forasna_migration='docker exec -it forasna-php php index.php migrations/mi
 alias wuzzuf_migration='docker exec -it docker.web-5 bash -c "cd wuzzuf/.build-wuzzuf; php vendor/bin/doctrine-migrations migrations:migrate" && docker exec -it docker.web-7 bash -c "cd wuzzuf-platform && php artisan doctrine:migrations:migrate"'
 alias fup='sh ~/bash/fup'
 alias fdown='sh ~/bash/fdown'
-alias new_wuzzuf_pr='~/bash/new-wuzzuf-pr.sh'
+alias new_wuzzuf_pr="~/bash/new-wuzzuf-pr.sh"
+alias merge_into_testing="~/bash/merge-into-testing.sh"
