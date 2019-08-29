@@ -8,7 +8,7 @@ rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim*
 apt-get update
 apt-get install vim-gnome zsh curl git tmux \
     silversearcher-ag build-essential cmake \
-    python3-dev ack-grep xclip locales -y
+    python3-dev ack-grep xclip locales dconf-tools -y
 
 # set local
 locale-gen en_US.UTF-8
