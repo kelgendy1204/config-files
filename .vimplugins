@@ -33,14 +33,15 @@ Plugin 'pangloss/vim-javascript'
 " For typescript syntax
 Plugin 'leafgarland/typescript-vim'
 Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'Quramy/tsuquyomi'
 Plugin 'peitalin/vim-jsx-typescript'
+" Need more installations
+Plugin 'Quramy/tsuquyomi'
 
 " For react syntax
 Plugin 'mxw/vim-jsx'
 
 " For file open in directory
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Hybrid theme
 Plugin 'kristijanhusak/vim-hybrid-material'
@@ -67,6 +68,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'w0rp/ale'
 
 " For project global search
+" Need more installations
 Plugin 'mileszs/ack.vim'
 
 " For brackets pairing
@@ -87,7 +89,7 @@ Plugin 'honza/vim-snippets'
 " Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
 
-" Syntax highlighting, matching rules and mappings for the original Markdown and extensions.
+" Syntax highlighting, matching rules and mappings for the original Markdown and extensions
 Plugin 'plasticboy/vim-markdown'
 
 " Vim snippets
@@ -97,15 +99,18 @@ Plugin 'SirVer/ultisnips'
 Plugin 'epilande/vim-react-snippets'
 
 " Auto completion plugin
+" Need more installations
 Plugin 'Valloric/YouCompleteMe'
 
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 
 " Prettier plugin
+" Need more installations
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Tabbar plugin
+" Need more installations
 Plugin 'majutsushi/tagbar'
 
 " auto closing tags
@@ -115,6 +120,7 @@ Plugin 'alvan/vim-closetag'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " better searching
+" Need more installations
 Plugin 'mhinz/vim-grepper'
 
 " better searching
