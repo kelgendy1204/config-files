@@ -132,6 +132,9 @@ Plugin 'mhartington/oceanic-next'
 " One theme
 Plugin 'rakr/vim-one'
 
+" One dark theme
+Plugin 'joshdick/onedark.vim'
+
 " Window swapping
 Plugin 'wesQ3/vim-windowswap'
 
@@ -197,28 +200,6 @@ let g:prettier#config#bracket_spacing       = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'false'
 let g:prettier#config#arrow_parens          = 'avoid'
 let g:prettier#config#trailing_comma        = 'none'
-
-" colorscheme solarized
-" set background=dark
-" let g:solarized_contrast='high'
-" let g:solarized_termcolors=256
-" let g:airline_solarized_bg='dark'
-
-" hybrid theme
-" set background=dark
-" colorscheme hybrid_material
-" let g:airline_theme = 'hybrid'
-
-" ===== PaperColor theme
-set background=dark
-colorscheme PaperColor
-let g:airline_theme = 'papercolor'
-
-" set termguicolors
-" let ayucolor="dark"
-" let ayucolor="light"
-" let ayucolor="mirage"
-" colorscheme ayu
 
 " ===== Ctrl-space setup
 if has("gui_running")
