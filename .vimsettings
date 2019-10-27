@@ -144,3 +144,14 @@ set cursorline
 set noerrorbells
 set vb t_vb=
 set belloff=all
+
+" Folding
+" Makes sure that when opening, files are "normal", i.e. not folded.
+set nofoldenable
+
+" Fold is manual not by indent
+set foldmethod=manual
+
+" Fold level and nesting
+set foldlevel=1
+set foldnestmax=10

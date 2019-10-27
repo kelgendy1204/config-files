@@ -20,7 +20,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 add-apt-repository ppa:neovim-ppa/stable
 apt-get update
 apt-get install software-properties-common python-dev \
-    python-pip python3-dev python3-pip neovim -y
+    python-pip python3-pip neovim -y
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -28,13 +28,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Vim plugin manager
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-# Add directories for nvim
-mkdir -p ~/.config ~/.config/nvim
 
 # clean up config files
 rm -rf ~/.gitconfig ~/.zshrc ~/.tmux.conf \
     ~/.vimrc ~/.vimplugins ~/.vimkeymapping \
     ~/.vimsettings ~/.config/nvim/init.vim
+
+# Add directories for nvim
+mkdir -p ~/.config ~/.config/nvim
 
 ### add config files ###
 ln -s $DIR/.gitconfig ~/.gitconfig
