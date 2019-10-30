@@ -186,10 +186,17 @@ map <silent> <leader>cd :lcd %:h<CR>
 " Normal mode switch for termial mode
 tnoremap <Esc> <C-\><C-n>
 
+" Start and end of line
+nnoremap H ^
+vnoremap H ^
+nnoremap L $
+vnoremap L $
+
 " ===================================================================== "
 " Key mapping for plugins
 " ===================================================================== "
 
+" ============== nerd tree
 " Toggle nerd tree
 noremap <leader>ne :NERDTreeToggle<CR>
 
@@ -199,7 +206,7 @@ nnoremap <leader>nf :NERDTreeFind<cr>
 " toggle nerdtree in the dir of the current buffer
 nnoremap <leader>nn :NERDTreeToggle %<CR>
 
-" Tabularize -^-
+" ============== Tabularize
 nnoremap <Leader>t :Tab<Space>/
 vnoremap <Leader>t :Tab<Space>/
 
@@ -209,14 +216,8 @@ nnoremap <silent> <leader><leader>p :Prettier<CR>
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<c-j>"
 
-" Toggle tagbar
+" ============== Toggle tagbar
 nmap <Leader><Leader>t :TagbarToggle<CR>
-
-" Start and end of line
-nnoremap H ^
-vnoremap H ^
-nnoremap L $
-vnoremap L $
 
 " In normal and visual mode, the operator gs takes any motion and uses that selection to populate the search prompt (Using grepper).
 " The query is quoted automatically.
@@ -240,3 +241,18 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+" ============= fzf
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Advanced customization using autoload functions
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
