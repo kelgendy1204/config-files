@@ -1,14 +1,17 @@
 #!/bin/bash
 DIR=$(pwd)
 
-# clean up previous config
-rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim*
-
-# setup zsh, tumx, oh my zsh, git and vim
+# setup zsh, tumx, oh my zsh, git, neovim and vim
+add-apt-repository ppa:neovim-ppa/stable
 apt-get update
 apt-get install vim-gnome zsh curl git tmux \
     silversearcher-ag build-essential cmake \
-    python3-dev ack-grep xclip locales dconf-tools -y
+    python3-dev python-dev xclip locales dconf-tools\
+    software-properties-common ack-grep \
+    python-pip python3-pip neovim fzf snapd -y
+
+# install ripgrep for file search
+snap install ripgrep --classic
 
 # set local
 locale-gen en_US.UTF-8
@@ -16,23 +19,14 @@ locale-gen en_US.UTF-8
 # setup ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# install neovim
-add-apt-repository ppa:neovim-ppa/stable
-apt-get update
-apt-get install software-properties-common python-dev \
-    python-pip python3-pip neovim -y
-
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Vim plugin manager
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-
-# clean up config files
-rm -rf ~/.gitconfig ~/.zshrc ~/.tmux.conf \
-    ~/.vimrc ~/.vimplugins ~/.vimkeymapping \
-    ~/.vimsettings ~/.config/nvim/init.vim
+# clean up previous config
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim*
 
 # Add directories for nvim
 mkdir -p ~/.config ~/.config/nvim

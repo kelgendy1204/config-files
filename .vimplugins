@@ -41,8 +41,6 @@ Plugin 'Quramy/tsuquyomi'
 Plugin 'mxw/vim-jsx'
 
 " For file open in directory
-Plugin 'ctrlpvim/ctrlp.vim'
-
 " Need more installations
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
@@ -127,9 +125,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Need more installations
 Plugin 'mhinz/vim-grepper'
 
-" better searching
-Plugin 'tacahiroy/ctrlp-funky'
-
 " Oceanic theme
 Plugin 'mhartington/oceanic-next'
 
@@ -175,11 +170,6 @@ let g:gitgutter_signs_enabled = 1
 
 " Update the signs when a file is saved
 autocmd BufWritePost * GitGutter
-
-" ===== Ctrlp configuration
-let g:ctrlp_show_hidden   = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-let g:ctrlp_max_files     = 0
 
 " ===== Nerdtree configuration
 let g:NERDSpaceDelims    = 1
@@ -291,10 +281,6 @@ let g:closetag_close_shortcut = '<leader>>'
 " ===== Tmux navigator
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
-
-" ===== Ctrlp-funky config
-" highlight feature
-let g:ctrlp_funky_matchtype = 'path'
 
 " ===== YCM configuration
 " YCM with typescript

@@ -224,11 +224,6 @@ nmap <Leader><Leader>t :TagbarToggle<CR>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
-" CtrlPFunky Config
-nnoremap <Leader>fu :CtrlPFunky<Cr>
-" narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-
 " ===== multi_cursor
 let g:multi_cursor_use_default_mapping=0
 
@@ -256,3 +251,10 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+
+" ============== FZF
+" FZF files open
+nnoremap <c-p> :Files<CR>
+
+" FZF files have content open
+nnoremap <c-g> :Rg<CR>

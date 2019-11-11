@@ -69,7 +69,6 @@ let g:airline_theme          = 'gruvbox'
 " let g:airline_theme='oceanicnext'
 
 " ===== One theme
-
 " if (empty($TMUX))
     " if (has("nvim"))
         " let $NVIM_TUI_ENABLE_TRUE_COLOR=1

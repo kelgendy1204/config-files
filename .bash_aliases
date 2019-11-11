@@ -1,3 +1,5 @@
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 alias safecommit="git stash && git pull && git stash pop && git add -p"
 alias fixlock="sudo rm /var/lib/apt/lists/lock && sudo rm /var/cache/apt/archives/lock && sudo rm /var/lib/dpkg/lock"
 alias list_ports="sudo netstat -peanut"
@@ -10,6 +12,7 @@ kill_port() { sudo fuser -n tcp -k $1 }
 ### work
 alias ssh_testing='ssh khaled@142.93.249.128'
 alias new_wuzzuf_pr="~/bash/new-wuzzuf-pr.sh"
+alias new_wuzzuf_up='bash ~/workspace/wuzzuf-frontend/dev/start.sh'
 alias wuzzuf_migration='docker exec -it docker.web-5 bash -c "cd wuzzuf/.build-wuzzuf; php vendor/bin/doctrine-migrations migrations:migrate" && docker exec -it docker.web-7 bash -c "cd wuzzuf-platform && php artisan doctrine:migrations:migrate"'
 alias forasna_up='sh ~/bash/fup'
 alias forasna_down='sh ~/bash/fdown'
