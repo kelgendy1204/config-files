@@ -1,156 +1,148 @@
-" required for Vundle starting
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
 " Indent lines
-Plugin 'Yggdroot/indentLine'
-
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+Plug 'Yggdroot/indentLine'
 
 " Bottom bar theme
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " For navigation tree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " For nerdtree with git integration
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " For comments
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 " For syntax of any kind of files
-Plugin 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 " For javascript syntax
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 " For typescript syntax
-Plugin 'leafgarland/typescript-vim'
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'peitalin/vim-jsx-typescript'
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'peitalin/vim-jsx-typescript'
 " Need more installations
-Plugin 'Quramy/tsuquyomi'
+Plug 'Quramy/tsuquyomi'
 
 " For react syntax
-Plugin 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 
 " For file open in directory
 " Need more installations
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Hybrid theme
-Plugin 'kristijanhusak/vim-hybrid-material'
+Plug 'kristijanhusak/vim-hybrid-material'
 
 " Solarized theme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " Gruvbox theme
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
 " PaperColor theme
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 
 " ayu theme
-Plugin 'ayu-theme/ayu-vim'
+Plug 'ayu-theme/ayu-vim'
 
 " Surround code with anything
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " For git gutter
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " For eslint integration
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " For project global search
 " Need more installations
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 " For brackets pairing
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " For git integration
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Fuzzy search for color schemes
-Plugin 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 
 " For multicursors
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 " Other snippets
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 " Vim script for text filtering and alignment
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 " Syntax highlighting, matching rules and mappings for the original Markdown and extensions
-Plugin 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 
 " Vim snippets
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " React snippets
-Plugin 'epilande/vim-react-snippets'
+Plug 'epilande/vim-react-snippets'
 
 " Auto completion plugin
 " Need more installations
-Plugin 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py' }
 
 " For buffers handling, extracting them to tabs, name the tabs and moving them
-Plugin 'vim-ctrlspace/vim-ctrlspace'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 
 " Prettier plugin
 " Need more installations
-Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Tabbar plugin
 " Need more installations
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " auto closing tags
-Plugin 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag'
 
 " Allow to move between Vim panes and tmux splits seamlessly.
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " better searching
 " Need more installations
-Plugin 'mhinz/vim-grepper'
+Plug 'mhinz/vim-grepper'
 
 " Oceanic theme
-Plugin 'mhartington/oceanic-next'
+Plug 'mhartington/oceanic-next'
 
 " One theme
-Plugin 'rakr/vim-one'
+Plug 'rakr/vim-one'
 
 " One dark theme
-Plugin 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 
 " Window swapping
-Plugin 'wesQ3/vim-windowswap'
+Plug 'wesQ3/vim-windowswap'
 
 " Start screen for vim
-Plugin 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 
 " gitk for vim
-Plugin 'cohama/agit.vim'
+Plug 'cohama/agit.vim'
 
 " Make terminal vim and tmux work better together for focusing events
-Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
-" All of your Plugins must be added before the following line
-call vundle#end()
-
-" required after Vundle ending
-filetype plugin indent on
+" Initialize plugin system
+call plug#end()
 
 " ===================================================================== "
 " Plugin settings
