@@ -29,8 +29,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
-" Need more installations
-Plug 'Quramy/tsuquyomi'
 
 " For react syntax
 Plug 'mxw/vim-jsx'
@@ -98,7 +96,8 @@ Plug 'epilande/vim-react-snippets'
 
 " Auto completion plugin
 " Need more installations
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py' }
+" CocInstall coc-tsserver coc-json coc-html coc-css coc-lists coc-snippets coc-git coc-yank
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -153,10 +152,18 @@ call plug#end()
 " ===== Airline config
 let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
-
-" enable bold and italic
-let g:enable_bold_font   = 1
-let g:enable_italic_font = 1
+" enable/disable coc integration
+let g:airline#extensions#coc#enabled = 1
+" change error symbol:
+let airline#extensions#coc#error_symbol = 'E:'
+" change warning symbol:
+let airline#extensions#coc#warning_symbol = 'W:'
+" change error format:
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+" change warning format:
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+let g:airline_exclude_preview = 1
+let g:airline#extensions#ale#enabled = 1
 
 " ===== Gitgutter configuration
 let g:gitgutter_enabled       = 1
@@ -221,7 +228,6 @@ endif
 
 let g:CtrlSpaceSearchTiming = 500
 let g:CtrlSpaceUseTabline = 1
-let g:airline_exclude_preview = 1
 
 " ===== Syntastic configuration
 set statusline+=%#warningmsg#
@@ -244,7 +250,6 @@ let g:javascript_plugin_flow = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -285,24 +290,6 @@ let g:closetag_close_shortcut = '<leader>>'
 " ===== Tmux navigator
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
-
-" ===== YCM configuration
-" YCM with typescript
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
-" let g:ycm_auto_trigger=0
-
-" ===== Tsuquyomi Plugin
-autocmd FileType typescript setlocal completeopt+=menu,preview
-let g:tsuquyomi_disable_default_mappings = 1
-let g:tsuquyomi_use_local_typescript = 1
-
-" Integrate with syntastic
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
-let g:typescript_indent_disable = 1
 
 " ===== yats plugin
 " highlight host specific keywords for typescript
@@ -346,3 +333,18 @@ let g:fzf_colors =
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+" ===================== Coc Plugin ===================== "
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction

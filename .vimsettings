@@ -11,6 +11,34 @@ filetype plugin indent on
 " Set syntax on for all files
 syntax on
 
+" enable bold and italic in colorscheme
+let g:enable_bold_font   = 1
+let g:enable_italic_font = 1
+
+" Possibility to have more than one unsaved buffers.
+" Also For coc if hidden is not set, TextEdit might fail.
+set hidden
+
+" Turn Off Swap Files
+" Also For coc Some servers have issues with backup files, see #649
+set noswapfile
+set nowb
+set nobackup
+set nowritebackup
+
+" For coc Better display for messages
+set cmdheight=2
+
+" Speed up the updatetime so gitgutter and friends are quicker
+" For coc you will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" For coc don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" For coc always show signcolumns
+set signcolumn=yes
+
 " Show vim mode
 set showmode
 
@@ -97,9 +125,6 @@ set gdefault
 " Automatically reload files changed outside of Vim
 set autoread
 
-" Speed up the updatetime so gitgutter and friends are quicker
-set updatetime=1000
-
 " Make the keyboard fast
 set ttyfast
 set timeout ttimeoutlen=50
@@ -122,9 +147,6 @@ set wildmode=longest,list,full
 
 " Shows the current line number at the bottom. right of the screen.
 set ruler
-
-" Possibility to have more than one unsaved buffers.
-set hidden
 
 " Turn off tabline
 set showtabline=1
