@@ -1,5 +1,6 @@
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+# export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 alias safecommit="git stash && git pull && git stash pop && git add -p"
 alias fixlock="sudo rm /var/lib/apt/lists/lock && sudo rm /var/cache/apt/archives/lock && sudo rm /var/lib/dpkg/lock"
 alias list_ports="sudo netstat -peanut"
