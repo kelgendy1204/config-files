@@ -12,6 +12,10 @@ apt-get install vim-gnome zsh curl git tmux \
 
 # install ripgrep for file search
 snap install ripgrep --classic
+snap install node --classic --channel=edge
+
+# Better diff
+npm install -g diff-so-fancy
 
 # set local
 locale-gen en_US.UTF-8

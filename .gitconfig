@@ -1,8 +1,13 @@
 [user]
-    email = elgendy1204@gmail.com
-    name = Khaled Saad
+    email    = elgendy1204@gmail.com
+    name     = Khaled Saad
+
 [push]
-    default = simple
+    default  = simple
+
 [core]
-    editor = vim
+    editor   = nvim
     autocrlf = input
+
+[pager]
+    diff     = diff-so-fancy | less --tabs=4 -RFX
