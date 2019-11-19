@@ -50,3 +50,4 @@ ln -s $DIR/.vimkeymapping ~/.vimkeymapping
 ln -s $DIR/.vimsettings ~/.vimsettings
 ln -s $DIR/init.vim ~/.config/nvim/init.vim
 ln -s $DIR/.bash_aliases ~/.bash_aliases
+ln -s $DIR/coc-settings.json ~/.config/nvim/coc-settings.json
