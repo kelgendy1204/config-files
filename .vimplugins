@@ -67,10 +67,6 @@ Plug 'dense-analysis/ale'
 " TODO look for alternatives
 Plug 'mileszs/ack.vim'
 
-" TODO Check if needed after coc-pairs
-" For brackets pairing
-Plug 'jiangmiao/auto-pairs'
-
 " For git integration
 Plug 'tpope/vim-fugitive'
 

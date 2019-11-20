@@ -1,3 +1,10 @@
 {
-
+    "yank.highlight.enable": false,
+    "snippets.ultisnips.directories": ["UltiSnips", "~/.vim/plugged/vim-react-snippets/UltiSnips"],
+    "git.removedSign.text": "-",
+    "git.addedSign.hlGroup": "GitGutterAdd",
+    "git.changedSign.hlGroup": "GitGutterChange",
+    "git.removedSign.hlGroup": "GitGutterDelete",
+    "git.topRemovedSign.hlGroup": "GitGutterDelete",
+    "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete"
 }

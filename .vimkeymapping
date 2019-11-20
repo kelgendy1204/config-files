@@ -357,3 +357,11 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" Show All lists
+nnoremap <silent> <space>l  :<C-u>CocList<cr>
+" Open yank list
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+" show chunk diff at current position
+nmap gs <Plug>(coc-git-chunkinfo)
+" show commit contains current position
+nmap gc <Plug>(coc-git-commit)
