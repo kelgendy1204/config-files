@@ -6,6 +6,7 @@ alias fixlock="sudo rm /var/lib/apt/lists/lock && sudo rm /var/cache/apt/archive
 alias list_ports="sudo netstat -peanut"
 alias merge_into_testing="~/bash/merge-into-testing.sh"
 alias update_from_staging="~/bash/update-from-staging.sh"
+alias update="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh"
 commit_push() { git commit -m "$1"; git push; }
 safemerge() { git pull && git merge "$1"; git push; }
 list_port() { sudo netstat -peanut | grep ":$1 " }

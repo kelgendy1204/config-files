@@ -101,6 +101,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 
 " Prettier plugin
 " Need more installations
+" TODO Check do i really need this
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Tabbar plugin
