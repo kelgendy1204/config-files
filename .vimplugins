@@ -6,6 +6,16 @@ call plug#begin('~/.vim/plugged')
 " Indent lines
 Plug 'Yggdroot/indentLine'
 
+" Themes
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'ayu-theme/ayu-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
+
 " Bottom bar theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -37,21 +47,6 @@ Plug 'mxw/vim-jsx'
 " Need more installations
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" Hybrid theme
-Plug 'kristijanhusak/vim-hybrid-material'
-
-" Solarized theme
-Plug 'altercation/vim-colors-solarized'
-
-" Gruvbox theme
-Plug 'morhetz/gruvbox'
-
-" PaperColor theme
-Plug 'NLKNguyen/papercolor-theme'
-
-" ayu theme
-Plug 'ayu-theme/ayu-vim'
 
 " Surround code with anything
 Plug 'tpope/vim-surround'
@@ -119,14 +114,6 @@ Plug 'christoomey/vim-tmux-navigator'
 " TODO study more
 Plug 'mhinz/vim-grepper'
 
-" Oceanic theme
-Plug 'mhartington/oceanic-next'
-
-" One theme
-Plug 'rakr/vim-one'
-
-" One dark theme
-Plug 'joshdick/onedark.vim'
 
 " Window swapping
 Plug 'wesQ3/vim-windowswap'
