@@ -14,7 +14,7 @@ list_port() { sudo netstat -peanut | grep ":$1 " }
 kill_port() { sudo fuser -n tcp -k $1 }
 
 ### work
-alias ssh_testing='ssh khaled@142.93.249.128'
+alias ssh_ec2='ssh khaled@3.17.142.4'
 alias new_wuzzuf_pr="~/bash/new-wuzzuf-pr.sh"
 alias new_wuzzuf_up='bash ~/workspace/wuzzuf-frontend/dev/start.sh'
 alias wuzzuf_migration='docker exec -it docker.web-5 bash -c "cd wuzzuf/.build-wuzzuf; php vendor/bin/doctrine-migrations migrations:migrate" && docker exec -it docker.web-7 bash -c "cd wuzzuf-platform && php artisan doctrine:migrations:migrate"'
