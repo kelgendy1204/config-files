@@ -1,3 +1,4 @@
+#!/bin/bash
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
@@ -8,10 +9,21 @@ alias merge_into_testing="~/bash/merge-into-testing.sh"
 alias update_from_staging="~/bash/update-from-staging.sh"
 alias update="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh"
 alias myip="curl http://ipecho.net/plain; echo"
-commit_push() { git commit -m "$1"; git push; }
-safemerge() { git pull && git merge "$1"; git push; }
-list_port() { sudo netstat -peanut | grep ":$1 " }
-kill_port() { sudo fuser -n tcp -k $1 }
+
+commit_push() {
+    git commit -m "$1"
+    git push
+}
+safemerge() {
+    git pull && git merge "$1"
+    git push
+}
+list_port() {
+    sudo netstat -peanut | grep ":$1 "
+}
+kill_port() {
+    sudo fuser -n tcp -k "$1"
+}
 
 ### work
 alias ssh_ec2='ssh khaled@3.17.142.4'
