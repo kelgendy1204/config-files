@@ -8,7 +8,7 @@ sudo apt-get install vim-gnome zsh curl git file tmux \
     silversearcher-ag build-essential cmake \
     python3-dev python-dev xclip locales dconf-tools\
     software-properties-common ack-grep \
-    python-pip python3-pip neovim snapd -y
+    python-pip python3-pip neovim snapd fd-find -y
 
 # Homebrew on Linux
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
