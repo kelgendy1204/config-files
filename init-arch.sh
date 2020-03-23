@@ -1,7 +1,7 @@
 #!/bin/bash
 DIR=$(pwd)
 
-sudo pacman -Syu
+# sudo pacman -Syu
 sudo pacman -S gvim zsh curl git tmux \
     the_silver_searcher cmake \
     python ruby xclip neovim ack \
