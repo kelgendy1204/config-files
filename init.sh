@@ -1,35 +1,20 @@
 #!/bin/bash
 DIR=$(pwd)
 
-# setup zsh, tumx, oh my zsh, git, neovim and vim
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install vim-gnome zsh curl git file tmux \
-    silversearcher-ag build-essential cmake \
-    python3-dev python-dev xclip locales dconf-tools\
-    software-properties-common ack-grep \
-    python-pip python3-pip neovim snapd fd-find -y
+# sudo pacman -Syu
+sudo pacman -S gvim zsh curl git tmux \
+    the_silver_searcher cmake \
+    python ruby xclip neovim ack \
+    python2-pip python-pip ripgrep fd nodejs \
+    fzf diff-so-fancy neofetch -y
 
-# Homebrew on Linux
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+yay -S npm yarn tldr++
 
-# install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-# install ripgrep for file search
-sudo snap install ripgrep --classic
-brew install node
-
-# Better diff
-sudo npm install -g diff-so-fancy
-
-# set local
-locale-gen en_US.UTF-8
+# install neovim
+sudo npm install -g neovim
+python2 -m pip install --user --upgrade pynvim
+python3 -m pip install --user --upgrade pynvim
+gem install neovim
 
 # setup ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
