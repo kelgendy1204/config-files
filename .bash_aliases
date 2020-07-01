@@ -4,24 +4,27 @@
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 alias safecommit="git stash && git pull && git stash pop && git add -p"
 alias fixlock="sudo rm /var/lib/apt/lists/lock && sudo rm /var/cache/apt/archives/lock && sudo rm /var/lib/dpkg/lock"
-alias list_ports="sudo netstat -peanut"
+alias list_ports="sudo ss -lntu"
 alias merge_into_testing="~/bash/merge-into-testing.sh"
 alias update_from_staging="~/bash/update-from-staging.sh"
 alias update="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh"
 alias myip="curl http://ipecho.net/plain; echo"
-alias bye="sudo shutdown -h now"
+alias bye="sudo shutdown now"
 
 commit_push() {
     git commit -m "$1"
     git push
 }
+
 safemerge() {
     git pull && git merge "$1"
     git push
 }
+
 list_port() {
     sudo netstat -peanut | grep ":$1 "
 }
+
 kill_port() {
     sudo fuser -n tcp -k "$1"
 }

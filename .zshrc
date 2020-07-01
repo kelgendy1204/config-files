@@ -107,3 +107,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+
+neofetch

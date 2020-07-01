@@ -114,7 +114,6 @@ Plug 'christoomey/vim-tmux-navigator'
 " TODO study more
 Plug 'mhinz/vim-grepper'
 
-
 " Window swapping
 Plug 'wesQ3/vim-windowswap'
 
@@ -124,8 +123,20 @@ Plug 'mhinz/vim-startify'
 " gitk for vim
 Plug 'cohama/agit.vim'
 
+" git commits history for lines
+Plug 'rhysd/git-messenger.vim'
+
 " Make terminal vim and tmux work better together for focusing events
 Plug 'tmux-plugins/vim-tmux-focus-events'
+
+" Helpers for UNIX
+Plug 'tpope/vim-eunuch'
+
+" Save session workspace
+Plug 'tpope/vim-obsession'
+
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " Initialize plugin system
 call plug#end()

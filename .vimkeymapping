@@ -150,7 +150,7 @@ nnoremap Y y$
 nnoremap <leader>vv :vs<CR>
 
 " split screen horizontally
-nnoremap <leader>ss :sp<CR>
+nnoremap <leader>hh :sp<CR>
 
 " Repalce word with a yanked words without replacing it
 nnoremap <leader>r viwp`[v`]y

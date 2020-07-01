@@ -5,9 +5,10 @@ DIR=$(pwd)
 sudo pacman -S gvim zsh curl git tmux \
     the_silver_searcher cmake \
     python ruby xclip neovim ack \
-    python2-pip python-pip ripgrep fd nodejs fzf diff-so-fancy -y
+    python2-pip python-pip ripgrep fd nodejs \
+    fzf diff-so-fancy neofetch -y
 
-yay -S npm yarn
+yay -S npm yarn tldr++
 
 # install neovim
 sudo npm install -g neovim
