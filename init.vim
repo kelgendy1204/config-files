@@ -51,11 +51,12 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set background=dark
 colorscheme gruvbox
-let g:gruvbox_bold           = 1
-let g:gruvbox_italic         = 1
-let g:gruvbox_contrast_dark  = 'medium'
-let g:gruvbox_contrast_light = 'medium'
-let g:airline_theme          = 'gruvbox'
+let g:gruvbox_bold             = 1
+let g:gruvbox_italic           = 1
+let g:gruvbox_contrast_dark    = 'medium'
+let g:gruvbox_contrast_light   = 'medium'
+let g:gruvbox_invert_selection = '0'
+let g:airline_theme            = 'gruvbox'
 
 " ===== OceanicNext theme
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -82,3 +83,9 @@ let g:airline_theme          = 'gruvbox'
 " let g:airline_theme='one'
 " let g:one_allow_italics = 1
 " colorscheme one
+
+" ======== visual studio code theme
+" colorscheme codedark
+" set t_ut=
+" let g:airline_theme = 'codedark'
+" let g:codedark_term256=1

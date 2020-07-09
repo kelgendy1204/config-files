@@ -15,6 +15,7 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
+Plug 'tomasiser/vim-code-dark'
 
 " Bottom bar theme
 Plug 'vim-airline/vim-airline'
