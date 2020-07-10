@@ -6,7 +6,7 @@ sudo pacman -S gvim zsh curl git tmux \
     the_silver_searcher cmake \
     python ruby xclip neovim ack \
     python2-pip python-pip ripgrep fd nodejs \
-    fzf diff-so-fancy neofetch -y
+    fzf diff-so-fancy neofetch gnome-terminal -y
 
 yay -S npm yarn tldr++
 
@@ -20,7 +20,7 @@ gem install neovim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # clean up previous config
-sudo rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -47,3 +47,17 @@ ln -s $DIR/.vimsettings ~/.vimsettings
 ln -s $DIR/init.vim ~/.config/nvim/init.vim
 ln -s $DIR/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s $DIR/.bash_aliases ~/.bash_aliases
+
+# For i3, config and dependencies
+sudo pacman -S i3 playerctl arandr feh lxappearance rofi compton
+
+# For i3 yay dependencies
+yay -S papirus-icon-theme
+
+cp -r ./Pictures ~/Pictures
+
+rm -rf ~/.config/i3 ~/.config/i3status ~/.config/rofi
+
+ln -s $DIR/config/i3 ~/.config/i3
+ln -s $DIR/config/i3status ~/.config/i3status
+ln -s $DIR/config/rofi ~/.config/rofi

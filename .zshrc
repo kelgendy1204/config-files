@@ -98,14 +98,21 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
 # redefine prompt_context for hiding user@hostname
 prompt_context () { }
 
+ # This loads nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# add fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# path for ruby for vim dependencies
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 neofetch

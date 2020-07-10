@@ -1,0 +1,9 @@
+configuration {
+    display-drun: "";
+    show-icons: true;
+    icon-theme: "Papirus";
+    modi: "window,drun,combi";
+    theme: "solarized";
+    font: "hack 10";
+    combi-modi: "window,drun";
+}
