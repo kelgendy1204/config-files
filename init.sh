@@ -49,15 +49,22 @@ ln -s $DIR/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s $DIR/.bash_aliases ~/.bash_aliases
 
 # For i3, config and dependencies
-sudo pacman -S i3 playerctl arandr feh lxappearance rofi compton ttf-font-awesome
+sudo pacman -S i3 playerctl arandr feh lxappearance \
+    rofi compton ttf-font-awesome alsa-utils acpi \
+    sysstat
 
 # For i3 yay dependencies
-yay -S papirus-icon-theme
+yay -S papirus-icon-theme kbdd-git
 
 cp -r ./Pictures ~/Pictures
 
 rm -rf ~/.config/i3 ~/.config/i3status ~/.config/rofi
 
+mkdir -p ~/.config/i3blocks
+
 ln -s $DIR/config/i3 ~/.config/i3
 ln -s $DIR/config/i3status ~/.config/i3status
 ln -s $DIR/config/rofi ~/.config/rofi
+ln -s $DIR/config/i3blocks/config ~/.config/i3blocks/config
+
+git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks/scripts
