@@ -50,8 +50,9 @@ ln -s $DIR/.bash_aliases ~/.bash_aliases
 
 # For i3, config and dependencies
 sudo pacman -S i3 playerctl arandr feh lxappearance \
-    rofi compton ttf-font-awesome acpi \
-    sysstat
+    rofi compton ttf-font-awesome sysstat acpi polkit \
+    alsa-utils pulseaudio pavucontrol \
+    nm-connection-editor network-manager-applet \
 
 # For i3 yay dependencies
 yay -S papirus-icon-theme kbdd-git
