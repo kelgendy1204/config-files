@@ -50,7 +50,7 @@ ln -s $DIR/.bash_aliases ~/.bash_aliases
 
 # For i3, config and dependencies
 sudo pacman -S i3 playerctl arandr feh lxappearance \
-    rofi compton ttf-font-awesome alsa-utils acpi \
+    rofi compton ttf-font-awesome acpi \
     sysstat
 
 # For i3 yay dependencies
