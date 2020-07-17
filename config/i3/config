@@ -25,7 +25,7 @@ font pango:Hack 10
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# bindsym $mod+l exec i3lock
+bindsym $mod+l exec i3lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -159,12 +159,15 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
+# bar {
+        # position top
         # status_command i3status
-        status_command i3blocks
-        font pango:Hack, FontAwesome 10
-}
+        # status_command i3blocks
+        # font pango:Hack, FontAwesome 10
+# }
+
+# add polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Pictures/1218219.jpg
@@ -201,18 +204,18 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 
 set $Locker i3lock && sleep 1
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+# set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+# mode "$mode_system" {
+    # bindsym l exec --no-startup-id $Locker, mode "default"
+    # bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    # bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    # bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    # bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    # bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+    # # back to normal: Enter or Escape
+    # bindsym Return mode "default"
+    # bindsym Escape mode "default"
+# }
 
-bindsym $mod+l mode "$mode_system"
+# bindsym $mod+l mode "$mode_system"

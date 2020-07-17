@@ -55,17 +55,20 @@ sudo pacman -S i3 playerctl arandr feh lxappearance \
     nm-connection-editor network-manager-applet \
 
 # For i3 yay dependencies
-yay -S papirus-icon-theme kbdd-git
+yay -S papirus-icon-theme kbdd-git ttf-symbola \
+    noto-fonts noto-fonts-emoji noto-fonts-extra
 
 cp -r ./Pictures ~/Pictures
 
-rm -rf ~/.config/i3 ~/.config/i3status ~/.config/rofi
+rm -rf ~/.config/i3 ~/.config/i3status ~/.config/rofi \
+    ~/.config/i3blocks ~/.config/polybar
 
 mkdir -p ~/.config/i3blocks
 
 ln -s $DIR/config/i3 ~/.config/i3
 ln -s $DIR/config/i3status ~/.config/i3status
 ln -s $DIR/config/rofi ~/.config/rofi
+ln -s $DIR/config/polybar ~/.config/polybar
 ln -s $DIR/config/i3blocks/config ~/.config/i3blocks/config
 
 git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks/scripts
