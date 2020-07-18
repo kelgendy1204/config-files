@@ -131,10 +131,6 @@ label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
 [module/filesystem]
 type = internal/fs
 interval = 25
@@ -142,6 +138,10 @@ mount-0 = /
 label-mounted = %{F#555}%{F-} %used%/%total%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
 
 [module/i3]
 type = internal/i3
