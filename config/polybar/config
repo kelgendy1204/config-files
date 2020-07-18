@@ -54,15 +54,15 @@ module-margin-right = 1
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
-font-3 = Font Awesome 5 Free:style=Regular:pixelsize=10;1
-font-4 = Font Awesome 5 Free:style=Solid:pixelsize=10;1
-font-5 = Font Awesome 5 Brands:pixelsize=10;1
+font-3 = Font Awesome 5 Free:style=Regular:pixelsize=12;1
+font-4 = Font Awesome 5 Free:style=Solid:pixelsize=12;1
+font-5 = Font Awesome 5 Brands:pixelsize=12;1
 font-6 = Noto Color Emoji:scale=10:style=Regular;2
 font-7 = Symbola:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 1
@@ -99,7 +99,7 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = 🔊 %percentage%%
 label-volume-foreground = ${root.foreground}
-label-muted = 🔇 muted
+label-muted = 🔇 0%
 label-muted-foreground = #666
 
 [module/temperature]
@@ -138,10 +138,8 @@ label = %title:0:30:...%
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#555}%{F-} %used%/%total%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
