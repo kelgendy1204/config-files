@@ -49,9 +49,10 @@ ln -s $DIR/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s $DIR/.bash_aliases ~/.bash_aliases
 
 # For i3, config and dependencies
-sudo pacman -S i3 playerctl arandr feh lxappearance \
+sudo pacman -S i3-gaps i3lock i3status i3blocks \
+    playerctl arandr feh lxappearance \
     rofi compton ttf-font-awesome sysstat acpi polkit \
-    alsa-utils pulseaudio pavucontrol \
+    alsa-utils pulseaudio pavucontrol volumeicon \
     nm-connection-editor network-manager-applet \
 
 # For i3 yay dependencies
