@@ -56,7 +56,8 @@ sudo pacman -S i3 playerctl arandr feh lxappearance \
 
 # For i3 yay dependencies
 yay -S papirus-icon-theme kbdd-git ttf-symbola \
-    noto-fonts noto-fonts-emoji noto-fonts-extra
+    noto-fonts noto-fonts-emoji noto-fonts-extra \
+    xfce4-notifyd
 
 cp -r ./Pictures ~/Pictures
 
