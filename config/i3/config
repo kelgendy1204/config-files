@@ -190,7 +190,8 @@ bindsym XF86AudioPrev exec playerctl previous
 for_window [class="Spotify"] move to workspace $ws10
 
 # fade effect
-exec_always --no-startup-id compton
+# exec_always --no-startup-id compton
+# exec_always --no-startup-id picom
 
 # change volume or toggle mute for i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -RTMIN+10 i3blocks
@@ -340,3 +341,5 @@ smart_gaps on
 smart_borders on
 
 exec --no-startup-id volumeicon
+
+exec --no-startup-id conky
