@@ -58,7 +58,7 @@ sudo pacman -S i3-gaps i3lock i3status i3blocks \
 # For i3 yay dependencies
 yay -S papirus-icon-theme kbdd-git ttf-symbola \
     noto-fonts noto-fonts-emoji noto-fonts-extra \
-    dunst conky
+    dunst conky arc-icon-theme
 
 cp -r ./Pictures ~/Pictures
 
