@@ -49,9 +49,9 @@ ln -s $DIR/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s $DIR/.bash_aliases ~/.bash_aliases
 
 # For i3, config and dependencies
-sudo pacman -S i3-gaps i3lock i3status i3blocks \
+sudo pacman -S i3-gaps i3lock \
     playerctl arandr feh lxappearance \
-    rofi picom ttf-font-awesome sysstat acpi polkit \
+    rofi picom ttf-font-awesome polkit \
     alsa-utils pulseaudio pavucontrol volumeicon \
     nm-connection-editor network-manager-applet \
 
@@ -62,19 +62,13 @@ yay -S papirus-icon-theme kbdd-git ttf-symbola \
 
 cp -r ./Pictures ~/Pictures
 
-rm -rf ~/.config/i3 ~/.config/i3status ~/.config/rofi \
-    ~/.config/i3blocks ~/.config/polybar ~/.config/dunst \
+rm -rf ~/.config/i3 ~/.config/rofi \
+    ~/.config/polybar ~/.config/dunst \
     ~/.xinitrc ~/.config/conky
 
-mkdir -p ~/.config/i3blocks
-
 ln -s $DIR/config/i3 ~/.config/i3
-ln -s $DIR/config/i3status ~/.config/i3status
 ln -s $DIR/config/rofi ~/.config/rofi
 ln -s $DIR/config/polybar ~/.config/polybar
 ln -s $DIR/config/dunst ~/.config/dunst
 ln -s $DIR/config/conky ~/.config/conky
 ln -s $DIR/.xinitrc ~/.xinitrc
-
-ln -s $DIR/config/i3blocks/config ~/.config/i3blocks/config
-git clone https://github.com/vivien/i3blocks-contrib.git ~/.config/i3blocks/scripts
