@@ -53,9 +53,7 @@ font-7 = Symbola:pixelsize=10;1
 modules-left = i3
 modules-right = public-ip filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date
 
-tray-position = right
-tray-padding = 1
-tray-detached = false
+tray-position = none
 wm-restack = i3
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev

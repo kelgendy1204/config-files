@@ -51,58 +51,16 @@ font-5 = Font Awesome 5 Brands:pixelsize=12;1
 font-6 = Noto Color Emoji:scale=10:style=Regular;2
 font-7 = Symbola:pixelsize=10;1
 
-modules-right = i3
+modules-right = info-trash
 
-tray-position = none
+tray-position = center
+tray-padding = 1
+tray-detached = false
 wm-restack = i3
 cursor-click = pointer
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0 = /
-label-mounted = %{F#555}%{F-} %used%/%total%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-ws-icon-0 = 10;
-ws-icon-1 = 1;
-ws-icon-2 = 2;
-ws-icon-3 = 3;
-
-; focused = Active workspace on focused monitor
-label-focused = %index% %icon%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index% %icon%
-label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-label-visible = %index% %icon%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %index% %icon%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
+[module/info-trash]
+type = custom/script
+exec = ~/polybar-scripts/polybar-scripts/info-trash/info-trash.sh
+format-prefix = 🗑 
+interval = 60

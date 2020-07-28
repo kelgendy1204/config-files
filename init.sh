@@ -58,7 +58,7 @@ sudo pacman -S i3-gaps i3lock \
 # For i3 yay dependencies
 yay -S papirus-icon-theme kbdd-git ttf-symbola \
     noto-fonts noto-fonts-emoji noto-fonts-extra \
-    dunst conky arc-icon-theme
+    dunst conky arc-icon-theme autotiling
 
 cp -r ./Pictures ~/Pictures
 
@@ -72,3 +72,5 @@ ln -s $DIR/config/polybar ~/.config/polybar
 ln -s $DIR/config/dunst ~/.config/dunst
 ln -s $DIR/config/conky ~/.config/conky
 ln -s $DIR/.xinitrc ~/.xinitrc
+
+git clone git@github.com:polybar/polybar-scripts.git ~/polybar-scripts
