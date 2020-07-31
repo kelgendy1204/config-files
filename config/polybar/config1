@@ -40,7 +40,6 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
-
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
@@ -49,10 +48,8 @@ font-4 = Font Awesome 5 Free:style=Solid:pixelsize=12;1
 font-5 = Font Awesome 5 Brands:pixelsize=12;1
 font-6 = Noto Color Emoji:scale=10:style=Regular;2
 font-7 = Symbola:pixelsize=10;1
-
 modules-left = i3
-modules-right = public-ip filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date
-
+modules-right = public-ip netspeed wired filesystem xbacklight pulseaudio xkeyboard memory cpu wlan battery temperature date
 tray-position = none
 wm-restack = i3
 scroll-up = i3wm-wsnext
@@ -129,42 +126,39 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
-
 ws-icon-0 = 10;
 ws-icon-1 = 1;
 ws-icon-2 = 2;
 ws-icon-3 = 3;
-
 ; focused = Active workspace on focused monitor
 label-focused = %index% %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
-
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index% %icon%
 label-unfocused-padding = 2
-
 ; visible = Active workspace on unfocused monitor
 label-visible = %index% %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
-
 ; urgent = Workspace with urgency hint set
 label-urgent = %index% %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-; Separator in between workspaces
-; label-separator = |
+;Public IP
+[module/public-ip]
+type = custom/script
+exec = curl -s icanhazip.com
+label-padding = 1
+format = %{F#0f0}<label>%{F-}
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -210,21 +204,23 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/eth]
+[module/wired]
 type = internal/network
-interface = veth9b63cfc
+interface = enp4s0
 interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = %{F#0f0}%local_ip%%{F-}
+format-connected = <label-connected>
+udspeed-minwidth = 5
+accumulate-stats = true
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+[module/netspeed]
+type = internal/network
+interface = enp4s0
+interval = 3.0
+label-connected = %{F#555} %{F-}%upspeed% %{F#555}  %{F-}%downspeed%
+format-connected = <label-connected>
 
 [module/battery]
 type = internal/battery
@@ -258,15 +254,6 @@ animation-discharging-1 = 
 animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
-
-;Public IP
-[module/public-ip]
-type = custom/script
-exec = curl -s icanhazip.com
-label-padding = 1
-format = %{F#0f0}<label>%{F-}
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
 
 [settings]
 screenchange-reload = true
