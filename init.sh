@@ -51,9 +51,10 @@ ln -s $DIR/.bash_aliases ~/.bash_aliases
 # For i3, config and dependencies
 sudo pacman -S i3-gaps i3lock \
     playerctl arandr feh lxappearance \
-    rofi picom ttf-font-awesome polkit \
+    rofi picom ttf-font-awesome polkit lxsession \
     alsa-utils pulseaudio pavucontrol volumeicon \
     nm-connection-editor network-manager-applet \
+    gnome-disk-utility udisks2 udiskie
 
 # For i3 yay dependencies
 yay -S papirus-icon-theme kbdd-git ttf-symbola \
