@@ -139,6 +139,12 @@ Plug 'tpope/vim-obsession'
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
+" A plugin to color colornames and codes
+Plug 'chrisbra/Colorizer'
+
+" GraphQL file detection, syntax highlighting, and indentation
+Plug 'jparise/vim-graphql'
+
 " Initialize plugin system
 call plug#end()
 
