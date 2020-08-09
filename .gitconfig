@@ -6,8 +6,25 @@
     default  = simple
 
 [core]
+    pager    = delta
     editor   = nvim
     autocrlf = input
 
-[pager]
-    diff     = diff-so-fancy | less --tabs=4 -R
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations diff-so-fancy navigate
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-minus-style = 124
+    line-numbers-plus-style = 28

@@ -6,9 +6,9 @@ sudo pacman -S gvim zsh curl git tmux \
     the_silver_searcher cmake \
     python ruby xclip neovim ack \
     python2-pip python-pip ripgrep fd nodejs \
-    fzf diff-so-fancy neofetch gnome-terminal -y
+    fzf neofetch gnome-terminal -y
 
-yay -S npm yarn tldr++
+yay -S npm yarn tldr++ git-delta-bin
 
 # install neovim
 sudo npm install -g neovim
