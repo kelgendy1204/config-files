@@ -6,7 +6,7 @@ sudo pacman -S gvim zsh curl git tmux \
     the_silver_searcher cmake \
     python ruby xclip neovim ack \
     python2-pip python-pip ripgrep fd nodejs \
-    fzf neofetch gnome-terminal -y
+    fzf neofetch gnome-terminal htop bashtop -y
 
 yay -S npm yarn tldr++ git-delta-bin
 
