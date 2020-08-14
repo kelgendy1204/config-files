@@ -49,7 +49,7 @@ font-5 = Font Awesome 5 Brands:pixelsize=12;1
 font-6 = Noto Color Emoji:scale=10:style=Regular;2
 font-7 = Symbola:pixelsize=10;1
 modules-left = i3
-modules-right = public-ip netspeed wired filesystem xbacklight pulseaudio xkeyboard memory cpu wlan battery temperature date
+modules-right = netspeed filesystem xbacklight pulseaudio xkeyboard memory cpu wlan battery temperature date
 tray-position = none
 wm-restack = i3
 scroll-up = i3wm-wsnext
@@ -153,13 +153,13 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ;Public IP
-[module/public-ip]
-type = custom/script
-exec = curl -s icanhazip.com
-label-padding = 1
-format = %{F#0f0}<label>%{F-}
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+; [module/public-ip]
+; type = custom/script
+; exec = curl -s icanhazip.com
+; label-padding = 1
+; format = %{F#0f0}<label>%{F-}
+; format-prefix = 
+; format-prefix-foreground = ${colors.foreground-alt}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -205,16 +205,16 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/wired]
-type = internal/network
-interface = enp4s0
-interval = 3.0
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %{F#0f0}%local_ip%%{F-}
-format-connected = <label-connected>
-udspeed-minwidth = 5
-accumulate-stats = true
+; [module/wired]
+; type = internal/network
+; interface = enp4s0
+; interval = 3.0
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = ${colors.foreground-alt}
+; label-connected = %{F#0f0}%local_ip%%{F-}
+; format-connected = <label-connected>
+; udspeed-minwidth = 5
+; accumulate-stats = true
 
 [module/netspeed]
 type = internal/network
