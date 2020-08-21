@@ -49,7 +49,7 @@ font-5 = Font Awesome 5 Brands:pixelsize=12;1
 font-6 = Noto Color Emoji:scale=10:style=Regular;2
 font-7 = Symbola:pixelsize=10;1
 modules-left = i3
-modules-right = netspeed filesystem xbacklight pulseaudio xkeyboard memory cpu wlan battery temperature date
+modules-right = netspeed filesystem xbacklight memory cpu wlan battery temperature pulseaudio xkeyboard date
 tray-position = none
 wm-restack = i3
 scroll-up = i3wm-wsnext

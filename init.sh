@@ -61,13 +61,14 @@ sudo pacman -S i3-gaps i3lock \
 
     gnome-disk-utility udisks2 udiskie \
 
-    qt5ct dolphin gnome-icon-theme moka-icon-theme
+    qt5ct dolphin gnome-icon-theme moka-icon-theme \
     faba-icon-theme elementary-icon-theme
 
 # For i3 yay dependencies
 yay -S papirus-icon-theme kbdd-git ttf-symbola \
     noto-fonts noto-fonts-emoji noto-fonts-extra \
-    dunst conky arc-icon-theme autotiling
+    dunst conky arc-icon-theme autotiling \
+    kmon-git
 
 cp -r ./Pictures ~/Pictures
 
