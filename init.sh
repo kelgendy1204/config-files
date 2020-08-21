@@ -70,7 +70,7 @@ yay -S papirus-icon-theme kbdd-git ttf-symbola \
     dunst conky arc-icon-theme autotiling \
     kmon-git
 
-cp -r ./Pictures ~/Pictures
+mkdir -p ~/Pictures
 
 rm -rf ~/.config/i3 ~/.config/rofi \
     ~/.config/polybar ~/.config/dunst \
@@ -84,3 +84,4 @@ ln -s $DIR/config/conky ~/.config/conky
 ln -s $DIR/.xinitrc ~/.xinitrc
 
 git clone git@github.com:polybar/polybar-scripts.git ~/polybar-scripts
+git clone https://gitlab.com/elgendy1204/wallpapers.git ~/Pictures/wallpapers

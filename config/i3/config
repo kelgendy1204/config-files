@@ -158,7 +158,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Pictures/1218219.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpapers/0201.jpg
 
 # configure keyboard repeat speed
 exec --no-startup-id xset r rate 200 50
