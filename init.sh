@@ -62,7 +62,7 @@ sudo pacman -S i3-gaps i3lock \
     gnome-disk-utility udisks2 udiskie \
 
     qt5ct dolphin gnome-icon-theme moka-icon-theme \
-    faba-icon-theme elementary-icon-theme
+    faba-icon-theme elementary-icon-theme nitrogen
 
 # For i3 yay dependencies
 yay -S papirus-icon-theme kbdd-git ttf-symbola \
