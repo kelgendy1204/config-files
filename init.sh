@@ -9,8 +9,7 @@ sudo pacman -S gvim zsh curl git tmux \
     fzf diff-so-fancy neofetch gnome-terminal \
     htop bashtop -y
 
-
-yay -S npm yarn tldr++
+yay -S npm yarn tldr++ tig-git
 
 # install neovim
 sudo npm install -g neovim
