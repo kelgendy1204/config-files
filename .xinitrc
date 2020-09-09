@@ -41,8 +41,6 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 # exec xterm -geometry 80x66+0+0 -name login
 
 dropbox &
-# compton transitions
-picom &
-# start polykit for permissions
-lxsession &
+picom & # compton transitions
+lxsession & # start polykit for permissions
 exec i3

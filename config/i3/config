@@ -192,7 +192,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+5 i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+5 i3blocks
 
-set $Locker i3lock && sleep 1
+set $Locker betterlockscreen --lock && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
@@ -338,3 +338,5 @@ exec_always --no-startup-id autotiling
 
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="qBittorrent"] floating enable
+
+exec --no-startup-id betterlockscreen -u ~/Pictures/Wallpapers
