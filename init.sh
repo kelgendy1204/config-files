@@ -53,13 +53,9 @@ ln -s $DIR/.bash_aliases ~/.bash_aliases
 sudo pacman -S i3-gaps i3lock \
     playerctl arandr feh lxappearance \
     rofi picom ttf-font-awesome polkit lxsession \
-
     alsa-utils pulseaudio pavucontrol volumeicon \
-
     nm-connection-editor network-manager-applet \
-
     gnome-disk-utility udisks2 udiskie \
-
     qt5ct dolphin gnome-icon-theme moka-icon-theme \
     faba-icon-theme elementary-icon-theme nitrogen gwenview
 
