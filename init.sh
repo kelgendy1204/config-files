@@ -21,13 +21,14 @@ gem install neovim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # clean up previous config
-rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases ~/Pictures
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Add directories for nvim
 mkdir -p ~/.config ~/.config/nvim
+mkdir -p ~/Pictures
 
 # vim-plug for vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -49,34 +50,33 @@ ln -s $DIR/init.vim ~/.config/nvim/init.vim
 ln -s $DIR/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s $DIR/.bash_aliases ~/.bash_aliases
 
+git clone https://gitlab.com/elgendy1204/wallpapers.git ~/Pictures/wallpapers
+
 # For i3, config and dependencies
-sudo pacman -S i3-gaps i3lock \
-    playerctl arandr feh lxappearance \
-    rofi picom ttf-font-awesome polkit lxsession \
-    alsa-utils pulseaudio pavucontrol volumeicon \
-    nm-connection-editor network-manager-applet \
-    gnome-disk-utility udisks2 udiskie \
-    qt5ct dolphin gnome-icon-theme moka-icon-theme \
-    faba-icon-theme elementary-icon-theme nitrogen gwenview
+# sudo pacman -S i3-gaps nitrogen gwenview \
+    # playerctl arandr feh lxappearance \
+    # rofi picom ttf-font-awesome polkit lxsession \
+    # alsa-utils pulseaudio pavucontrol volumeicon \
+    # nm-connection-editor network-manager-applet \
+    # gnome-disk-utility udisks2 udiskie \
+    # qt5ct dolphin gnome-icon-theme moka-icon-theme \
+    # faba-icon-theme elementary-icon-theme
 
 # For i3 yay dependencies
-yay -S papirus-icon-theme kbdd-git ttf-symbola \
-    noto-fonts noto-fonts-emoji noto-fonts-extra \
-    dunst conky arc-icon-theme autotiling \
-    kmon-git diskonaut betterlockscreen
+# yay -S papirus-icon-theme kbdd-git ttf-symbola \
+    # noto-fonts noto-fonts-emoji noto-fonts-extra \
+    # dunst conky arc-icon-theme autotiling \
+    # kmon-git diskonaut betterlockscreen
 
-mkdir -p ~/Pictures
+# rm -rf ~/.config/i3 ~/.config/rofi \
+    # ~/.config/polybar ~/.config/dunst \
+    # ~/.xinitrc ~/.config/conky
 
-rm -rf ~/.config/i3 ~/.config/rofi \
-    ~/.config/polybar ~/.config/dunst \
-    ~/.xinitrc ~/.config/conky
+# ln -s $DIR/config/i3 ~/.config/i3
+# ln -s $DIR/config/rofi ~/.config/rofi
+# ln -s $DIR/config/polybar ~/.config/polybar
+# ln -s $DIR/config/dunst ~/.config/dunst
+# ln -s $DIR/config/conky ~/.config/conky
+# ln -s $DIR/.xinitrc ~/.xinitrc
 
-ln -s $DIR/config/i3 ~/.config/i3
-ln -s $DIR/config/rofi ~/.config/rofi
-ln -s $DIR/config/polybar ~/.config/polybar
-ln -s $DIR/config/dunst ~/.config/dunst
-ln -s $DIR/config/conky ~/.config/conky
-ln -s $DIR/.xinitrc ~/.xinitrc
-
-git clone git@github.com:polybar/polybar-scripts.git ~/polybar-scripts
-git clone https://gitlab.com/elgendy1204/wallpapers.git ~/Pictures/wallpapers
+# git clone git@github.com:polybar/polybar-scripts.git ~/polybar-scripts
