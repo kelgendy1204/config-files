@@ -367,3 +367,8 @@ let g:coc_global_extensions = [
   \  'coc-git',
   \  'coc-yank'
   \  ]
+
+" ===================== Git Messenger Plugin ===================== "
+
+let g:git_messenger_close_on_cursor_moved = v:false
+let g:git_messenger_always_into_popup = v:true
