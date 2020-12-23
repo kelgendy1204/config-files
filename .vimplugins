@@ -145,6 +145,12 @@ Plug 'chrisbra/Colorizer'
 " GraphQL file detection, syntax highlighting, and indentation
 Plug 'jparise/vim-graphql'
 
+" Editor config plugin
+Plug 'editorconfig/editorconfig-vim'
+
+" ejs syntax
+Plug 'nikvdp/ejs-syntax'
+
 " Initialize plugin system
 call plug#end()
 

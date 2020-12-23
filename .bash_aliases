@@ -38,6 +38,6 @@ alias forasna_up='~/bash/fup'
 alias forasna_down='~/bash/fdown'
 alias wuzzuf_up='sh ~/bash/wuzzuf-up.sh'
 alias wuzzuf_down='sh ~/bash/wuzzuf-down.sh'
-alias forasna_migration='docker exec -it forasna-php php index.php migrations/migrate'
+alias forasna_migration='docker exec -it forasna-php-dev php index.php migrations/migrate'
 alias forasna_clear_cache="find application/cache/ -type f -not -name '*html' -not -name '*htaccess' -print0 | xargs -0 rm --"
-alias forasna_compile_migrate='docker exec -u 1000 forasna-php-dev bash -c "cd application/third_party && php -d memory_limit=6096M /bin/composer install && cd ../../ && php index.php migrations/migrate/pre && php index.php migrations/migrate"'
+alias forasna_compile_migrate='docker exec -u $USER forasna-php-dev bash -c "cd application/third_party && php -d memory_limit=6096M /bin/composer install && cd ../../ && php index.php migrations/migrate/pre && php index.php migrations/migrate"'
