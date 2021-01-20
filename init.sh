@@ -27,7 +27,7 @@ rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases ~/P
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Add directories for nvim
-mkdir -p ~/.config ~/.config/nvim
+mkdir -p ~/.config
 mkdir -p ~/Pictures
 
 # vim-plug for vim
@@ -39,15 +39,11 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ### add config files ###
+ln -s $DIR/config/nvim ~/.config/nvim
 ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.zshrc ~/.zshrc
 ln -s $DIR/.tmux.conf ~/.tmux.conf
 ln -s $DIR/.vimrc ~/.vimrc
-ln -s $DIR/.vimplugins ~/.vimplugins
-ln -s $DIR/.vimkeymapping ~/.vimkeymapping
-ln -s $DIR/.vimsettings ~/.vimsettings
-ln -s $DIR/init.vim ~/.config/nvim/init.vim
-ln -s $DIR/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s $DIR/.bash_aliases ~/.bash_aliases
 
 git clone https://gitlab.com/elgendy1204/wallpapers.git ~/Pictures/wallpapers

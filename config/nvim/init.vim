@@ -1,11 +1,11 @@
 " import vim settings file
-source ~/.vimsettings
+source ~/.config/nvim/.vimsettings
 
 " import vim plugins file with its settings and mappings
-source ~/.vimplugins
+source ~/.config/nvim/.vimplugins
 
 " import vim mapping file
-source ~/.vimkeymapping
+source ~/.config/nvim/.vimkeymapping
 
 " ====================================================== "
 " Neovim settings
