@@ -10,6 +10,7 @@ alias update_from_staging="~/bash/update-from-staging.sh"
 alias update="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y && sudo snap refresh"
 alias myip="curl http://ipecho.net/plain; echo"
 alias bye="sudo shutdown now"
+alias rsync="rsync -avhP"
 
 commit_push() {
     git commit -m "$1"
