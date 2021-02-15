@@ -7,5 +7,8 @@
     "git.removedSign.hlGroup": "GitGutterDelete",
     "git.topRemovedSign.hlGroup": "GitGutterDelete",
     "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
-    "tsserver.log": "verbose"
+    "tsserver.log": "verbose",
+    "typescript.format.enabled": false,
+    "javascript.format.enabled": false,
+    "tsserver.disableAutomaticTypeAcquisition": false
 }

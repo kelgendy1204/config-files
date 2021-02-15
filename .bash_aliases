@@ -31,7 +31,6 @@ kill_port() {
 }
 
 ### work
-alias ssh_ec2='ssh khaled@18.191.35.207'
 alias new_wuzzuf_pr="~/bash/new-wuzzuf-pr.sh"
 alias new_wuzzuf_up='bash ~/workspace/wuzzuf-frontend/dev/start.sh'
 alias wuzzuf_migration='docker exec -it docker.web-5 bash -c "cd basharjobs/.build-wuzzuf; php vendor/bin/doctrine-migrations migrations:migrate" && docker exec -it docker.web-7 bash -c "cd wuzzuf-platform && php artisan doctrine:migrations:migrate"'
