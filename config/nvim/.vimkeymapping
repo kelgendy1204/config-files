@@ -57,7 +57,7 @@ nnoremap <Leader><Leader>r :redraw!<CR>
 " Don't want to jump to the first result automatically.
 cnoreabbrev Ack Ack!
 " Map Ack
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>a :Ack!<Space>-i<Space>
 
 " Search will center on the line it's found in.
 nnoremap n nzz
