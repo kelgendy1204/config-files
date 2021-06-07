@@ -7,7 +7,7 @@ sudo pacman -S gvim zsh curl git tmux \
     python ruby xclip neovim ack \
     python2-pip python-pip ripgrep fd nodejs \
     fzf diff-so-fancy neofetch gnome-terminal \
-    htop bashtop -y
+    htop bashtop vimiv ranger -y
 
 yay -S npm yarn tldr++ tig-git kmon-git diskonaut
 
@@ -21,14 +21,13 @@ gem install neovim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # clean up previous config
-rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases ~/Pictures
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Add directories for nvim
 mkdir -p ~/.config
-mkdir -p ~/Pictures
 
 # vim-plug for vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -45,8 +44,6 @@ ln -s $DIR/.zshrc ~/.zshrc
 ln -s $DIR/.tmux.conf ~/.tmux.conf
 ln -s $DIR/.vimrc ~/.vimrc
 ln -s $DIR/.bash_aliases ~/.bash_aliases
-
-git clone https://gitlab.com/elgendy1204/wallpapers.git ~/Pictures/wallpapers
 
 # For i3, config and dependencies
 # sudo pacman -S i3-gaps nitrogen gwenview \

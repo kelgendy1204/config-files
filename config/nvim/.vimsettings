@@ -136,6 +136,8 @@ set timeout ttimeoutlen=50
 set backupdir=~/.vim/temp//
 set directory=~/.vim/temp//
 set undodir=~/.vim/temp//
+" automatically save and restore undo history
+set undofile
 
 " Remember more commands and search history
 set history=1000
@@ -174,9 +176,34 @@ set belloff=all
 " Makes sure that when opening, files are "normal", i.e. not folded.
 set nofoldenable
 
-" Fold is manual not by indent
+" Fold method by syntax or indent or manual
 set foldmethod=manual
 
 " Fold level and nesting
 set foldlevel=1
 set foldnestmax=10
+
+" enable reading .vimrc/.exrc/.gvimrc in the current directory = local custom config
+set exrc
+
+" Return cursor to its default style
+set guicursor=
+
+" show the line number for each line
+set nu
+
+" Set true colors for specific terminals
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+" number of screen lines to show around the cursor
+set scrolloff=10
+
+" not displaying the current mode in the status line
+set noshowmode
+
+" whether to use a popup menu for Insert mode completion
+set completeopt=menuone,noinsert,noselect

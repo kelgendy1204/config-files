@@ -75,10 +75,6 @@ noremap <Leader>tm :tabmove<CR>
 " Show all buffers
 nnoremap <silent> <leader>b :buffers<CR>:buffer<Space>
 
-" map escape key
-imap jk <Esc>
-imap kj <Esc>
-
 " Remove highlights for search
 nnoremap <silent> <leader>s :nohlsearch<cr>
 
@@ -204,6 +200,9 @@ nnoremap H ^
 vnoremap H ^
 nnoremap L $
 vnoremap L $
+
+" space for toggle foldable blocks
+nnoremap <space> za
 
 " ===================================================================== "
 " Key mapping for plugins

@@ -14,16 +14,6 @@ source ~/.config/nvim/.vimkeymapping
 " Fix slow scroll issue in nvim
 set lazyredraw
 
-" Set true colors for specific terminals
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
-" Return cursor to its default style
-set guicursor=
-
 " ====================================================== "
 " Neovim Keymapping
 " ====================================================== "
