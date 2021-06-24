@@ -130,7 +130,7 @@ set autoread
 
 " Make the keyboard fast
 set ttyfast
-set timeout ttimeoutlen=50
+set timeout ttimeoutlen=50 timeoutlen=500
 
 " Change swap files, backup files and undo files to another directory
 set backupdir=~/.vim/temp//

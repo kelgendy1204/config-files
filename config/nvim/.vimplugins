@@ -73,7 +73,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'terryma/vim-multiple-cursors'
 
 " Vim script for text filtering and alignment
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 
 " Syntax highlighting, matching rules and mappings for the original Markdown and extensions
 Plug 'plasticboy/vim-markdown'
@@ -102,7 +102,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Tabbar plugin
 " Need more installations
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " auto closing tags
 Plug 'alvan/vim-closetag'
@@ -147,6 +147,11 @@ Plug 'editorconfig/editorconfig-vim'
 
 " ejs syntax
 Plug 'nikvdp/ejs-syntax'
+
+" Float terminal
+Plug 'voldikss/vim-floaterm'
+
+Plug 'liuchengxu/vim-which-key'
 
 " Initialize plugin system
 call plug#end()

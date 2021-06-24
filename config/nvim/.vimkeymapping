@@ -63,18 +63,6 @@ nnoremap <Leader>a :Ack!<Space>-i<Space>
 nnoremap n nzz
 nnoremap N Nzz
 
-" Easily create a new tab.
-noremap <Leader>tn :tabnew<CR>
-
-" Easily close a tab.
-noremap <Leader>tc :tabclose<CR>
-
-" Easily move a tab.
-noremap <Leader>tm :tabmove<CR>
-
-" Show all buffers
-nnoremap <silent> <leader>b :buffers<CR>:buffer<Space>
-
 " Remove highlights for search
 nnoremap <silent> <leader>s :nohlsearch<cr>
 
@@ -108,20 +96,11 @@ nnoremap <C-Right> :vertical resize +5<CR>
 nnoremap <C-Up> :resize +5<CR>
 nnoremap <C-Down> :resize -5<CR>
 
-" Disable arrow keys completely in Insert Mode
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
-
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
 " close all except the current window
 nnoremap <leader>o :only<CR>
-
-" Quickly close the current buffer
-" nnoremap <leader>c :bd<CR>
 
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
@@ -219,8 +198,8 @@ nnoremap <leader>nf :NERDTreeFind<cr>
 nnoremap <leader>nn :NERDTreeToggle %<CR>
 
 " ============== Tabularize
-nnoremap <Leader>t :Tab<Space>/
-vnoremap <Leader>t :Tab<Space>/
+" nnoremap <Leader>t :Tab<Space>/
+" vnoremap <Leader>t :Tab<Space>/
 
 " Prettier key map
 nnoremap <silent> <leader><leader>p :Prettier<CR>
@@ -229,7 +208,7 @@ nnoremap <silent> <leader><leader>p :Prettier<CR>
 let g:UltiSnipsExpandTrigger = "<c-j>"
 
 " ============== Toggle tagbar
-nmap <Leader><Leader>t :TagbarToggle<CR>
+" nmap <Leader><Leader>t :TagbarToggle<CR>
 
 " In normal and visual mode, the operator gs takes any motion and uses that selection to populate the search prompt (Using grepper).
 " The query is quoted automatically.

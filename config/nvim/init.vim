@@ -8,4 +8,6 @@ source ~/.config/nvim/.vimplugins
 source ~/.config/nvim/.vimkeymapping
 
 " Plugins imports
+source ~/.config/nvim/plugins/whichkey.vim
 source ~/.config/nvim/plugins/telescope.vim
+source ~/.config/nvim/plugins/floaterm.vim

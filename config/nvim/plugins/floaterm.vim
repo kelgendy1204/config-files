@@ -1,0 +1,20 @@
+let g:floaterm_keymap_toggle = '<Leader>tt'
+let g:floaterm_keymap_new = '<Leader>tn'
+let g:floaterm_keymap_kill = '<Leader>tk'
+let g:floaterm_opener = 'edit'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+let g:floaterm_autoclose = 1
+let g:floaterm_title = '($1/$2)'
+
+command! Ranger FloatermNew ranger
+nnoremap <silent> <leader>tr :Ranger<CR>
+
+let g:which_key_map.t = {
+      \ 'name' : '+terminal' ,
+      \ 't' : ['FloatermToggle'         , 'Toggle'],
+      \ 'n' : ['FloatermNew'            , 'New'],
+      \ 'k' : ['FloatermKill'           , 'Kill'],
+      \ 'r' : ['Ranger'                 , 'Ranger'],
+      \ }
+
