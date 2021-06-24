@@ -87,10 +87,8 @@ Plug 'SirVer/ultisnips'
 " React snippets
 Plug 'epilande/vim-react-snippets'
 
-" Auto completion plugin
-" Need more installations
-" CocInstall coc-tsserver coc-json coc-html coc-css coc-lists coc-snippets coc-git coc-yank coc-marketplace
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Setup lsp
+Plug 'neovim/nvim-lspconfig'
 
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -127,9 +125,6 @@ Plug 'rhysd/git-messenger.vim'
 " Make terminal vim and tmux work better together for focusing events
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-" Helpers for UNIX
-Plug 'tpope/vim-eunuch'
-
 " Save session workspace
 Plug 'tpope/vim-obsession'
 
@@ -151,6 +146,7 @@ Plug 'nikvdp/ejs-syntax'
 " Float terminal
 Plug 'voldikss/vim-floaterm'
 
+" Which key for list key mapping with leader key
 Plug 'liuchengxu/vim-which-key'
 
 " Initialize plugin system
@@ -163,16 +159,14 @@ call plug#end()
 " ===== Airline config
 let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
-" enable/disable coc integration
-let g:airline#extensions#coc#enabled = 1
-" change error symbol:
-let airline#extensions#coc#error_symbol = 'E:'
-" change warning symbol:
-let airline#extensions#coc#warning_symbol = 'W:'
-" change error format:
-let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-" change warning format:
-let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+
+" enable/disable nvimlsp integration
+let g:airline#extensions#nvimlsp#enabled = 1
+" nvimlsp error_symbol
+let airline#extensions#nvimlsp#error_symbol = 'E:'
+" nvimlsp warning
+let airline#extensions#nvimlsp#warning_symbol = 'W:'
+
 let g:airline_exclude_preview = 1
 let g:airline#extensions#ale#enabled = 1
 
@@ -305,37 +299,6 @@ let g:tmux_navigator_disable_when_zoomed = 1
 " ===== yats plugin
 " highlight host specific keywords for typescript
 let g:yats_host_keyword = 1
-
-" ===================== Coc Plugin ===================== "
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_global_extensions = [
-  \  'coc-eslint',
-  \  'coc-prettier',
-  \  'coc-marketplace',
-  \  'coc-pairs',
-  \  'coc-tsserver',
-  \  'coc-css',
-  \  'coc-json',
-  \  'coc-yaml',
-  \  'coc-html',
-  \  'coc-lists',
-  \  'coc-snippets',
-  \  'coc-git',
-  \  'coc-yank'
-  \  ]
 
 " ===================== Git Messenger Plugin ===================== "
 
