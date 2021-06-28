@@ -8,6 +8,7 @@ let g:floaterm_autoclose = 1
 let g:floaterm_title = '($1/$2)'
 
 command! Ranger FloatermNew ranger
+command! FZF FloatermNew fzf
 nnoremap <silent> <leader>tr :Ranger<CR>
 
 let g:which_key_map.t = {
@@ -16,5 +17,5 @@ let g:which_key_map.t = {
       \ 'n' : ['FloatermNew'            , 'New'],
       \ 'k' : ['FloatermKill'           , 'Kill'],
       \ 'r' : ['Ranger'                 , 'Ranger'],
+      \ 'f' : ['FZF'                    , 'FZF'],
       \ }
-
