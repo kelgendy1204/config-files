@@ -179,6 +179,10 @@ vnoremap L $
 " space for toggle foldable blocks
 nnoremap <space> za
 
+" Remap omnifunc to ctrl + space
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+
 " ===================================================================== "
 " Key mapping for plugins
 " ===================================================================== "

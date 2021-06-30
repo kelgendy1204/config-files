@@ -13,4 +13,4 @@ source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/floaterm.vim
 
 " Lua imports from ~/.config/nvim/lua/
-lua require('tsserver-lsp')
+lua require('lsp')
