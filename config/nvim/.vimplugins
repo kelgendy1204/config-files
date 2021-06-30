@@ -55,9 +55,6 @@ Plug 'tpope/vim-surround'
 " For git gutter
 Plug 'airblade/vim-gitgutter'
 
-" For eslint integration
-Plug 'dense-analysis/ale'
-
 " For project global search
 " Need more installations
 " TODO look for alternatives
@@ -149,6 +146,9 @@ Plug 'voldikss/vim-floaterm'
 " Which key for list key mapping with leader key
 Plug 'liuchengxu/vim-which-key'
 
+" Pair brackets
+Plug 'jiangmiao/auto-pairs'
+
 " Initialize plugin system
 call plug#end()
 
@@ -166,9 +166,7 @@ let g:airline#extensions#nvimlsp#enabled = 1
 let airline#extensions#nvimlsp#error_symbol = 'E:'
 " nvimlsp warning
 let airline#extensions#nvimlsp#warning_symbol = 'W:'
-
 let g:airline_exclude_preview = 1
-let g:airline#extensions#ale#enabled = 1
 
 " ===== Gitgutter configuration
 let g:gitgutter_enabled       = 1
@@ -250,31 +248,6 @@ let g:syntastic_auto_loc_list = 1
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
-
-" ===== Ale configuration
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" Enable completion where available.
-" This setting must be set before ALE is loaded.
-let g:ale_completion_enabled = 1
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'typescript': ['tsserver', 'eslint'],
-\   'vue': ['eslint']
-\}
-let g:ale_fixers = {
-\    'javascript': ['prettier', 'eslint'],
-\    'typescript': ['prettier'],
-\    'vue': ['prettier'],
-\    'scss': ['prettier'],
-\    'html': ['prettier']
-\}
-let g:ale_linters_ignore = {'typescript': ['tslint']}
-let g:ale_typescript_tsserver_use_global = 0
 
 " ===== Vim close tag
 " These are the file extensions where this plugin is enabled.
