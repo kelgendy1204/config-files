@@ -75,15 +75,6 @@ Plug 'terryma/vim-multiple-cursors'
 " Syntax highlighting, matching rules and mappings for the original Markdown and extensions
 Plug 'plasticboy/vim-markdown'
 
-" Other snippets
-Plug 'honza/vim-snippets'
-
-" Vim snippets
-Plug 'SirVer/ultisnips'
-
-" React snippets
-Plug 'epilande/vim-react-snippets'
-
 " Setup lsp
 Plug 'neovim/nvim-lspconfig'
 
