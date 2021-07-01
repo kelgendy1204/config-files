@@ -15,3 +15,4 @@ source ~/.config/nvim/plugins/compe.vim
 
 " Lua imports from ~/.config/nvim/lua/
 lua require('lsp')
+lua require('lsp-diagnosticls')

@@ -12,7 +12,7 @@ sudo pacman -S gvim zsh curl git tmux \
 yay -S npm yarn tldr++ tig-git kmon-git diskonaut
 
 # install neovim and tsserver lsp
-npm install -g neovim typescript typescript-language-server
+npm install -g neovim typescript typescript-language-server diagnostic-languageserver
 python2 -m pip install --user --upgrade pynvim
 python3 -m pip install --user --upgrade pynvim
 gem install neovim
