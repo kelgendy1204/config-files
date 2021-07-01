@@ -87,6 +87,9 @@ Plug 'epilande/vim-react-snippets'
 " Setup lsp
 Plug 'neovim/nvim-lspconfig'
 
+" Lsp Completion
+Plug 'hrsh7th/nvim-compe'
+
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
