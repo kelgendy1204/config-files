@@ -30,20 +30,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " For comments
 Plug 'scrooloose/nerdcommenter'
 
-" For syntax of any kind of files
-Plug 'vim-syntastic/syntastic'
-
-" For javascript syntax
-Plug 'pangloss/vim-javascript'
-
-" For typescript syntax
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'peitalin/vim-jsx-typescript'
-
-" For react syntax
-Plug 'mxw/vim-jsx'
-
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -72,14 +58,15 @@ Plug 'terryma/vim-multiple-cursors'
 " Vim script for text filtering and alignment
 " Plug 'godlygeek/tabular'
 
-" Syntax highlighting, matching rules and mappings for the original Markdown and extensions
-Plug 'plasticboy/vim-markdown'
-
 " Setup lsp
+" Setup the requested lsp servers
 Plug 'neovim/nvim-lspconfig'
 
 " Lsp Completion
 Plug 'hrsh7th/nvim-compe'
+
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -125,14 +112,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " A plugin to color colornames and codes
 Plug 'chrisbra/Colorizer'
 
-" GraphQL file detection, syntax highlighting, and indentation
-Plug 'jparise/vim-graphql'
-
 " Editor config plugin
 Plug 'editorconfig/editorconfig-vim'
-
-" ejs syntax
-Plug 'nikvdp/ejs-syntax'
 
 " Float terminal
 Plug 'voldikss/vim-floaterm'
@@ -225,18 +206,6 @@ endif
 
 let g:CtrlSpaceSearchTiming = 500
 let g:CtrlSpaceUseTabline = 1
-
-" ===== Syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_balloons = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
 
 " ===== Vim javascript configuration
 let g:javascript_plugin_jsdoc = 1
