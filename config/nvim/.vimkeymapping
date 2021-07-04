@@ -18,6 +18,7 @@ vnoremap <silent> # :<C-U>
 
 " Change the mapleader from \ to ,
 let mapleader=","
+let maplocalleader="\<space>"
 
 " Apply Q macro record
 nnoremap Q @q
