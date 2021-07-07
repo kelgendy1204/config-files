@@ -26,14 +26,14 @@ set nowb
 set nobackup
 set nowritebackup
 
-" For coc Better display for messages
+" For displaying messages
 set cmdheight=2
 
 " Speed up the updatetime so gitgutter and friends are quicker
 " For coc you will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 
-" For coc don't give |ins-completion-menu| messages.
+" remove ins-completion-menu messages.
 set shortmess+=c
 
 " For coc always show signcolumns

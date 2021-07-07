@@ -7,7 +7,13 @@ source ~/.config/nvim/.vimplugins
 " import vim mapping file
 source ~/.config/nvim/.vimkeymapping
 
-" Plugins imports
+" Vim plugins imports
 source ~/.config/nvim/plugins/whichkey.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/floaterm.vim
+source ~/.config/nvim/plugins/compe.vim
+
+" Lua imports from ~/.config/nvim/lua/
+lua require('lsp')
+lua require('lsp-diagnosticls')
+lua require('treesitter')

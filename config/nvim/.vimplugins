@@ -30,20 +30,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " For comments
 Plug 'scrooloose/nerdcommenter'
 
-" For syntax of any kind of files
-Plug 'vim-syntastic/syntastic'
-
-" For javascript syntax
-Plug 'pangloss/vim-javascript'
-
-" For typescript syntax
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'peitalin/vim-jsx-typescript'
-
-" For react syntax
-Plug 'mxw/vim-jsx'
-
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -54,9 +40,6 @@ Plug 'tpope/vim-surround'
 
 " For git gutter
 Plug 'airblade/vim-gitgutter'
-
-" For eslint integration
-Plug 'dense-analysis/ale'
 
 " For project global search
 " Need more installations
@@ -75,22 +58,15 @@ Plug 'terryma/vim-multiple-cursors'
 " Vim script for text filtering and alignment
 " Plug 'godlygeek/tabular'
 
-" Syntax highlighting, matching rules and mappings for the original Markdown and extensions
-Plug 'plasticboy/vim-markdown'
+" Setup lsp
+" Setup the requested lsp servers
+Plug 'neovim/nvim-lspconfig'
 
-" Other snippets
-Plug 'honza/vim-snippets'
+" Lsp Completion
+Plug 'hrsh7th/nvim-compe'
 
-" Vim snippets
-Plug 'SirVer/ultisnips'
-
-" React snippets
-Plug 'epilande/vim-react-snippets'
-
-" Auto completion plugin
-" Need more installations
-" CocInstall coc-tsserver coc-json coc-html coc-css coc-lists coc-snippets coc-git coc-yank coc-marketplace
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -106,9 +82,6 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " auto closing tags
 Plug 'alvan/vim-closetag'
-
-" Allow to move between Vim panes and tmux splits seamlessly.
-Plug 'christoomey/vim-tmux-navigator'
 
 " better searching
 " Need more installations
@@ -127,9 +100,6 @@ Plug 'rhysd/git-messenger.vim'
 " Make terminal vim and tmux work better together for focusing events
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-" Helpers for UNIX
-Plug 'tpope/vim-eunuch'
-
 " Save session workspace
 Plug 'tpope/vim-obsession'
 
@@ -139,19 +109,17 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 " A plugin to color colornames and codes
 Plug 'chrisbra/Colorizer'
 
-" GraphQL file detection, syntax highlighting, and indentation
-Plug 'jparise/vim-graphql'
-
 " Editor config plugin
 Plug 'editorconfig/editorconfig-vim'
-
-" ejs syntax
-Plug 'nikvdp/ejs-syntax'
 
 " Float terminal
 Plug 'voldikss/vim-floaterm'
 
+" Which key for list key mapping with leader key
 Plug 'liuchengxu/vim-which-key'
+
+" Pair brackets
+Plug 'jiangmiao/auto-pairs'
 
 " Initialize plugin system
 call plug#end()
@@ -163,18 +131,14 @@ call plug#end()
 " ===== Airline config
 let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
-" enable/disable coc integration
-let g:airline#extensions#coc#enabled = 1
-" change error symbol:
-let airline#extensions#coc#error_symbol = 'E:'
-" change warning symbol:
-let airline#extensions#coc#warning_symbol = 'W:'
-" change error format:
-let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-" change warning format:
-let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
+
+" enable/disable nvimlsp integration
+let g:airline#extensions#nvimlsp#enabled = 1
+" nvimlsp error_symbol
+let airline#extensions#nvimlsp#error_symbol = 'E:'
+" nvimlsp warning
+let airline#extensions#nvimlsp#warning_symbol = 'W:'
 let g:airline_exclude_preview = 1
-let g:airline#extensions#ale#enabled = 1
 
 " ===== Gitgutter configuration
 let g:gitgutter_enabled       = 1
@@ -240,47 +204,10 @@ endif
 let g:CtrlSpaceSearchTiming = 500
 let g:CtrlSpaceUseTabline = 1
 
-" ===== Syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_balloons = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-
 " ===== Vim javascript configuration
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
-
-" ===== Ale configuration
-let g:ale_sign_column_always = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" Enable completion where available.
-" This setting must be set before ALE is loaded.
-let g:ale_completion_enabled = 1
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'typescript': ['tsserver', 'eslint'],
-\   'vue': ['eslint']
-\}
-let g:ale_fixers = {
-\    'javascript': ['prettier', 'eslint'],
-\    'typescript': ['prettier'],
-\    'vue': ['prettier'],
-\    'scss': ['prettier'],
-\    'html': ['prettier']
-\}
-let g:ale_linters_ignore = {'typescript': ['tslint']}
-let g:ale_typescript_tsserver_use_global = 0
 
 " ===== Vim close tag
 " These are the file extensions where this plugin is enabled.
@@ -305,37 +232,6 @@ let g:tmux_navigator_disable_when_zoomed = 1
 " ===== yats plugin
 " highlight host specific keywords for typescript
 let g:yats_host_keyword = 1
-
-" ===================== Coc Plugin ===================== "
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_global_extensions = [
-  \  'coc-eslint',
-  \  'coc-prettier',
-  \  'coc-marketplace',
-  \  'coc-pairs',
-  \  'coc-tsserver',
-  \  'coc-css',
-  \  'coc-json',
-  \  'coc-yaml',
-  \  'coc-html',
-  \  'coc-lists',
-  \  'coc-snippets',
-  \  'coc-git',
-  \  'coc-yank'
-  \  ]
 
 " ===================== Git Messenger Plugin ===================== "
 
