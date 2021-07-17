@@ -116,3 +116,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # path for ruby for vim dependencies
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+
+# path for go for neovim dependencies
+export PATH="$PATH:/home/khaled/go/bin"
