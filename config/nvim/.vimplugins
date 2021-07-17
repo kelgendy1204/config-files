@@ -21,11 +21,9 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" For navigation tree
-Plug 'scrooloose/nerdtree'
-
-" For nerdtree with git integration
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" File explorer
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " For comments
 Plug 'scrooloose/nerdcommenter'
@@ -146,29 +144,6 @@ let g:gitgutter_signs_enabled = 1
 
 " Update the signs when a file is saved
 autocmd BufWritePost * GitGutter
-
-" ===== Nerdtree configuration
-let g:NERDSpaceDelims    = 1
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeChDirMode  = 1
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeIgnore     = ['\.swp$']
-let g:NERDTreeMapJumpNextSibling = '<Nop>'
-let g:NERDTreeMapJumpPrevSibling = '<Nop>'
-
-" ===== Nerdtree git plugin configuration
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
 
 " ===== Indent lines configurations
 let g:indentLine_char    = '┆'

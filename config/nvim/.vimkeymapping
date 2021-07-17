@@ -188,16 +188,6 @@ inoremap <C-@> <C-Space>
 " Key mapping for plugins
 " ===================================================================== "
 
-" ============== nerd tree
-" Toggle nerd tree
-noremap <leader>ne :NERDTreeToggle<CR>
-
-" view the current buffer in NERDTree:
-nnoremap <leader>nf :NERDTreeFind<cr>
-
-" toggle nerdtree in the dir of the current buffer
-nnoremap <leader>nn :NERDTreeToggle %<CR>
-
 " ============== Tabularize
 " nnoremap <Leader>t :Tab<Space>/
 " vnoremap <Leader>t :Tab<Space>/

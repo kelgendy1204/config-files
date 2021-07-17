@@ -12,6 +12,7 @@ source ~/.config/nvim/plugins/whichkey.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/floaterm.vim
 source ~/.config/nvim/plugins/compe.vim
+source ~/.config/nvim/plugins/nvim-tree.vim
 
 " Lua imports from ~/.config/nvim/lua/
 lua require('lsp')
