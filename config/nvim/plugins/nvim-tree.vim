@@ -81,7 +81,6 @@ let g:nvim_tree_icons = {
     \ }
 
 nnoremap <leader>ne :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>nf :NvimTreeFindFile<CR>
 " NvimTreeOpen and NvimTreeClose are also available if you need them
 
