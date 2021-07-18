@@ -62,6 +62,8 @@ Plug 'neovim/nvim-lspconfig'
 
 " Lsp Completion
 Plug 'hrsh7th/nvim-compe'
+" Support signature for nvim-compe until it's implemented
+Plug 'ray-x/lsp_signature.nvim'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
