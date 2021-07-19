@@ -29,7 +29,7 @@ set nowritebackup
 " For displaying messages
 set cmdheight=2
 
-" Speed up the updatetime so gitgutter and friends are quicker
+" Speed up the updatetime plugins updates are quicker
 " For coc you will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 

@@ -36,8 +36,9 @@ Plug 'nvim-telescope/telescope.nvim'
 " Surround code with anything
 Plug 'tpope/vim-surround'
 
-" For git gutter
-Plug 'airblade/vim-gitgutter'
+" For git signs and its dependencies
+" Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 " For project global search
 " Need more installations
@@ -71,10 +72,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
-" Prettier plugin
-" Need more installations
-" TODO Check do i really need this
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" formatter plugin
+Plug 'mhartington/formatter.nvim'
 
 " Tabbar plugin
 " Need more installations
@@ -139,28 +138,6 @@ let airline#extensions#nvimlsp#error_symbol = 'E:'
 " nvimlsp warning
 let airline#extensions#nvimlsp#warning_symbol = 'W:'
 let g:airline_exclude_preview = 1
-
-" ===== Gitgutter configuration
-let g:gitgutter_enabled       = 1
-let g:gitgutter_signs_enabled = 1
-
-" Update the signs when a file is saved
-autocmd BufWritePost * GitGutter
-
-" ===== Prettier configuration
-let g:prettier#config#print_width           = 100
-let g:prettier#config#tab_width             = 4
-let g:prettier#config#use_tabs              = 'false'
-let g:prettier#config#semi                  = 'true'
-let g:prettier#config#single_quote          = 'true'
-let g:prettier#config#bracket_spacing       = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-let g:prettier#config#arrow_parens          = 'avoid'
-let g:prettier#config#trailing_comma        = 'none'
-let g:prettier#exec_cmd_async               = 1
-" For Prettier
-autocmd FileType javascript set formatprg=prettier\ --stdin
-autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
 " ===== Ctrl-space setup
 if has("gui_running")

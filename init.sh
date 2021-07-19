@@ -11,8 +11,8 @@ sudo pacman -S gvim zsh curl git tmux \
 
 yay -S npm yarn tldr++ tig-git kmon-git diskonaut
 
-# install neovim, lsp-tsserver, efm-langserver, eslint_d
-npm install -g neovim typescript typescript-language-server eslint_d
+# install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
+npm install -g neovim typescript typescript-language-server eslint_d prettier
 go get github.com/mattn/efm-langserver
 
 # neovim dependencies

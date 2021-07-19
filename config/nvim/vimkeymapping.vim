@@ -192,9 +192,6 @@ inoremap <C-@> <C-Space>
 " nnoremap <Leader>t :Tab<Space>/
 " vnoremap <Leader>t :Tab<Space>/
 
-" Prettier key map
-nnoremap <silent> <leader><leader>p :Prettier<CR>
-
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<c-j>"
 
