@@ -26,7 +26,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " For comments
-Plug 'scrooloose/nerdcommenter'
+Plug 'b3nj5m1n/kommentary'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'

@@ -40,12 +40,6 @@ let b:keymap_name = "CAPS"
 " Show b:keymap_name in status line.
 set statusline^=%k
 
-" Toggle the highlight of the current line
-nnoremap <Leader><Leader>h :set cursorline!<CR>
-
-" Toggle indent lines, should be disabled in json files
-nnoremap <Leader><Leader>i :IndentLinesToggle<CR>
-
 " Move normally between wrapped lines
 nnoremap j gj
 nnoremap k gk
