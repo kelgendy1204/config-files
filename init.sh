@@ -37,6 +37,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 ### add config files ###
 ln -s $DIR/config/nvim ~/.config/nvim
+ln -s $DIR/config/kitty ~/.config/kitty
 ln -s $DIR/config/efm-langserver ~/.config/efm-langserver
 ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.zshrc ~/.zshrc
