@@ -79,7 +79,7 @@ export LANG=en_US.UTF-8
 #   export EDITOR='mvim'
 # fi
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -118,4 +118,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 # path for go for neovim dependencies
-export PATH="$PATH:/home/khaled/go/bin"
+export PATH="$PATH:$HOME/go/bin"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

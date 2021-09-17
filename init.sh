@@ -41,34 +41,5 @@ ln -s $DIR/config/efm-langserver ~/.config/efm-langserver
 ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.zshrc ~/.zshrc
 ln -s $DIR/.tmux.conf ~/.tmux.conf
-ln -s $DIR/.vimrc ~/.vimrc
 ln -s $DIR/.bash_aliases ~/.bash_aliases
-
-# For i3, config and dependencies
-# sudo pacman -S i3-gaps nitrogen gwenview \
-    # playerctl arandr feh lxappearance \
-    # rofi picom ttf-font-awesome polkit lxsession \
-    # alsa-utils pulseaudio pavucontrol volumeicon \
-    # nm-connection-editor network-manager-applet \
-    # gnome-disk-utility udisks2 udiskie \
-    # qt5ct dolphin gnome-icon-theme moka-icon-theme \
-    # faba-icon-theme elementary-icon-theme
-
-# For i3 yay dependencies
-# yay -S papirus-icon-theme kbdd-git ttf-symbola \
-    # noto-fonts noto-fonts-emoji noto-fonts-extra \
-    # dunst conky arc-icon-theme autotiling \
-    # kmon-git diskonaut betterlockscreen
-
-# rm -rf ~/.config/i3 ~/.config/rofi \
-    # ~/.config/polybar ~/.config/dunst \
-    # ~/.xinitrc ~/.config/conky
-
-# ln -s $DIR/config/i3 ~/.config/i3
-# ln -s $DIR/config/rofi ~/.config/rofi
-# ln -s $DIR/config/polybar ~/.config/polybar
-# ln -s $DIR/config/dunst ~/.config/dunst
 # ln -s $DIR/config/conky ~/.config/conky
-# ln -s $DIR/.xinitrc ~/.xinitrc
-
-# git clone git@github.com:polybar/polybar-scripts.git ~/polybar-scripts
