@@ -42,4 +42,3 @@ ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.zshrc ~/.zshrc
 ln -s $DIR/.tmux.conf ~/.tmux.conf
 ln -s $DIR/.bash_aliases ~/.bash_aliases
-# ln -s $DIR/config/conky ~/.config/conky

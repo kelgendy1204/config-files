@@ -178,6 +178,10 @@ nnoremap <space> za
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
 
+" Remap esc for macos
+:imap jk <Esc>
+:imap kj <Esc>
+
 " ===================================================================== "
 " Key mapping for plugins
 " ===================================================================== "
