@@ -1,8 +1,9 @@
 require('bufferline').setup {
     options = {
-        numbers = "ordinal",
-        number_style = "superscript",
-        mappings = true,
+        -- For 8|² -
+        numbers = function(opts)
+            return string.format('%s', opts.raise(opts.ordinal))
+        end,
         close_command = "bdelete! %d",
         right_mouse_command = "bdelete! %d",
         left_mouse_command = "buffer %d",
@@ -22,6 +23,7 @@ require('bufferline').setup {
         max_prefix_length = 15,
         tab_size = 18,
         diagnostics = "nvim_lsp",
+        diagnostics_update_in_insert = false,
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
             return "("..count..")"
         end,
@@ -61,3 +63,6 @@ require('bufferline').setup {
     }
 }
 
+-- Mappings.
+local opts = { noremap=true, silent=true }
+vim.api.nvim_set_keymap('n', 'gb', ':BufferLinePick<CR>', opts)
