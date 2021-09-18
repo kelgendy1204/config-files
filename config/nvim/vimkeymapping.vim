@@ -26,6 +26,11 @@ nnoremap Q @q
 " Easier bookmarking
 nnoremap M `m
 
+" TAB in general mode will move to text buffer
+nnoremap <TAB> :bnext<CR>
+" SHIFT-TAB will go back
+nnoremap <S-TAB> :bprevious<CR>
+
 " Use (ctrl + ^) to toggle the uppercase of the letters
 " Fixing caps lock problem in normal mode
 " Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
@@ -170,9 +175,6 @@ nnoremap H ^
 vnoremap H ^
 nnoremap L $
 vnoremap L $
-
-" space for toggle foldable blocks
-nnoremap <space> za
 
 " Remap omnifunc to ctrl + space
 inoremap <C-Space> <C-x><C-o>

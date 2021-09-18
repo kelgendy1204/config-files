@@ -20,6 +20,7 @@ Plug 'morhetz/gruvbox'
 " Bottom bar theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'akinsho/nvim-bufferline.lua'
 
 " File explorer
 Plug 'kyazdani42/nvim-web-devicons'
@@ -129,7 +130,7 @@ call plug#end()
 
 " ===== Airline config
 let g:airline_powerline_fonts            = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 " enable/disable nvimlsp integration
 let g:airline#extensions#nvimlsp#enabled = 1
