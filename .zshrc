@@ -119,5 +119,3 @@ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 # path for go for neovim dependencies
 export PATH="$PATH:$HOME/go/bin"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
