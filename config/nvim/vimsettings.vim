@@ -26,14 +26,14 @@ set nowb
 set nobackup
 set nowritebackup
 
-" For coc Better display for messages
+" For displaying messages
 set cmdheight=2
 
-" Speed up the updatetime so gitgutter and friends are quicker
+" Speed up the updatetime plugins updates are quicker
 " For coc you will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 
-" For coc don't give |ins-completion-menu| messages.
+" remove ins-completion-menu messages.
 set shortmess+=c
 
 " For coc always show signcolumns
@@ -49,9 +49,6 @@ set showmode
 set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if expand('%') !=# '[Command Line]' | checktime | endif
 autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
-
-" To get correct comment highlighting for json, add:
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Files encoding
 set encoding=utf-8

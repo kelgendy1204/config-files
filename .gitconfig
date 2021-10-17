@@ -1,6 +1,6 @@
 [user]
     email    = elgendy1204@gmail.com
-    name     = Khaled Saad
+    name     = Khaled Elgendy
 
 [push]
     default  = simple
@@ -12,3 +12,5 @@
 
 [color]
     ui = true
+[init]
+    defaultBranch = main

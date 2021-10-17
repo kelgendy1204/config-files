@@ -1,0 +1,4 @@
+version: 2
+log-level: 4
+lint-debounce: 1s
+log-file: "/tmp/efm.log"

@@ -5,14 +5,17 @@ DIR=$(pwd)
 sudo pacman -S gvim zsh curl git tmux \
     the_silver_searcher cmake \
     python ruby xclip neovim ack \
-    python2-pip python-pip ripgrep fd nodejs \
+    python2-pip python-pip ripgrep fd nodejs go \
     fzf diff-so-fancy neofetch gnome-terminal kitty \
     htop bashtop vimiv ranger -y
 
 yay -S npm yarn tldr++ tig-git kmon-git diskonaut
 
-# install neovim
-sudo npm install -g neovim
+# install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
+npm install -g neovim typescript typescript-language-server eslint_d prettier
+go get github.com/mattn/efm-langserver
+
+# neovim dependencies
 python2 -m pip install --user --upgrade pynvim
 python3 -m pip install --user --upgrade pynvim
 gem install neovim
@@ -26,12 +29,7 @@ rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Add directories for nvim
 mkdir -p ~/.config
-
-# vim-plug for vim
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # vim-plug for nvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -39,37 +37,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 ### add config files ###
 ln -s $DIR/config/nvim ~/.config/nvim
+ln -s $DIR/config/kitty ~/.config/kitty
+ln -s $DIR/config/efm-langserver ~/.config/efm-langserver
 ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.zshrc ~/.zshrc
 ln -s $DIR/.tmux.conf ~/.tmux.conf
-ln -s $DIR/.vimrc ~/.vimrc
 ln -s $DIR/.bash_aliases ~/.bash_aliases
-
-# For i3, config and dependencies
-# sudo pacman -S i3-gaps nitrogen gwenview \
-    # playerctl arandr feh lxappearance \
-    # rofi picom ttf-font-awesome polkit lxsession \
-    # alsa-utils pulseaudio pavucontrol volumeicon \
-    # nm-connection-editor network-manager-applet \
-    # gnome-disk-utility udisks2 udiskie \
-    # qt5ct dolphin gnome-icon-theme moka-icon-theme \
-    # faba-icon-theme elementary-icon-theme
-
-# For i3 yay dependencies
-# yay -S papirus-icon-theme kbdd-git ttf-symbola \
-    # noto-fonts noto-fonts-emoji noto-fonts-extra \
-    # dunst conky arc-icon-theme autotiling \
-    # kmon-git diskonaut betterlockscreen
-
-# rm -rf ~/.config/i3 ~/.config/rofi \
-    # ~/.config/polybar ~/.config/dunst \
-    # ~/.xinitrc ~/.config/conky
-
-# ln -s $DIR/config/i3 ~/.config/i3
-# ln -s $DIR/config/rofi ~/.config/rofi
-# ln -s $DIR/config/polybar ~/.config/polybar
-# ln -s $DIR/config/dunst ~/.config/dunst
-# ln -s $DIR/config/conky ~/.config/conky
-# ln -s $DIR/.xinitrc ~/.xinitrc
-
-# git clone git@github.com:polybar/polybar-scripts.git ~/polybar-scripts
