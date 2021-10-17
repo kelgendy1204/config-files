@@ -16,12 +16,13 @@ source ~/.config/nvim/plugins/nvim-tree.vim
 source ~/.config/nvim/plugins/blankline-indent.vim
 
 " Lua imports from ~/.config/nvim/lua/
-lua require('lsp-tsserver')
-lua require('lsp-efm')
-lua require('lsp-signature')
-lua require('treesitter')
+lua require('_lsp-tsserver')
+lua require('_lsp-efm')
+lua require('_lsp-signature')
+lua require('_treesitter')
 lua require('_formatter')
 lua require('_gitsigns')
 lua require('_kommentary')
 lua require('_bufferline')
 lua require('_nvim-tree')
+lua require('_lualine')

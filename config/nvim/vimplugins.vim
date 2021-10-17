@@ -18,8 +18,7 @@ Plug 'morhetz/gruvbox'
 " Plug 'tomasiser/vim-code-dark'
 
 " Bottom bar theme
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'akinsho/nvim-bufferline.lua'
 
 " File explorer
@@ -128,18 +127,6 @@ call plug#end()
 " Plugin settings
 " ===================================================================== "
 
-" ===== Airline config
-let g:airline_powerline_fonts            = 1
-" let g:airline#extensions#tabline#enabled = 1
-
-" enable/disable nvimlsp integration
-let g:airline#extensions#nvimlsp#enabled = 1
-" nvimlsp error_symbol
-let airline#extensions#nvimlsp#error_symbol = 'E:'
-" nvimlsp warning
-let airline#extensions#nvimlsp#warning_symbol = 'W:'
-let g:airline_exclude_preview = 1
-
 " ===== Ctrl-space setup
 if has("gui_running")
     " Settings for MacVim and Inconsolata font
@@ -199,7 +186,6 @@ let g:gruvbox_italic           = 1
 let g:gruvbox_contrast_dark    = 'medium'
 let g:gruvbox_contrast_light   = 'medium'
 let g:gruvbox_invert_selection = '0'
-let g:airline_theme            = 'gruvbox'
 
 " ===== CtrlSpace
 " CtrlSpace plugin fix for neovim
