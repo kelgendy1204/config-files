@@ -17,9 +17,9 @@ Plug 'morhetz/gruvbox'
 " Plug 'joshdick/onedark.vim'
 " Plug 'tomasiser/vim-code-dark'
 
-" Bottom bar theme
+" Bottom and Top bars
 Plug 'hoob3rt/lualine.nvim'
-Plug 'akinsho/nvim-bufferline.lua'
+Plug 'romgrk/barbar.nvim'
 
 " File explorer
 Plug 'kyazdani42/nvim-web-devicons'
