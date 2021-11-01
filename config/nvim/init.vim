@@ -11,7 +11,6 @@ source ~/.config/nvim/vimkeymapping.vim
 source ~/.config/nvim/plugins/whichkey.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/floaterm.vim
-source ~/.config/nvim/plugins/compe.vim
 source ~/.config/nvim/plugins/nvim-tree.vim
 source ~/.config/nvim/plugins/blankline-indent.vim
 
@@ -26,3 +25,4 @@ lua require('_kommentary')
 lua require('_barbar')
 lua require('_nvim-tree')
 lua require('_lualine')
+lua require('_nvim-cmp')

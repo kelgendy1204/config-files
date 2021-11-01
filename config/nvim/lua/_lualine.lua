@@ -5,6 +5,7 @@ require'lualine'.setup {
         component_separators = { left = '|', right = '|'},
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},
+        always_divide_middle = true,
         padding = 2, -- adds padding to the left and right of components
     },
     sections = {

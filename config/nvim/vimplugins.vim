@@ -8,14 +8,6 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Themes
 Plug 'morhetz/gruvbox'
-" Plug 'kristijanhusak/vim-hybrid-material'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'NLKNguyen/papercolor-theme'
-" Plug 'ayu-theme/ayu-vim'
-" Plug 'mhartington/oceanic-next'
-" Plug 'rakr/vim-one'
-" Plug 'joshdick/onedark.vim'
-" Plug 'tomasiser/vim-code-dark'
 
 " Bottom and Top bars
 Plug 'hoob3rt/lualine.nvim'
@@ -43,6 +35,7 @@ Plug 'lewis6991/gitsigns.nvim'
 " For project global search
 " Need more installations
 " TODO look for alternatives
+" TODO check if to be replaced
 Plug 'mileszs/ack.vim'
 
 " For git integration
@@ -54,15 +47,21 @@ Plug 'flazz/vim-colorschemes'
 " For multicursors
 Plug 'terryma/vim-multiple-cursors'
 
-" Vim script for text filtering and alignment
-" Plug 'godlygeek/tabular'
-
 " Setup lsp
 " Setup the requested lsp servers
 Plug 'neovim/nvim-lspconfig'
 
 " Lsp Completion
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
 " Support signature for nvim-compe until it's implemented
 Plug 'ray-x/lsp_signature.nvim'
 
@@ -75,10 +74,6 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 " formatter plugin
 Plug 'mhartington/formatter.nvim'
 
-" Tabbar plugin
-" Need more installations
-" Plug 'majutsushi/tagbar'
-
 " auto closing tags
 Plug 'alvan/vim-closetag'
 
@@ -88,9 +83,11 @@ Plug 'alvan/vim-closetag'
 Plug 'mhinz/vim-grepper'
 
 " Window swapping
+" TODO check if to be removed
 Plug 'wesQ3/vim-windowswap'
 
 " gitk for vim
+" TODO what is that?
 Plug 'cohama/agit.vim'
 
 " git commits history for lines
@@ -100,12 +97,14 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Save session workspace
+" TODO check if to be removed
 Plug 'tpope/vim-obsession'
 
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 " A plugin to color colornames and codes
+" TODO check if to be removed
 Plug 'chrisbra/Colorizer'
 
 " Editor config plugin

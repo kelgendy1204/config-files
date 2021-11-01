@@ -203,7 +203,7 @@ set scrolloff=10
 set noshowmode
 
 " whether to use a popup menu for Insert mode completion
-set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noinsert,noselect
 
 " Fix slow scroll issue in nvim
 set lazyredraw
