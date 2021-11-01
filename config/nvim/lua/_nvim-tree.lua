@@ -68,5 +68,9 @@ require'nvim-tree'.setup {
             -- list of mappings to set on the tree manually
             list = {}
         }
+    },
+    filters = {
+        dotfiles = false,
+        custom = {}
     }
 }

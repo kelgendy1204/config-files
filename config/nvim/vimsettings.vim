@@ -27,7 +27,7 @@ set nobackup
 set nowritebackup
 
 " For displaying messages
-set cmdheight=2
+set cmdheight=1
 
 " Speed up the updatetime plugins updates are quicker
 " For coc you will have bad experience for diagnostic messages when it's default 4000.
