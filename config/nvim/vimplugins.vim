@@ -57,6 +57,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+" Do you really need this
+Plug 'hrsh7th/cmp-emoji'
 
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
