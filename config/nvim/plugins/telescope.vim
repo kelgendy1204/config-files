@@ -5,6 +5,7 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').grep_string()<cr>
 nnoremap <leader>fm <cmd>lua require('telescope.builtin').keymaps()<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').registers()<cr>
 
 nnoremap <leader>fgc <cmd>lua require('telescope.builtin').git_commits()<cr>
 nnoremap <leader>fgb <cmd>lua require('telescope.builtin').git_branches()<cr>
@@ -19,6 +20,7 @@ let g:which_key_map.f = {
       \ 'h'     : [':execute "lua require(\"telescope.builtin\").help_tags()"'         , 'Tags'],
       \ 's'     : [':execute "lua require(\"telescope.builtin\").grep_string()"'       , 'Grep String'],
       \ 'm'     : [':execute "lua require(\"telescope.builtin\").keymaps()"'           , 'Key Maps'],
+      \ 'r'     : [':execute "lua require(\"telescope.builtin\").registers()"'         , 'Registers'],
       \ 'gc'     : [':execute "lua require(\"telescope.builtin\").git_commits()"'      , 'Commits'],
       \ 'gb'     : [':execute "lua require(\"telescope.builtin\").git_branches()"'     , 'Branches'],
       \ 'gd'     : [':execute "lua require(\"telescope.builtin\").git_bcommits()"'     , 'Buffer Commits'],

@@ -24,6 +24,7 @@ Plug 'b3nj5m1n/kommentary'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'xiyaowong/telescope-emoji.nvim'
 
 " Surround code with anything
 Plug 'tpope/vim-surround'
@@ -57,8 +58,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-" Do you really need this
-Plug 'hrsh7th/cmp-emoji'
 
 " For vsnip users.
 Plug 'hrsh7th/cmp-vsnip'
