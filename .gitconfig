@@ -8,10 +8,13 @@
 [core]
     editor   = nvim
     autocrlf = input
-    pager    = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+    pager    = diff-so-fancy | less --tabs=4 -RFX
 
 [color]
     ui = true
 
 [init]
     defaultBranch = main
+
+[interactive]
+    diffFilter = diff-so-fancy --patch
