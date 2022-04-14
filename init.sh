@@ -11,9 +11,9 @@ sudo pacman -S gvim zsh curl git tmux \
 
 yay -S npm yarn tldr++ tig-git kmon-git diskonaut
 
-# install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
-npm install -g neovim typescript typescript-language-server eslint_d prettier
-go get github.com/mattn/efm-langserver
+# install neovim, lsp-tsserver, prettier
+npm install -g neovim typescript typescript-language-server prettier \
+    vscode-langservers-extracted
 
 # neovim dependencies
 python2 -m pip install --user --upgrade pynvim
@@ -38,7 +38,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 ### add config files ###
 ln -s $DIR/config/nvim ~/.config/nvim
 ln -s $DIR/config/kitty ~/.config/kitty
-ln -s $DIR/config/efm-langserver ~/.config/efm-langserver
 ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.zshrc ~/.zshrc
 ln -s $DIR/.tmux.conf ~/.tmux.conf

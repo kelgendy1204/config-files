@@ -16,7 +16,7 @@ source ~/.config/nvim/plugins/blankline-indent.vim
 
 " Lua imports from ~/.config/nvim/lua/
 lua require('_lsp-tsserver')
-lua require('_lsp-efm')
+lua require('_lsp-eslint')
 lua require('_lsp-signature')
 lua require('_treesitter')
 lua require('_formatter')
