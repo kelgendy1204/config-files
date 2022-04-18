@@ -28,5 +28,10 @@ kill_port() {
     sudo fuser -n tcp -k "$1"
 }
 
-# Alias for floaterm in vim
-alias f=floaterm
+get_weather() {
+    curl "https://wttr.in/$1"
+}
+
+alias vpnconnect="nordvpn connect"
+alias vpndisconnect="nordvpn disconnect"
+alias vpnkillswitch="nordvpn set killswitch"
