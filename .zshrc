@@ -104,6 +104,14 @@ if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+    source /usr/share/fzf/key-bindings.zsh
+fi
+
+if [ -f /usr/share/fzf/completion.zsh ]; then
+    source /usr/share/fzf/completion.zsh
+fi
+
 # redefine prompt_context for hiding user@hostname
 prompt_context () { }
 
@@ -119,3 +127,6 @@ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 # path for go for neovim dependencies
 export PATH="$PATH:$HOME/go/bin"
+
+# path for global npm packages
+export PATH=~/.npm-global/bin:$PATH

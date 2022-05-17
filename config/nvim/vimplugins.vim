@@ -66,9 +66,6 @@ Plug 'hrsh7th/vim-vsnip'
 " Support signature for nvim-compe until it's implemented
 Plug 'ray-x/lsp_signature.nvim'
 
-" Treesitter
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
 " For buffers handling, extracting them to tabs, name the tabs and moving them
 Plug 'vim-ctrlspace/vim-ctrlspace'
 

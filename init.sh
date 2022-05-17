@@ -2,21 +2,20 @@
 DIR=$(pwd)
 
 # sudo pacman -Syu
-sudo pacman -S gvim zsh curl git tmux \
-    the_silver_searcher cmake \
-    python ruby xclip neovim ack \
-    python2-pip python-pip ripgrep fd nodejs go \
-    fzf diff-so-fancy neofetch gnome-terminal kitty \
-    htop bashtop vimiv ranger -y
+sudo pacman -S zsh curl git tmux \
+	the_silver_searcher cmake \
+	python ruby xclip neovim \
+	ack python-pip ripgrep \
+	nodejs go fzf diff-so-fancy \
+	neofetch kitty htop ranger -y
 
-yay -S npm yarn tldr++ tig-git kmon-git diskonaut
+yay -S npm yarn tldr sublime-merge kmon-git diskonaut
 
 # install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
 npm install -g neovim typescript typescript-language-server eslint_d prettier
 go get github.com/mattn/efm-langserver
 
 # neovim dependencies
-python2 -m pip install --user --upgrade pynvim
 python3 -m pip install --user --upgrade pynvim
 gem install neovim
 
@@ -24,7 +23,7 @@ gem install neovim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # clean up previous config
-rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases ~/config/kitty ~/config/efm-langserver
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -18,7 +18,6 @@ source ~/.config/nvim/plugins/blankline-indent.vim
 lua require('_lsp-tsserver')
 lua require('_lsp-efm')
 lua require('_lsp-signature')
-lua require('_treesitter')
 lua require('_formatter')
 lua require('_gitsigns')
 lua require('_kommentary')
