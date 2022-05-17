@@ -29,7 +29,8 @@ kill_port() {
 }
 
 get_weather() {
-    curl "https://wttr.in/$1"
+    local city="${1:-"hilden"}"
+    curl "https://wttr.in/$city"
 }
 
 update_branch() {
