@@ -32,6 +32,15 @@ get_weather() {
     curl "https://wttr.in/$1"
 }
 
+update_branch() {
+    local branch="${1:-"main"}"
+    echo $branch
+    git checkout "$branch"
+    git pull
+    git checkout -
+    git merge "$branch"
+}
+
 alias vpnconnect="nordvpn connect"
 alias vpndisconnect="nordvpn disconnect"
 alias vpnkillswitch="nordvpn set killswitch"
