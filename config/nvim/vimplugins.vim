@@ -117,6 +117,8 @@ Plug 'liuchengxu/vim-which-key'
 " Pair brackets
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " Initialize plugin system
 call plug#end()
 

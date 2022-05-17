@@ -13,7 +13,7 @@ yay -S npm yarn tldr sublime-merge kmon-git diskonaut
 
 # install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
 npm install -g neovim typescript typescript-language-server eslint_d prettier
-go get github.com/mattn/efm-langserver
+go install github.com/mattn/efm-langserver@latest
 
 # neovim dependencies
 python3 -m pip install --user --upgrade pynvim
