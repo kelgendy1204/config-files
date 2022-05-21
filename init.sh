@@ -23,7 +23,7 @@ gem install neovim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # clean up previous config
-rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases ~/config/kitty ~/config/efm-langserver
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases ~/config/kitty ~/config/efm-langserver ~/.config/i3
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -36,6 +36,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 ### add config files ###
 ln -s $DIR/config/nvim ~/.config/nvim
+ln -s $DIR/config/i3 ~/.config/i3
 ln -s $DIR/config/kitty ~/.config/kitty
 ln -s $DIR/config/efm-langserver ~/.config/efm-langserver
 ln -s $DIR/.gitconfig ~/.gitconfig
