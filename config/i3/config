@@ -276,8 +276,10 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 #bindsym $mod+w exec /usr/bin/firefox
+# bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym $mod+n exec /usr/bin/thunar
-bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym Print       exec flameshot full
+bindsym Shift+Print exec flameshot gui
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -451,6 +453,12 @@ for_window [window_role="About"] floating enable
 # set border of floating window
 for_window [class="urxvt"] border pixel 1
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # set size of floating window
 #for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
 #for_window [class=".*"] resize set 640 480 #to change size of all floating windows 
@@ -474,10 +482,11 @@ set $darkgrey		#383c4a
 set $grey		#b0b5bd
 set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
+set $green		#00FF00
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
+client.focused		    $green	$darkblue	$white		$green		$green
 client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
 client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown

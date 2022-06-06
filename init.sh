@@ -7,7 +7,7 @@ sudo pacman -S zsh curl git tmux \
 	python ruby xclip neovim \
 	ack python-pip ripgrep \
 	nodejs go fzf diff-so-fancy \
-	neofetch kitty htop ranger -y
+	neofetch kitty htop ranger flameshot -y
 
 yay -S npm yarn tldr sublime-merge kmon-git diskonaut
 
