@@ -7,9 +7,13 @@ sudo pacman -S zsh curl git tmux \
 	python ruby xclip neovim \
 	ack python-pip ripgrep \
 	nodejs go fzf diff-so-fancy \
-	neofetch kitty htop ranger flameshot -y
+	neofetch kitty htop ranger -y
 
 yay -S npm yarn tldr sublime-merge kmon-git diskonaut
+
+# for i3
+sudo pacman -S flameshot -y
+yay -S xkb-switch
 
 # install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
 npm install -g neovim typescript typescript-language-server eslint_d prettier
