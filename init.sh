@@ -3,11 +3,11 @@ DIR=$(pwd)
 
 # sudo pacman -Syu
 sudo pacman -S zsh curl git tmux \
-	the_silver_searcher cmake \
-	python ruby xclip neovim \
-	ack python-pip ripgrep \
-	nodejs go fzf diff-so-fancy \
-	neofetch kitty htop ranger -y
+    the_silver_searcher cmake \
+    python ruby xclip neovim \
+    ack python-pip ripgrep \
+    nodejs go fzf diff-so-fancy \
+    neofetch kitty htop ranger -y
 
 yay -S npm yarn tldr sublime-merge kmon-git diskonaut
 
@@ -42,6 +42,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 ln -s $DIR/config/nvim ~/.config/nvim
 ln -s $DIR/config/i3 ~/.config/i3
 ln -s $DIR/config/kitty ~/.config/kitty
+ln -s $DIR/config/conky ~/.config/conky
 ln -s $DIR/config/efm-langserver ~/.config/efm-langserver
 ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.zshrc ~/.zshrc
