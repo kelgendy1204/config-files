@@ -42,6 +42,12 @@ update_branch() {
     git merge "$branch"
 }
 
-alias vpnconnect="nordvpn connect"
-alias vpndisconnect="nordvpn disconnect"
-alias vpnkillswitch="nordvpn set killswitch"
+alias nordvpnconnect="nordvpn connect"
+alias nordvpndisconnect="nordvpn disconnect"
+alias nordvpnkillswitch="nordvpn set killswitch"
+
+alias openvpnmanage="openvpn3 session-manage --config ~/Dropbox/linux.ovpn"
+alias openvpnconnect="openvpn3 session-start --config ~/Dropbox/linux.ovpn"
+alias openvpndisconnect="openvpn3 session-manage --config ~/Dropbox/linux.ovpn --disconnect"
+alias openvpnresume="openvpn3 session-manage --config ~/Dropbox/linux.ovpn --resume"
+alias openvpnpause="openvpn3 session-manage --config ~/Dropbox/linux.ovpn --pause"
