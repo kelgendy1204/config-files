@@ -142,10 +142,8 @@ bindcode $mod+Shift+80 	 move container to workspace  $ws8
 bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
-set $monitor1 eDP-1
-set $monitor2 HDMI-1
-set $monitor3 eDP-1-1
-set $monitor4 HDMI-1-1
+set $monitor1 eDP1
+set $monitor2 HDMI1
 
 # resize window (you can also use the mouse for that):
 #mode "resize" {
