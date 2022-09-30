@@ -13,7 +13,7 @@ yay -S npm yarn tldr sublime-merge kmon-git diskonaut
 
 # for i3
 sudo pacman -S flameshot -y
-yay -S xkb-switch
+yay -S xkb-switch light-git
 
 # install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
 npm install -g neovim typescript typescript-language-server eslint_d prettier

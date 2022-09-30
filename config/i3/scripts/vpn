@@ -9,7 +9,7 @@ connected="Connected"
 disconnected="Disconnected"
 
 vpnstatus="$disconnected"
-nordvpn_output=$(nordvpn status | cat -v | head -1 | sed -e 's/\^M-^M  ^M//g' )
+nordvpn_output=$(nordvpn status | cat -v | sed -n '/Status/p' | sed -e 's/\^M-^M  ^M//g' )
 if [ "${nordvpn_output}" = "Status: Connected" ]; then
     vpnstatus="$connected"
 elif [ "${nordvpn_output}" = "A new version of NordVPN is available! Please update the application." ]; then
