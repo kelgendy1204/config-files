@@ -8,19 +8,22 @@
 connected="Connected"
 disconnected="Disconnected"
 
+connected_feedback="<span foreground='#00ff00'>$connected</span>"
+disconnected_feedback="<span foreground='#ff0000'>$disconnected</span>"
+
 vpnstatus="$disconnected"
 nordvpn_output=$(nordvpn status | cat -v | sed -n '/Status/p' | sed -e 's/\^M-^M  ^M//g' )
 if [ "${nordvpn_output}" = "Status: Connected" ]; then
-    vpnstatus="$connected"
+    vpnstatus="$connected_feedback"
 elif [ "${nordvpn_output}" = "A new version of NordVPN is available! Please update the application." ]; then
     nordvpn_output=$(nordvpn status | cat -v | head -2 | tail -1 | sed -e 's/\^M-^M  ^M//g' )
     if [ "${nordvpn_output}" = "Status: Connected" ]; then
-        vpnstatus="$connected"
+        vpnstatus="$connected_feedback"
     elif [ "${nordvpn_output}" = "Status: Disconnected" ]; then
-        vpnstatus="$disconnected"
+        vpnstatus="$disconnected_feedback"
     fi
 elif [ "${nordvpn_output}" = "Status: Disconnected" ]; then
-    vpnstatus="$disconnected"
+    vpnstatus="$disconnected_feedback"
 elif [[ "$nordvpn_output" == *\/* ]] || [[ "$nordvpn_output" == *\\* ]]; then
     vpnstatus="Something's very wrong"
 fi
