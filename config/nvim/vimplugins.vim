@@ -14,8 +14,8 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'romgrk/barbar.nvim'
 
 " File explorer
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 
 " For comments
 Plug 'b3nj5m1n/kommentary'
@@ -30,7 +30,6 @@ Plug 'xiyaowong/telescope-emoji.nvim'
 Plug 'tpope/vim-surround'
 
 " For git signs and its dependencies
-" Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 " For project global search
