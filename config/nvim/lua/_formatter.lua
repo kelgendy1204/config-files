@@ -1,69 +1,30 @@
-require("formatter").setup(
-  {
+local util = require "formatter.util"
+
+local prettier = {
+    -- prettier
+    function()
+        return {
+            exe = "prettier",
+            args = {
+                "--stdin-filepath",
+                util.escape_path(util.get_current_buffer_file_path()),
+            },
+            stdin = true,
+            try_node_modules = true,
+        }
+    end
+}
+
+require("formatter").setup({
     logging = true,
     filetype = {
-      typescriptreact = {
-        -- prettier
-        function()
-          return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-            stdin = true
-          }
-        end
-      },
-      typescript = {
-        -- prettier
-        function()
-          return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-            stdin = true
-          }
-        end
-      },
-      javascript = {
-        -- prettier
-        function()
-          return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-            stdin = true
-          }
-        end
-      },
-      javascriptreact = {
-        -- prettier
-        function()
-          return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-            stdin = true
-          }
-        end
-      },
-      json = {
-        -- prettier
-        function()
-          return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0)},
-            stdin = true
-          }
-        end
-      },
-      lua = {
-        -- luafmt
-        function()
-          return {
-            exe = "luafmt",
-            args = {"--indent-count", 2, "--stdin"},
-            stdin = true
-          }
-        end
-      }
+        typescriptreact = prettier,
+        typescript = prettier,
+        javascript = prettier,
+        javascriptreact = prettier,
+        json = prettier,
+        markdown = prettier,
     }
-  }
-)
+})
 
 vim.api.nvim_set_keymap('n', '<leader><leader>f', '<cmd>Format<cr>', { noremap = true, silent = true })
