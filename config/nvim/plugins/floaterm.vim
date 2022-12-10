@@ -10,12 +10,3 @@ let g:floaterm_title = '($1/$2)'
 command! Ranger FloatermNew ranger
 command! FZF FloatermNew fzf
 nnoremap <silent> <leader>tr :Ranger<CR>
-
-let g:which_key_map.t = {
-      \ 'name' : '+terminal' ,
-      \ 't' : ['FloatermToggle'         , 'Toggle'],
-      \ 'n' : ['FloatermNew'            , 'New'],
-      \ 'k' : ['FloatermKill'           , 'Kill'],
-      \ 'r' : ['Ranger'                 , 'Ranger'],
-      \ 'f' : ['FZF'                    , 'FZF'],
-      \ }

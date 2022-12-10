@@ -8,7 +8,6 @@ source ~/.config/nvim/vimplugins.vim
 source ~/.config/nvim/vimkeymapping.vim
 
 " Vim plugins imports
-source ~/.config/nvim/plugins/whichkey.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/floaterm.vim
 source ~/.config/nvim/plugins/nvim-tree.vim
@@ -27,3 +26,4 @@ lua require('_lualine')
 lua require('_nvim-cmp')
 lua require('_telescope')
 lua require('_treesitter')
+lua require('_which-key')

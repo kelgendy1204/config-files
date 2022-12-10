@@ -111,7 +111,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'voldikss/vim-floaterm'
 
 " Which key for list key mapping with leader key
-Plug 'liuchengxu/vim-which-key'
+Plug 'folke/which-key.nvim'
 
 " Pair brackets
 Plug 'jiangmiao/auto-pairs'
