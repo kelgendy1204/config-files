@@ -12,6 +12,7 @@ require('_lualine')
 require('_nvim-cmp')
 require('_treesitter')
 require('_which-key')
+require('_telescope')
 
 -- Import vim settings file
 vim.api.nvim_command('source ~/.config/nvim/vimsettings.vim')
@@ -23,7 +24,6 @@ vim.api.nvim_command('source ~/.config/nvim/vimplugins.vim')
 vim.api.nvim_command('source ~/.config/nvim/vimkeymapping.vim')
 
 -- Vim plugins imports
-vim.api.nvim_command('source ~/.config/nvim/plugins/telescope.vim')
 vim.api.nvim_command('source ~/.config/nvim/plugins/floaterm.vim')
 vim.api.nvim_command('source ~/.config/nvim/plugins/nvim-tree.vim')
 vim.api.nvim_command('source ~/.config/nvim/plugins/blankline-indent.vim')
