@@ -51,3 +51,7 @@ alias openvpnconnect="openvpn3 session-start --config ~/Dropbox/linux.ovpn"
 alias openvpndisconnect="openvpn3 session-manage --config ~/Dropbox/linux.ovpn --disconnect"
 alias openvpnresume="openvpn3 session-manage --config ~/Dropbox/linux.ovpn --resume"
 alias openvpnpause="openvpn3 session-manage --config ~/Dropbox/linux.ovpn --pause"
+
+if [[ $TMUX ]]; then
+  alias clear='clear && tmux clear-history'
+fi
