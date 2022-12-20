@@ -28,7 +28,16 @@ return require('packer').startup(function(use)
     }
 
     -- Themes
-    use 'morhetz/gruvbox'
+    use { "ellisonleao/gruvbox.nvim" }
+    --[[
+        use({
+            'rose-pine/neovim',
+            as = 'rose-pine',
+            config = function()
+                vim.cmd('colorscheme rose-pine')
+            end
+        })
+    ]]
 
     -- Indent lines
     use 'lukas-reineke/indent-blankline.nvim'

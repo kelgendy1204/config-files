@@ -13,6 +13,7 @@ require('_nvim-cmp')
 require('_treesitter')
 require('_which-key')
 require('_telescope')
+require('_theme')
 
 -- Import vim settings file
 vim.api.nvim_command('source ~/.config/nvim/vimsettings.vim')
