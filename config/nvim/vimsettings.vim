@@ -36,9 +36,6 @@ set updatetime=300
 " remove ins-completion-menu messages.
 set shortmess+=c
 
-" For coc always show signcolumns
-set signcolumn=yes
-
 " Show vim mode
 set showmode
 
@@ -157,7 +154,7 @@ set showtabline=1
 set cursorline
 
 " Disable the use of the mouse in all modes
- set mouse=
+set mouse=
 " Mouse use all modes
 " set mouse=a
 
@@ -191,9 +188,9 @@ set nu
 
 " Set true colors for specific terminals
 if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
 endif
 
 " number of screen lines to show around the cursor

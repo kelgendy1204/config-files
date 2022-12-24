@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- rose-pine theme
 --[[ require('rose-pine').setup({
     dark_variant = 'moon',

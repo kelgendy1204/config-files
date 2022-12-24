@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 vim.api.nvim_set_keymap("n", "<leader>cic", "<Plug>kommentary_line_increase", {})
 vim.api.nvim_set_keymap("n", "<leader>ci", "<Plug>kommentary_motion_increase", {})
 vim.api.nvim_set_keymap("x", "<leader>ci", "<Plug>kommentary_visual_increase", {})

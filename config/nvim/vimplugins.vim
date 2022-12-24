@@ -1,8 +1,4 @@
-" ===================================================================== "
-" Plugin settings
-" ===================================================================== "
-
-" ===== Ctrl-space setup
+" ================ Ctrl-space setup
 if has("gui_running")
     " Settings for MacVim and Inconsolata font
     let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
@@ -17,12 +13,10 @@ endif
 let g:CtrlSpaceSearchTiming = 500
 let g:CtrlSpaceUseTabline = 1
 
-" ===== Vim javascript configuration
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
+" CtrlSpace plugin fix for neovim
+let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 
-" ===== Vim close tag
+" ================ Vim close tag
 " These are the file extensions where this plugin is enabled.
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
 " These are the file types where this plugin is enabled.
@@ -42,15 +36,25 @@ let g:closetag_close_shortcut = '<leader>>'
 " Disable tmux navigator when zooming the Vim pane
 let g:tmux_navigator_disable_when_zoomed = 1
 
-" ===== yats plugin
-" highlight host specific keywords for typescript
-let g:yats_host_keyword = 1
-
 " ===================== Git Messenger Plugin ===================== "
-
 let g:git_messenger_close_on_cursor_moved = v:false
 let g:git_messenger_always_into_popup = v:true
 
-" ===== CtrlSpace
-" CtrlSpace plugin fix for neovim
-let g:CtrlSpaceDefaultMappingKey = "<C-space> "
+" ============== Grepper
+" In normal and visual mode, the operator gs takes any motion and uses that selection to populate the search prompt (Using grepper).
+" The query is quoted automatically.
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+
+" ============== multi_cursor
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'

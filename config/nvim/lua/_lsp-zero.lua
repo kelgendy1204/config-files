@@ -1,4 +1,14 @@
-local nvim_lsp = require('lspconfig')
+---@diagnostic disable: undefined-global, unused-local
+vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
+
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+
+lsp.ensure_installed({
+    'tsserver',
+    'efm',
+    'sumneko_lua',
+})
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- Use an on_attach function to only map the following keys
@@ -9,7 +19,7 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
     vim.keymap.set('n', '<localleader>e', vim.diagnostic.open_float, bufopts)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts)
@@ -33,5 +43,5 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<localleader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-nvim_lsp.tsserver.setup{ on_attach = on_attach, capabilities = capabilities }
+lsp.on_attach(on_attach)
+lsp.setup()

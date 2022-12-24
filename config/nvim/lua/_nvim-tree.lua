@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 -- examples for your init.lua
 
 -- disable netrw at the very start of your init.lua (strongly advised)

@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local util = require "formatter.util"
 
 local prettier = {
