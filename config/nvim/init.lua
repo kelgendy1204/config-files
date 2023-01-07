@@ -1,11 +1,14 @@
 ---@diagnostic disable: undefined-global
+
+-- Lua imports from ~/.config/nvim/lua/
+require('_maps')
+
 -- Import vim settings file
 vim.api.nvim_command('source ~/.config/nvim/vimsettings.vim')
 
 -- Import vim mapping file
 vim.api.nvim_command('source ~/.config/nvim/vimkeymapping.vim')
 
--- Lua imports from ~/.config/nvim/lua/
 require('_packer')
 require('_lsp-zero')
 require('_lsp-efm')

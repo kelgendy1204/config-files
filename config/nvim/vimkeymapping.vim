@@ -16,10 +16,6 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-" Change the mapleader from \ to ,
-let mapleader=","
-let maplocalleader="\<space>"
-
 " Apply Q macro record
 nnoremap Q @q
 
@@ -75,14 +71,6 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
-
-" Moving lines in all modes
-nnoremap <A-j> :m .+1<CR>
-nnoremap <A-k> :m .-2<CR>
-inoremap <A-j> <Esc>:m .+1<CR>gi
-inoremap <A-k> <Esc>:m .-2<CR>gi
-vnoremap <A-j> :m '>+1<CR>gv
-vnoremap <A-k> :m '<-2<CR>gv
 
 " Resize splitting windows vertically
 nnoremap <C-Left> :vertical resize -5<CR>
