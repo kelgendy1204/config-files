@@ -3,6 +3,7 @@
     -- lintIgnoreExitCode = true,
     -- lintStdin = true
 -- }
+
 local eslint = {
   lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
   lintStdin = true,
@@ -11,6 +12,7 @@ local eslint = {
   formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}",
   formatStdin = true
 }
+
 local util = require "lspconfig".util
 
 require "lspconfig".efm.setup {

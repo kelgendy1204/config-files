@@ -2,6 +2,7 @@
 
 -- Lua imports from ~/.config/nvim/lua/
 require('_maps')
+require('_config')
 
 -- Import vim settings file
 vim.api.nvim_command('source ~/.config/nvim/vimsettings.vim')
@@ -10,7 +11,9 @@ vim.api.nvim_command('source ~/.config/nvim/vimsettings.vim')
 vim.api.nvim_command('source ~/.config/nvim/vimkeymapping.vim')
 
 require('_packer')
-require('_lsp-zero')
+require('_mason')
+require('_cmp')
+require('_lsp-config')
 require('_lsp-efm')
 require('_formatter')
 require('_gitsigns')
