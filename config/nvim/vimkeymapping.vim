@@ -59,9 +59,6 @@ nnoremap <Leader>a :Ack!<Space>-i<Space>
 nnoremap n nzz
 nnoremap N Nzz
 
-" Remove highlights for search
-nnoremap <silent> <leader>s :nohlsearch<cr>
-
 " Scrolling
 nnoremap <C-e> j<C-e>
 nnoremap <C-y> k<C-y>

@@ -29,10 +29,6 @@ set nowritebackup
 " For displaying messages
 set cmdheight=1
 
-" Speed up the updatetime plugins updates are quicker
-" For coc you will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
 " remove ins-completion-menu messages.
 set shortmess+=c
 
@@ -56,11 +52,6 @@ set backupcopy=yes
 " Set color to 256 colors
 set t_Co=256
 
-" Always show line numbers
-set number
-
-set list
-
 " For breaking a line not a word
 set linebreak
 
@@ -78,12 +69,6 @@ set hlsearch
 
 " Highlight while search
 set incsearch
-
-" Case Insensitivity Pattern Matching
-set ignorecase
-
-" Overrides ignorecase if pattern contains upcase
-set smartcase
 
 " insert tabs on the start of a line according to
 set smarttab
@@ -130,8 +115,6 @@ set timeout ttimeoutlen=50 timeoutlen=500
 set backupdir=~/.vim/temp//
 set directory=~/.vim/temp//
 set undodir=~/.vim/temp//
-" automatically save and restore undo history
-set undofile
 
 " Remember more commands and search history
 set history=1000
@@ -152,14 +135,6 @@ set showtabline=1
 
 " Highlight the current line
 set cursorline
-
-" Disable the use of the mouse in all modes
-set mouse=
-" Mouse use all modes
-" set mouse=a
-
-" For arabic support for bidi support terminals i.e. Konsole
-" set arabicshape!
 
 " no visual bell & flash
 set noerrorbells
@@ -183,24 +158,11 @@ set exrc
 " Return cursor to its default style
 set guicursor=
 
-" show the line number for each line
-set nu
-
-" Set true colors for specific terminals
-if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-endif
-
 " number of screen lines to show around the cursor
 set scrolloff=10
 
 " not displaying the current mode in the status line
 set noshowmode
-
-" whether to use a popup menu for Insert mode completion
-set completeopt=menu,menuone,noinsert,noselect
 
 " Fix slow scroll issue in nvim
 set lazyredraw
