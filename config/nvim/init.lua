@@ -1,8 +1,8 @@
 ---@diagnostic disable: undefined-global
 
 -- Lua imports from ~/.config/nvim/lua/
-require('_maps')
-require('_settings')
+require('_neovim-maps')
+require('_neovim-settings')
 
 -- Import vim settings file
 vim.api.nvim_command('source ~/.config/nvim/vimsettings.vim')
@@ -17,7 +17,6 @@ require('_lsp-config')
 require('_lsp-efm')
 require('_formatter')
 require('_gitsigns')
-require('_kommentary')
 require('_barbar')
 require('_nvim-tree')
 require('_lualine')

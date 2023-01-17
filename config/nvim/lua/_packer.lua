@@ -51,13 +51,6 @@ require('packer').startup(function(use)
             -- Automatically install LSPs to stdpath for neovim
             'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
-
-            -- Useful status updates for LSP
-            -- Standalone UI for nvim-lsp progress. Eye candy for the impatient.
-            'j-hui/fidget.nvim',
-
-            -- Additional lua configuration, makes nvim stuff amazing
-            'folke/neodev.nvim',
         },
     }
 
@@ -90,9 +83,6 @@ require('packer').startup(function(use)
 
     -- For git integration
     use 'tpope/vim-fugitive'
-
-    -- If fugitive.vim is the Git, rhubarb.vim is the Hub
-    use 'tpope/vim-rhubarb'
 
     -- Surround code with anything
     use 'tpope/vim-surround'
@@ -147,9 +137,6 @@ require('packer').startup(function(use)
 
     -- For multicursors
     use 'terryma/vim-multiple-cursors'
-
-    -- Detect tabstop and shiftwidth automatically
-    use 'tpope/vim-sleuth'
 
     if is_bootstrap then
         require('packer').sync()
