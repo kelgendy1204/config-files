@@ -1,6 +1,8 @@
-require 'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
+    ensure_installed = { 'go', 'lua', 'typescript', 'help', 'vim' },
+
     -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
+    sync_install = true,
 
     -- Automatically install missing parsers when entering buffer
     -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
@@ -8,6 +10,8 @@ require 'nvim-treesitter.configs'.setup {
 
     ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
     -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+    indent = { enable = true },
 
     highlight = {
         -- `false` will disable the whole extension

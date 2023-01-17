@@ -73,11 +73,6 @@ require('packer').startup(function(use)
         end,
     }
 
-    use { -- Additional text objects via treesitter
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        after = 'nvim-treesitter',
-    }
-
     -- For buffers handling, extracting them to tabs, name the tabs and moving them
     use 'vim-ctrlspace/vim-ctrlspace'
 
