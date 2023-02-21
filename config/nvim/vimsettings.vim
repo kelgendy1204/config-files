@@ -64,9 +64,6 @@ set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 " To display the status line always
 set laststatus=2
 
-" Enable Highlight Search
-set hlsearch
-
 " Highlight while search
 set incsearch
 

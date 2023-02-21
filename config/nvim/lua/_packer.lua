@@ -94,7 +94,7 @@ require('packer').startup(function(use)
     }
 
     -- Float terminal
-    use 'voldikss/vim-floaterm'
+    use 'numToStr/FTerm.nvim'
 
     -- File explorer
     use {

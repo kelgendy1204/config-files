@@ -25,9 +25,9 @@ require('_which-key')
 require('_telescope')
 require('_theme')
 require('_indent-blankline')
+require('_floaterm')
 
 -- Vim plugins imports
 -- Import vim plugins file with its settings and mappings
 vim.api.nvim_command('source ~/.config/nvim/vimplugins.vim')
-vim.api.nvim_command('source ~/.config/nvim/plugins/floaterm.vim')
 vim.api.nvim_command('source ~/.config/nvim/plugins/nvim-tree.vim')
