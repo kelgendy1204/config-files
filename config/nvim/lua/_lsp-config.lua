@@ -3,39 +3,40 @@
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-    -- Mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    local nmap = function(keys, func, desc)
+        if desc then
+            desc = 'LSP: ' .. desc
+        end
+        vim.keymap.set('n', keys, func, { noremap = true, silent = true, buffer = bufnr, desc = desc })
+    end
 
-    vim.keymap.set('n', '<localleader>e', vim.diagnostic.open_float, bufopts)
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts)
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
-    vim.keymap.set('n', '<localleader>q', vim.diagnostic.setloclist, bufopts)
+    -- Diagnostic keymaps
+    nmap('[d', vim.diagnostic.goto_prev, '[P]revious [D]iagnostic')
+    nmap(']d', vim.diagnostic.goto_next, '[N]ext [D]iagnostic')
+    nmap('<localleader>e', vim.diagnostic.open_float, '[O]pen [F]loat [D]iagnostic')
+    nmap('<localleader>q', vim.diagnostic.setloclist, '[S]et [L]oclist [D]iagnostic')
 
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-    vim.keymap.set('n', '<localleader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-    vim.keymap.set('n', '<localleader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-    vim.keymap.set('n', '<localleader>wl', function()
+    nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+    nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+    nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+    nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+
+    nmap('<C-k>', vim.lsp.buf.signature_help, '[S]ignature [H]elp')
+    nmap('<localleader>wa', vim.lsp.buf.add_workspace_folder, '[A]dd [W]orkspace [F]older')
+    nmap('<localleader>wr', vim.lsp.buf.remove_workspace_folder, '[R]emove [W]orkspace [F]older')
+    nmap('<localleader>wl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, bufopts)
-    vim.keymap.set('n', '<localleader>D', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<localleader>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<localleader>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<localleader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+    end, '[L]ist [W]orkspace [F]olders')
+
+    nmap('<localleader>D', vim.lsp.buf.type_definition, '[T]ype [D]efinition')
+    nmap('<localleader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+    nmap('<localleader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+    nmap('gr', vim.lsp.buf.references, '[R]eferences')
+    nmap('<localleader>f', function() vim.lsp.buf.format { async = true } end, '[F]ormat')
 end
 
 local masonLspconfig = require('mason-lspconfig')
-masonLspconfig.setup({
-    ensure_installed = {
-        'tsserver',
-    },
-    automatic_installation = true,
-})
+masonLspconfig.setup()
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
