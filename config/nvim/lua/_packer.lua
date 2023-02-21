@@ -88,7 +88,10 @@ require('packer').startup(function(use)
     use 'tpope/vim-surround'
 
     -- Pair brackets
-    use 'jiangmiao/auto-pairs'
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
     -- Float terminal
     use 'voldikss/vim-floaterm'
