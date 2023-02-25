@@ -9,6 +9,7 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias bye="sudo shutdown now"
 alias rsync="rsync -avhP"
 alias change="cd ~ && cd \$(find * -type d | fzf)"
+alias tat="~/profile-scripts/tat.sh"
 
 commit_push() {
     git commit -m "$1"
