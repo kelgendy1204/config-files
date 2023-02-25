@@ -1,5 +1,4 @@
 ---@diagnostic disable: undefined-global
--- vim.keymap.set("n", "<leader>cs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Remap leader keys
 vim.g.mapleader = ","
@@ -13,3 +12,4 @@ vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 
 -- Remove highlights for search
 vim.keymap.set("n", "<localleader>s", ":nohlsearch<cr>")
+vim.keymap.set("n", "<leader>cp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
