@@ -122,6 +122,17 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # add fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Never Leaving Tmux
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+
+ensure_tmux_is_running() {
+    if _not_inside_tmux; then
+        tat
+    fi
+}
+
+ensure_tmux_is_running
+
 # path for ruby for vim dependencies
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
