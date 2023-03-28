@@ -43,6 +43,18 @@ update_branch() {
     git merge "$branch"
 }
 
+alias pr_open="gh pr view --web"
+alias pr_checks="gh pr checks"
+alias pr_diff="gh pr diff"
+pr_checkout() {
+    local pr_no="${1}"
+    if [ -z "$pr_no" ]; then
+        echo "Error: PR number is missing."
+        return 1
+    fi
+    gh pr checkout "$pr_no"
+}
+
 alias nordvpnconnect="nordvpn connect"
 alias nordvpndisconnect="nordvpn disconnect"
 alias nordvpnkillswitch="nordvpn set killswitch"
