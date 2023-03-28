@@ -15,6 +15,10 @@ yay -S npm yarn tldr sublime-merge kmon-git diskonaut
 sudo pacman -S flameshot -y
 yay -S xkb-switch light-git
 
+# for mac only
+# coreutils for tmux stats
+brew install coreutils
+
 # install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
 npm install -g neovim typescript typescript-language-server eslint_d prettier
 go install github.com/mattn/efm-langserver@latest

@@ -43,9 +43,11 @@ update_branch() {
     git merge "$branch"
 }
 
-alias pr_open="gh pr view --web"
+alias pr_view="gh pr view --web"
 alias pr_checks="gh pr checks"
 alias pr_diff="gh pr diff"
+alias pr_create="gh pr create --web"
+alias repo_view="gh repo view --web"
 pr_checkout() {
     local pr_no="${1}"
     if [ -z "$pr_no" ]; then
