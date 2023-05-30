@@ -43,4 +43,4 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.opt.list = true
 
 -- relative numbers
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
