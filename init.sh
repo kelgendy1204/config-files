@@ -6,7 +6,7 @@ sudo pacman -S zsh curl git tmux \
     the_silver_searcher cmake \
     python ruby xclip neovim \
     ack python-pip ripgrep \
-    nodejs go fzf git-delta \
+    nodejs go fzf difftastic \
     neofetch kitty htop ranger -y
 
 yay -S npm yarn tldr sublime-merge kmon-git diskonaut
