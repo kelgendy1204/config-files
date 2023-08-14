@@ -16,6 +16,15 @@ commit_push() {
     git push
 }
 
+unzip_tar() {
+    local file_path="${1}"
+    if [ -z "$file_path" ]; then
+        echo "Error: file path is missing."
+        return 1
+    fi
+    tar zxvf "$file_path"
+}
+
 safemerge() {
     git pull && git merge "$1"
     git push

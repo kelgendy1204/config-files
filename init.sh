@@ -5,7 +5,7 @@ DIR=$(pwd)
 sudo pacman -S zsh curl git tmux \
     the_silver_searcher cmake \
     python ruby xclip neovim \
-    ack python-pip ripgrep \
+    ack python-pip ripgrep ruby-devel \
     nodejs go fzf difftastic \
     neofetch kitty htop ranger -y
 
@@ -21,7 +21,6 @@ brew install coreutils
 
 # install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
 npm install -g neovim typescript typescript-language-server eslint_d prettier
-go install github.com/mattn/efm-langserver@latest
 
 # neovim dependencies
 python3 -m pip install --user --upgrade pynvim
