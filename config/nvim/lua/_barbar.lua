@@ -64,9 +64,9 @@ vim.g.bufferline = {
     -- Configure icons on the bufferline.
     icon_separator_active = '▎',
     icon_separator_inactive = '▎',
-    icon_close_tab = '',
+    icon_close_tab = 'x',
     icon_close_tab_modified = '●',
-    icon_pinned = '車',
+    icon_pinned = '',
 
     -- If true, new buffers will be inserted at the start/end of the list.
     -- Default is to insert after current buffer.
