@@ -60,11 +60,9 @@ require('packer').startup(function(use)
         requires = { 'hrsh7th/cmp-nvim-lsp' },
     }
 
-    use { -- Highlight, edit, and navigate code
+    use {
         'nvim-treesitter/nvim-treesitter',
-        run = function()
-            pcall(require('nvim-treesitter.install').update { with_sync = true })
-        end,
+        run = ':TSUpdate'
     }
 
     -- For buffers handling, extracting them to tabs, name the tabs and moving them
