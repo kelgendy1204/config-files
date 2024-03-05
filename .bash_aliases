@@ -16,6 +16,11 @@ commit_push() {
     git push
 }
 
+commit_push_no_check() {
+    git commit -m "$1" -n
+    git push
+}
+
 unzip_tar() {
     local file_path="${1}"
     if [ -z "$file_path" ]; then
