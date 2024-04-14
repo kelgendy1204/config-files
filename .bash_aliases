@@ -43,11 +43,6 @@ kill_port() {
     sudo fuser -n tcp -k "$1"
 }
 
-get_weather() {
-    local city="${1:-"hilden"}"
-    curl "https://wttr.in/$city"
-}
-
 update_branch() {
     local branch="${1:-"main"}"
     echo $branch
@@ -55,6 +50,11 @@ update_branch() {
     git pull
     git checkout -
     git merge "$branch"
+}
+
+function ssh-add-key() {
+    eval "$(ssh-agent -s)"
+    ssh-add "$1"
 }
 
 alias pr_view="gh pr view --web"
