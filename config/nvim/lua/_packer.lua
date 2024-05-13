@@ -60,6 +60,9 @@ require('packer').startup(function(use)
         requires = { 'hrsh7th/cmp-nvim-lsp' },
     }
 
+    -- Live-updating Neovim LSP diagnostics in quickfix and loclist
+    use 'onsails/diaglist.nvim'
+
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'

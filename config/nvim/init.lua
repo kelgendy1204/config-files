@@ -26,6 +26,7 @@ require('_telescope')
 require('_theme')
 require('_indent-blankline')
 require('_floaterm')
+require('_diaglist')
 
 -- Vim plugins imports
 -- Import vim plugins file with its settings and mappings
