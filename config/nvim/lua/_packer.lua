@@ -71,9 +71,6 @@ require('packer').startup(function(use)
         run = ':TSUpdate'
     }
 
-    -- For buffers handling, extracting them to tabs, name the tabs and moving them
-    use 'vim-ctrlspace/vim-ctrlspace'
-
     -- Fuzzy Finder (files, lsp, etc)
     use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
@@ -103,9 +100,12 @@ require('packer').startup(function(use)
 
     -- File explorer
     use {
-        'nvim-tree/nvim-tree.lua',
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
         requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
         }
     }
 

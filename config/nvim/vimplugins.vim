@@ -1,21 +1,3 @@
-" ================ Ctrl-space setup
-if has("gui_running")
-    " Settings for MacVim and Inconsolata font
-    let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
-endif
-
-if executable("ag")
-    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
-else
-    echo "silversearcher-ag package (ag command) is Required"
-endif
-
-let g:CtrlSpaceSearchTiming = 500
-let g:CtrlSpaceUseTabline = 1
-
-" CtrlSpace plugin fix for neovim
-let g:CtrlSpaceDefaultMappingKey = "<C-space> "
-
 " ================ Vim close tag
 " These are the file extensions where this plugin is enabled.
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
