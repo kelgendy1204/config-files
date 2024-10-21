@@ -32,6 +32,9 @@ require('packer').startup(function(use)
     -- Which key for list key mapping with leader key
     use "folke/which-key.nvim"
 
+    -- Icons plugin required by which-key
+    use 'echasnovski/mini.nvim'
+
     -- Themes
     use 'ellisonleao/gruvbox.nvim'
     use 'flazz/vim-colorschemes'

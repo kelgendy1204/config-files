@@ -7,14 +7,10 @@ map('n', '<Space>bp', ':BufferPick<CR>', opts)
 
 -- Which key mapping
 local wk = require("which-key")
-wk.register({
-    ["<localleader>"] = {
-        b = {
-            name = "+buffers",
-            p = { '<cmd>BufferPick<CR>', "Buffer Pick" },
-        },
-    },
+wk.add({
+    { "<localleader>b", group = "buffers" },
+    { "<localleader>bp", "<cmd>BufferPick<CR>", desc = "Buffer Pick" },
 })
 
 vim.g.barbar_auto_setup = false -- disable auto-setup
-require 'barbar'.setup { }
+require 'barbar'.setup {}
