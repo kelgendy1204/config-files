@@ -11,6 +11,7 @@ vim.api.nvim_command('source ~/.config/nvim/vimsettings.vim')
 vim.api.nvim_command('source ~/.config/nvim/vimkeymapping.vim')
 
 require('_packer')
+require('_theme')
 require('_mason')
 require('_cmp')
 require('_lsp-config')
@@ -20,10 +21,8 @@ require('_gitsigns')
 require('_lualine')
 require('_treesitter')
 require('_telescope')
-require('_theme')
 require('_indent-blankline')
 require('_floaterm')
-require('_diaglist')
 require('_neo-tree')
 
 -- Vim plugins imports

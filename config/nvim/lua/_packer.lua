@@ -18,7 +18,7 @@ require('packer').startup(function(use)
     use {
         'romgrk/barbar.nvim',
         requires = {
-            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
             'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
         }
     }
@@ -37,17 +37,6 @@ require('packer').startup(function(use)
 
     -- Themes
     use 'ellisonleao/gruvbox.nvim'
-    use 'flazz/vim-colorschemes'
-    -- use 'navarasu/onedark.nvim' -- Theme inspired by Atom
-    --[[
-        use({
-            'rose-pine/neovim',
-            as = 'rose-pine',
-            config = function()
-                vim.cmd('colorscheme rose-pine')
-            end
-        })
-    ]]
 
     use { -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
@@ -62,9 +51,6 @@ require('packer').startup(function(use)
         'hrsh7th/nvim-cmp',
         requires = { 'hrsh7th/cmp-nvim-lsp' },
     }
-
-    -- Live-updating Neovim LSP diagnostics in quickfix and loclist
-    use 'onsails/diaglist.nvim'
 
     use {
         'nvim-treesitter/nvim-treesitter',
