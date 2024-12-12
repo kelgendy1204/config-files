@@ -32,7 +32,7 @@ local on_attach = function(client, bufnr)
     nmap('<localleader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
     nmap('<localleader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
     nmap('gr', vim.lsp.buf.references, '[R]eferences')
-    nmap('<localleader>f', function() vim.lsp.buf.format { async = true } end, '[F]ormat')
+    nmap('<localleader>f', function() vim.lsp.buf.format({ async = true }) end, '[F]ormat')
 end
 
 local masonLspconfig = require('mason-lspconfig')
@@ -40,11 +40,12 @@ masonLspconfig.setup()
 
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
+
 masonLspconfig.setup_handlers({
     function(server_name)
         lspconfig[server_name].setup({
             on_attach = on_attach,
-            capabilities = capabilities,
+            capabilities = lsp_capabilities,
         })
     end,
 })
