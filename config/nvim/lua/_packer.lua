@@ -35,6 +35,9 @@ require('packer').startup(function(use)
     -- Icons plugin required by which-key
     use 'echasnovski/mini.nvim'
 
+    -- linter
+    use 'mfussenegger/nvim-lint'
+
     -- Themes
     use 'ellisonleao/gruvbox.nvim'
 
