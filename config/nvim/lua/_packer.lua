@@ -132,6 +132,9 @@ require('packer').startup(function(use)
     -- For multicursors
     use 'terryma/vim-multiple-cursors'
 
+    -- Copilot
+    use 'github/copilot.vim'
+
     if is_bootstrap then
         require('packer').sync()
     end
