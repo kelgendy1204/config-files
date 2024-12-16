@@ -40,6 +40,8 @@ require('packer').startup(function(use)
 
     -- Themes
     use 'ellisonleao/gruvbox.nvim'
+    use 'luisiacc/gruvbox-baby'
+    use 'Mofiqul/vscode.nvim'
 
     use { -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
