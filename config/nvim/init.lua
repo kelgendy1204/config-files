@@ -15,6 +15,7 @@ require('_theme')
 require('_mason')
 require('_cmp')
 require('_lsp-config')
+require('_lsp-efm')
 require('_formatter')
 require('_gitsigns')
 require('_lualine')
@@ -23,7 +24,6 @@ require('_telescope')
 require('_indent-blankline')
 require('_floaterm')
 require('_neo-tree')
-require('_linter')
 
 -- Vim plugins imports
 -- Import vim plugins file with its settings and mappings

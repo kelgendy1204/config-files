@@ -19,8 +19,8 @@ yay -S xkb-switch light-git
 # coreutils for tmux stats
 brew install coreutils
 
-# install neovim, lsp-tsserver, prettier
-npm install -g neovim typescript typescript-language-server prettier
+# install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
+npm install -g neovim typescript typescript-language-server eslint_d prettier
 
 # neovim dependencies
 python3 -m pip install --user --upgrade pynvim
@@ -30,7 +30,7 @@ gem install neovim
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # clean up previous config
-rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases ~/config/kitty ~/.config/i3
+rm -rf ~/.vim* ~/.zsh* ~/.tmux* ~/.gitconfig ~/.config/nvim* ~/.bash_aliases ~/config/kitty ~/config/efm-langserver ~/.config/i3
 
 # Tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -46,6 +46,7 @@ ln -s $DIR/config/nvim ~/.config/nvim
 ln -s $DIR/config/i3 ~/.config/i3
 ln -s $DIR/config/kitty ~/.config/kitty
 ln -s $DIR/config/conky ~/.config/conky
+ln -s $DIR/config/efm-langserver ~/.config/efm-langserver
 ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.zshrc ~/.zshrc
 ln -s $DIR/.tmux.conf ~/.tmux.conf
