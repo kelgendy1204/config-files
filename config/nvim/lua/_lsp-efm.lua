@@ -1,23 +1,27 @@
--- local eslint = {
-    -- lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT}",
-    -- lintIgnoreExitCode = true,
-    -- lintStdin = true
--- }
+local lspconfig = require('lspconfig')
 
 local eslint = {
-  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
-  lintStdin = true,
-  lintFormats = {"%f:%l:%c: %m"},
-  lintIgnoreExitCode = true,
-  formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}",
-  formatStdin = true
+    lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT}",
+    lintStdin = true,
+    lintFormats = { "%f:%l:%c: %m" },
+    lintIgnoreExitCode = true,
 }
 
-local util = require "lspconfig".util
+-- Prettier configuration
+local prettier = {
+    formatCommand = "./node_modules/.bin/prettier --stdin-filepath ${INPUT}",
+    formatStdin = true,
+}
 
-require "lspconfig".efm.setup {
-    --cmd = {"efm-langserver",},
-    init_options = {documentFormatting = true},
+lspconfig.efm.setup({
+    init_options = {
+        documentFormatting = true,
+        documentRangeFormatting = true,
+        hover = true,
+        documentSymbol = true,
+        codeAction = true,
+        completion = true
+    },
     filetypes = {
         "javascript",
         "javascriptreact",
@@ -26,19 +30,16 @@ require "lspconfig".efm.setup {
         "typescriptreact",
         "typescript.tsx"
     },
-    root_dir = function(fname)
-        return util.root_pattern("tsconfig.json")(fname) or
-            util.root_pattern(".eslintrc.js", ".git")(fname);
-    end,
     settings = {
-        rootMarkers = {".eslintrc.js", ".git/"},
+        rootMarkers = { ".git/", ".eslintrc.js", ".eslintrc.json", ".eslintrc.yml" },
         languages = {
-            javascript = {eslint},
-            javascriptreact = {eslint},
-            ["javascript.jsx"] = {eslint},
-            typescript = {eslint},
-            typescriptreact = {eslint},
-            ["typescript.tsx"] = {eslint}
+            javascript = { eslint, prettier },
+            javascriptreact = { eslint, prettier },
+            ["javascript.jsx"] = { eslint, prettier },
+            typescript = { eslint, prettier },
+            typescriptreact = { eslint, prettier },
+            ["typescript.tsx"] = { eslint, prettier },
+            markdown = { prettier },
         }
     }
-}
+})

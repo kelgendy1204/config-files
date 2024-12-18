@@ -128,9 +128,6 @@ require('packer').startup(function(use)
     -- Auto closing tags
     use 'alvan/vim-closetag'
 
-    -- Formatter plugin
-    use 'mhartington/formatter.nvim'
-
     -- For multicursors
     use 'terryma/vim-multiple-cursors'
 
