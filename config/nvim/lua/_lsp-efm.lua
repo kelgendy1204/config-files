@@ -31,7 +31,7 @@ lspconfig.efm.setup({
         "typescript.tsx"
     },
     settings = {
-        rootMarkers = { ".git/", ".eslintrc.js", ".eslintrc.json", ".eslintrc.yml" },
+        rootMarkers = { ".git" },
         languages = {
             javascript = { eslint, prettier },
             javascriptreact = { eslint, prettier },
