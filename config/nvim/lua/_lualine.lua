@@ -1,55 +1,62 @@
-require 'lualine'.setup {
+-- Bubbles config for lualine
+-- Author: lokesh-krishna
+-- MIT license, see LICENSE for more details.
+
+-- stylua: ignore
+local colors = {
+    blue   = '#80a0ff',
+    cyan   = '#79dac8',
+    black  = '#080808',
+    white  = '#c6c6c6',
+    red    = '#ff5189',
+    violet = '#d183e8',
+    grey   = '#303030',
+}
+
+local bubbles_theme = {
+    normal = {
+        a = { fg = colors.black, bg = colors.violet },
+        b = { fg = colors.white, bg = colors.grey },
+        c = { fg = colors.white },
+    },
+
+    insert = { a = { fg = colors.black, bg = colors.blue } },
+    visual = { a = { fg = colors.black, bg = colors.cyan } },
+    replace = { a = { fg = colors.black, bg = colors.red } },
+
+    inactive = {
+        a = { fg = colors.white, bg = colors.black },
+        b = { fg = colors.white, bg = colors.black },
+        c = { fg = colors.white },
+    },
+}
+
+require('lualine').setup {
     options = {
-        icons_enabled = true,
-        component_separators = { left = '|', right = '|' },
+        theme = bubbles_theme,
+        component_separators = '',
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {},
-        always_divide_middle = true,
-        padding = 2, -- adds padding to the left and right of components
     },
     sections = {
-        lualine_a = { 'mode' },
-        lualine_b = {
-            'branch',
-            {
-                'diff',
-                colored = true, -- displays diff status in color if set to true
-                -- all colors are in format #rrggbb
-                color_added = nil, -- changes diff's added foreground color
-                color_modified = nil, -- changes diff's modified foreground color
-                color_removed = nil, -- changes diff's removed foreground color
-                symbols = { added = '+', modified = '~', removed = '-' } -- changes diff symbols
-            },
-        },
+        lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
-            { 'filename', path = 1 },
-            {
-                'diagnostics',
-                -- table of diagnostic sources, available sources:
-                -- nvim_lsp, coc, ale, vim_lsp
-                sources = { "nvim_diagnostic" },
-                -- displays diagnostics from defined severity
-                sections = { 'error', 'warn', 'info', 'hint' },
-                -- all colors are in format #rrggbb
-                color_error = nil, -- changes diagnostic's error foreground color
-                color_warn = nil, -- changes diagnostic's warn foreground color
-                color_info = nil, -- Changes diagnostic's info foreground color
-                color_hint = nil, -- Changes diagnostic's hint foreground color
-                symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' }
-            }
+            '%=', --[[ add your center compoentnts here in place of this comment ]]
         },
-        lualine_x = { 'encoding', { 'fileformat', icon = nil }, { 'filetype', colored = true } },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' }
+        lualine_x = {},
+        lualine_y = { 'filetype', 'progress' },
+        lualine_z = {
+            { 'location', separator = { right = '' }, left_padding = 2 },
+        },
     },
     inactive_sections = {
-        lualine_a = {},
+        lualine_a = { 'filename' },
         lualine_b = {},
-        lualine_c = { 'filename' },
-        lualine_x = { 'location' },
+        lualine_c = {},
+        lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = { 'location' },
     },
     tabline = {},
-    extensions = { 'quickfix', 'neo-tree', 'mason', 'fzf' }
+    extensions = {},
 }

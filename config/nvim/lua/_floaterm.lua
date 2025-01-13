@@ -9,7 +9,6 @@ FTerm.setup({
     },
 })
 
-vim.keymap.set('n', '<Leader>tt', FTerm.toggle)
-vim.keymap.set('n', '<Leader>tn', FTerm.open)
-vim.keymap.set('n', '<Leader>tk', FTerm.exit)
--- let g:floaterm_title = '($1/$2)'
+vim.keymap.set('n', '<Leader>ft', FTerm.toggle, { desc = '[F]loatterm [T]oggle' })
+vim.keymap.set('n', '<Leader>fn', FTerm.open, { desc = '[F]loatterm [O]pen' })
+vim.keymap.set('n', '<Leader>fk', FTerm.exit, { desc = '[F]loatterm [E]xit' })
