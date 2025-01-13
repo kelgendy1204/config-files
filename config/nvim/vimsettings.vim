@@ -160,6 +160,3 @@ set scrolloff=10
 
 " not displaying the current mode in the status line
 set noshowmode
-
-" Fix slow scroll issue in nvim
-set lazyredraw
