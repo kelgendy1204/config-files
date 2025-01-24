@@ -23,6 +23,7 @@ require('_telescope')
 require('_indent-blankline')
 require('_floaterm')
 require('_neo-tree')
+require('_spectre')
 
 -- Vim plugins imports
 -- Import vim plugins file with its settings and mappings

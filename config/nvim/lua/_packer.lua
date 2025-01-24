@@ -60,6 +60,15 @@ require('packer').startup(function(use)
     }
 
     use {
+        'nvim-pack/nvim-spectre',
+        requires = {
+            'folke/trouble.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons',
+        }
+    }
+
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
