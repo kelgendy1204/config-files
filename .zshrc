@@ -122,6 +122,18 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # add fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# path for ruby for vim dependencies
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+
+# path for go for neovim dependencies
+export PATH="$PATH:$HOME/go/bin"
+
+# path for global npm packages
+export PATH=~/.npm-global/bin:$PATH
+
+# path for brew in macos
+export PATH=/opt/homebrew/bin:$PATH
+
 # Never Leaving Tmux
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
 
@@ -132,12 +144,3 @@ ensure_tmux_is_running() {
 }
 
 ensure_tmux_is_running
-
-# path for ruby for vim dependencies
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-
-# path for go for neovim dependencies
-export PATH="$PATH:$HOME/go/bin"
-
-# path for global npm packages
-export PATH=~/.npm-global/bin:$PATH
