@@ -20,7 +20,7 @@ yay -S xkb-switch light-git
 brew install coreutils
 
 # install neovim, lsp-tsserver, efm-langserver, eslint_d, prettier
-npm install -g neovim typescript typescript-language-server eslint_d prettier
+npm install -g neovim typescript typescript-language-server eslint_d prettier eslint-formatter-unix
 
 # neovim dependencies
 python3 -m pip install --user --upgrade pynvim

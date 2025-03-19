@@ -1,7 +1,8 @@
 local lspconfig = require('lspconfig')
 
 local eslint = {
-    lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT}",
+    lintCommand = "./node_modules/.bin/eslint -f $(npm root -g)/eslint-formatter-unix/index.js --stdin --stdin-filename ${INPUT}",
+    -- lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT}",
     lintStdin = true,
     lintFormats = { "%f:%l:%c: %m" },
     lintIgnoreExitCode = true,

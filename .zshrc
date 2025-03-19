@@ -115,10 +115,6 @@ fi
 # redefine prompt_context for hiding user@hostname
 prompt_context () { }
 
- # This loads nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 # add fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -133,6 +129,8 @@ export PATH=~/.npm-global/bin:$PATH
 
 # path for brew in macos
 export PATH=/opt/homebrew/bin:$PATH
+
+export PATH=~/.volta:$PATH
 
 # Never Leaving Tmux
 _not_inside_tmux() { [[ -z "$TMUX" ]] }
