@@ -79,6 +79,9 @@ require('packer').startup(function(use)
     -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
+    -- Replace native select UI using telescope
+    use { 'nvim-telescope/telescope-ui-select.nvim' }
+
     -- Indent lines
     use 'lukas-reineke/indent-blankline.nvim'
 
@@ -147,6 +150,9 @@ require('packer').startup(function(use)
 
     -- Copilot
     use 'github/copilot.vim'
+
+    -- Copilot Chat
+    use 'CopilotC-Nvim/CopilotChat.nvim'
 
     if is_bootstrap then
         require('packer').sync()

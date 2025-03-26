@@ -1,7 +1,6 @@
 ---@diagnostic disable: undefined-global
 
--- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+local telescope = require('telescope')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
@@ -22,3 +21,17 @@ vim.keymap.set('n', '<leader>tw', builtin.grep_string, { desc = '[T]elescope Sea
 vim.keymap.set('n', '<leader>td', builtin.diagnostics, { desc = '[T]elescope Search [D]iagnostics' })
 vim.keymap.set('n', '<leader>tr', builtin.registers, { desc = '[T]elescope Search [R]egisters' })
 vim.keymap.set('n', '<leader>tm', builtin.keymaps, { desc = '[T]elescope Search [M]aps' })
+
+telescope.setup {
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown { }
+        }
+    }
+}
+
+-- get ui-select loaded and working with telescope, you need to call
+telescope.load_extension("ui-select")
+
+-- Enable telescope fzf native, if installed
+pcall(telescope.load_extension, 'fzf')
