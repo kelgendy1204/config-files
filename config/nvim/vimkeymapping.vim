@@ -145,9 +145,6 @@ vnoremap <leader>P "+P
 nnoremap <leader>gP "+gP
 vnoremap <leader>gP "+gP
 
-" Enter paste mode
-set pastetoggle=<F10>
-
 " 'cd' towards the dir in which the current file is edited
 " but only change the path for the current window
 map <silent> <leader>cd :lcd %:h<CR>
