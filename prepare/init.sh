@@ -37,10 +37,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 mkdir -p ~/.config
 
-# packer for nvim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
 # Install luarocks for neovim lazy plugin manager
 ./luarocks.sh
 
