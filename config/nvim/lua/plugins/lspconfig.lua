@@ -1,23 +1,15 @@
 return {
     {
-        "mason-org/mason.nvim",
-        opts = {}
-    },
-    {
-        "mason-org/mason-lspconfig.nvim",
-        opts = {},
-        dependencies = {
-            "mason-org/mason.nvim",
-        },
-    },
-    {
         "neovim/nvim-lspconfig",
         dependencies = {
-            "mason-org/mason.nvim",
-            "mason-org/mason-lspconfig.nvim"
+            { "mason-org/mason.nvim",           version = "1.*" },
+            { "mason-org/mason-lspconfig.nvim", version = "1.*" }
         },
         config = function()
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+            require('mason').setup()
+            require('mason-lspconfig').setup()
+
             -- Use an on_attach function to only map the following keys
             -- after the language server attaches to the current buffer
             local on_attach = function(client, bufnr)
@@ -59,13 +51,14 @@ return {
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local lspconfig = require('lspconfig')
 
-            -- mason-lspconfig v2.x exposes installed servers here:
-            for _, server_name in ipairs(masonLspconfig.get_installed_servers()) do
-                lspconfig[server_name].setup {
-                    on_attach = on_attach,
-                    capabilities = capabilities,
-                }
-            end
+            masonLspconfig.setup_handlers({
+                function(server_name)
+                    lspconfig[server_name].setup({
+                        on_attach = on_attach,
+                        capabilities = capabilities,
+                    })
+                end,
+            })
 
             -- Setup efm-langserver configuration
             require('config.lsp-efm')
