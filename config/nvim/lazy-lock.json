@@ -21,6 +21,7 @@
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-autopairs": { "branch": "master", "commit": "23320e75953ac82e559c610bec5a90d9c6dfa743" },
   "nvim-cmp": { "branch": "main", "commit": "b5311ab3ed9c846b585c0c15b7559be131ec4be9" },
+  "nvim-lsp-file-operations": { "branch": "master", "commit": "9744b738183a5adca0f916527922078a965515ed" },
   "nvim-lspconfig": { "branch": "master", "commit": "d8f03bfd5b54b10352276a0ed1f2ffe9c2e0676f" },
   "nvim-spectre": { "branch": "master", "commit": "72f56f7585903cd7bf92c665351aa585e150af0f" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
@@ -36,5 +37,6 @@
   "vim-grepper": { "branch": "master", "commit": "acaaf32edaa11d82fb972d2af36b949ec3042928" },
   "vim-multiple-cursors": { "branch": "master", "commit": "6456718e1d30b42c04b920c5413ca44f68f08759" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
-  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
+  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
+  "window-picker": { "branch": "main", "commit": "6382540b2ae5de6c793d4aa2e3fe6dbb518505ec" }
 }
