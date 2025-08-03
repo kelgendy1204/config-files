@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 -- Remap leader keys
 vim.g.mapleader = ","
 vim.g.maplocalleader = " "
