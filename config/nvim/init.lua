@@ -18,4 +18,5 @@ vim.api.nvim_command('source ~/.config/nvim/vimplugins.vim')
 require('core.lazy')
 
 -- Config lsp and diagnostics
+-- Has to be after all lsp servers are installed
 require('core.lsp')
