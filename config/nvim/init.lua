@@ -16,3 +16,6 @@ vim.api.nvim_command('source ~/.config/nvim/vimplugins.vim')
 
 -- Lazy.nvim plugin manager
 require('core.lazy')
+
+-- Config lsp and diagnostics
+require('core.lsp')
