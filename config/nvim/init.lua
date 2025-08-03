@@ -1,8 +1,8 @@
 ---@diagnostic disable: undefined-global
 
 -- Lua imports from ~/.config/nvim/lua/
-require('config.maps')
-require('config.settings')
+require('core.maps')
+require('core.settings')
 
 -- Import vim settings file
 vim.api.nvim_command('source ~/.config/nvim/vimsettings.vim')
@@ -15,4 +15,4 @@ vim.api.nvim_command('source ~/.config/nvim/vimkeymapping.vim')
 vim.api.nvim_command('source ~/.config/nvim/vimplugins.vim')
 
 -- Lazy.nvim plugin manager
-require('config.lazy')
+require('core.lazy')

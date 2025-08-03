@@ -1,8 +1,3 @@
----@diagnostic disable: undefined-global
-
--- [[ Setting options ]]
--- See `:help vim.o`
-
 -- Set highlight on search
 vim.o.hlsearch = true
 
@@ -34,12 +29,14 @@ vim.o.completeopt = 'menu,menuone,noinsert,noselect'
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
+-- remove the default <Space> mapping
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Makes invisible characters (like tabs and trailing spaces) visible in the editor
 vim.opt.list = true
 
 -- relative numbers
