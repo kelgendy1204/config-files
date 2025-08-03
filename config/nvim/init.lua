@@ -16,3 +16,6 @@ vim.api.nvim_command('source ~/.config/nvim/vimplugins.vim')
 
 -- Lazy.nvim plugin manager
 require('config.lazy')
+
+-- LSP (Language Server Protocol) configuration
+require('config.lsp')
