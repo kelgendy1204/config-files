@@ -1,73 +1,29 @@
 " Set all .vim* file to vim syntax
 au BufReadPost *.vim* set syntax=vim
 
-" It turns on 'detection', 'plugin' and 'indent' at once.
-" Allows auto-indenting depending on file type
-filetype plugin indent on
-
-" Vim already set it
-" set nocompatible
-
-" Set syntax on for all files
-syntax on
-
 " enable bold and italic in colorscheme
 let g:enable_bold_font   = 1
 let g:enable_italic_font = 1
 
-" Possibility to have more than one unsaved buffers.
-" Also For coc if hidden is not set, TextEdit might fail.
-set hidden
-
 " Turn Off Swap Files
-" Also For coc Some servers have issues with backup files, see #649
 set noswapfile
-set nowb
 set nobackup
 set nowritebackup
-
-" For displaying messages
-set cmdheight=1
 
 " remove ins-completion-menu messages.
 set shortmess+=c
 
-" Show vim mode
-set showmode
-
-" To do automatically load changes set autoread then
-" Triger `autoread` when files changes on disk then
-" Notification after file change
-" Exclude in command line
-set autoread
+" Auto-reload files changed outside of Neovim
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if expand('%') !=# '[Command Line]' | checktime | endif
 autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
-
-" Files encoding
-set encoding=utf-8
-
-" Saving strategy
-set backupcopy=yes
-
-" Set color to 256 colors
-set t_Co=256
 
 " For breaking a line not a word
 set linebreak
 
-" Wrap lines
-set wrap
-
-" set listchars=space:.,tab:>-
+" Show invisible characters
 set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
-" To display the status line always
-set laststatus=2
-
-" Highlight while search
-set incsearch
-
-" insert tabs on the start of a line according to
+" insert tabs on the start of a line according to context
 set smarttab
 
 " Width of tab character
@@ -86,9 +42,6 @@ set expandtab
 set splitbelow
 set splitright
 
-" Always set autoindenting on
-set autoindent
-
 " Smart indent
 set smartindent
 
@@ -100,9 +53,6 @@ set showmatch
 
 " Search/replace globally (on a line) by default
 set gdefault
-
-" Automatically reload files changed outside of Vim
-set autoread
 
 " Make the keyboard fast
 set ttyfast
@@ -119,15 +69,11 @@ set history=1000
 " Use many muchos levels of undo
 set undolevels=1000
 
-" Great command-line completion, use '<Tab>' to move around and '<CR>' to validate"
-" Make use of the 'status line' to show possible completions of command line commands, file names, and more
+" Great command-line completion
 set wildmenu
 set wildmode=longest,list,full
 
-" Shows the current line number at the bottom. right of the screen.
-set ruler
-
-" Turn off tabline
+" Turn off tabline when only one tab
 set showtabline=1
 
 " Highlight the current line
@@ -135,7 +81,7 @@ set cursorline
 
 " no visual bell & flash
 set noerrorbells
-set vb t_vb=
+set visualbell t_vb=
 set belloff=all
 
 " Folding
