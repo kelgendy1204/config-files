@@ -41,3 +41,6 @@ vim.opt.list = true
 
 -- relative numbers
 vim.opt.relativenumber = false
+
+-- rounded borders for diagnostics and floating windows
+vim.opt.winborder = 'rounded'

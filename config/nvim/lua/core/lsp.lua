@@ -10,9 +10,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function()
         nmap('<localleader>e', vim.diagnostic.open_float, '[O]pen [F]loat [D]iagnostic')
         nmap('<localleader>q', vim.diagnostic.setloclist, '[S]et [L]oclist [D]iagnostic')
-        nmap('K', function()
-            vim.lsp.buf.hover({ border = 'rounded' })
-        end, 'Symbol Hover')
     end,
 })
 
