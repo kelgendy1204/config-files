@@ -6,8 +6,9 @@ return {
     lazy = false,
     opts = {
         input = { enabled = true },
-        indent = { enabled = true },
+        indent = { enabled = true, animate = { enabled = false } },
         bigfile = { enabled = true },
+        animate = { enabled = false },
         dashboard = { enabled = true },
         notifier = {
             enabled = true,
