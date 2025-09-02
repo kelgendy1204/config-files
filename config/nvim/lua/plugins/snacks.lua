@@ -5,10 +5,9 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
+        input = { enabled = true },
         indent = { enabled = true },
-        scroll = { enabled = false },
         bigfile = { enabled = true },
-        animate = { enabled = false },
         dashboard = { enabled = true },
         notifier = {
             enabled = true,
