@@ -17,5 +17,6 @@ return {
     },
     keys = {
         { "<localleader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+        { "<leader>bd",      function() Snacks.bufdelete() end,     desc = "Delete Buffer" },
     },
 }
