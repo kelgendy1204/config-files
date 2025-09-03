@@ -14,10 +14,10 @@ return {
             enabled = true,
             timeout = 3000
         },
-        explorer = { },
+        explorer = {},
         picker = {
             sources = {
-                explorer = { }
+                explorer = {}
             }
         }
     },
@@ -25,7 +25,16 @@ return {
         { "<localleader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
         { "<leader>bd",      function() Snacks.bufdelete() end,     desc = "Delete Buffer" },
 
-        { "<leader>ne",      function() Snacks.explorer() end,            desc = "File Explorer" },
-        { "<c-space>",       function() Snacks.picker.buffers() end,      desc = "Navigate Buffers" },
+        { "<leader>ne",      function() Snacks.explorer() end,      desc = "File Explorer" },
+        {
+            "<c-space>",
+            function()
+                Snacks.picker.buffers({
+                    focus = 'list',
+                    sort_lastused = true,
+                })
+            end,
+            desc = "Navigate Buffers"
+        },
     },
 }
