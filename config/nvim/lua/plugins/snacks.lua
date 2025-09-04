@@ -31,7 +31,7 @@ return {
             function()
                 Snacks.picker.buffers({
                     focus = 'list',
-                    sort_lastused = true,
+                    sort_lastused = false,
                 })
             end,
             desc = "Navigate Buffers"
