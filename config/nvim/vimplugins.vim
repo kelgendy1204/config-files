@@ -1,27 +1,3 @@
-" ================ Vim close tag
-" These are the file extensions where this plugin is enabled.
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
-" These are the file types where this plugin is enabled.
-let g:closetag_filetypes = 'html,xhtml,phtml,js'
-" This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
-" This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
-" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
-let g:closetag_emptyTags_caseSensitive = 1
-" Shortcut for closing tags, default is '>'
-let g:closetag_shortcut = '>'
-" Add > at current position without closing the current tag, default is ''
-let g:closetag_close_shortcut = '<leader>>'
-
-" ===== Tmux navigator
-" Disable tmux navigator when zooming the Vim pane
-let g:tmux_navigator_disable_when_zoomed = 1
-
-" ===================== Git Messenger Plugin ===================== "
-let g:git_messenger_close_on_cursor_moved = v:false
-let g:git_messenger_always_into_popup = v:true
-
 " ============== Grepper
 " In normal and visual mode, the operator gs takes any motion and uses that selection to populate the search prompt (Using grepper).
 " The query is quoted automatically.

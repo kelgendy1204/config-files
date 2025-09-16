@@ -4,9 +4,6 @@
 require('core.maps')
 require('core.settings')
 
--- Import vim mapping file
-vim.api.nvim_command('source ~/.config/nvim/vimkeymapping.vim')
-
 -- Vim plugins imports
 -- Import vim plugins file with its settings and mappings
 vim.api.nvim_command('source ~/.config/nvim/vimplugins.vim')
