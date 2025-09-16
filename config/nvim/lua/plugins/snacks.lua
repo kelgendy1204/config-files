@@ -22,10 +22,19 @@ return {
         }
     },
     keys = {
-        { "<localleader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-        { "<leader>bd",      function() Snacks.bufdelete() end,     desc = "Delete Buffer" },
+        { "<localleader>un", function() Snacks.notifier.hide() end,       desc = "Dismiss All Notifications" },
+        { "<leader>bd",      function() Snacks.bufdelete() end,           desc = "Delete Buffer" },
 
-        { "<leader>ne",      function() Snacks.explorer() end,      desc = "File Explorer" },
+        -- Grep
+        { "<leader>sl",      function() Snacks.picker.lines() end,        desc = "[Grep] Buffer Lines" },
+        { "<leader>sb",      function() Snacks.picker.grep_buffers() end, desc = "[Grep] Open Buffers" },
+        { "<leader>sg",      function() Snacks.picker.grep() end,         desc = "[Grep]" },
+        { "<leader>sv",      function() Snacks.picker.grep_word() end,    desc = "[Grep] Visual selection or word", mode = { "n", "x" } },
+
+        -- Explorer
+        { "<leader>ne",      function() Snacks.explorer() end,            desc = "File Explorer" },
+
+        -- Buffers
         {
             "<c-space>",
             function()
