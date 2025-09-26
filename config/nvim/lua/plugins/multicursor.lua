@@ -5,8 +5,8 @@ return {
         local mc = require("multicursor-nvim")
         mc.setup()
 
-        vim.keymap.set({ "n", "x" }, "<leader><up>", function() mc.lineAddCursor(-1) end)
-        vim.keymap.set({ "n", "x" }, "<leader><down>", function() mc.lineAddCursor(1) end)
+        vim.keymap.set({ "n", "x" }, "<localleader>j", function() mc.lineAddCursor(-1) end)
+        vim.keymap.set({ "n", "x" }, "<localleader>k", function() mc.lineAddCursor(1) end)
         vim.keymap.set({ "n", "x" }, "<c-n>", function() mc.matchAddCursor(1) end)
 
         -- Mappings defined in a keymap layer only apply when there are
