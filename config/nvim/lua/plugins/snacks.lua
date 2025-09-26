@@ -24,6 +24,7 @@ return {
             }
         },
         scope = { enabled = true },
+        terminal = { enabled = true },
     },
     keys = {
         { "<leader>bd", function() Snacks.bufdelete() end,                                                desc = "Delete Buffer" },
@@ -42,7 +43,7 @@ return {
         { '<leader>sr', function() Snacks.picker.registers(listFocus) end,                                desc = "Registers" },
         { "<leader>sc", function() Snacks.picker.commands(listFocus) end,                                 desc = "Commands" },
         { "<leader>sC", function() Snacks.picker.colorschemes(listFocus) end,                             desc = "Colorschemes" },
-        { "<leader>sk", function() snacks.picker.keymaps(listFocus) end,                                  desc = "Keymaps" },
+        { "<leader>sk", function() Snacks.picker.keymaps(listFocus) end,                                  desc = "Keymaps" },
         { "<leader>sh", function() Snacks.picker.help(listFocus) end,                                     desc = "Help Pages" },
         { "<leader>si", function() Snacks.picker.icons(listFocus) end,                                    desc = "Icons" },
         { "<leader>sd", function() Snacks.picker.diagnostics_buffer(listFocus) end,                       desc = "Buffer Diagnostics" },
@@ -78,6 +79,6 @@ return {
         { "grs",        function() Snacks.picker.lsp_symbols(listFocus) end,                              desc = "LSP Symbols" },
 
         -- terminal
-        { "<c-/>",      function() Snacks.terminal() end,                                                 desc = "Toggle Terminal" },
+        { "<c-t>",      function() Snacks.terminal() end,                                                 desc = "Toggle Terminal" },
     },
 }
