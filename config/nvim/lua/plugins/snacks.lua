@@ -57,9 +57,9 @@ return {
         { "<c-space>",  function() Snacks.picker.buffers({ focus = 'list', sort_lastused = false, }) end, desc = "Navigate Buffers" },
 
         -- grep
-        { "<leader>sg", function() Snacks.picker.git_grep() end,                                          desc = "Grep" },
-        { "<leader>sG", function() Snacks.picker.grep() end,                                              desc = "Grep" },
-        { "<leader>sw", function() Snacks.picker.grep_word() end,                                         desc = "Visual selection or word", mode = { "n", "x" } },
+        { "<leader>sg", function() Snacks.picker.git_grep() end,                                          desc = "Git Grep" },
+        { "<leader>sG", function() Snacks.picker.grep() end,                                              desc = "Folder Grep" },
+        { "<leader>sv", function() Snacks.picker.grep_word() end,                                         desc = "Visual selection or word", mode = { "n", "x" } },
 
         -- git
         { "<c-p>",      function() Snacks.picker.git_files() end,                                         desc = "Find Git Files" },

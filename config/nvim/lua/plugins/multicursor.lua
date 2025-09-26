@@ -8,18 +8,6 @@ return {
         vim.keymap.set({ "n", "x" }, "<localleader>j", function() mc.lineAddCursor(-1) end)
         vim.keymap.set({ "n", "x" }, "<localleader>k", function() mc.lineAddCursor(1) end)
         vim.keymap.set({ "n", "x" }, "<c-n>", function() mc.matchAddCursor(1) end)
-
-        -- Mappings defined in a keymap layer only apply when there are
-        -- multiple cursors. This lets you have overlapping mappings.
-        mc.addKeymapLayer(function(layerSet)
-            -- Enable and clear cursors using escape.
-            layerSet("n", "<esc>", function()
-                if not mc.cursorsEnabled() then
-                    mc.enableCursors()
-                else
-                    mc.clearCursors()
-                end
-            end)
-        end)
+        vim.keymap.set({ "n", "x" }, "<c-q>", mc.clearCursors)
     end
 }
