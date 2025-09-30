@@ -15,7 +15,7 @@ return {
             },
         })
 
-        nmap('<localleader>f', function()
+        nmap('<leader>f', function()
             -- Format using conform, and fallback to native LSP formatter
             -- if no conform formatters are available
             conform.format({ lsp_fallback = true })
