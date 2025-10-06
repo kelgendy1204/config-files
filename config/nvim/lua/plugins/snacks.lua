@@ -51,7 +51,6 @@ return {
         { "<localleader>fg", function() Snacks.picker.files() end,                         desc = "Find Files" },
         { "<localleader>fp", function() Snacks.picker.projects(listFocus) end,             desc = "Projects" },
         { "<localleader>fr", function() Snacks.picker.recent(listFocus) end,               desc = "Recent" },
-        { "<localleader>fb", function() Snacks.picker.buffers(listFocus) end,              desc = "Buffers" },
         { "<c-space>",       function() Snacks.picker.buffers(listFocus) end,              desc = "Navigate Buffers" },
 
         -- grep
@@ -61,7 +60,6 @@ return {
 
         -- git
         { "<c-p>",           function() Snacks.picker.git_files() end,                     desc = "Find Git Files" },
-        { "<localleader>gf", function() Snacks.picker.git_files() end,                     desc = "Find Git Files" },
         { "<localleader>gs", function() Snacks.picker.git_status(listFocus) end,           desc = "Git Status" },
         { "<localleader>gS", function() Snacks.picker.git_stash(listFocus) end,            desc = "Git Stash" },
         { "<localleader>gd", function() Snacks.picker.git_diff(listFocus) end,             desc = "Git Diff (Hunks)" },

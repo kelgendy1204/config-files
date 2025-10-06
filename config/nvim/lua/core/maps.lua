@@ -6,25 +6,25 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Moving lines in all modes
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv")
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv")
+keymap("n", "<A-j>", ":m .+1<CR>==")
+keymap("n", "<A-k>", ":m .-2<CR>==")
 
 -- Remove highlights for search
-vim.keymap.set("n", "<localleader>s", ":nohlsearch<cr>")
-vim.keymap.set("n", "<leader>cp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap("n", "<localleader>h", ":nohlsearch<cr>", { silent = true, desc = "Clear highlights" })
+keymap("n", "<leader>cp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- remove the default <Space> mapping
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Search for visually selected text
-vim.keymap.set('v', '*', 'y/\\V<C-R>=escape(@","/\\\\")<CR><CR>', { silent = true })
-vim.keymap.set('v', '#', 'y?\\V<C-R>=escape(@","?\\\\")<CR><CR>', { silent = true })
+keymap('v', '*', 'y/\\V<C-R>=escape(@","/\\\\")<CR><CR>', { silent = true })
+keymap('v', '#', 'y?\\V<C-R>=escape(@","?\\\\")<CR><CR>', { silent = true })
 
 -- Apply Q macro record
 keymap('n', 'Q', '@q', opts)
@@ -104,8 +104,6 @@ keymap('n', '<Leader>p', '"+p', opts)
 keymap('v', '<Leader>p', '"+p', opts)
 keymap('n', '<Leader>P', '"+P', opts)
 keymap('v', '<Leader>P', '"+P', opts)
-keymap('n', '<Leader>gP', '"+gP', opts)
-keymap('v', '<Leader>gP', '"+gP', opts)
 
 -- Start and end of line
 keymap({'n','v'}, 'H', '^', opts)
@@ -115,5 +113,5 @@ keymap({'n','v'}, 'L', '$', opts)
 keymap('i', '<C-Space>', '<C-x><C-o>', opts)
 
 -- Remap esc in insert mode
-vim.cmd('inoremap jk <Esc>')
-vim.cmd('inoremap kj <Esc>')
+vim.cmd('inoremap jk <esc>')
+vim.cmd('inoremap kj <esc>')

@@ -22,6 +22,6 @@ return {
 
             -- Make sure to map to the native LSP format function if conform removed in the future
             -- vim.lsp.buf.format({ async = true })
-        end, '[F]ormat')
+        end, 'Format')
     end,
 }

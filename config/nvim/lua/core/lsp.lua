@@ -8,8 +8,13 @@ vim.lsp.enable({
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function()
-        nmap('<localleader>e', vim.diagnostic.open_float, '[O]pen [F]loat [D]iagnostic')
-        nmap('<localleader>q', vim.diagnostic.setloclist, '[S]et [L]oclist [D]iagnostic')
+        local wk = require("which-key")
+        wk.add({
+            { "<localleader>d", group = "Diagnostic" },
+        })
+
+        nmap('<localleader>df', vim.diagnostic.open_float, '[O]pen [F]loat [D]iagnostic')
+        nmap('<localleader>dl', vim.diagnostic.setloclist, '[S]et [L]oclist [D]iagnostic')
     end,
 })
 
