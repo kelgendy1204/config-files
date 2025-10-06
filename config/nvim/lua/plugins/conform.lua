@@ -15,13 +15,13 @@ return {
             },
         })
 
-        nmap('<leader>f', function()
+       nmap('<localleader>i', function()
             -- Format using conform, and fallback to native LSP formatter
             -- if no conform formatters are available
             conform.format({ lsp_fallback = true })
 
             -- Make sure to map to the native LSP format function if conform removed in the future
             -- vim.lsp.buf.format({ async = true })
-        end, 'Format')
+        end, 'Format [i]nput')
     end,
 }

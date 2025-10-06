@@ -12,7 +12,7 @@ keymap("n", "<A-j>", ":m .+1<CR>==")
 keymap("n", "<A-k>", ":m .-2<CR>==")
 
 -- Remove highlights for search
-keymap("n", "<localleader>h", ":nohlsearch<cr>", { silent = true, desc = "Clear highlights" })
+keymap("n", "<leader>s", ":nohlsearch<cr>", { silent = true, desc = "Clear highlights" })
 keymap("n", "<leader>cp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- remove the default <Space> mapping
