@@ -13,7 +13,7 @@ return {
             on_attach = function(bufnr)
                 local wk = require("which-key")
                 wk.add({
-                    { "<localleader>h", group = "Gitsigns" },
+                    { "<localleader>h", group = "Gitsigns (Hunk)" },
                 })
 
                 local gitsigns = require('gitsigns')
@@ -62,10 +62,6 @@ return {
                 map('n', '<localleader>hb', function() gitsigns.blame_line({ full = true }) end, { desc = 'Blame line' })
                 map('n', '<localleader>hB', gitsigns.blame, { desc = 'Blame' })
                 map('n', '<localleader>hd', gitsigns.diffthis, { desc = 'Diff this' })
-
-                ---@diagnostic disable-next-line: param-type-mismatch
-                map('n', '<localleader>hQ', function() gitsigns.setqflist('all') end, { desc = 'list all changes' })
-                map('n', '<localleader>hq', gitsigns.setqflist, { desc = 'list changes in file' })
             end,
         }
     end,

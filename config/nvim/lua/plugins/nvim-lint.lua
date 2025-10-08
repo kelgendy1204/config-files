@@ -23,8 +23,8 @@ return {
             end,
         })
 
-        vim.keymap.set("n", "<localleader>o", function()
+        vim.keymap.set("n", "<leader>l", function()
             lint.try_lint()
-        end, { desc = "Lint [o]put" })
+        end, { desc = "Lint" })
     end,
 }
