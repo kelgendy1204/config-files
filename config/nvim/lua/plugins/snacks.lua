@@ -48,15 +48,15 @@ return {
         { "<localleader>pp", function() Snacks.picker(listFocus) end,                      desc = "Pickers" },
 
         -- find
-        { "<localleader>ff", function() Snacks.picker.files() end,                         desc = "Find Files" },
-        { "<localleader>fp", function() Snacks.picker.projects(listFocus) end,             desc = "Projects" },
-        { "<localleader>fr", function() Snacks.picker.recent(listFocus) end,               desc = "Recent" },
+        { "<leader>ff",      function() Snacks.picker.files() end,                         desc = "Find Files" },
+        { "<leader>fp",      function() Snacks.picker.projects(listFocus) end,             desc = "Projects" },
+        { "<leader>fr",      function() Snacks.picker.recent(listFocus) end,               desc = "Recent" },
         { "<c-space>",       function() Snacks.picker.buffers(listFocus) end,              desc = "Navigate Buffers" },
 
         -- grep
-        { "<localleader>sg", function() Snacks.picker.git_grep() end,                      desc = "Git Grep" },
-        { "<localleader>sG", function() Snacks.picker.grep() end,                          desc = "Folder Grep" },
-        { "<localleader>sw", function() Snacks.picker.grep_word() end,                     desc = "Visual selection or word", mode = { "n", "x" } },
+        { "<leader>gg",      function() Snacks.picker.git_grep() end,                      desc = "Git Grep" },
+        { "<leader>gG",      function() Snacks.picker.grep() end,                          desc = "Folder Grep" },
+        { "<leader>gw",      function() Snacks.picker.grep_word() end,                     desc = "Visual selection or word", mode = { "n", "x" } },
 
         -- git
         { "<c-p>",           function() Snacks.picker.git_files() end,                     desc = "Find Git Files" },
@@ -77,11 +77,11 @@ return {
         local wk = require("which-key")
         wk.add({
             { "gr",             group = "LSP" },
+            { "<leader>g",      group = "Grep" },
+            { "<leader>f",      group = "Files" },
             { "<localleader>g", group = "Git" },
-            { "<localleader>s", group = "Grep" },
             { "<localleader>p", group = "Picker" },
             { "<localleader>n", group = "Notifications" },
-            { "<localleader>f", group = "Files" },
         })
     end,
 }

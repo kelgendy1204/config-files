@@ -49,13 +49,7 @@ return {
                     gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
                 end, { desc = 'Stage hunk' })
 
-                map('n', '<localleader>hr', gitsigns.reset_hunk, { desc = 'Reset hunk' })
-                map('v', '<localleader>hr', function()
-                    gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-                end, { desc = 'Reset hunk' })
-
-                map('n', '<localleader>hS', gitsigns.stage_buffer, { desc = 'Stage buffer' })
-                map('n', '<localleader>hR', gitsigns.reset_buffer, { desc = 'Reset buffer' })
+                map('n', '<localleader>hS', gitsigns.stage_buffer, { desc = 'Stage/Unstage buffer' })
                 map('n', '<localleader>hp', gitsigns.preview_hunk, { desc = 'Preview hunk' })
                 map('n', '<localleader>hi', gitsigns.preview_hunk_inline, { desc = 'Preview hunk inline' })
 
