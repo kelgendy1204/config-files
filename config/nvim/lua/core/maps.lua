@@ -11,16 +11,8 @@ keymap("v", "<A-k>", ":m '<-2<CR>gv=gv")
 keymap("n", "<A-j>", ":m .+1<CR>==")
 keymap("n", "<A-k>", ":m .-2<CR>==")
 
--- Remove highlights for search
-keymap("n", "<leader>s", ":nohlsearch<cr>", { silent = true, desc = "Clear highlights" })
-keymap("n", "<leader>cp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
 -- remove the default <Space> mapping
 keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Remap for dealing with word wrap
-keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Search for visually selected text
 keymap('v', '*', 'y/\\V<C-R>=escape(@","/\\\\")<CR><CR>', { silent = true })
@@ -37,11 +29,8 @@ keymap('n', '<Tab>', ':bnext<CR>', opts)
 keymap('n', '<S-Tab>', ':bprevious<CR>', opts)
 
 -- Move normally between wrapped lines
-keymap({'n', 'v'}, 'j', 'gj', opts)
-keymap({'n', 'v'}, 'k', 'gk', opts)
-
--- Redraw page
-keymap('n', '<Leader><Leader>r', ':redraw!<CR>', opts)
+keymap({ 'n', 'v' }, 'j', 'gj', opts)
+keymap({ 'n', 'v' }, 'k', 'gk', opts)
 
 -- Search centers on result
 keymap('n', 'n', 'nzz', opts)
@@ -65,49 +54,38 @@ keymap('n', '<C-Right>', ':vertical resize +5<CR>', opts)
 keymap('n', '<C-Up>', ':resize +5<CR>', opts)
 keymap('n', '<C-Down>', ':resize -5<CR>', opts)
 
--- Quickly close window/buffer
-keymap('n', '<Leader>q', ':q<CR>', opts)
-keymap('n', '<Leader>o', ':only<CR>', opts)
-
--- Updating, saving, writing
-keymap('n', '<Leader>u', ':update<CR>', opts)
-keymap('n', '<Leader>w', ':w<CR>', opts)
-keymap('n', '<Leader>W', ':wall<CR>', opts)
-
--- Paste and indent text
-keymap('n', 'gp', 'p`[v`]=', opts)
+-- Shortcuts with descriptions
+keymap('n', '<Leader>q', ':q<CR>', { silent = true, desc = "Close window" })
+keymap('n', '<Leader>o', ':only<CR>', { silent = true, desc = "Close other windows" })
+keymap('n', '<Leader>u', ':update<CR>', { silent = true, desc = "Update file" })
+keymap('n', '<Leader>w', ':w<CR>', { silent = true, desc = "Write file" })
+keymap('n', '<Leader>W', ':wall<CR>', { silent = true, desc = "Write all files" })
+keymap('n', 'gp', 'p`[v`]=', { silent = true, desc = "Paste and indent" })
+keymap('n', '<Leader><Leader>r', ':redraw!<CR>', { silent = true, desc = "Redraw screen" })
+keymap("n", "<leader>s", ":nohlsearch<cr>", { silent = true, desc = "Clear highlights" })
+keymap("n", "<leader>cp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Buffer replace word" })
+keymap('n', '<Leader>vv', ':vs<CR>', { silent = true, desc = "Vertical split" })
+keymap('n', '<Leader>hh', ':sp<CR>', { silent = true, desc = "Horizontal split" })
+keymap('n', '<Leader>r', 'viwp`[v`]y', { silent = true, desc = "Replace word" })
+keymap('v', '<Leader>r', 'p`[v`]y', { silent = true, desc = "Replace selection" })
+keymap('n', '<Leader>d', '"_d', { silent = true, desc = "Delete without yank" })
+keymap('n', '<Leader>D', '"_D', { silent = true, desc = "Delete to end of line without yank" })
+keymap('v', '<Leader>d', '"_d', { silent = true, desc = "Delete selection without yank" })
+keymap('n', '<Leader>y', '"+y', { silent = true, desc = "Yank to system clipboard" })
+keymap('v', '<Leader>y', '"+y', { silent = true, desc = "Yank selection to system clipboard" })
+keymap('n', '<Leader>Y', '"+y$', { silent = true, desc = "Yank to end of line to system clipboard" })
+keymap('n', '<Leader>yy', '"+yy', { silent = true, desc = "Yank line to system clipboard" })
+keymap('n', '<Leader>p', '"+p', { silent = true, desc = "Paste from system clipboard" })
+keymap('v', '<Leader>p', '"+p', { silent = true, desc = "Paste from system clipboard" })
+keymap('n', '<Leader>P', '"+P', { silent = true, desc = "Paste before from system clipboard" })
+keymap('v', '<Leader>P', '"+P', { silent = true, desc = "Paste before from system clipboard" })
 
 -- Yank to end of the line
 keymap('n', 'Y', 'y$', opts)
 
--- Vertical/horizontal split
-keymap('n', '<Leader>vv', ':vs<CR>', opts)
-keymap('n', '<Leader>hh', ':sp<CR>', opts)
-
--- Replace word or paragraph with yanked text (without replacing default register)
-keymap('n', '<Leader>r', 'viwp`[v`]y', opts)
-keymap('v', '<Leader>r', 'p`[v`]y', opts)
-
--- Black hole deletes
-keymap('n', '<Leader>d', '"_d', opts)
-keymap('n', '<Leader>D', '"_D', opts)
-keymap('v', '<Leader>d', '"_d', opts)
-
--- System clipboard yank
-keymap('n', '<Leader>y', '"+y', opts)
-keymap('v', '<Leader>y', '"+y', opts)
-keymap('n', '<Leader>Y', '"+y$', opts)
-keymap('n', '<Leader>yy', '"+yy', opts)
-
--- System clipboard paste
-keymap('n', '<Leader>p', '"+p', opts)
-keymap('v', '<Leader>p', '"+p', opts)
-keymap('n', '<Leader>P', '"+P', opts)
-keymap('v', '<Leader>P', '"+P', opts)
-
 -- Start and end of line
-keymap({'n','v'}, 'H', '^', opts)
-keymap({'n','v'}, 'L', '$', opts)
+keymap({ 'n', 'v' }, 'H', '^', opts)
+keymap({ 'n', 'v' }, 'L', '$', opts)
 
 -- Remap omnifunc to ctrl + space
 keymap('i', '<C-Space>', '<C-x><C-o>', opts)
