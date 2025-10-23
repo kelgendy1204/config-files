@@ -6,6 +6,11 @@ return {
         'nvim-tree/nvim-web-devicons',
     },
     config = function()
+        local wk = require("which-key")
+        wk.add({
+            { "<localleader>S", group = "Spectre" },
+        })
+
         require('spectre').setup()
 
         vim.keymap.set('n', '<localleader>Ss', '<cmd>lua require("spectre").toggle()<CR>', {
