@@ -19,8 +19,38 @@ return {
         },
         picker = {
             sources = {
-                explorer = {}
-            }
+                explorer = {
+                    win = {
+                        list = {
+                            keys = {
+                                -- normal mode keys in explorer
+                                ["y"]  = "yank_relative_cwd",
+                                ["Y"]  = "yank_relative_home",
+                            },
+                        },
+                    },
+                    actions = {
+                        yank_relative_cwd = function(_, item)
+                            local path = vim.fn.fnamemodify(item.file, ":.")
+                            vim.fn.setreg("+", path)
+                            vim.fn.setreg('"', path)
+                            vim.notify("Yanked (rel cwd): " .. path)
+                        end,
+                        yank_relative_home = function(_, item)
+                            local path = vim.fn.fnamemodify(item.file, ":~")
+                            vim.fn.setreg("+", path)
+                            vim.fn.setreg('"', path)
+                            vim.notify("Yanked (rel home): " .. path)
+                        end,
+                        yank_absolute = function(_, item)
+                            local path = vim.fn.fnamemodify(item.file, ":p")
+                            vim.fn.setreg("+", path)
+                            vim.fn.setreg('"', path)
+                            vim.notify("Yanked (absolute): " .. path)
+                        end,
+                    },
+                },
+            },
         },
     },
     keys = {
