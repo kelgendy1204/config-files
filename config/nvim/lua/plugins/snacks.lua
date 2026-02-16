@@ -13,6 +13,7 @@ return {
         explorer = { enabled = true },
         indent = { enabled = true, animate = { enabled = false } },
         input = { enabled = true },
+        gh = { enabled = true },
         notifier = {
             enabled = true,
             timeout = 3000
@@ -24,8 +25,8 @@ return {
                         list = {
                             keys = {
                                 -- normal mode keys in explorer
-                                ["y"]  = "yank_relative_cwd",
-                                ["Y"]  = "yank_relative_home",
+                                ["y"] = "yank_relative_cwd",
+                                ["Y"] = "yank_relative_home",
                             },
                         },
                     },
@@ -50,6 +51,7 @@ return {
                         end,
                     },
                 },
+                gh_pr = {}
             },
         },
     },
@@ -86,14 +88,16 @@ return {
         -- grep
         { "<leader>gg",      function() Snacks.picker.git_grep() end,                      desc = "Git Grep" },
         { "<leader>gG",      function() Snacks.picker.grep() end,                          desc = "Folder Grep" },
-        { "<leader>gw",      function() Snacks.picker.grep_word() end,                     desc = "Visual selection or word", mode = { "n", "x" } },
+        { "<leader>gw",      function() Snacks.picker.grep_word() end,                     desc = "Visual selection or word",   mode = { "n", "x" } },
 
         -- git
         { "<c-p>",           function() Snacks.picker.git_files() end,                     desc = "Find Git Files" },
         { "<localleader>gs", function() Snacks.picker.git_status(listFocus) end,           desc = "Git Status" },
         { "<localleader>gd", function() Snacks.picker.git_diff(listFocus) end,             desc = "Git Diff (Hunks)" },
-        { "<localleader>gB", function() Snacks.gitbrowse() end,                            desc = "Git Browse",               mode = { "n", "v" } },
+        { "<localleader>gB", function() Snacks.gitbrowse() end,                            desc = "Git Browse",                 mode = { "n", "v" } },
         { "<localleader>gg", function() Snacks.lazygit() end,                              desc = "Lazygit" },
+        { "<localleader>gp", function() Snacks.picker.gh_pr() end,                         desc = "GitHub Pull Requests (open)" },
+        { "<localleader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end,        desc = "GitHub Pull Requests (all)" },
 
         --lsp
         { "grd",             function() Snacks.picker.lsp_definitions(listFocus) end,      desc = "Goto Definition" },
