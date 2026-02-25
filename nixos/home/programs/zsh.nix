@@ -34,8 +34,8 @@
         '';
 
         shellAliases = {
-            mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nixos-config#lenovo-laptop";
-            mynix-check = "nix flake check ~/config-files/nixos-config --impure";
+            mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nixos#lenovo-laptop";
+            mynix-check = "nix flake check ~/config-files/nixos --impure";
             mynix-update = "nix flake update";
             mynix-clean = "nix-collect-garbage -d";
 
