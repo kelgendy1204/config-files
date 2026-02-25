@@ -12,4 +12,4 @@
         ./programs.nix
         ./users.nix
     ];
-};
+}
