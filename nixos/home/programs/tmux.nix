@@ -81,7 +81,7 @@
             set -g status-justify left
             set -g status-keys vi
             set -g status-interval 1
-            set -g status-right '#{?client_prefix,   ,} %r - %a %d-%b-%Y #[fg=green]#(whoami)@#H '
+            set -g status-right '#{?client_prefix,   ,} #(/bin/sh ~/config-files/scripts/netspeed.sh) | #(/bin/sh ~/config-files/scripts/cpu.sh) | #(/bin/sh ~/config-files/scripts/mem.sh) | %r - %a %d-%b-%Y '
             set -g status-bg black
             set -g status-fg white
             set -g status-right-length 150
