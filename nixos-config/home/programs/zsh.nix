@@ -14,7 +14,7 @@
         };
 
         initContent = lib.mkBefore ''
-            source ${./../config-files/p10k/p10k.zsh}
+            source ${../../../config/p10k/p10k.zsh}
             source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
             commit_push() { git commit -m "$1" && git push; }

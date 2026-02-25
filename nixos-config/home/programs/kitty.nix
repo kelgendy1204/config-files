@@ -4,7 +4,7 @@
     programs.kitty.enable = true;
 
     xdg.configFile."kitty" = {
-        source = ./../config-files/kitty;
+        source = ../../../config/kitty;
         recursive = true;
     };
 }
