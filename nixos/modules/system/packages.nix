@@ -8,7 +8,6 @@
         gcc
         binutils
         tree
-        zsh-powerlevel10k
         xclip
         tealdeer
         google-chrome

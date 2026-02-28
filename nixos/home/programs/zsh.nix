@@ -8,15 +8,25 @@
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
 
+        plugins = [
+            {
+                name = "powerlevel10k";
+                src = pkgs.zsh-powerlevel10k;
+                file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+            }
+            {
+                name = "powerlevel10k-config";
+                src = ../../../config/p10k;
+                file = "p10k.zsh";
+            }
+        ];
+
         oh-my-zsh = {
             enable = true;
             plugins = [ "git" "vi-mode" ];
         };
 
         initContent = lib.mkBefore ''
-            source ${../../../config/p10k/p10k.zsh}
-            source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-
             commit_push() { git commit -m "$1" && git push; }
             commit_push_no_check() { git commit -m "$1" -n && git push; }
 
