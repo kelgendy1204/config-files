@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
     programs.tmux = {
@@ -21,7 +21,7 @@
         ];
 
         extraConfig = ''
-            source-file ../../../config/tmux/tmux.conf
+            source-file ${config.home.homeDirectory}/config-files/config/tmux/tmux.conf
         '';
     };
 }
