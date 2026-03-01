@@ -44,6 +44,8 @@
         '';
 
         shellAliases = {
+            myhm-switch = "home-manager switch --flake ~/config-files/nixos";
+
             mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nixos#lenovo-laptop";
             mynix-check = "nix flake check ~/config-files/nixos --impure";
             mynix-update = "nix flake update";

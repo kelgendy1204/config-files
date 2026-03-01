@@ -19,15 +19,19 @@
             system = "x86_64-linux";
             modules = [
                 ./hosts/lenovo-laptop
-                home-manager.nixosModules.default
-                {
-                    home-manager = {
-                        useGlobalPkgs = true;
-                        useUserPackages = true;
-                        users.khaled = import ./home;
-                    };
-                }
             ];
+        };
+
+        homeConfigurations = {
+            "khaled@lenovo-laptop" = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.x86_64-linux;
+                modules = [ ./home/lenovo-laptop.nix ];
+            };
+
+            "kelgendy@trv4147" = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+                modules = [ ./home/trv4147.nix ];
+            };
         };
     };
 }

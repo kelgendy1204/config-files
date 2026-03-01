@@ -10,8 +10,5 @@
         ./programs/npm.nix
     ];
 
-    home.username = "khaled";
-    home.homeDirectory = "/home/khaled";
-
     home.stateVersion = "25.11";
 }
