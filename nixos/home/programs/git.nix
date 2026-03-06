@@ -1,11 +1,18 @@
 { pkgs, ... }:
 
 {
-    programs.difftastic.enable = true;
-    programs.difftastic.git.enable = true;
-
     programs.git = {
         enable = true;
+
+        aliases = {
+            dft = "difftool";
+        };
+
+        difftastic = {
+            enable = true;
+            background = "dark";
+            display = "inline";
+        };
 
         settings = {
             user = {
@@ -34,14 +41,13 @@
                 conflictstyle = "merge";
             };
 
-            # Modern improvements
             diff = {
                 algorithm = "histogram";
                 colorMoved = "default";
             };
 
             fetch = {
-                prunetags = true;
+                pruneTags = true;
             };
 
             branch = {
