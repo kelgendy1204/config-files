@@ -56,9 +56,9 @@
                 alias clear='clear && tmux clear-history'
             fi
 
-            # Clean old NixOS generations, garbage collect, and update boot menu
+            # Clean all old NixOS generations, garbage collect, and update boot menu
             mynix-clean() {
-                sudo nix-env --delete-generations +5 --profile /nix/var/nix/profiles/system \
+                sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system \
                 && nix-collect-garbage -d \
                 && sudo nixos-rebuild boot --flake ~/config-files/nixos#lenovo-laptop
             }
