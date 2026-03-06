@@ -4,16 +4,6 @@
     programs.git = {
         enable = true;
 
-        aliases = {
-            dft = "difftool";
-        };
-
-        difftastic = {
-            enable = true;
-            background = "dark";
-            display = "inline";
-        };
-
         settings = {
             user = {
                 name = "Khaled Elgendy";
