@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 
 {
+    home.sessionVariables = {
+        EDITOR = "nvim";
+    };
+
     programs.zsh = {
         enable = true;
         enableCompletion = true;
@@ -50,6 +54,11 @@
             # In tmux: clear also clears scrollback history
             if [[ -n "$TMUX" ]]; then
                 alias clear='clear && tmux clear-history'
+            fi
+
+            # Auto-start tmux on shell launch
+            if [ -z "$TMUX" ]; then
+                tat
             fi
         '';
 
