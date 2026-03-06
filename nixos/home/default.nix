@@ -8,6 +8,7 @@
         ./programs/kitty.nix
         ./programs/opencode.nix
         ./programs/npm.nix
+        ./programs/git.nix
     ];
 
     programs.home-manager.enable = true;

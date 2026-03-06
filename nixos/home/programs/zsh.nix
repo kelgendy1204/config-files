@@ -34,12 +34,18 @@
         '';
 
         shellAliases = {
+            # Home Manager
             myhm-switch = "home-manager switch --flake ~/config-files/nixos";
+            myhm-generations = "home-manager generations";
+            myhm-packages = "home-manager packages";
 
+            # NixOS
             mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nixos#lenovo-laptop";
             mynix-check = "nix flake check ~/config-files/nixos --impure";
-            mynix-update = "nix flake update";
+            mynix-update = "nix flake update --flake ~/config-files/nixos";
             mynix-clean = "nix-collect-garbage -d";
+            mynix-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
+            mynix-rollback = "sudo nixos-rebuild switch --rollback";
 
             myip = "curl http://ipecho.net/plain; echo";
             rsync = "rsync -avhP";
