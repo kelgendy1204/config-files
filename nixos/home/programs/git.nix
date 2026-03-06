@@ -1,13 +1,18 @@
 { pkgs, ... }:
 
 {
+    programs.difftastic.enable = true;
+    programs.difftastic.git.enable = true;
+
     programs.git = {
         enable = true;
 
-        userName = "Khaled Elgendy";
-        userEmail = "elgendy1204@gmail.com";
+        settings = {
+            user = {
+                name = "Khaled Elgendy";
+                email = "elgendy1204@gmail.com";
+            };
 
-        extraConfig = {
             push = {
                 default = "simple";
                 autoSetupRemote = true;
@@ -50,13 +55,6 @@
             column = {
                 ui = "auto";
             };
-        };
-
-        # Use difftastic as a difftool instead of diff.external
-        # diff.external breaks interactive commands like 'git add -p'
-        # Use with: git difftool
-        difftastic = {
-            enable = true;
         };
     };
 }
