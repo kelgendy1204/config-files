@@ -9,6 +9,7 @@
         ./programs/opencode.nix
         ./programs/npm.nix
         ./programs/git.nix
+        ./programs/fzf.nix
     ];
 
     programs.home-manager.enable = true;
