@@ -56,6 +56,13 @@
                 alias clear='clear && tmux clear-history'
             fi
 
+            # Clean old NixOS generations, garbage collect, and update boot menu
+            mynix-clean() {
+                sudo nix-env --delete-generations +5 --profile /nix/var/nix/profiles/system \
+                && nix-collect-garbage -d \
+                && sudo nixos-rebuild boot --flake ~/config-files/nixos#lenovo-laptop
+            }
+
             # Auto-start tmux on shell launch
             if [ -z "$TMUX" ]; then
                 tat
@@ -73,7 +80,6 @@
             mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nixos#lenovo-laptop";
             mynix-check = "nix flake check ~/config-files/nixos --impure";
             mynix-update = "nix flake update --flake ~/config-files/nixos";
-            mynix-clean = "nix-collect-garbage -d";
             mynix-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
             mynix-rollback = "sudo nixos-rebuild switch --rollback";
 
