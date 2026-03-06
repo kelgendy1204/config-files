@@ -31,6 +31,26 @@
             }
 
             ssh-add-key() { eval "$(ssh-agent -s)" && ssh-add "$1"; }
+
+            # Attach or create tmux session named after current directory
+            tat() {
+                local session_name
+                session_name="$(basename "$PWD" | tr . -)"
+
+                if [ -z "$TMUX" ]; then
+                    tmux new-session -As "$session_name"
+                else
+                    if ! tmux list-sessions -F '#S' | grep -q "^''${session_name}$"; then
+                        TMUX="" tmux new-session -Ad -s "$session_name"
+                    fi
+                    tmux switch-client -t "$session_name"
+                fi
+            }
+
+            # In tmux: clear also clears scrollback history
+            if [[ -n "$TMUX" ]]; then
+                alias clear='clear && tmux clear-history'
+            fi
         '';
 
         shellAliases = {
@@ -38,6 +58,7 @@
             myhm-switch = "home-manager switch --flake ~/config-files/nixos";
             myhm-generations = "home-manager generations";
             myhm-packages = "home-manager packages";
+            myhm-rollback = "home-manager switch --rollback";
 
             # NixOS
             mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nixos#lenovo-laptop";
