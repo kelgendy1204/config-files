@@ -5,7 +5,7 @@
         ./default.nix
 
         # DE settings: uncomment one, comment the others
-        # ./programs/sway-settings.nix
+        ./programs/sway-settings.nix
     ];
 
     home.username = "khaled";
