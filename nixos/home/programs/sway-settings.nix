@@ -38,7 +38,7 @@ in
         waybar
 
         # App launcher
-        rofi-wayland
+        rofi
 
         # Notifications
         mako
@@ -76,7 +76,7 @@ in
     gtk = {
         enable = true;
         theme = {
-            name = "Catppuccin-Mocha-Standard-Blue-Dark";
+            name = "catppuccin-mocha-blue-standard-dark";
             package = pkgs.catppuccin-gtk.override {
                 accents = [ "blue" ];
                 variant = "mocha";
@@ -87,7 +87,7 @@ in
             package = pkgs.papirus-icon-theme;
         };
         cursorTheme = {
-            name = "Catppuccin-Mocha-Dark-Cursors";
+            name = "catppuccin-mocha-dark-cursors";
             package = pkgs.catppuccin-cursors.mochaDark;
             size = 24;
         };
@@ -99,7 +99,7 @@ in
 
     # Cursor theme for Wayland
     home.pointerCursor = {
-        name = "Catppuccin-Mocha-Dark-Cursors";
+        name = "catppuccin-mocha-dark-cursors";
         package = pkgs.catppuccin-cursors.mochaDark;
         size = 24;
         gtk.enable = true;
@@ -240,7 +240,6 @@ in
 
             # Startup applications
             startup = [
-                { command = "mako"; }
                 {
                     command = ''
                         swayidle -w \

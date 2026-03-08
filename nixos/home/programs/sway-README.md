@@ -43,7 +43,7 @@ Reboot after the first switch to get greetd as the login manager.
 
 **Catppuccin Mocha** applied consistently across all components:
 
-- **GTK**: `Catppuccin-Mocha-Standard-Blue-Dark`
+- **GTK**: `catppuccin-mocha-blue-standard-dark`
 - **Icons**: Papirus-Dark
 - **Cursor**: Catppuccin Mocha Dark (24px)
 - **Font**: FiraCode Nerd Font (11pt) + Font Awesome for Waybar icons
@@ -143,7 +143,7 @@ Managed in `sway-settings.nix` via `home.packages`:
 | Package | Purpose |
 |---|---|
 | waybar | Status bar |
-| rofi-wayland | App launcher |
+| rofi | App launcher |
 | mako | Notification daemon |
 | swaylock-effects | Lock screen (with blur/vignette) |
 | swaybg | Wallpaper setter |
