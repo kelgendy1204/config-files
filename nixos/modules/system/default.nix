@@ -4,8 +4,9 @@
     imports = [
         ./audio.nix
         ./boot.nix
-        # ./gnome.nix     # Desktop: swap with ./kde.nix to switch
+        # ./gnome.nix     # Desktop: uncomment one DE, comment the others
         ./kde.nix
+        # ./sway.nix
         ./locale.nix
         ./networking.nix
         ./nix.nix
