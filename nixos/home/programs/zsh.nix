@@ -70,12 +70,6 @@
         '';
 
         shellAliases = {
-            # Home Manager
-            myhm-switch = "home-manager switch --flake ~/config-files/nixos";
-            myhm-generations = "home-manager generations";
-            myhm-packages = "home-manager packages";
-            myhm-rollback = "home-manager switch --rollback";
-
             # NixOS
             mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nixos#lenovo-laptop";
             mynix-check = "nix flake check ~/config-files/nixos --impure";
@@ -83,9 +77,11 @@
             mynix-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
             mynix-rollback = "sudo nixos-rebuild switch --rollback";
 
+            # General
             myip = "curl http://ipecho.net/plain; echo";
             rsync = "rsync -avhP";
 
+            # GitHub CLI
             pr_view = "gh pr view --web";
             pr_checks = "gh pr checks";
             pr_diff = "gh pr diff";
