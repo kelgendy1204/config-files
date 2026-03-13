@@ -25,8 +25,6 @@
         extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
 
-    services.printing.enable = true;
-
     # System packages needed for Sway
     environment.systemPackages = with pkgs; [
         wayland-utils

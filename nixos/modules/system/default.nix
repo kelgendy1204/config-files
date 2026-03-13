@@ -4,9 +4,8 @@
     imports = [
         ./audio.nix
         ./boot.nix
-        # ./gnome.nix     # Desktop: uncomment one DE, comment the others
-        # ./kde.nix
-        ./sway.nix
+        ./desktop
+        ./fonts.nix
         ./locale.nix
         ./networking.nix
         ./nix.nix

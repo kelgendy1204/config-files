@@ -67,9 +67,6 @@ in
 
         # Image viewer
         imv
-
-        # Fonts for waybar icons
-        font-awesome
     ];
 
     # GTK theme (Catppuccin)

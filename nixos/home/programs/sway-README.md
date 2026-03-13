@@ -6,7 +6,7 @@ Tiling Wayland compositor with Catppuccin Mocha theme, managed declaratively via
 
 Two files must be updated — system-level and home-level:
 
-**1. System module** (`modules/system/default.nix`):
+**1. System module** (`modules/system/desktop/default.nix`):
 
 ```nix
 # ./gnome.nix
@@ -14,7 +14,7 @@ Two files must be updated — system-level and home-level:
 ./sway.nix          # uncomment this, comment the others
 ```
 
-**2. Home Manager** (`home/lenovo-laptop.nix`):
+**2. Home Manager** (`home/default.nix`):
 
 ```nix
 # ./programs/gnome-settings.nix
@@ -22,11 +22,10 @@ Two files must be updated — system-level and home-level:
 ./programs/sway-settings.nix    # uncomment this, comment the others
 ```
 
-**3. Apply both:**
+**3. Apply:**
 
 ```sh
-mynix-switch     # rebuilds NixOS (system-level: greetd, sway, polkit, etc.)
-myhm-switch      # rebuilds Home Manager (user-level: waybar, rofi, mako, etc.)
+mynix-switch     # rebuilds NixOS + Home Manager (system + user level)
 ```
 
 Reboot after the first switch to get greetd as the login manager.
@@ -35,7 +34,9 @@ Reboot after the first switch to get greetd as the login manager.
 
 | File | Layer | What it does |
 |---|---|---|
-| `modules/system/sway.nix` | NixOS | Sway WM, greetd/tuigreet login, XDG portals, polkit, PAM for swaylock, printing |
+| `modules/system/desktop/sway.nix` | NixOS | Sway WM, greetd/tuigreet login, XDG portals, polkit, PAM for swaylock |
+| `modules/system/desktop/default.nix` | NixOS | DE selector (imports active DE), printing |
+| `modules/system/fonts.nix` | NixOS | All fonts (Nerd Fonts, Font Awesome) |
 | `home/programs/sway-settings.nix` | Home Manager | Sway config, Waybar, Rofi, Mako, Swaylock, GTK/cursor theme, packages |
 | `modules/system/audio.nix` | NixOS | PipeWire (shared across all DEs, always imported) |
 
@@ -156,9 +157,10 @@ Managed in `sway-settings.nix` via `home.packages`:
 | playerctl | Media player control |
 | pcmanfm | File manager |
 | imv | Image viewer |
-| font-awesome | Icon font for Waybar |
 
-System-level packages (from `sway.nix`): `wayland-utils`, `wl-clipboard`, `xdg-utils`.
+Fonts (from `modules/system/fonts.nix`): `nerd-fonts.meslo-lg`, `nerd-fonts.fira-code`, `font-awesome`.
+
+System-level packages (from `desktop/sway.nix`): `wayland-utils`, `wl-clipboard`, `xdg-utils`.
 
 ## Workspace Assignments
 
