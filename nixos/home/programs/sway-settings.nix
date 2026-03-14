@@ -280,6 +280,25 @@ in
             "battery"
         ];
 
+        "sway/workspaces" = {
+            format = "{icon}";
+            format-icons = {
+                "1" = "";
+                "2" = "";
+                "3" = "";
+                "4" = "";
+                "5" = "";
+                "6" = "6";
+                "7" = "7";
+                "8" = "8";
+                "9" = "9";
+                "10" = "10";
+                focused = "";
+                urgent = "";
+                default = "";
+            };
+        };
+
         clock = {
             format = "  {:%H:%M}";
             format-alt = "  {:%A, %B %d, %Y}";
@@ -294,7 +313,7 @@ in
             format = "{icon}  {capacity}%";
             format-charging = "  {capacity}%";
             format-plugged = "  {capacity}%";
-            format-icons = [ "" "" "" "" "" ];
+            format-icons = ["", "", "", "", ""];
         };
 
         network = {
@@ -316,7 +335,7 @@ in
 
         backlight = {
             format = "{icon}  {percent}%";
-            format-icons = [ "" "" "" "" "" "" "" "" "" ];
+            format-icons = ["", ""];
         };
 
         tray = {
