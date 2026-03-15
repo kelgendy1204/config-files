@@ -5,25 +5,28 @@
     "spacing": 4,
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "network", "backlight", "battery"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["cpu", "memory", "tray", "pulseaudio", "network", "backlight", "battery", "clock", "sway/language", "privacy"],
+
+   "sway/language": {
+        "format": "{}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    },
 
     "sway/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "1": "\uf489",
-            "2": "\uf0ac",
-            "3": "\uf121",
-            "4": "\uf075",
-            "5": "\uf001",
+            "1": "",
+            "2": "",
+            "3": "3",
+            "4": "4",
+            "5": "5",
             "6": "6",
             "7": "7",
             "8": "8",
             "9": "9",
             "10": "10",
-            "focused": "\uf192",
-            "urgent": "\uf06a",
-            "default": "\uf10c"
+            "urgent": "",
         }
     },
 
@@ -38,9 +41,59 @@
         "tooltip-format": "{app}: {title}"
     },
 
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+        {
+            "type": "screenshare",
+            "tooltip": true,
+            "tooltip-icon-size": 24
+        },
+        {
+            "type": "audio-out",
+            "tooltip": true,
+            "tooltip-icon-size": 24
+        },
+        {
+            "type": "audio-in",
+            "tooltip": true,
+            "tooltip-icon-size": 24
+        }
+        ],
+        "ignore-monitor": true,
+        "ignore": [
+        {
+            "type": "audio-in",
+            "name": "cava"
+        },
+        {
+            "type": "screenshare",
+            "name": "obs"
+        }
+        ]
+    },
+
+    "memory": {
+        "interval": 30,
+        // "format": "{}% ",
+        "format": "{used:0.1f}G/{total:0.1f}G ",
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "{}%  ",
+        "max-length": 10
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50
+    },
+
     "clock": {
-        "format": "\uf017 {:%H:%M}",
-        "format-alt": "\uf073 {:%A, %B %d, %Y}",
+        "format": "\uf073 {:%A, %B %d, %Y  \uf017 %H:%M}",
         "tooltip-format": "<tt>{calendar}</tt>"
     },
 
