@@ -47,7 +47,7 @@ Reboot after the first switch to get greetd as the login manager.
 - **GTK**: `catppuccin-mocha-blue-standard-dark`
 - **Icons**: Papirus-Dark
 - **Cursor**: Catppuccin Mocha Dark (24px)
-- **Font**: FiraCode Nerd Font (11pt) + Font Awesome for Waybar icons
+- **Font**: JetBrains Mono Nerd Font (11pt) + Font Awesome for Waybar icons
 - **Accent color**: Lavender (`#b4befe`)
 
 ## Keybindings
@@ -82,6 +82,7 @@ These are Sway defaults (inherited via `mkOptionDefault`):
 | `Super + b` | Browser (Google Chrome) |
 | `Super + e` | File manager (PCManFM) |
 | `Super + l` | Lock screen (Swaylock) |
+| `Super + Shift + l` | Power menu (Wlogout) |
 | `Super + n` | Dismiss notification |
 | `Super + Shift + n` | Dismiss all notifications |
 | `Print` | Screenshot (full screen to clipboard) |
@@ -106,8 +107,12 @@ These are Sway defaults (inherited via `mkOptionDefault`):
 Top bar with three sections:
 
 - **Left**: Workspaces, Sway mode, Scratchpad
-- **Center**: Clock (click for full date)
-- **Right**: System tray, Volume, Network, Backlight, Battery
+- **Center**: Active window title
+- **Right**: CPU, Memory, Bandwidth, Tray, Volume, Network, Backlight, Battery, Clock, Language, Privacy
+
+### Wlogout (power menu)
+
+`Super + Shift + l` opens a full-screen power menu with six actions: Lock, Logout, Suspend, Hibernate, Reboot, Shutdown. Each button is color-coded with a Catppuccin accent and fills in on hover. Configuration lives at `~/.config/wlogout/style.css`.
 
 ### Rofi (app launcher)
 
@@ -155,10 +160,11 @@ Managed in `sway-settings.nix` via `home.packages`:
 | brightnessctl | Backlight control |
 | pamixer | PulseAudio/PipeWire mixer CLI |
 | playerctl | Media player control |
+| wlogout | Power menu (lock/logout/suspend/reboot/shutdown) |
 | pcmanfm | File manager |
 | imv | Image viewer |
 
-Fonts (from `modules/system/fonts.nix`): `nerd-fonts.meslo-lg`, `nerd-fonts.fira-code`, `font-awesome`.
+Fonts (from `modules/system/fonts.nix`): `nerd-fonts.meslo-lg`, `nerd-fonts.fira-code`, `nerd-fonts.jetbrains-mono`, `font-awesome`.
 
 System-level packages (from `desktop/sway.nix`): `wayland-utils`, `wl-clipboard`, `xdg-utils`.
 
@@ -176,6 +182,7 @@ These windows open floating by default:
 - `imv` (image viewer)
 - `pavucontrol` (audio settings)
 - `pcmanfm` (file manager)
+- `wlogout` (power menu)
 - File Upload / Save As dialogs
 
 ## Customization
@@ -190,6 +197,14 @@ output = {
         bg = "/path/to/wallpaper.jpg fill";
     };
 };
+```
+
+Scale modes: `fill`, `fit`, `stretch`, `center`, `tile`.
+
+To change the wallpaper at runtime without rebuilding:
+
+```sh
+swaymsg output '*' bg /path/to/wallpaper.jpg fill
 ```
 
 ### Colors

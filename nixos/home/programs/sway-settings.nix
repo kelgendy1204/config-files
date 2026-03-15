@@ -67,6 +67,9 @@ in
 
         # Image viewer
         imv
+
+        # Power menu
+        wlogout
     ];
 
     # GTK theme (Catppuccin)
@@ -208,6 +211,7 @@ in
 
                 # Lock
                 "${modifier}+l" = "exec swaylock";
+                "${modifier}+Shift+l" = "exec wlogout";
 
                 # Volume
                 "XF86AudioRaiseVolume" = "exec pamixer -i 5";
@@ -255,6 +259,7 @@ in
             for_window [app_id="imv"] floating enable
             for_window [app_id="pavucontrol"] floating enable
             for_window [app_id="pcmanfm"] floating enable
+            for_window [app_id="wlogout"] floating enable
             for_window [title="File Upload"] floating enable
             for_window [title="Save As"] floating enable
 
@@ -338,68 +343,202 @@ in
         }
 
         * {
-            bg: ${colors.base};
-            bg-alt: ${colors.surface0};
-            fg: ${colors.text};
-            fg-alt: ${colors.subtext0};
-            accent: ${colors.lavender};
-            urgent: ${colors.red};
+            bg:        ${colors.base};
+            bg-alt:    ${colors.surface0};
+            bg-hover:  ${colors.surface1};
+            fg:        ${colors.text};
+            fg-dim:    ${colors.subtext1};
+            fg-muted:  ${colors.overlay1};
+            accent:    ${colors.lavender};
+            urgent:    ${colors.red};
 
             background-color: transparent;
             text-color: @fg;
         }
 
         window {
-            width: 600px;
-            padding: 20px;
+            width: 620px;
+            padding: 16px;
             background-color: @bg;
-            border: 2px;
+            border: 2px solid;
             border-color: @accent;
-            border-radius: 12px;
+            border-radius: 14px;
+        }
+
+        mainbox {
+            spacing: 0;
         }
 
         inputbar {
             children: [ prompt, entry ];
-            padding: 12px;
+            padding: 10px 14px;
             background-color: @bg-alt;
             border-radius: 8px;
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
+            spacing: 8px;
         }
 
         prompt {
-            padding: 0 8px 0 0;
             text-color: @accent;
+            font: "JetBrainsMono Nerd Font Bold 12";
         }
 
         entry {
             placeholder: "Search...";
-            placeholder-color: @fg-alt;
+            placeholder-color: @fg-muted;
+            text-color: @fg;
         }
 
         listview {
             lines: 8;
             columns: 1;
-            spacing: 4px;
+            spacing: 2px;
             fixed-height: true;
+            background-color: transparent;
         }
 
         element {
-            padding: 10px;
+            padding: 9px 12px;
             border-radius: 6px;
+            background-color: transparent;
+            text-color: @fg-dim;
+            spacing: 10px;
         }
 
-        element selected {
+        element normal.normal {
+            background-color: transparent;
+            text-color: @fg-dim;
+        }
+
+        element alternate.normal {
+            background-color: transparent;
+            text-color: @fg-dim;
+        }
+
+        element selected.normal {
             background-color: @accent;
             text-color: @bg;
         }
 
+        element normal.urgent,
+        element alternate.urgent {
+            text-color: @urgent;
+        }
+
+        element selected.urgent {
+            background-color: @urgent;
+            text-color: @bg;
+        }
+
         element-icon {
-            size: 24px;
-            margin: 0 10px 0 0;
+            size: 22px;
+            vertical-align: 0.5;
         }
 
         element-text {
             vertical-align: 0.5;
+            text-color: inherit;
+        }
+
+        scrollbar {
+            width: 4px;
+            handle-width: 4px;
+            handle-color: @accent;
+            background-color: @bg-alt;
+            border-radius: 2px;
+        }
+    '';
+
+    # ── Wlogout ───────────────────────────────────────────────────────
+    xdg.configFile."wlogout/style.css".text = ''
+        * {
+            font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+            font-size: 14px;
+            background-image: none;
+            box-shadow: none;
+        }
+
+        window {
+            background-color: rgba(17, 17, 27, 0.92);
+        }
+
+        button {
+            color: ${colors.text};
+            background-color: ${colors.surface0};
+            border: 2px solid transparent;
+            border-radius: 12px;
+            margin: 8px;
+            padding: 20px 30px;
+            font-size: 16px;
+            min-width: 130px;
+            min-height: 80px;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background-color: ${colors.surface1};
+            border-color: ${colors.lavender};
+            color: ${colors.lavender};
+        }
+
+        #lock {
+            border-color: ${colors.blue};
+            color: ${colors.blue};
+        }
+
+        #lock:hover {
+            background-color: ${colors.blue};
+            color: ${colors.base};
+        }
+
+        #logout {
+            border-color: ${colors.green};
+            color: ${colors.green};
+        }
+
+        #logout:hover {
+            background-color: ${colors.green};
+            color: ${colors.base};
+        }
+
+        #suspend {
+            border-color: ${colors.yellow};
+            color: ${colors.yellow};
+        }
+
+        #suspend:hover {
+            background-color: ${colors.yellow};
+            color: ${colors.base};
+        }
+
+        #hibernate {
+            border-color: ${colors.peach};
+            color: ${colors.peach};
+        }
+
+        #hibernate:hover {
+            background-color: ${colors.peach};
+            color: ${colors.base};
+        }
+
+        #reboot {
+            border-color: ${colors.mauve};
+            color: ${colors.mauve};
+        }
+
+        #reboot:hover {
+            background-color: ${colors.mauve};
+            color: ${colors.base};
+        }
+
+        #shutdown {
+            border-color: ${colors.red};
+            color: ${colors.red};
+        }
+
+        #shutdown:hover {
+            background-color: ${colors.red};
+            color: ${colors.base};
         }
     '';
 }

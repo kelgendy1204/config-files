@@ -1,5 +1,5 @@
 * {
-    font-family: "FiraCode Nerd Font", "Font Awesome 6 Free";
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
     font-size: 14px;
     min-height: 0;
 }
@@ -138,8 +138,12 @@ window#waybar {
 }
 
 #window {
-    padding: 0 12px;
+    padding: 0 14px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background: transparent;
     color: #a6adc8;
+    font-style: italic;
 }
 
 @keyframes blink {
