@@ -109,6 +109,7 @@ in
     wayland.windowManager.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
+        checkConfig = false;
 
         config = {
             inherit modifier;
@@ -187,7 +188,7 @@ in
             # Output (wallpaper)
             output = {
                 "*" = {
-                    bg = "${colors.crust} solid_color";
+                    bg = "~/Pictures/wallpaper-1.jpg fill";
                 };
             };
 
