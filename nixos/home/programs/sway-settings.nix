@@ -89,7 +89,7 @@ in
             size = 24;
         };
         font = {
-            name = "FiraCode Nerd Font";
+            name = "JetBrainsMono Nerd Font";
             size = 11;
         };
     };
@@ -114,7 +114,7 @@ in
 
             # Font
             fonts = {
-                names = [ "FiraCode Nerd Font" ];
+                names = [ "JetBrainsMono Nerd Font" ];
                 size = 11.0;
             };
 
@@ -273,7 +273,7 @@ in
     services.mako = {
         enable = true;
         settings = {
-            font = "FiraCode Nerd Font 11";
+            font = "JetBrainsMono Nerd Font 11";
             background-color = colors.base;
             text-color = colors.text;
             border-color = colors.lavender;
@@ -322,7 +322,7 @@ in
         text-clear-color=${builtins.substring 1 6 colors.text}
         text-ver-color=${builtins.substring 1 6 colors.text}
         text-wrong-color=${builtins.substring 1 6 colors.red}
-        font=FiraCode Nerd Font
+        font=JetBrainsMono Nerd Font
     '';
 
     # ── Rofi ──────────────────────────────────────────────────────────
@@ -330,7 +330,7 @@ in
         configuration {
             show-icons: true;
             icon-theme: "Papirus-Dark";
-            font: "FiraCode Nerd Font 12";
+            font: "JetBrainsMono Nerd Font 12";
             display-drun: " Apps";
             display-run: " Run";
             display-window: " Windows";

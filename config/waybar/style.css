@@ -52,9 +52,12 @@ window#waybar {
 
 #clock,
 #battery,
+#cpu,
+#memory,
 #network,
 #pulseaudio,
 #backlight,
+#language,
 #tray {
     padding: 0 12px;
     margin: 4px 2px;
@@ -93,6 +96,11 @@ window#waybar {
     color: #6c7086;
 }
 
+#network.bandwidth {
+    color: #a6e3a1;
+    font-size: 12px;
+}
+
 #pulseaudio {
     color: #cba6f7;
 }
@@ -107,6 +115,31 @@ window#waybar {
 
 #tray {
     color: #cdd6f4;
+}
+
+#cpu {
+    color: #fab387;
+}
+
+#memory {
+    color: #f38ba8;
+}
+
+#language {
+    color: #94e2d5;
+}
+
+#privacy {
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background: #313244;
+    color: #f38ba8;
+}
+
+#window {
+    padding: 0 12px;
+    color: #a6adc8;
 }
 
 @keyframes blink {

@@ -6,7 +6,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "memory", "tray", "pulseaudio", "network", "backlight", "battery", "clock", "sway/language", "privacy"],
+    "modules-right": ["cpu", "memory", "network#bandwidth", "tray", "pulseaudio", "network", "backlight", "battery", "clock", "sway/language", "privacy"],
 
    "sway/language": {
         "format": "{}",
@@ -113,6 +113,14 @@
         "format-ethernet": "\uf0e8 {ipaddr}",
         "format-disconnected": "\uf127 Disconnected",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)"
+    },
+
+    "network#bandwidth": {
+        "interval": 5,
+        "format-wifi": "\uf063 {bandwidthDownBits} \uf062 {bandwidthUpBits}",
+        "format-ethernet": "\uf063 {bandwidthDownBits} \uf062 {bandwidthUpBits}",
+        "format-disconnected": "",
+        "tooltip-format": "{ifname}: \uf063 {bandwidthDownBytes} \uf062 {bandwidthUpBytes}"
     },
 
     "pulseaudio": {
