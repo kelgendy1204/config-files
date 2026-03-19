@@ -67,6 +67,9 @@ in
 
         # Image viewer
         imv
+
+        # Power menu
+        wlogout
     ];
 
     # GTK theme (Catppuccin)
@@ -89,7 +92,7 @@ in
             size = 24;
         };
         font = {
-            name = "FiraCode Nerd Font";
+            name = "JetBrainsMono Nerd Font";
             size = 11;
         };
     };
@@ -106,6 +109,7 @@ in
     wayland.windowManager.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
+        checkConfig = false;
 
         config = {
             inherit modifier;
@@ -114,7 +118,7 @@ in
 
             # Font
             fonts = {
-                names = [ "FiraCode Nerd Font" ];
+                names = [ "JetBrainsMono Nerd Font" ];
                 size = 11.0;
             };
 
@@ -184,7 +188,7 @@ in
             # Output (wallpaper)
             output = {
                 "*" = {
-                    bg = "${colors.crust} solid_color";
+                    bg = "~/Pictures/wallpaper-1.jpg fill";
                 };
             };
 
@@ -208,6 +212,7 @@ in
 
                 # Lock
                 "${modifier}+l" = "exec swaylock";
+                "${modifier}+Shift+l" = "exec wlogout";
 
                 # Volume
                 "XF86AudioRaiseVolume" = "exec pamixer -i 5";
@@ -255,6 +260,7 @@ in
             for_window [app_id="imv"] floating enable
             for_window [app_id="pavucontrol"] floating enable
             for_window [app_id="pcmanfm"] floating enable
+            for_window [app_id="wlogout"] floating enable
             for_window [title="File Upload"] floating enable
             for_window [title="Save As"] floating enable
 
@@ -264,171 +270,16 @@ in
     };
 
     # ── Waybar ────────────────────────────────────────────────────────
-    xdg.configFile."waybar/config".text = builtins.toJSON {
-        layer = "top";
-        position = "top";
-        height = 36;
-        spacing = 4;
-
-        modules-left = [ "sway/workspaces" "sway/mode" "sway/scratchpad" ];
-        modules-center = [ "clock" ];
-        modules-right = [
-            "tray"
-            "pulseaudio"
-            "network"
-            "backlight"
-            "battery"
-        ];
-
-        clock = {
-            format = "  {:%H:%M}";
-            format-alt = "  {:%A, %B %d, %Y}";
-            tooltip-format = "<tt>{calendar}</tt>";
-        };
-
-        battery = {
-            states = {
-                warning = 30;
-                critical = 15;
-            };
-            format = "{icon}  {capacity}%";
-            format-charging = "  {capacity}%";
-            format-plugged = "  {capacity}%";
-            format-icons = [ "" "" "" "" "" ];
-        };
-
-        network = {
-            format-wifi = "  {signalStrength}%";
-            format-ethernet = "  {ipaddr}";
-            format-disconnected = "  Disconnected";
-            tooltip-format-wifi = "{essid} ({signalStrength}%)";
-        };
-
-        pulseaudio = {
-            format = "{icon}  {volume}%";
-            format-muted = "  Muted";
-            format-icons = {
-                default = [ "" "" "" ];
-            };
-            on-click = "pamixer -t";
-            on-click-right = "pavucontrol";
-        };
-
-        backlight = {
-            format = "{icon}  {percent}%";
-            format-icons = [ "" "" "" "" "" "" "" "" "" ];
-        };
-
-        tray = {
-            spacing = 10;
-        };
+    xdg.configFile."waybar" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/waybar";
+        recursive = false;
     };
-
-    xdg.configFile."waybar/style.css".text = ''
-        * {
-            font-family: "FiraCode Nerd Font", "Font Awesome 6 Free";
-            font-size: 14px;
-            min-height: 0;
-        }
-
-        window#waybar {
-            background-color: ${colors.crust};
-            color: ${colors.text};
-            border-bottom: 2px solid ${colors.surface0};
-        }
-
-        #workspaces button {
-            padding: 0 8px;
-            color: ${colors.overlay0};
-            background: transparent;
-            border-radius: 6px;
-            margin: 4px 2px;
-        }
-
-        #workspaces button.focused {
-            color: ${colors.base};
-            background: ${colors.lavender};
-        }
-
-        #workspaces button.urgent {
-            color: ${colors.base};
-            background: ${colors.red};
-        }
-
-        #workspaces button:hover {
-            background: ${colors.surface1};
-            color: ${colors.text};
-        }
-
-        #clock,
-        #battery,
-        #network,
-        #pulseaudio,
-        #backlight,
-        #tray {
-            padding: 0 12px;
-            margin: 4px 2px;
-            border-radius: 6px;
-            background: ${colors.surface0};
-            color: ${colors.text};
-        }
-
-        #clock {
-            color: ${colors.blue};
-            font-weight: bold;
-        }
-
-        #battery {
-            color: ${colors.green};
-        }
-
-        #battery.warning {
-            color: ${colors.yellow};
-        }
-
-        #battery.critical {
-            color: ${colors.red};
-            animation: blink 1s linear infinite;
-        }
-
-        #battery.charging {
-            color: ${colors.green};
-        }
-
-        #network {
-            color: ${colors.sapphire};
-        }
-
-        #network.disconnected {
-            color: ${colors.overlay0};
-        }
-
-        #pulseaudio {
-            color: ${colors.mauve};
-        }
-
-        #pulseaudio.muted {
-            color: ${colors.overlay0};
-        }
-
-        #backlight {
-            color: ${colors.yellow};
-        }
-
-        #tray {
-            color: ${colors.text};
-        }
-
-        @keyframes blink {
-            to { color: ${colors.surface0}; }
-        }
-    '';
 
     # ── Mako (notifications) ──────────────────────────────────────────
     services.mako = {
         enable = true;
         settings = {
-            font = "FiraCode Nerd Font 11";
+            font = "JetBrainsMono Nerd Font 11";
             background-color = colors.base;
             text-color = colors.text;
             border-color = colors.lavender;
@@ -477,7 +328,7 @@ in
         text-clear-color=${builtins.substring 1 6 colors.text}
         text-ver-color=${builtins.substring 1 6 colors.text}
         text-wrong-color=${builtins.substring 1 6 colors.red}
-        font=FiraCode Nerd Font
+        font=JetBrainsMono Nerd Font
     '';
 
     # ── Rofi ──────────────────────────────────────────────────────────
@@ -485,7 +336,7 @@ in
         configuration {
             show-icons: true;
             icon-theme: "Papirus-Dark";
-            font: "FiraCode Nerd Font 12";
+            font: "JetBrainsMono Nerd Font 12";
             display-drun: " Apps";
             display-run: " Run";
             display-window: " Windows";
@@ -493,68 +344,202 @@ in
         }
 
         * {
-            bg: ${colors.base};
-            bg-alt: ${colors.surface0};
-            fg: ${colors.text};
-            fg-alt: ${colors.subtext0};
-            accent: ${colors.lavender};
-            urgent: ${colors.red};
+            bg:        ${colors.base};
+            bg-alt:    ${colors.surface0};
+            bg-hover:  ${colors.surface1};
+            fg:        ${colors.text};
+            fg-dim:    ${colors.subtext1};
+            fg-muted:  ${colors.overlay1};
+            accent:    ${colors.lavender};
+            urgent:    ${colors.red};
 
             background-color: transparent;
             text-color: @fg;
         }
 
         window {
-            width: 600px;
-            padding: 20px;
+            width: 620px;
+            padding: 16px;
             background-color: @bg;
-            border: 2px;
+            border: 2px solid;
             border-color: @accent;
-            border-radius: 12px;
+            border-radius: 14px;
+        }
+
+        mainbox {
+            spacing: 0;
         }
 
         inputbar {
             children: [ prompt, entry ];
-            padding: 12px;
+            padding: 10px 14px;
             background-color: @bg-alt;
             border-radius: 8px;
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
+            spacing: 8px;
         }
 
         prompt {
-            padding: 0 8px 0 0;
             text-color: @accent;
+            font: "JetBrainsMono Nerd Font Bold 12";
         }
 
         entry {
             placeholder: "Search...";
-            placeholder-color: @fg-alt;
+            placeholder-color: @fg-muted;
+            text-color: @fg;
         }
 
         listview {
             lines: 8;
             columns: 1;
-            spacing: 4px;
+            spacing: 2px;
             fixed-height: true;
+            background-color: transparent;
         }
 
         element {
-            padding: 10px;
+            padding: 9px 12px;
             border-radius: 6px;
+            background-color: transparent;
+            text-color: @fg-dim;
+            spacing: 10px;
         }
 
-        element selected {
+        element normal.normal {
+            background-color: transparent;
+            text-color: @fg-dim;
+        }
+
+        element alternate.normal {
+            background-color: transparent;
+            text-color: @fg-dim;
+        }
+
+        element selected.normal {
             background-color: @accent;
             text-color: @bg;
         }
 
+        element normal.urgent,
+        element alternate.urgent {
+            text-color: @urgent;
+        }
+
+        element selected.urgent {
+            background-color: @urgent;
+            text-color: @bg;
+        }
+
         element-icon {
-            size: 24px;
-            margin: 0 10px 0 0;
+            size: 22px;
+            vertical-align: 0.5;
         }
 
         element-text {
             vertical-align: 0.5;
+            text-color: inherit;
+        }
+
+        scrollbar {
+            width: 4px;
+            handle-width: 4px;
+            handle-color: @accent;
+            background-color: @bg-alt;
+            border-radius: 2px;
+        }
+    '';
+
+    # ── Wlogout ───────────────────────────────────────────────────────
+    xdg.configFile."wlogout/style.css".text = ''
+        * {
+            font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+            font-size: 14px;
+            background-image: none;
+            box-shadow: none;
+        }
+
+        window {
+            background-color: rgba(17, 17, 27, 0.92);
+        }
+
+        button {
+            color: ${colors.text};
+            background-color: ${colors.surface0};
+            border: 2px solid transparent;
+            border-radius: 12px;
+            margin: 8px;
+            padding: 20px 30px;
+            font-size: 16px;
+            min-width: 130px;
+            min-height: 80px;
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            background-color: ${colors.surface1};
+            border-color: ${colors.lavender};
+            color: ${colors.lavender};
+        }
+
+        #lock {
+            border-color: ${colors.blue};
+            color: ${colors.blue};
+        }
+
+        #lock:hover {
+            background-color: ${colors.blue};
+            color: ${colors.base};
+        }
+
+        #logout {
+            border-color: ${colors.green};
+            color: ${colors.green};
+        }
+
+        #logout:hover {
+            background-color: ${colors.green};
+            color: ${colors.base};
+        }
+
+        #suspend {
+            border-color: ${colors.yellow};
+            color: ${colors.yellow};
+        }
+
+        #suspend:hover {
+            background-color: ${colors.yellow};
+            color: ${colors.base};
+        }
+
+        #hibernate {
+            border-color: ${colors.peach};
+            color: ${colors.peach};
+        }
+
+        #hibernate:hover {
+            background-color: ${colors.peach};
+            color: ${colors.base};
+        }
+
+        #reboot {
+            border-color: ${colors.mauve};
+            color: ${colors.mauve};
+        }
+
+        #reboot:hover {
+            background-color: ${colors.mauve};
+            color: ${colors.base};
+        }
+
+        #shutdown {
+            border-color: ${colors.red};
+            color: ${colors.red};
+        }
+
+        #shutdown:hover {
+            background-color: ${colors.red};
+            color: ${colors.base};
         }
     '';
 }
