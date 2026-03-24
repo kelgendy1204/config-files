@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
     home.packages = with pkgs; [
@@ -81,7 +81,7 @@
         config = null;
     };
 
-    xdg.configFile."sway/config" = {
+    xdg.configFile."sway/config" = lib.mkForce {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/config";
     };
 

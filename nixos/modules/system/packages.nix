@@ -12,6 +12,7 @@
         tealdeer
         google-chrome
         btop
+        htop
         nodejs
         gh
     ];
