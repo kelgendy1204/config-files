@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, config, ... }:
 
 let
     # Catppuccin Mocha color palette
@@ -30,7 +30,6 @@ let
         rosewater = "#f5e0dc";
     };
 
-    modifier = "Mod4"; # Super key
 in
 {
     home.packages = with pkgs; [
@@ -110,163 +109,12 @@ in
         enable = true;
         wrapperFeatures.gtk = true;
         checkConfig = false;
+        config = null;
+    };
 
-        config = {
-            inherit modifier;
-            terminal = "kitty";
-            menu = "rofi -show drun -show-icons";
-
-            # Font
-            fonts = {
-                names = [ "JetBrainsMono Nerd Font" ];
-                size = 11.0;
-            };
-
-            # Gaps
-            gaps = {
-                inner = 8;
-                outer = 4;
-                smartGaps = true;
-            };
-
-            # Window borders
-            window = {
-                titlebar = false;
-                border = 2;
-            };
-
-            floating = {
-                titlebar = false;
-                border = 2;
-            };
-
-            # Colors (Catppuccin Mocha)
-            colors = {
-                focused = {
-                    border = colors.lavender;
-                    background = colors.base;
-                    text = colors.text;
-                    indicator = colors.lavender;
-                    childBorder = colors.lavender;
-                };
-                focusedInactive = {
-                    border = colors.surface1;
-                    background = colors.mantle;
-                    text = colors.subtext0;
-                    indicator = colors.surface1;
-                    childBorder = colors.surface1;
-                };
-                unfocused = {
-                    border = colors.surface0;
-                    background = colors.crust;
-                    text = colors.overlay0;
-                    indicator = colors.surface0;
-                    childBorder = colors.surface0;
-                };
-                urgent = {
-                    border = colors.red;
-                    background = colors.base;
-                    text = colors.red;
-                    indicator = colors.red;
-                    childBorder = colors.red;
-                };
-            };
-
-            # Input configuration (touchpad + mouse)
-            input = {
-                "type:touchpad" = {
-                    natural_scroll = "enabled";
-                    tap = "enabled";
-                    dwt = "enabled";           # disable while typing
-                    middle_emulation = "enabled";
-                };
-                "type:pointer" = {
-                    natural_scroll = "enabled";
-                };
-            };
-
-            # Output (wallpaper)
-            output = {
-                "*" = {
-                    bg = "~/Pictures/wallpaper-1.jpg fill";
-                };
-            };
-
-            # Status bar
-            bars = [{
-                command = "waybar";
-            }];
-
-            # Keybindings
-            keybindings = lib.mkOptionDefault {
-                # Launch
-                "${modifier}+Return" = "exec kitty";
-                "${modifier}+d" = "exec rofi -show drun -show-icons";
-                "${modifier}+b" = "exec google-chrome-stable";
-                "${modifier}+e" = "exec pcmanfm";
-
-                # Screenshot
-                "Print" = "exec grim - | wl-copy";
-                "${modifier}+Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
-                "${modifier}+Shift+Print" = "exec grim -g \"$(slurp)\" - | swappy -f -";
-
-                # Lock
-                "${modifier}+l" = "exec swaylock";
-                "${modifier}+Shift+l" = "exec wlogout";
-
-                # Volume
-                "XF86AudioRaiseVolume" = "exec pamixer -i 5";
-                "XF86AudioLowerVolume" = "exec pamixer -d 5";
-                "XF86AudioMute" = "exec pamixer -t";
-                "XF86AudioMicMute" = "exec pamixer --default-source -t";
-
-                # Brightness
-                "XF86MonBrightnessUp" = "exec brightnessctl set +5%";
-                "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
-
-                # Media
-                "XF86AudioPlay" = "exec playerctl play-pause";
-                "XF86AudioNext" = "exec playerctl next";
-                "XF86AudioPrev" = "exec playerctl previous";
-
-                # Notifications
-                "${modifier}+n" = "exec makoctl dismiss";
-                "${modifier}+Shift+n" = "exec makoctl dismiss --all";
-            };
-
-            # Default workspace assignments
-            assigns = {
-                "1" = [{ app_id = "kitty"; }];
-                "2" = [{ class = "Google-chrome"; }];
-            };
-
-            # Startup applications
-            startup = [
-                {
-                    command = ''
-                        swayidle -w \
-                            timeout 300 'swaylock -f' \
-                            timeout 600 'swaymsg "output * power off"' \
-                            resume 'swaymsg "output * power on"' \
-                            before-sleep 'swaylock -f'
-                    '';
-                }
-            ];
-        };
-
-        # Extra config not covered by the module
-        extraConfig = ''
-            # Floating rules
-            for_window [app_id="imv"] floating enable
-            for_window [app_id="pavucontrol"] floating enable
-            for_window [app_id="pcmanfm"] floating enable
-            for_window [app_id="wlogout"] floating enable
-            for_window [title="File Upload"] floating enable
-            for_window [title="Save As"] floating enable
-
-            # Smart borders (hide border when only one window)
-            smart_borders on
-        '';
+    xdg.configFile."sway" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway";
+        recursive = false;
     };
 
     # ── Waybar ────────────────────────────────────────────────────────
@@ -299,37 +147,10 @@ in
     };
 
     # ── Swaylock ──────────────────────────────────────────────────────
-    xdg.configFile."swaylock/config".text = ''
-        daemonize
-        show-failed-attempts
-        clock
-        indicator
-        indicator-radius=120
-        indicator-thickness=10
-        effect-blur=10x5
-        effect-vignette=0.5:0.5
-        color=${builtins.substring 1 6 colors.base}
-        bs-hl-color=${builtins.substring 1 6 colors.red}
-        key-hl-color=${builtins.substring 1 6 colors.lavender}
-        separator-color=${builtins.substring 1 6 colors.surface0}
-        inside-color=${builtins.substring 1 6 colors.base}
-        inside-clear-color=${builtins.substring 1 6 colors.base}
-        inside-ver-color=${builtins.substring 1 6 colors.base}
-        inside-wrong-color=${builtins.substring 1 6 colors.base}
-        line-color=00000000
-        line-clear-color=00000000
-        line-ver-color=00000000
-        line-wrong-color=00000000
-        ring-color=${builtins.substring 1 6 colors.surface1}
-        ring-clear-color=${builtins.substring 1 6 colors.surface1}
-        ring-ver-color=${builtins.substring 1 6 colors.blue}
-        ring-wrong-color=${builtins.substring 1 6 colors.red}
-        text-color=${builtins.substring 1 6 colors.text}
-        text-clear-color=${builtins.substring 1 6 colors.text}
-        text-ver-color=${builtins.substring 1 6 colors.text}
-        text-wrong-color=${builtins.substring 1 6 colors.red}
-        font=JetBrainsMono Nerd Font
-    '';
+    xdg.configFile."swaylock" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/swaylock";
+        recursive = false;
+    };
 
     # ── Rofi ──────────────────────────────────────────────────────────
     xdg.configFile."rofi" = {

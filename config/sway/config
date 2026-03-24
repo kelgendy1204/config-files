@@ -1,0 +1,106 @@
+# Sway configuration – Catppuccin Mocha
+
+# Modifier key (Super)
+set $mod Mod4
+
+# Terminal & launcher
+set $term kitty
+set $menu rofi -show drun -show-icons
+
+# Font
+font pango:JetBrainsMono Nerd Font 11
+
+# Gaps
+gaps inner 8
+gaps outer 4
+smart_gaps on
+
+# Window borders
+default_border pixel 2
+default_floating_border pixel 2
+
+# Colors (Catppuccin Mocha)
+# class                 border   background  text     indicator  child_border
+client.focused          #b4befe  #1e1e2e     #cdd6f4  #b4befe    #b4befe
+client.focused_inactive #45475a  #181825     #a6adc8  #45475a    #45475a
+client.unfocused        #313244  #11111b     #6c7086  #313244    #313244
+client.urgent           #f38ba8  #1e1e2e     #f38ba8  #f38ba8    #f38ba8
+
+# Input configuration
+input type:touchpad {
+    natural_scroll enabled
+    tap enabled
+    dwt enabled
+    middle_emulation enabled
+}
+
+input type:pointer {
+    natural_scroll enabled
+}
+
+# Output (wallpaper)
+output * bg ~/Pictures/wallpaper-1.jpg fill
+
+# Status bar
+bar {
+    swaybar_command waybar
+}
+
+# Keybindings
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+b exec google-chrome-stable
+bindsym $mod+e exec pcmanfm
+
+# Screenshot
+bindsym Print exec grim - | wl-copy
+bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
+
+# Lock
+bindsym $mod+l exec swaylock
+bindsym $mod+Shift+l exec wlogout
+
+# Volume
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioMicMute exec pamixer --default-source -t
+
+# Brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# Media
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Notifications
+bindsym $mod+n exec makoctl dismiss
+bindsym $mod+Shift+n exec makoctl dismiss --all
+
+# Workspace assignments
+assign [app_id="kitty"] 1
+assign [class="Google-chrome"] 2
+
+# Startup applications
+exec swayidle -w \
+    timeout 300 'swaylock -f' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f'
+
+# Floating rules
+for_window [app_id="imv"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="pcmanfm"] floating enable
+for_window [app_id="wlogout"] floating enable
+for_window [title="File Upload"] floating enable
+for_window [title="Save As"] floating enable
+
+# Smart borders (hide border when only one window)
+smart_borders on
+
+# Include default sway keybindings for workspaces, focus, etc.
+include /etc/sway/config.d/*
