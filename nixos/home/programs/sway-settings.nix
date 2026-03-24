@@ -1,36 +1,5 @@
 { pkgs, config, ... }:
 
-let
-    # Catppuccin Mocha color palette
-    colors = {
-        base = "#1e1e2e";
-        mantle = "#181825";
-        crust = "#11111b";
-        surface0 = "#313244";
-        surface1 = "#45475a";
-        surface2 = "#585b70";
-        overlay0 = "#6c7086";
-        overlay1 = "#7f849c";
-        text = "#cdd6f4";
-        subtext0 = "#a6adc8";
-        subtext1 = "#bac2de";
-        lavender = "#b4befe";
-        blue = "#89b4fa";
-        sapphire = "#74c7ec";
-        sky = "#89dceb";
-        teal = "#94e2d5";
-        green = "#a6e3a1";
-        yellow = "#f9e2af";
-        peach = "#fab387";
-        maroon = "#eba0ac";
-        red = "#f38ba8";
-        mauve = "#cba6f7";
-        pink = "#f5c2e7";
-        flamingo = "#f2cdcd";
-        rosewater = "#f5e0dc";
-    };
-
-in
 {
     home.packages = with pkgs; [
         # Bar
@@ -124,26 +93,10 @@ in
     };
 
     # ── Mako (notifications) ──────────────────────────────────────────
-    services.mako = {
-        enable = true;
-        settings = {
-            font = "JetBrainsMono Nerd Font 11";
-            background-color = colors.base;
-            text-color = colors.text;
-            border-color = colors.lavender;
-            border-size = 2;
-            border-radius = 8;
-            padding = "12";
-            margin = "12";
-            width = 350;
-            default-timeout = 5000;
-            group-by = "app-name";
-
-            "urgency=high" = {
-                border-color = colors.red;
-                default-timeout = 0;
-            };
-        };
+    services.mako.enable = true;
+    xdg.configFile."mako" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/mako";
+        recursive = false;
     };
 
     # ── Swaylock ──────────────────────────────────────────────────────
