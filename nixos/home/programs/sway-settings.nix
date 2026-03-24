@@ -81,39 +81,38 @@
         config = null;
     };
 
-    xdg.configFile."sway" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway";
-        recursive = false;
+    xdg.configFile."sway/config" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/config";
     };
 
     # ── Waybar ────────────────────────────────────────────────────────
     xdg.configFile."waybar" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/waybar";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/waybar";
         recursive = false;
     };
 
     # ── Mako (notifications) ──────────────────────────────────────────
     services.mako.enable = true;
     xdg.configFile."mako" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/mako";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/mako";
         recursive = false;
     };
 
     # ── Swaylock ──────────────────────────────────────────────────────
     xdg.configFile."swaylock" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/swaylock";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/swaylock";
         recursive = false;
     };
 
     # ── Rofi ──────────────────────────────────────────────────────────
     xdg.configFile."rofi" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/rofi";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/rofi";
         recursive = false;
     };
 
     # ── Wlogout ────────────────────────────────────────────────────────
     xdg.configFile."wlogout" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/wlogout";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/wlogout";
         recursive = false;
     };
 }
