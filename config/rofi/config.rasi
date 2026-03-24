@@ -1,0 +1,115 @@
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    font: "JetBrainsMono Nerd Font 12";
+    display-drun: " Apps";
+    display-run: " Run";
+    display-window: " Windows";
+    drun-display-format: "{name}";
+}
+
+* {
+    bg:        #1e1e2e;
+    bg-alt:    #313244;
+    bg-hover:  #45475a;
+    fg:        #cdd6f4;
+    fg-dim:    #bac2de;
+    fg-muted:  #7f849c;
+    accent:    #b4befe;
+    urgent:    #f38ba8;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    width: 620px;
+    padding: 16px;
+    background-color: @bg;
+    border: 2px solid;
+    border-color: @accent;
+    border-radius: 14px;
+}
+
+mainbox {
+    spacing: 0;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    padding: 10px 14px;
+    background-color: @bg-alt;
+    border-radius: 8px;
+    margin: 0 0 8px 0;
+    spacing: 8px;
+}
+
+prompt {
+    text-color: @accent;
+    font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+    placeholder: "Search...";
+    placeholder-color: @fg-muted;
+    text-color: @fg;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    spacing: 2px;
+    fixed-height: true;
+    background-color: transparent;
+}
+
+element {
+    padding: 9px 12px;
+    border-radius: 6px;
+    background-color: transparent;
+    text-color: @fg-dim;
+    spacing: 10px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg-dim;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg-dim;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    text-color: @urgent;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color: @bg;
+}
+
+element-icon {
+    size: 22px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+scrollbar {
+    width: 4px;
+    handle-width: 4px;
+    handle-color: @accent;
+    background-color: @bg-alt;
+    border-radius: 2px;
+}
