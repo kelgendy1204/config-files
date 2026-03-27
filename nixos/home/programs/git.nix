@@ -51,6 +51,10 @@
             column = {
                 ui = "auto";
             };
+
+            credential = {
+                helper = "libsecret";
+            };
         };
     };
 }

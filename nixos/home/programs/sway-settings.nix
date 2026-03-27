@@ -38,6 +38,23 @@
 
         # Power menu
         wlogout
+
+        # Volume mixer GUI
+        pavucontrol
+
+        # Tray applets
+        networkmanagerapplet
+        blueman
+
+        # Notifications (notify-send CLI)
+        libnotify
+
+        # Display management
+        kanshi
+        wdisplays
+
+        # Secret manager GUI
+        seahorse
     ];
 
     # GTK theme (Catppuccin)
