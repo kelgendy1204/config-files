@@ -34,7 +34,7 @@ Reboot after the first switch to get greetd as the login manager.
 
 | File | Layer | What it does |
 |---|---|---|
-| `modules/system/desktop/sway.nix` | NixOS | Sway WM, greetd/tuigreet login, XDG portals, polkit, PAM for swaylock |
+| `modules/system/desktop/sway.nix` | NixOS | Sway WM, greetd/tuigreet login, XDG portals, polkit, PAM for swaylock, gnome-keyring |
 | `modules/system/desktop/default.nix` | NixOS | DE selector (imports active DE), printing |
 | `modules/system/fonts.nix` | NixOS | All fonts (Nerd Fonts, Font Awesome) |
 | `home/programs/sway-settings.nix` | Home Manager | Sway config, Waybar, Rofi, Mako, Swaylock, GTK/cursor theme, packages |
@@ -52,39 +52,98 @@ Reboot after the first switch to get greetd as the login manager.
 
 ## Keybindings
 
-Modifier key is **Super** (Mod4).
+Modifier key is **Super** (Mod4). The sway config is a standalone file at `config/sway/config` — keybindings are defined explicitly (not via Home Manager `mkOptionDefault`). The `include /etc/sway/config.d/*` line only pulls in NixOS D-Bus/systemd integration, not default keybindings.
 
-### Window Management
-
-These are Sway defaults (inherited via `mkOptionDefault`):
+### Basics
 
 | Key | Action |
 |---|---|
-| `Super + Enter` | Open terminal (kitty) |
-| `Super + Shift + q` | Kill focused window |
-| `Super + Arrow` | Move focus |
-| `Super + Shift + Arrow` | Move window |
-| `Super + 1-9` | Switch to workspace |
-| `Super + Shift + 1-9` | Move window to workspace |
-| `Super + f` | Toggle fullscreen |
-| `Super + Shift + Space` | Toggle floating |
-| `Super + v` | Split vertical |
-| `Super + h` | Split horizontal |
-| `Super + r` | Resize mode (arrows to resize, Enter/Escape to exit) |
-| `Super + Shift + c` | Reload Sway config |
-| `Super + Shift + e` | Exit Sway |
-
-### Custom Bindings
-
-| Key | Action |
-|---|---|
+| `Super + Return` | Open terminal (kitty) |
+| `Super + q` | Kill focused window |
 | `Super + d` | App launcher (Rofi) |
 | `Super + b` | Browser (Google Chrome) |
 | `Super + e` | File manager (PCManFM) |
-| `Super + l` | Lock screen (Swaylock) |
-| `Super + Shift + l` | Power menu (Wlogout) |
-| `Super + n` | Dismiss notification |
-| `Super + Shift + n` | Dismiss all notifications |
+| `Super + Shift + c` | Reload Sway config |
+| `Super + hold + mouse` | Drag (left-click) / resize (right-click) floating windows |
+
+### Lock / Power
+
+| Key | Action |
+|---|---|
+| `Super + Escape` | Lock screen (Swaylock) |
+| `Super + Shift + Escape` | Power menu (Wlogout) |
+
+### Focus Navigation
+
+| Key | Action |
+|---|---|
+| `Super + h/j/k/l` | Focus left/down/up/right (vim-style) |
+| `Super + Arrow` | Focus left/down/up/right (arrows) |
+
+### Move Window
+
+| Key | Action |
+|---|---|
+| `Super + Shift + h/j/k/l` | Move window left/down/up/right (vim-style) |
+| `Super + Shift + Arrow` | Move window left/down/up/right (arrows) |
+
+### Workspaces
+
+| Key | Action |
+|---|---|
+| `Super + 1-9, 0` | Switch to workspace 1-10 |
+| `Super + Shift + 1-9, 0` | Move window to workspace 1-10 |
+
+### Window Layout
+
+| Key | Action |
+|---|---|
+| `Super + f` | Toggle fullscreen |
+| `Super + Shift + Space` | Toggle floating |
+| `Super + Space` | Toggle focus between tiling/floating |
+| `Super + a` | Focus parent container |
+
+### Scratchpad
+
+| Key | Action |
+|---|---|
+| `Super + grave` (backtick) | Show / cycle scratchpad |
+| `Super + Shift + grave` | Move window to scratchpad |
+
+### Modes
+
+Sway modes are mini-keymaps: press the mode entry key, then a key inside the mode. The mode exits automatically after the action (or press Escape/Return to cancel).
+
+#### Split Mode (`Super + s`)
+
+| Key (inside mode) | Action |
+|---|---|
+| `-` | Split horizontal |
+| `Shift + \` (`\|`) | Split vertical |
+| `Escape` / `Return` | Cancel |
+
+#### Layout Mode (`Super + ,`)
+
+| Key (inside mode) | Action |
+|---|---|
+| `t` | Layout tabbed |
+| `s` | Layout stacking |
+| `Escape` / `Return` | Cancel |
+
+#### Resize Mode (`Super + r`)
+
+| Key (inside mode) | Action |
+|---|---|
+| `h` / `Left` | Shrink width 10px |
+| `l` / `Right` | Grow width 10px |
+| `k` / `Up` | Shrink height 10px |
+| `j` / `Down` | Grow height 10px |
+| `Escape` / `Return` | Exit |
+
+### Screenshot
+
+| Key | Action |
+|---|---|
 | `Print` | Screenshot (full screen to clipboard) |
 | `Super + Print` | Screenshot (select region to clipboard) |
 | `Super + Shift + Print` | Screenshot (select region, open in Swappy for annotation) |
@@ -100,6 +159,13 @@ These are Sway defaults (inherited via `mkOptionDefault`):
 | `Play/Pause` | playerctl play-pause |
 | `Next/Prev` | playerctl next/previous |
 
+### Notifications
+
+| Key | Action |
+|---|---|
+| `Super + n` | Dismiss notification |
+| `Super + Shift + n` | Dismiss all notifications |
+
 ## Components
 
 ### Waybar (status bar)
@@ -112,7 +178,7 @@ Top bar with three sections:
 
 ### Wlogout (power menu)
 
-`Super + Shift + l` opens a full-screen power menu with six actions: Lock, Logout, Suspend, Hibernate, Reboot, Shutdown. Each button is color-coded with a Catppuccin accent and fills in on hover. Configuration lives at `~/.config/wlogout/style.css`.
+`Super + Shift + Escape` opens a full-screen power menu with six actions: Lock, Logout, Suspend, Hibernate, Reboot, Shutdown. Each button is color-coded with a Catppuccin accent and fills in on hover. Configuration lives at `~/.config/wlogout/style.css`.
 
 ### Rofi (app launcher)
 
@@ -124,7 +190,7 @@ Notification daemon with Catppuccin styling. Notifications auto-dismiss after 5 
 
 ### Swaylock (lock screen)
 
-Locks on `Super + l` or automatically after 5 minutes idle. Features:
+Locks on `Super + Escape` or automatically after 5 minutes idle. Features:
 - Blur effect with vignette
 - Clock display
 - Ring indicator (blue when verifying, red on wrong password)
@@ -137,6 +203,26 @@ Locks on `Super + l` or automatically after 5 minutes idle. Features:
 - **Resume**: Turn displays back on
 - **Before sleep**: Lock screen
 
+### Credential Storage (gnome-keyring)
+
+gnome-keyring provides a D-Bus secret service for apps to store/retrieve credentials. Configured in `sway.nix` at the system level:
+
+- Auto-unlocks at login via PAM integration with greetd (no manual interaction needed)
+- Used by Chrome, Firefox, `gh`, and git (via `libsecret` credential helper) transparently
+- Use `seahorse` to visually inspect stored secrets if needed
+
+### Tray Applets
+
+Started automatically via the sway config:
+
+- **nm-applet**: NetworkManager tray icon for WiFi management
+- **blueman-applet**: Bluetooth tray icon and management
+
+### Display Management
+
+- **kanshi**: Auto-detect and configure displays when plugging/unplugging external monitors. Configured via `~/.config/kanshi/config`.
+- **wdisplays**: GUI tool for display arrangement. Launch from Rofi when needed.
+
 ### Input
 
 - **Touchpad**: Natural scroll, tap-to-click, disable-while-typing, middle emulation
@@ -144,7 +230,7 @@ Locks on `Super + l` or automatically after 5 minutes idle. Features:
 
 ## Installed Packages
 
-Managed in `sway-settings.nix` via `home.packages`:
+### Home Manager (`sway-settings.nix`)
 
 | Package | Purpose |
 |---|---|
@@ -152,21 +238,34 @@ Managed in `sway-settings.nix` via `home.packages`:
 | rofi | App launcher |
 | mako | Notification daemon |
 | swaylock-effects | Lock screen (with blur/vignette) |
-| swaybg | Wallpaper setter |
+| swaybg | Wallpaper setter (used internally by sway's `output bg` directive) |
 | swayidle | Idle management |
 | grim | Screenshot capture |
-| slurp | Region selection |
+| slurp | Region selection for screenshots |
 | swappy | Screenshot annotation |
 | brightnessctl | Backlight control |
-| pamixer | PulseAudio/PipeWire mixer CLI |
-| playerctl | Media player control |
+| pamixer | PulseAudio/PipeWire volume CLI |
+| playerctl | Media player control (play/pause/next/prev) |
 | wlogout | Power menu (lock/logout/suspend/reboot/shutdown) |
 | pcmanfm | File manager |
 | imv | Image viewer |
+| pavucontrol | Volume mixer GUI (right-click volume in Waybar) |
+| networkmanagerapplet | WiFi tray applet (nm-applet) |
+| blueman | Bluetooth tray applet |
+| libnotify | `notify-send` CLI (used by apps/scripts to send notifications to mako) |
+| kanshi | Auto display configuration for external monitors |
+| wdisplays | GUI display configuration tool |
+| seahorse | GUI to inspect gnome-keyring secrets |
+
+### System-level (`sway.nix`)
+
+| Package | Purpose |
+|---|---|
+| wayland-utils | Wayland diagnostic tool (`wayland-info`) |
+| wl-clipboard | `wl-copy` / `wl-paste` for clipboard |
+| xdg-utils | `xdg-open` and friends (used by apps to open URLs/files) |
 
 Fonts (from `modules/system/fonts.nix`): `nerd-fonts.meslo-lg`, `nerd-fonts.fira-code`, `nerd-fonts.jetbrains-mono`, `font-awesome`.
-
-System-level packages (from `desktop/sway.nix`): `wayland-utils`, `wl-clipboard`, `xdg-utils`.
 
 ## Workspace Assignments
 
@@ -183,25 +282,24 @@ These windows open floating by default:
 - `pavucontrol` (audio settings)
 - `pcmanfm` (file manager)
 - `wlogout` (power menu)
+- `blueman-manager` (Bluetooth settings)
+- `wdisplays` (display configuration)
+- `seahorse` (secret manager)
 - File Upload / Save As dialogs
 
 ## Customization
 
 ### Wallpaper
 
-Currently set to a solid color (`#11111b` / Catppuccin Crust). To use an image, change the output config in `sway-settings.nix`:
+Currently set to `~/Pictures/wallpaper-1.jpg`. To change, edit the `output` line in `config/sway/config`:
 
-```nix
-output = {
-    "*" = {
-        bg = "/path/to/wallpaper.jpg fill";
-    };
-};
+```
+output * bg ~/Pictures/your-wallpaper.jpg fill
 ```
 
 Scale modes: `fill`, `fit`, `stretch`, `center`, `tile`.
 
-To change the wallpaper at runtime without rebuilding:
+To change the wallpaper at runtime without editing the config:
 
 ```sh
 swaymsg output '*' bg /path/to/wallpaper.jpg fill
@@ -209,8 +307,8 @@ swaymsg output '*' bg /path/to/wallpaper.jpg fill
 
 ### Colors
 
-All colors are defined in the `colors` attrset at the top of `sway-settings.nix`. Changing these values will propagate to Sway borders, Waybar, Rofi, Mako, and Swaylock.
+All colors are defined in the `client.*` directives in `config/sway/config`. Changing these values will update Sway's window borders. Other components (Waybar, Rofi, Mako, Swaylock) have their own Catppuccin configs in their respective config directories under `config/sway/`.
 
 ### Gaps
 
-Default: 8px inner, 4px outer. Smart gaps enabled (gaps disappear with a single window). Edit the `gaps` block in the Sway config section.
+Default: 8px inner, 4px outer. Smart gaps enabled (gaps disappear with a single window). Edit the `gaps` lines in `config/sway/config`.
