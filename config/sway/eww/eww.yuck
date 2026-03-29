@@ -1,0 +1,192 @@
+(defwindow keybindings
+  :monitor 0
+  :geometry (geometry
+    :x "16px"
+    :y "0px"
+    :width "420px"
+    :height "88%"
+    :anchor "right center")
+  :stacking "bottom"
+  :exclusive false
+  :focusable false
+  :namespace "keybindings"
+  (keybindings-widget))
+
+(defwidget keybindings-widget []
+  (box
+    :class "keybindings-root"
+    :orientation "vertical"
+    :space-evenly false
+    :spacing 0
+    (box
+      :class "kb-header"
+      :orientation "horizontal"
+      :halign "center"
+      :spacing 10
+      (label :class "kb-header-icon" :text "󰌌")
+      (label :class "kb-header-text" :text "KEYBINDINGS"))
+    (scroll
+      :vscroll true
+      :hscroll false
+      :vexpand true
+      (box
+        :orientation "vertical"
+        :space-evenly false
+        :spacing 10
+        :vexpand true
+        :style "padding: 14px 14px 18px 14px;"
+
+        (kb-section :icon "" :title "BASICS"
+          :entries {[
+            ["", "Super + Enter",   "Terminal"],
+            ["", "Super + Q",       "Close window"],
+            ["", "Super + D",       "App launcher"],
+            ["", "Super + B",       "Browser"],
+            ["", "Super + E",       "File manager"],
+            ["", "Super + Shift+C", "Reload Sway"]
+          ]})
+
+        (kb-section :icon "" :title "LOCK / POWER"
+          :entries {[
+            ["", "Super + Esc",       "Lock screen"],
+            ["󰗼 ", "Super + Shift+Esc", "Power menu"]
+          ]})
+
+        (kb-section :icon "" :title "FOCUS"
+          :entries {[
+            ["", "Super + H/J/K/L", "Focus left/down/up/right"],
+            ["", "Super + Arrows",  "Focus (arrow keys)"]
+          ]})
+
+        (kb-section :icon "󰆾" :title "MOVE WINDOW"
+          :entries {[
+            ["", "Super + Shift+H/J/K/L", "Move left/down/up/right"],
+            ["", "Super + Shift+Arrows",  "Move (arrow keys)"]
+          ]})
+
+        (kb-section :icon "󰕰" :title "WORKSPACES"
+          :entries {[
+            ["󰼏 ", "Super + 1–0",       "Switch to workspace 1–10"],
+            ["󰁁 ", "Super + Shift+1–0", "Move to workspace 1–10"]
+          ]})
+
+        (kb-section :icon "" :title "LAYOUT"
+          :entries {[
+            ["󰊓 ", "Super + F",           "Fullscreen toggle"],
+            ["󱂬 ", "Super + Shift+Space", "Floating toggle"],
+            ["", "Super + Space",       "Focus float/tile"],
+            ["", "Super + A",           "Focus parent"]
+          ]})
+
+        (kb-section :icon "" :title "SCRATCHPAD"
+          :entries {[
+            ["", "Super + `",       "Show scratchpad"],
+            ["", "Super + Shift+`", "Send to scratchpad"]
+          ]})
+
+        (kb-section :icon "" :title "MODES"
+          :entries {[
+            ["", "Super + S",   "Split mode"],
+            ["", "Super + ,",   "Layout mode"],
+            ["", "Super + R",   "Resize mode"],
+            ["", "Esc / Enter", "Exit mode"]
+          ]})
+
+        (kb-section :icon "" :title "SPLIT MODE"
+          :entries {[
+            ["", "-",         "Split horizontal"],
+            ["", "Shift+\\",  "Split vertical"]
+          ]})
+
+        (kb-section :icon "" :title "LAYOUT MODE"
+          :entries {[
+            ["", "T", "Tabbed layout"],
+            ["", "S", "Stacking layout"]
+          ]})
+
+        (kb-section :icon "󰙖" :title "RESIZE MODE"
+          :entries {[
+            ["", "H/J/K/L", "Shrink/grow width & height"],
+            ["", "Arrows",  "Resize (arrow keys)"]
+          ]})
+
+        (kb-section :icon "󰹑" :title "SCREENSHOT"
+          :entries {[
+            ["󰆞 ", "Print",             "Full screen → clipboard"],
+            ["󰆞 ", "Super + Print",     "Region → clipboard"],
+            ["", "Super+Shift+Print", "Region → annotate"]
+          ]})
+
+        (kb-section :icon "󰕾" :title "VOLUME"
+          :entries {[
+            ["󰝝 ", "Vol Up",   "Volume +5%"],
+            ["󰝞 ", "Vol Down", "Volume −5%"],
+            ["󰸈 ", "Mute",     "Toggle mute"],
+            ["󰍭 ", "Mic Mute", "Toggle mic"]
+          ]})
+
+        (kb-section :icon "󰃠" :title "BRIGHTNESS"
+          :entries {[
+            ["󰃟 ", "Bright Up",   "Brightness +5%"],
+            ["󰃞 ", "Bright Down", "Brightness −5%"]
+          ]})
+
+        (kb-section :icon "󰝚" :title "MEDIA"
+          :entries {[
+            ["󰐎 ", "Play/Pause", "Toggle playback"],
+            ["󰒭 ", "Next",       "Next track"],
+            ["󰒮 ", "Prev",       "Previous track"]
+          ]})
+
+        (kb-section :icon "󰂞" :title "NOTIFICATIONS"
+          :entries {[
+            ["󰂛 ", "Super + N",       "Dismiss notification"],
+            ["󰂛 ", "Super + Shift+N", "Dismiss all"]
+          ]})
+
+        (box :class "kb-footer-line")
+      ))))
+
+(defwidget kb-section [icon title entries]
+  (box
+    :class "kb-section"
+    :orientation "vertical"
+    :space-evenly false
+    :spacing 0
+    (box
+      :class "kb-section-title-row"
+      :orientation "horizontal"
+      :halign "center"
+      :spacing 8
+      (label :class "kb-section-icon" :text icon)
+      (label :class "kb-section-title" :halign "center" :text title))
+    (box
+      :class "kb-section-body"
+      :orientation "vertical"
+      :space-evenly false
+      :spacing 0
+      (for entry in entries
+        (kb-row :icon {entry[0]} :key {entry[1]} :val {entry[2]})))))
+
+(defwidget kb-row [icon key val]
+  (box
+    :class "kb-row"
+    :orientation "horizontal"
+    :space-evenly false
+    :spacing 0
+    (label
+      :class "kb-row-icon"
+      :halign "start"
+      :text icon)
+    (label
+      :class "kb-key"
+      :halign "start"
+      :hexpand false
+      :wrap false
+      :text key)
+    (label
+      :class "kb-val"
+      :halign "end"
+      :hexpand true
+      :wrap true
+      :text val)))

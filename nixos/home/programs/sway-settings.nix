@@ -132,4 +132,10 @@
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/wlogout";
         recursive = false;
     };
+
+    # ── Eww (keybindings widget) ──────────────────────────────────────
+    programs.eww = {
+        enable = true;
+        configDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/eww";
+    };
 }

@@ -1,0 +1,173 @@
+// Catppuccin Mocha palette
+$base:      #1e1e2e;
+$mantle:    #181825;
+$crust:     #11111b;
+$surface0:  #313244;
+$surface1:  #45475a;
+$surface2:  #585b70;
+$overlay0:  #6c7086;
+$overlay1:  #7f849c;
+$text:      #cdd6f4;
+$subtext1:  #bac2de;
+$subtext0:  #a6adc8;
+$lavender:  #b4befe;
+$blue:      #89b4fa;
+$sapphire:  #74c7ec;
+$sky:       #89dceb;
+$teal:      #94e2d5;
+$green:     #a6e3a1;
+$yellow:    #f9e2af;
+$peach:     #fab387;
+$maroon:    #eba0ac;
+$red:       #f38ba8;
+$mauve:     #cba6f7;
+$pink:      #f5c2e7;
+$flamingo:  #f2cdcd;
+$rosewater: #f5e0dc;
+
+// ── Root window ─────────────────────────────────────────────────────
+.keybindings-root {
+  background: alpha($crust, 0.35);
+  border-radius: 20px;
+  border: 1px solid alpha($lavender, 0.12);
+  padding: 0;
+  // Note: backdrop-filter requires SwayFX or a compositor with blur support
+  // Add this via SwayFX: blur enable; blur_passes 3; blur_strength 6
+}
+
+// ── Header ───────────────────────────────────────────────────────────
+.kb-header {
+  background: alpha($mantle, 0.50);
+  border-radius: 20px 20px 0 0;
+  padding: 16px 22px 14px;
+  border-bottom: 1px solid alpha($surface1, 0.30);
+
+  .kb-header-icon {
+    color: $lavender;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 18px;
+    opacity: 0.9;
+  }
+
+  .kb-header-text {
+    color: $lavender;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+}
+
+// ── Scroll area ───────────────────────────────────────────────────────
+scrolledwindow {
+  background: transparent;
+  border-radius: 0 0 20px 20px;
+
+  undershoot.top,
+  undershoot.bottom,
+  overshoot.top,
+  overshoot.bottom {
+    background: transparent;
+  }
+
+  > * {
+    background: transparent;
+  }
+
+  scrollbar {
+    background: transparent;
+    border: none;
+    min-width: 0;
+    min-height: 0;
+    opacity: 0;
+  }
+}
+
+// ── Section card ─────────────────────────────────────────────────────
+.kb-section {
+  background: alpha($mantle, 0.30);
+  border-radius: 12px;
+  border: 1px solid alpha($surface0, 0.20);
+  overflow: hidden;
+  transition: border-color 200ms ease;
+
+  &:hover {
+    border-color: alpha($surface0, 0.38);
+  }
+}
+
+.kb-section-title-row {
+  background: alpha($surface0, 0.20);
+  padding: 7px 14px 6px;
+  border-bottom: 1px solid alpha($surface0, 0.28);
+  // halign center is set in yuck
+}
+
+.kb-section-icon {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15px;
+  color: $text;
+  min-width: 20px;
+}
+
+.kb-section-title {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: $text;
+}
+
+.kb-section-body {
+  padding: 3px 0 5px;
+}
+
+// ── Row ──────────────────────────────────────────────────────────────
+.kb-row {
+  padding: 5px 14px;
+  border-radius: 6px;
+  margin: 1px 5px;
+  transition: background 150ms ease;
+
+  &:hover {
+    background: alpha($surface0, 0.45);
+  }
+}
+
+.kb-row-icon {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 11px;
+  color: $mauve;
+  min-width: 28px;
+  margin-right: 8px;
+  opacity: 0.85;
+}
+
+.kb-key {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 10.5px;
+  color: $peach;
+  background: alpha($surface0, 0.65);
+  border-radius: 5px;
+  border: 1px solid alpha($surface2, 0.45);
+  padding: 2px 8px;
+  margin-right: 12px;
+  min-width: 148px;
+  font-weight: bold;
+}
+
+.kb-val {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 10.5px;
+  color: $subtext1;
+  min-width: 110px;
+  opacity: 0.80;
+}
+
+// ── Bottom decorative line ────────────────────────────────────────────
+.kb-footer-line {
+  margin: 14px 24px 18px;
+  background: alpha($lavender, 0.18);
+  min-height: 1px;
+  border-radius: 1px;
+}

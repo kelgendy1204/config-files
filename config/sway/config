@@ -178,6 +178,8 @@ assign [app_id="kitty"] 1
 assign [class="Google-chrome"] 2
 
 # ── Startup applications ─────────────────────────────────────────
+exec eww daemon && eww open keybindings
+
 exec swayidle -w \
     timeout 300 'swaylock -f' \
     timeout 600 'swaymsg "output * power off"' \
