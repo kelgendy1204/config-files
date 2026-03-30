@@ -1,33 +1,68 @@
 {
-    description = "Khaled's NixOS system";
+    description = "Khaled's Nix system";
 
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+
+        nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
+
+        nix-darwin = {
+            url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+            inputs.nixpkgs.follows = "nixpkgs-darwin";
+        };
+
         home-manager = {
-            url = "github:nix-community/home-manager";
+            url = "github:nix-community/home-manager/release-25.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
 
-    outputs = {
+    outputs =
+        {
         self,
         nixpkgs,
+        nixpkgs-darwin,
+        nix-darwin,
         home-manager,
         ...
-    }: {
-        nixosConfigurations.lenovo-laptop = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            modules = [
-                ./hosts/lenovo-laptop
-                home-manager.nixosModules.default
-                {
-                    home-manager = {
-                        useGlobalPkgs = true;
-                        useUserPackages = true;
-                        users.khaled = import ./home;
+        }:
+        {
+            nixosConfigurations.lenovo-laptop = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./hosts/lenovo-laptop
+                    home-manager.nixosModules.default
+                    {
+                        home-manager = {
+                            useGlobalPkgs = true;
+                            useUserPackages = true;
+                            users.khaled = import ./home;
+                        };
+                    }
+                ];
+            };
+
+            darwinConfigurations.trv4147 = nix-darwin.lib.darwinSystem {
+                modules = [ ./hosts/trv4147 ];
+                specialArgs = { inherit self; };
+            };
+
+            formatter.aarch64-darwin =
+                let
+                    pkgs = import nixpkgs-darwin { system = "aarch64-darwin"; };
+                in
+                    pkgs.writeShellApplication {
+                        name = "formatter";
+
+                        runtimeInputs = with pkgs; [
+                            nixfmt-tree
+                            just
+                        ];
+
+                        text = ''
+                            treefmt .
+                            just --fmt --unstable
+                        '';
                     };
-                }
-            ];
         };
-    };
 }

@@ -1,0 +1,5 @@
+switch-darwin:
+    sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- --flake . switch
+
+switch-nixos:
+    sudo nixos-rebuild switch --flake .#lenovo-laptop

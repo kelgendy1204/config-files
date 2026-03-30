@@ -1,2 +1,0 @@
-switch:
-    sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- --flake . switch
