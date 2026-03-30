@@ -16,6 +16,10 @@
     # Whether to enable Touch ID with sudo.
     security.pam.services.sudo_local.touchIdAuth = true;
 
+    users.users.kelgendy = {
+        home = "/Users/kelgendy";
+    };
+
     system.configurationRevision = self.rev or self.dirtyRev or null;
     system.stateVersion = 6;
 

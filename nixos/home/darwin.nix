@@ -1,0 +1,18 @@
+{ ... }:
+
+{
+    imports = [
+        ./programs/zsh.nix
+        ./programs/tmux.nix
+        ./programs/neovim.nix
+        ./programs/kitty.nix
+        ./programs/opencode.nix
+        ./programs/git.nix
+        ./programs/fzf.nix
+    ];
+
+    home.username = "kelgendy";
+    home.homeDirectory = "/Users/kelgendy";
+
+    home.stateVersion = "25.11";
+}

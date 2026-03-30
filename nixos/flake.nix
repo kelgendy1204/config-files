@@ -19,12 +19,12 @@
 
     outputs =
         {
-        self,
-        nixpkgs,
-        nixpkgs-darwin,
-        nix-darwin,
-        home-manager,
-        ...
+            self,
+            nixpkgs,
+            nixpkgs-darwin,
+            nix-darwin,
+            home-manager,
+            ...
         }:
         {
             nixosConfigurations.lenovo-laptop = nixpkgs.lib.nixosSystem {
@@ -43,7 +43,17 @@
             };
 
             darwinConfigurations.trv4147 = nix-darwin.lib.darwinSystem {
-                modules = [ ./hosts/trv4147 ];
+                modules = [
+                    ./hosts/trv4147
+                    home-manager.darwinModules.default
+                    {
+                        home-manager = {
+                            useGlobalPkgs = true;
+                            useUserPackages = true;
+                            users.kelgendy = import ./home/darwin.nix;
+                        };
+                    }
+                ];
                 specialArgs = { inherit self; };
             };
 
