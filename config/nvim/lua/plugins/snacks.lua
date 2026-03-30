@@ -79,6 +79,9 @@ return {
         { "<localleader>pD", function() Snacks.picker.diagnostics(listFocus) end,          desc = "Diagnostics" },
         { "<localleader>pp", function() Snacks.picker(listFocus) end,                      desc = "Pickers" },
 
+        -- jump
+        { "<leader>j",       function() Snacks.picker.jumps() end,                         desc = "Jumplist" },
+
         -- find
         { "<leader>ff",      function() Snacks.picker.files() end,                         desc = "Find Files" },
         { "<leader>fp",      function() Snacks.picker.projects(listFocus) end,             desc = "Projects" },
