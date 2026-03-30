@@ -186,6 +186,8 @@ exec swayidle -w \
     resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f'
 
+exec autotiling
+
 exec nm-applet --indicator
 exec blueman-applet
 exec eval $(gnome-keyring-daemon --start --components=secrets)

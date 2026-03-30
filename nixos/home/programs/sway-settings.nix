@@ -30,6 +30,9 @@
         # Idle management
         swayidle
 
+        # Sway autotiling helper
+        autotiling
+
         # File manager
         pcmanfm
 
