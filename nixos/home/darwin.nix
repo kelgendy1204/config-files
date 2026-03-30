@@ -7,6 +7,7 @@
         ./programs/neovim.nix
         ./programs/kitty.nix
         ./programs/opencode.nix
+        ./programs/npm.nix
         ./programs/git.nix
         ./programs/fzf.nix
     ];

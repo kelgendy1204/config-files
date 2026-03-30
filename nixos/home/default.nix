@@ -11,7 +11,7 @@
         ./programs/git.nix
         ./programs/fzf.nix
 
-        # DE settings: uncomment one, comment the others
+        # DE settings
         ./programs/sway-settings.nix
     ];
 
