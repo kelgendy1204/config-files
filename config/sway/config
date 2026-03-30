@@ -38,8 +38,8 @@ input type:pointer {
     natural_scroll enabled
 }
 
-# Output (wallpaper)
-output * bg ~/Pictures/wallpaper-1.jpg fill
+# Wallpaper via Waypaper
+exec_always waypaper --restore
 
 # Status bar
 bar {

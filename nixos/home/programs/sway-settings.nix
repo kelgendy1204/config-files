@@ -15,7 +15,7 @@
         swaylock-effects
 
         # Wallpaper
-        swaybg
+        waypaper
 
         # Screenshot
         grim        # screenshot tool
