@@ -180,6 +180,9 @@ assign [class="Google-chrome"] 2
 # ── Startup applications ─────────────────────────────────────────
 exec eww daemon && eww open keybindings
 
+# Toggle the keybindings overlay
+bindsym $mod+? exec eww open --toggle keybindings
+
 exec swayidle -w \
     timeout 300 'swaylock -f' \
     timeout 600 'swaymsg "output * power off"' \

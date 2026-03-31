@@ -1,192 +1,98 @@
+(defwidget keybind-row [desc keys]
+  (box :class "keybind-row" :orientation "h" :halign "fill"
+    (label :class "keybind-desc" :text desc :xalign 0 :halign "start" :hexpand true)
+    (box :class "keys" :spacing 3 :halign "end"
+      (for key in keys
+        (label :class "key" :text key)))))
+
+(defwidget section [color label children]
+  (box :class "section" :orientation "v"
+    (box :class "section-header" :orientation "h" :spacing 8
+      (box :class {color + " dot"})
+      (label :class {color + " section-label"} :text label)
+      (box :class "section-line" :hexpand true))
+    children))
+
+(defwidget keybindings-widget []
+  (box :class "widget" :orientation "v"
+    ; Header
+    (box :class "header" :orientation "v"
+      (box :class "header-top" :orientation "h"
+        (label :class "header-title" :text "⌨  Keybindings")
+        (label :class "header-icon" :text "⌘"))
+      (label :class "header-sub" :text "Sway WM · $mod = Super" :xalign 0))
+
+    ; Scroll area
+    (scroll :class "scroll-area" :vscroll true :vexpand true
+      (box :class "content" :orientation "v"
+
+        (section :color "peach" :label "Launch"
+          (box :orientation "v"
+            (keybind-row :desc "Terminal (foot)"     :keys ["$mod" "Return"])
+            (keybind-row :desc "App launcher (wofi)" :keys ["$mod" "d"])
+            (keybind-row :desc "File manager (nemo)" :keys ["$mod" "e"])
+            (keybind-row :desc "Browser (firefox)"   :keys ["$mod" "b"])
+            (keybind-row :desc "Screenshot (grimblast)" :keys ["Print"])))
+
+        (section :color "blue" :label "Windows"
+          (box :orientation "v"
+            (keybind-row :desc "Focus direction"       :keys ["$mod" "hjkl"])
+            (keybind-row :desc "Move window"           :keys ["$mod" "Shift" "hjkl"])
+            (keybind-row :desc "Kill focused window"   :keys ["$mod" "Shift" "q"])
+            (keybind-row :desc "Toggle floating"       :keys ["$mod" "Shift" "Space"])
+            (keybind-row :desc "Toggle fullscreen"     :keys ["$mod" "f"])
+            (keybind-row :desc "Toggle sticky"         :keys ["$mod" "Shift" "s"])))
+
+        (section :color "mauve" :label "Layout"
+          (box :orientation "v"
+            (keybind-row :desc "Split horizontal" :keys ["$mod" "h"])
+            (keybind-row :desc "Split vertical"   :keys ["$mod" "v"])
+            (keybind-row :desc "Stacking layout"  :keys ["$mod" "s"])
+            (keybind-row :desc "Tabbed layout"    :keys ["$mod" "w"])
+            (keybind-row :desc "Tiling layout"    :keys ["$mod" "e"])
+            (keybind-row :desc "Resize mode"      :keys ["$mod" "r"])))
+
+        (section :color "yellow" :label "Workspaces"
+          (box :orientation "v"
+            (keybind-row :desc "Go to workspace N"     :keys ["$mod" "1–9"])
+            (keybind-row :desc "Move window to WS N"   :keys ["$mod" "Shift" "1–9"])
+            (keybind-row :desc "Next workspace"        :keys ["$mod" "Tab"])
+            (keybind-row :desc "Prev workspace"        :keys ["$mod" "Shift" "Tab"])
+            (keybind-row :desc "Back and forth"        :keys ["$mod" "\\"]) ))
+
+        (section :color "teal" :label "Media & Audio"
+          (box :orientation "v"
+            (keybind-row :desc "Volume up"    :keys ["$mod" "F3"])
+            (keybind-row :desc "Volume down"  :keys ["$mod" "F2"])
+            (keybind-row :desc "Mute toggle"  :keys ["$mod" "F1"])
+            (keybind-row :desc "Play / Pause" :keys ["XF86Play"])
+            (keybind-row :desc "Next track"   :keys ["XF86Next"])))
+
+        (section :color "red" :label "System"
+          (box :orientation "v"
+            (keybind-row :desc "Reload config"         :keys ["$mod" "Shift" "c"])
+            (keybind-row :desc "Restart Sway"          :keys ["$mod" "Shift" "r"])
+            (keybind-row :desc "Exit Sway"             :keys ["$mod" "Shift" "e"])
+            (keybind-row :desc "Lock screen (swaylock)" :keys ["$mod" "l"])
+            (keybind-row :desc "Brightness up"         :keys ["XF86MonUp"])
+            (keybind-row :desc "Brightness down"       :keys ["XF86MonDn"])))))
+
+    ; Footer
+    (box :class "footer" :orientation "h" :spacing 8
+      (box :class "status-dot")
+      (label :class "footer-text" :text "Sway WM active" :xalign 0 :hexpand true)
+      (label :class "footer-tag" :text "eww widget"))))
+
 (defwindow keybindings
   :monitor 0
   :geometry (geometry
-    :x "16px"
-    :y "0px"
-    :width "420px"
-    :height "88%"
-    :anchor "right center")
-  :stacking "bottom"
+    :x "0%"
+    :y "0%"
+    :width "320px"
+    :height "80%"
+    :anchor "center left")
+  :stacking "bottom"           ; sits on wallpaper, never overlays apps
   :exclusive false
   :focusable false
-  :namespace "keybindings"
+  :namespace "eww-keybindings"
   (keybindings-widget))
-
-(defwidget keybindings-widget []
-  (box
-    :class "keybindings-root"
-    :orientation "vertical"
-    :space-evenly false
-    :spacing 0
-    (box
-      :class "kb-header"
-      :orientation "horizontal"
-      :halign "center"
-      :spacing 10
-      (label :class "kb-header-icon" :text "󰌌")
-      (label :class "kb-header-text" :text "KEYBINDINGS"))
-    (scroll
-      :vscroll true
-      :hscroll false
-      :vexpand true
-      (box
-        :orientation "vertical"
-        :space-evenly false
-        :spacing 10
-        :vexpand true
-        :style "padding: 14px 14px 18px 14px;"
-
-        (kb-section :icon "" :title "BASICS"
-          :entries {[
-            ["", "Super + Enter",   "Terminal"],
-            ["", "Super + Q",       "Close window"],
-            ["", "Super + D",       "App launcher"],
-            ["", "Super + B",       "Browser"],
-            ["", "Super + E",       "File manager"],
-            ["", "Super + Shift+C", "Reload Sway"]
-          ]})
-
-        (kb-section :icon "" :title "LOCK / POWER"
-          :entries {[
-            ["", "Super + Esc",       "Lock screen"],
-            ["󰗼 ", "Super + Shift+Esc", "Power menu"]
-          ]})
-
-        (kb-section :icon "" :title "FOCUS"
-          :entries {[
-            ["", "Super + H/J/K/L", "Focus left/down/up/right"],
-            ["", "Super + Arrows",  "Focus (arrow keys)"]
-          ]})
-
-        (kb-section :icon "󰆾" :title "MOVE WINDOW"
-          :entries {[
-            ["", "Super + Shift+H/J/K/L", "Move left/down/up/right"],
-            ["", "Super + Shift+Arrows",  "Move (arrow keys)"]
-          ]})
-
-        (kb-section :icon "󰕰" :title "WORKSPACES"
-          :entries {[
-            ["󰼏 ", "Super + 1–0",       "Switch to workspace 1–10"],
-            ["󰁁 ", "Super + Shift+1–0", "Move to workspace 1–10"]
-          ]})
-
-        (kb-section :icon "" :title "LAYOUT"
-          :entries {[
-            ["󰊓 ", "Super + F",           "Fullscreen toggle"],
-            ["󱂬 ", "Super + Shift+Space", "Floating toggle"],
-            ["", "Super + Space",       "Focus float/tile"],
-            ["", "Super + A",           "Focus parent"]
-          ]})
-
-        (kb-section :icon "" :title "SCRATCHPAD"
-          :entries {[
-            ["", "Super + `",       "Show scratchpad"],
-            ["", "Super + Shift+`", "Send to scratchpad"]
-          ]})
-
-        (kb-section :icon "" :title "MODES"
-          :entries {[
-            ["", "Super + S",   "Split mode"],
-            ["", "Super + ,",   "Layout mode"],
-            ["", "Super + R",   "Resize mode"],
-            ["", "Esc / Enter", "Exit mode"]
-          ]})
-
-        (kb-section :icon "" :title "SPLIT MODE"
-          :entries {[
-            ["", "-",         "Split horizontal"],
-            ["", "Shift+\\",  "Split vertical"]
-          ]})
-
-        (kb-section :icon "" :title "LAYOUT MODE"
-          :entries {[
-            ["", "T", "Tabbed layout"],
-            ["", "S", "Stacking layout"]
-          ]})
-
-        (kb-section :icon "󰙖" :title "RESIZE MODE"
-          :entries {[
-            ["", "H/J/K/L", "Shrink/grow width & height"],
-            ["", "Arrows",  "Resize (arrow keys)"]
-          ]})
-
-        (kb-section :icon "󰹑" :title "SCREENSHOT"
-          :entries {[
-            ["󰆞 ", "Print",             "Full screen → clipboard"],
-            ["󰆞 ", "Super + Print",     "Region → clipboard"],
-            ["", "Super+Shift+Print", "Region → annotate"]
-          ]})
-
-        (kb-section :icon "󰕾" :title "VOLUME"
-          :entries {[
-            ["󰝝 ", "Vol Up",   "Volume +5%"],
-            ["󰝞 ", "Vol Down", "Volume −5%"],
-            ["󰸈 ", "Mute",     "Toggle mute"],
-            ["󰍭 ", "Mic Mute", "Toggle mic"]
-          ]})
-
-        (kb-section :icon "󰃠" :title "BRIGHTNESS"
-          :entries {[
-            ["󰃟 ", "Bright Up",   "Brightness +5%"],
-            ["󰃞 ", "Bright Down", "Brightness −5%"]
-          ]})
-
-        (kb-section :icon "󰝚" :title "MEDIA"
-          :entries {[
-            ["󰐎 ", "Play/Pause", "Toggle playback"],
-            ["󰒭 ", "Next",       "Next track"],
-            ["󰒮 ", "Prev",       "Previous track"]
-          ]})
-
-        (kb-section :icon "󰂞" :title "NOTIFICATIONS"
-          :entries {[
-            ["󰂛 ", "Super + N",       "Dismiss notification"],
-            ["󰂛 ", "Super + Shift+N", "Dismiss all"]
-          ]})
-
-        (box :class "kb-footer-line")
-      ))))
-
-(defwidget kb-section [icon title entries]
-  (box
-    :class "kb-section"
-    :orientation "vertical"
-    :space-evenly false
-    :spacing 0
-    (box
-      :class "kb-section-title-row"
-      :orientation "horizontal"
-      :halign "center"
-      :spacing 8
-      (label :class "kb-section-icon" :text icon)
-      (label :class "kb-section-title" :halign "center" :text title))
-    (box
-      :class "kb-section-body"
-      :orientation "vertical"
-      :space-evenly false
-      :spacing 0
-      (for entry in entries
-        (kb-row :icon {entry[0]} :key {entry[1]} :val {entry[2]})))))
-
-(defwidget kb-row [icon key val]
-  (box
-    :class "kb-row"
-    :orientation "horizontal"
-    :space-evenly false
-    :spacing 0
-    (label
-      :class "kb-row-icon"
-      :halign "start"
-      :text icon)
-    (label
-      :class "kb-key"
-      :halign "start"
-      :hexpand false
-      :wrap false
-      :text key)
-    (label
-      :class "kb-val"
-      :halign "end"
-      :hexpand true
-      :wrap true
-      :text val)))

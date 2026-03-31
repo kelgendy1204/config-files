@@ -1,173 +1,144 @@
-// Catppuccin Mocha palette
-$base:      #1e1e2e;
-$mantle:    #181825;
-$crust:     #11111b;
-$surface0:  #313244;
-$surface1:  #45475a;
-$surface2:  #585b70;
-$overlay0:  #6c7086;
-$overlay1:  #7f849c;
-$text:      #cdd6f4;
-$subtext1:  #bac2de;
-$subtext0:  #a6adc8;
-$lavender:  #b4befe;
-$blue:      #89b4fa;
-$sapphire:  #74c7ec;
-$sky:       #89dceb;
-$teal:      #94e2d5;
-$green:     #a6e3a1;
-$yellow:    #f9e2af;
-$peach:     #fab387;
-$maroon:    #eba0ac;
-$red:       #f38ba8;
-$mauve:     #cba6f7;
-$pink:      #f5c2e7;
-$flamingo:  #f2cdcd;
-$rosewater: #f5e0dc;
+// ─── Cappuccino dark palette ──────────────────────────────────────
+$crust:    #1e1a17;
+$mantle:   #251f1b;
+$base:     #2d2520;
+$surface0: #3a302a;
+$surface1: #463c35;
+$surface2: #534840;
+$overlay0: #7a6a60;
+$overlay1: #9e8c80;
+$overlay2: #bfad9f;
+$text:     #e8d5c0;
+$subtext:  #c4a882;
+$muted:    #9e8c80;
 
-// ── Root window ─────────────────────────────────────────────────────
-.keybindings-root {
-  background: alpha($crust, 0.35);
-  border-radius: 20px;
-  border: 1px solid alpha($lavender, 0.12);
-  padding: 0;
-  // Note: backdrop-filter requires SwayFX or a compositor with blur support
-  // Add this via SwayFX: blur enable; blur_passes 3; blur_strength 6
-}
+$rosewater: #f0cba8;
+$peach:     #d4845a;
+$yellow:    #c9a84c;
+$green:     #7aab78;
+$teal:      #6aada8;
+$blue:      #7a9ec2;
+$mauve:     #a87cb8;
+$red:       #c87060;
 
-// ── Header ───────────────────────────────────────────────────────────
-.kb-header {
-  background: alpha($mantle, 0.50);
-  border-radius: 20px 20px 0 0;
-  padding: 16px 22px 14px;
-  border-bottom: 1px solid alpha($surface1, 0.30);
-
-  .kb-header-icon {
-    color: $lavender;
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 18px;
-    opacity: 0.9;
-  }
-
-  .kb-header-text {
-    color: $lavender;
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-  }
-}
-
-// ── Scroll area ───────────────────────────────────────────────────────
-scrolledwindow {
-  background: transparent;
-  border-radius: 0 0 20px 20px;
-
-  undershoot.top,
-  undershoot.bottom,
-  overshoot.top,
-  overshoot.bottom {
-    background: transparent;
-  }
-
-  > * {
-    background: transparent;
-  }
-
-  scrollbar {
-    background: transparent;
-    border: none;
-    min-width: 0;
-    min-height: 0;
-    opacity: 0;
-  }
-}
-
-// ── Section card ─────────────────────────────────────────────────────
-.kb-section {
-  background: alpha($mantle, 0.30);
-  border-radius: 12px;
-  border: 1px solid alpha($surface0, 0.20);
-  overflow: hidden;
-  transition: border-color 200ms ease;
-
-  &:hover {
-    border-color: alpha($surface0, 0.38);
-  }
-}
-
-.kb-section-title-row {
-  background: alpha($surface0, 0.20);
-  padding: 7px 14px 6px;
-  border-bottom: 1px solid alpha($surface0, 0.28);
-  // halign center is set in yuck
-}
-
-.kb-section-icon {
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 15px;
+// ─── Widget shell ─────────────────────────────────────────────────
+.widget {
+  background: rgba(30, 26, 23, 0.92);
+  border: 1px solid rgba(200, 168, 130, 0.12);
+  border-radius: 18px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
   color: $text;
-  min-width: 20px;
 }
 
-.kb-section-title {
-  font-family: "JetBrainsMono Nerd Font";
+// ─── Header ───────────────────────────────────────────────────────
+.header {
+  padding: 16px 20px 12px;
+  border-bottom: 1px solid rgba(200, 168, 130, 0.08);
+}
+.header-top {
+  margin-bottom: 6px;
+}
+.header-title {
   font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: $text;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: $rosewater;
+}
+.header-icon {
+  font-size: 16px;
+}
+.header-sub {
+  font-size: 10px;
+  color: $muted;
+  letter-spacing: 0.05em;
 }
 
-.kb-section-body {
-  padding: 3px 0 5px;
+// ─── Scroll area ──────────────────────────────────────────────────
+.scroll-area {
+  padding: 8px 0 12px;
 }
 
-// ── Row ──────────────────────────────────────────────────────────────
-.kb-row {
-  padding: 5px 14px;
-  border-radius: 6px;
-  margin: 1px 5px;
-  transition: background 150ms ease;
+// ─── Section headers ──────────────────────────────────────────────
+.section-header {
+  padding: 8px 16px 5px;
+}
+.section-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+.section-line {
+  background: rgba(200, 168, 130, 0.07);
+  min-height: 1px;
+}
+.dot {
+  min-width: 6px;
+  min-height: 6px;
+  border-radius: 999px;
+}
+
+// Per-category accent colors
+.peach  { color: $peach;  background: $peach; }
+.blue   { color: $blue;   background: $blue; }
+.mauve  { color: $mauve;  background: $mauve; }
+.yellow { color: $yellow; background: $yellow; }
+.teal   { color: $teal;   background: $teal; }
+.red    { color: $red;    background: $red; }
+
+// Reset dot bg interference
+.dot.peach  { color: transparent; }
+.dot.blue   { color: transparent; }
+.dot.mauve  { color: transparent; }
+.dot.yellow { color: transparent; }
+.dot.teal   { color: transparent; }
+.dot.red    { color: transparent; }
+
+// ─── Keybind rows ─────────────────────────────────────────────────
+.keybind-row {
+  padding: 5px 16px;
 
   &:hover {
-    background: alpha($surface0, 0.45);
+    background: rgba(58, 48, 42, 0.5);
   }
 }
-
-.kb-row-icon {
-  font-family: "JetBrainsMono Nerd Font";
+.keybind-desc {
   font-size: 11px;
-  color: $mauve;
-  min-width: 28px;
-  margin-right: 8px;
-  opacity: 0.85;
+  color: $overlay2;
 }
-
-.kb-key {
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 10.5px;
-  color: $peach;
-  background: alpha($surface0, 0.65);
+.keys {
+  spacing: 3px;
+}
+.key {
+  background: rgba(70, 60, 53, 0.7);
+  border: 1px solid rgba(200, 168, 130, 0.14);
   border-radius: 5px;
-  border: 1px solid alpha($surface2, 0.45);
-  padding: 2px 8px;
-  margin-right: 12px;
-  min-width: 148px;
-  font-weight: bold;
+  padding: 2px 6px;
+  font-size: 9.5px;
+  color: $subtext;
+  font-family: "JetBrains Mono", monospace;
 }
 
-.kb-val {
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 10.5px;
-  color: $subtext1;
-  min-width: 110px;
-  opacity: 0.80;
+// ─── Footer ───────────────────────────────────────────────────────
+.footer {
+  padding: 8px 16px 12px;
+  border-top: 1px solid rgba(200, 168, 130, 0.07);
 }
-
-// ── Bottom decorative line ────────────────────────────────────────────
-.kb-footer-line {
-  margin: 14px 24px 18px;
-  background: alpha($lavender, 0.18);
-  min-height: 1px;
-  border-radius: 1px;
+.status-dot {
+  min-width: 5px;
+  min-height: 5px;
+  border-radius: 999px;
+  background: $green;
+}
+.footer-text {
+  font-size: 9px;
+  color: $muted;
+  letter-spacing: 0.06em;
+}
+.footer-tag {
+  font-size: 8.5px;
+  color: $overlay0;
+  background: rgba(58, 48, 42, 0.5);
+  border: 1px solid rgba(200, 168, 130, 0.08);
+  padding: 2px 7px;
+  border-radius: 999px;
 }
