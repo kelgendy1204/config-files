@@ -5,6 +5,10 @@
 }:
 
 {
+    imports = [
+        ../../modules/system/fonts.nix
+    ];
+
     environment.systemPackages = with pkgs; [ just ];
 
     # Necessary for using flakes on this system.
