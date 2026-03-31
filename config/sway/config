@@ -181,7 +181,7 @@ assign [class="Google-chrome"] 2
 exec eww daemon && eww open keybindings
 
 # Toggle the keybindings overlay
-bindsym $mod+? exec eww open --toggle keybindings
+bindsym $mod+p exec eww open --toggle keybindings
 
 exec swayidle -w \
     timeout 300 'swaylock -f' \

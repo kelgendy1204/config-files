@@ -16,6 +16,7 @@
 
         # Wallpaper
         waypaper
+        swaybg # dependency of waypaper
 
         # Screenshot
         grim        # screenshot tool
