@@ -27,6 +27,14 @@
     system.configurationRevision = self.rev or self.dirtyRev or null;
     system.stateVersion = 6;
 
+    # ── Homebrew (for macOS-native apps not in nixpkgs) ─────────────
+    homebrew = {
+        enable = true;
+        casks = [
+            "menumeters"
+        ];
+    };
+
     # The platform the configuration will be used on.
     nixpkgs.hostPlatform = "aarch64-darwin";
 }
