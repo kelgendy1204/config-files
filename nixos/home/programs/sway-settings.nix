@@ -59,6 +59,10 @@
 
         # Secret manager GUI
         seahorse
+
+        # AGS widget system
+        ags
+        gtk-layer-shell
     ];
 
     # GTK theme (Catppuccin)
@@ -137,9 +141,9 @@
         recursive = false;
     };
 
-    # ── Eww (keybindings widget) ──────────────────────────────────────
-    programs.eww = {
-        enable = true;
-        configDir = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/eww";
+    # ── ags (widget) ──────────────────────────────────────────
+    xdg.configFile."ags" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/ags";
+        recursive = false;
     };
 }

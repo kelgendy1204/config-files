@@ -178,10 +178,9 @@ assign [app_id="kitty"] 1
 assign [class="Google-chrome"] 2
 
 # ── Startup applications ─────────────────────────────────────────
-exec eww daemon && eww open keybindings
-
-# Toggle the keybindings overlay
-bindsym $mod+p exec eww open --toggle keybindings
+# Keybindings widget via ags
+exec ags run ~/.config/ags
+bindsym $mod+slash exec ags toggle keybindings
 
 exec swayidle -w \
     timeout 300 'swaylock -f' \

@@ -1,0 +1,61 @@
+.keybindings-window { background: transparent; margin: 16px; }
+
+.widget {
+  background-color: rgba(30, 30, 46, 0.94);
+  border: 1px solid rgba(180, 190, 254, 0.10);
+  border-radius: 18px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  color: #cdd6f4;
+  min-width: 320px;
+}
+
+.header { padding: 14px 18px 11px; border-bottom: 1px solid rgba(180, 190, 254, 0.07); }
+.header-title { font-size: 11px; font-weight: 700; letter-spacing: .13em; color: #b4befe; }
+.header-icon { font-size: 12px; }
+.header-sub { font-size: 9px; color: #7f849c; letter-spacing: .04em; }
+
+.scroll-area { padding: 4px 0 8px; }
+
+.section-header { padding: 8px 14px 4px; }
+.section-label { font-size: 8.5px; font-weight: 700; letter-spacing: .15em; }
+.section-line { background-color: rgba(180, 190, 254, 0.06); min-height: 1px; }
+.section-dot { min-width: 5px; min-height: 5px; border-radius: 999px; }
+
+.label-peach  { color: #fab387; } .dot-peach  { background-color: #fab387; }
+.label-blue   { color: #89b4fa; } .dot-blue   { background-color: #89b4fa; }
+.label-mauve  { color: #cba6f7; } .dot-mauve  { background-color: #cba6f7; }
+.label-yellow { color: #f9e2af; } .dot-yellow { background-color: #f9e2af; }
+.label-teal   { color: #94e2d5; } .dot-teal   { background-color: #94e2d5; }
+.label-red    { color: #f38ba8; } .dot-red    { background-color: #f38ba8; }
+
+.keybind-row { padding: 3.5px 14px; }
+.keybind-row:hover { background-color: rgba(49, 50, 68, 0.5); }
+.keybind-desc { font-size: 10px; color: #a6adc8; }
+.key-plus { font-size: 7px; color: #6c7086; padding: 0 1px; }
+
+.key {
+  background-color: #313244;
+  border: 1px solid #45475a;
+  border-bottom: 2px solid #585b70;
+  border-radius: 5px;
+  padding: 1.5px 5px;
+  font-size: 8.5px;
+  color: #bac2de;
+  font-family: "JetBrains Mono", monospace;
+}
+.key-mod {
+  color: #cba6f7;
+  background-color: rgba(203, 166, 247, 0.09);
+  border-color: rgba(203, 166, 247, 0.22);
+  border-bottom-color: rgba(203, 166, 247, 0.34);
+}
+
+.footer { padding: 7px 14px 11px; border-top: 1px solid rgba(180, 190, 254, 0.06); }
+.status-dot { min-width: 5px; min-height: 5px; border-radius: 999px; background-color: #a6e3a1; }
+.footer-text { font-size: 8.5px; color: #6c7086; letter-spacing: .05em; }
+.footer-tag {
+  font-size: 7.5px; color: #7f849c;
+  background-color: #313244;
+  border: 1px solid rgba(180, 190, 254, 0.08);
+  padding: 2px 7px; border-radius: 999px;
+}

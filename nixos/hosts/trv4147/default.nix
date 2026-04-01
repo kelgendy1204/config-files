@@ -28,6 +28,7 @@
     system.stateVersion = 6;
 
     # ── Homebrew (for macOS-native apps not in nixpkgs) ─────────────
+    system.primaryUser = "kelgendy";
     homebrew = {
         enable = true;
         casks = [

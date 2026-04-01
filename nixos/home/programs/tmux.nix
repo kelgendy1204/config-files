@@ -1,6 +1,12 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 {
+    # Scripts in tmux status bar depend on these Linux-only tools
+    home.packages = lib.optionals pkgs.stdenv.isLinux (with pkgs; [
+        iproute2  # netspeed.sh: ip route get
+        procps    # mem.sh: free --mega
+    ]);
+
     programs.tmux = {
         enable = true;
 
