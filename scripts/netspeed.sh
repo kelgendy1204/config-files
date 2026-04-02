@@ -12,11 +12,11 @@ else
     IFACE=$(ip route get 8.8.8.8 2>/dev/null | awk '{print $5; exit}')
     [ -z "$IFACE" ] && echo "N/A" && exit
 
-    RX1=$(awk -v iface="$IFACE:" '$1==iface {print $2}' /proc/net/dev)
-    TX1=$(awk -v iface="$IFACE:" '$1==iface {print $10}' /proc/net/dev)
+    RX1=$(cat /proc/net/dev | awk -v iface="$IFACE:" '$1==iface {print $2}')
+    TX1=$(cat /proc/net/dev | awk -v iface="$IFACE:" '$1==iface {print $10}')
     sleep 1
-    RX2=$(awk -v iface="$IFACE:" '$1==iface {print $2}' /proc/net/dev)
-    TX2=$(awk -v iface="$IFACE:" '$1==iface {print $10}' /proc/net/dev)
+    RX2=$(cat /proc/net/dev | awk -v iface="$IFACE:" '$1==iface {print $2}')
+    TX2=$(cat /proc/net/dev | awk -v iface="$IFACE:" '$1==iface {print $10}')
 fi
 
 RX=$(( (RX2 - RX1) / 1024 ))

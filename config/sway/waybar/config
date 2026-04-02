@@ -4,9 +4,9 @@
     "height": 36,
     "spacing": 4,
 
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "clock"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "memory", "network#bandwidth", "tray", "pulseaudio", "network", "backlight", "battery", "clock", "sway/language", "privacy"],
+    "modules-right": ["cpu", "memory", "network#bandwidth", "tray", "pulseaudio", "network", "backlight", "battery", "sway/language", "privacy"],
 
    "sway/language": {
         "format": "{}",
