@@ -77,6 +77,9 @@
             mynix-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
             mynix-rollback = "sudo nixos-rebuild switch --rollback";
 
+            # Darwin
+            drawin-switch = "sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- --flake ~/config-files/nixos switch";
+
             # General
             myip = "curl http://ipecho.net/plain; echo";
             rsync = "rsync -avhP";
