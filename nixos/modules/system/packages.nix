@@ -15,5 +15,6 @@
         htop
         nodejs
         gh
+        xed-editor
     ];
 }

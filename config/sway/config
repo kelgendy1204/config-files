@@ -36,7 +36,7 @@ input type:touchpad {
 
 input type:keyboard {
     xkb_layout "us,ara"
-    xkb_options "grp:win_space_toggle"
+    xkb_options "grp:alt_shift_toggle"
     repeat_delay 300
     repeat_rate 60
 }
