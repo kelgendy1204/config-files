@@ -157,9 +157,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # ── Screenshot ────────────────────────────────────────────────────
-bindsym Print exec grim - | wl-copy
-bindsym $mod+Print exec grim -g "$(slurp)" - | wl-copy
-bindsym $mod+Shift+Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+p exec flameshot full
+bindsym $mod+Shift+p exec flameshot gui
 
 # ── Volume ────────────────────────────────────────────────────────
 bindsym XF86AudioRaiseVolume exec pamixer -i 5

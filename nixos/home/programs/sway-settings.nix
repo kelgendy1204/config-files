@@ -19,9 +19,7 @@
         swaybg # dependency of waypaper
 
         # Screenshot
-        grim        # screenshot tool
-        slurp       # region selection
-        swappy      # screenshot annotation
+        flameshot
 
         # Brightness & volume
         brightnessctl
@@ -140,7 +138,7 @@
         recursive = false;
     };
 
-    # ── ags (widget) ──────────────────────────────────────────
+    # ── eww (widget) ──────────────────────────────────────────
     xdg.configFile."eww" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/eww";
         recursive = false;
