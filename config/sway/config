@@ -35,7 +35,7 @@ input type:touchpad {
 }
 
 input type:keyboard {
-    xkb_layout "us,ara"
+    xkb_layout "us,ara,de"
     xkb_options "grp:alt_shift_toggle"
     repeat_delay 300
     repeat_rate 60
@@ -182,12 +182,11 @@ bindsym $mod+Shift+n exec makoctl dismiss --all
 
 # ── Workspace assignments ─────────────────────────────────────────
 assign [app_id="kitty"] 1
-assign [class="Google-chrome"] 2
+assign [app_id="google-chrome"] 2
 
 # ── Startup applications ─────────────────────────────────────────
-# Keybindings widget via ags
-exec ags run ~/.config/ags
-bindsym $mod+slash exec ags toggle keybindings
+# Widgets via eww
+exec eww daemon && eww open media-widget
 
 exec swayidle -w \
     timeout 300 'swaylock -f' \

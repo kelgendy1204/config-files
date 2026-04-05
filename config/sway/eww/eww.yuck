@@ -1,0 +1,43 @@
+;; --- Poll playerctl data ---
+(defpoll player-title   :interval "2s" `playerctl metadata title 2>/dev/null || echo "Nothing playing"`)
+(defpoll player-artist  :interval "2s" `playerctl metadata artist 2>/dev/null || echo ""`)
+(defpoll player-status  :interval "2s" `playerctl status 2>/dev/null || echo "Stopped"`)
+
+;; --- Widget definition ---
+(defwidget media-player []
+  (box :class "media-box"
+       :orientation "vertical"
+       :space-evenly false
+       :spacing 8
+    (label :class "track-title"
+           :text {player-title}
+           :limit-width 25
+           :truncate true)
+    (label :class "track-artist"
+           :text {player-artist}
+           :limit-width 25
+           :truncate true)
+    (box :class "controls"
+         :orientation "horizontal"
+         :space-evenly true
+      (button :class "ctrl-btn"
+              :onclick "playerctl previous"
+              "⏮")
+      (button :class "ctrl-btn play-pause"
+              :onclick "playerctl play-pause"
+              {player-status == "Playing" ? "⏸" : "▶"})
+      (button :class "ctrl-btn"
+              :onclick "playerctl next"
+              "⏭"))))
+
+;; --- Window (renders on desktop background layer) ---
+(defwindow media-widget
+  :monitor 0
+  :geometry (geometry :x "20px"
+                      :y "20px"
+                      :width "220px"
+                      :height "120px"
+                      :anchor "top right")
+  :stacking "bottom"       ;; sits on the background
+  :exclusive false
+  (media-player))

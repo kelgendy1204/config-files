@@ -6,7 +6,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "clock"],
     "modules-center": ["sway/window"],
-    "modules-right": ["cpu", "memory", "network#bandwidth", "tray", "pulseaudio", "network", "backlight", "battery", "sway/language", "privacy"],
+    "modules-right": ["sway/language", "cpu", "memory", "network#bandwidth","pulseaudio", "network", "backlight", "battery", "privacy", "tray"],
 
    "sway/language": {
         "format": "{}",

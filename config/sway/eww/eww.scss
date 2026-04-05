@@ -1,0 +1,47 @@
+* {
+  all: unset;
+}
+
+window {
+  background: transparent;
+}
+
+.media-box {
+  background: rgba(30, 30, 46, 0.85);
+  border-radius: 12px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.track-title {
+  color: #cdd6f4;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.track-artist {
+  color: #a6adc8;
+  font-size: 12px;
+}
+
+.controls {
+  margin-top: 4px;
+}
+
+.ctrl-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cdd6f4;
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin: 0 8px;
+  font-size: 16px;
+  border: none;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.play-pause {
+  color: #a6e3a1;
+}
