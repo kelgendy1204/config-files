@@ -11,13 +11,7 @@
         ./programs/volta.nix
         ./programs/git.nix
         ./programs/fzf.nix
-
-        # DE settings
-        ./programs/sway-settings.nix
     ];
-
-    home.username = "khaled";
-    home.homeDirectory = "/home/khaled";
 
     home.stateVersion = "25.11";
 }

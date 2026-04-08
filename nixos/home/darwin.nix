@@ -2,15 +2,7 @@
 
 {
     imports = [
-        ./programs/zsh.nix
-        ./programs/tmux.nix
-        ./programs/neovim.nix
-        ./programs/kitty.nix
-        ./programs/opencode.nix
-        ./programs/npm.nix
-        ./programs/volta.nix
-        ./programs/git.nix
-        ./programs/fzf.nix
+        ./default.nix
     ];
 
     programs.zsh.initContent = ''
@@ -25,9 +17,4 @@
     xdg.configFile."kitty/darwin.conf".text = ''
         font_family      ComicShannsMono Nerd Font
     '';
-
-    home.username = "kelgendy";
-    home.homeDirectory = "/Users/kelgendy";
-
-    home.stateVersion = "25.11";
 }

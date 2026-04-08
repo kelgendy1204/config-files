@@ -36,7 +36,11 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
-                            users.khaled = import ./home;
+                            users.khaled = {
+                                imports = [ ./home/nixos.nix ];
+                                home.username = "khaled";
+                                home.homeDirectory = "/home/khaled";
+                            };
                         };
                     }
                 ];
@@ -50,7 +54,11 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
-                            users.kelgendy = import ./home/darwin.nix;
+                            users.kelgendy = {
+                                imports = [ ./home/darwin.nix ];
+                                home.username = "kelgendy";
+                                home.homeDirectory = "/Users/kelgendy";
+                            };
                         };
                     }
                 ];
