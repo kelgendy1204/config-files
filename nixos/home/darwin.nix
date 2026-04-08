@@ -13,6 +13,10 @@
         ./programs/fzf.nix
     ];
 
+    programs.zsh.initContent = ''
+        eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+    '';
+
     programs.git.settings = {
         user.email = "elgendy1204@gmail.com";
         credential.helper = lib.mkForce "osxkeychain";

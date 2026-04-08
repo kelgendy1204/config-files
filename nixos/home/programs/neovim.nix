@@ -1,13 +1,16 @@
 { config, pkgs, inputs, ... }:
 
 {
+    home.packages = with pkgs; [
+        prettier
+    ];
+
     programs.neovim = {
         enable = true;
 
         extraPackages = with pkgs; [
             lua51Packages.luarocks
             lua51Packages.lua
-            prettier
             lazygit
             fd
             typescript-language-server
