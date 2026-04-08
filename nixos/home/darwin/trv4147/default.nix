@@ -2,7 +2,7 @@
 
 {
     imports = [
-        ./default.nix
+        ../../shared
     ];
 
     programs.git.settings = {

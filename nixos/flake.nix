@@ -37,7 +37,7 @@
                             useGlobalPkgs = true;
                             useUserPackages = true;
                             users.khaled = {
-                                imports = [ ./home/nixos.nix ];
+                                imports = [ ./home/linux/lenovo-laptop ];
                                 home.username = "khaled";
                                 home.homeDirectory = "/home/khaled";
                             };
@@ -55,7 +55,7 @@
                             useGlobalPkgs = true;
                             useUserPackages = true;
                             users.kelgendy = {
-                                imports = [ ./home/darwin.nix ];
+                                imports = [ ./home/darwin/trv4147 ];
                                 home.username = "kelgendy";
                                 home.homeDirectory = "/Users/kelgendy";
                             };
