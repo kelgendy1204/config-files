@@ -6,6 +6,6 @@
         isNormalUser = true;
         description = "Khaled Saad";
         extraGroups = [ "networkmanager" "wheel" "docker" ];
-        packages = with pkgs; [ volta ];
+        packages = with pkgs; [ ];
     };
 }

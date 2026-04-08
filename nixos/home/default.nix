@@ -8,6 +8,7 @@
         ./programs/kitty.nix
         ./programs/opencode.nix
         ./programs/npm.nix
+        ./programs/volta.nix
         ./programs/git.nix
         ./programs/fzf.nix
 
