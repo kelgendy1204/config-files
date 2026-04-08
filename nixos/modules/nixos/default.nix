@@ -2,16 +2,17 @@
 
 {
     imports = [
-        ./audio.nix
-        ./boot.nix
         ./desktop
         ./dev
+        ./fonts
+        ./packages
+        ./programs
+
+        ./audio.nix
+        ./boot.nix
         ./locale.nix
         ./networking.nix
         ./nix.nix
-        ./packages.nix
-        ./programs.nix
         ./users.nix
-        ../shared/fonts.nix
     ];
 }

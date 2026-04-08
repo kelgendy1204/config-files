@@ -3,9 +3,7 @@
 {
     homebrew = {
         enable = true;
-        brews = [
-            "volta"
-        ];
+        brews = [];
 
         casks = [
             "menumeters"

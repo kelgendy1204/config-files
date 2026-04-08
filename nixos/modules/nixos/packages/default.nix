@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
-    nixpkgs.config.allowUnfree = true;
+    imports = [
+        ../../shared/packages
+    ];
 
     environment.systemPackages = with pkgs; [
         gnumake
@@ -11,10 +13,6 @@
         xclip
         tealdeer
         google-chrome
-        btop
-        htop
-        nodejs
-        gh
         xed-editor
     ];
 }

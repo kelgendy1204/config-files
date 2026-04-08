@@ -5,12 +5,8 @@
         ./default.nix
     ];
 
-    programs.zsh.initContent = ''
-        eval "$(/opt/homebrew/bin/brew shellenv zsh)"
-    '';
-
     programs.git.settings = {
-        user.email = "elgendy1204@gmail.com";
+        user.email = lib.mkForce "elgendy1204@outlook.com";
         credential.helper = lib.mkForce "osxkeychain";
     };
 
