@@ -18,6 +18,11 @@
         };
 
         initContent = lib.mkBefore ''
+            # Load secrets from .env file if it exists
+            if [ -f "$HOME/config-files/.env" ]; then
+                set -a; source "$HOME/config-files/.env"; set +a
+            fi
+
             source ${../../../../config/p10k/p10k.zsh}
             source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 

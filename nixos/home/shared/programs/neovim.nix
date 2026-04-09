@@ -8,7 +8,6 @@
             lua51Packages.luarocks
             lua51Packages.lua
             lazygit
-            nodejs
             prettier
             fd
             typescript-language-server

@@ -9,7 +9,7 @@
         ../../modules/darwin
     ];
 
-    environment.systemPackages = with pkgs; [ just ];
+    environment.systemPackages = with pkgs; [ ];
 
     users.users.kelgendy.home = "/Users/kelgendy";
 

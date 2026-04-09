@@ -1,0 +1,13 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "mcp": {
+        "codescene": {
+            "type": "local",
+            "command": ["cs-mcp"],
+            "enabled": true,
+            "environment": {
+                "CS_ACCESS_TOKEN": "$CS_ACCESS_TOKEN"
+            }
+        }
+    }
+}

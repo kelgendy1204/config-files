@@ -5,6 +5,6 @@
         ../../shared
 
         # DE settings
-        ../../shared/programs/sway-settings.nix
+        ./sway-settings.nix
     ];
 }
