@@ -65,7 +65,7 @@
             mynix-clean() {
                 sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system \
                 && nix-collect-garbage -d \
-                && sudo nixos-rebuild boot --flake ~/config-files/nixos#lenovo-laptop
+                && sudo nixos-rebuild boot --flake ~/config-files/nix#lenovo-laptop
             }
 
             # Auto-start tmux on shell launch
@@ -76,14 +76,14 @@
 
         shellAliases = {
             # NixOS
-            mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nixos#lenovo-laptop";
-            mynix-check = "nix flake check ~/config-files/nixos --impure";
-            mynix-update = "nix flake update --flake ~/config-files/nixos";
+            mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nix#lenovo-laptop";
+            mynix-check = "nix flake check ~/config-files/nix --impure";
+            mynix-update = "nix flake update --flake ~/config-files/nix";
             mynix-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
             mynix-rollback = "sudo nixos-rebuild switch --rollback";
 
             # Darwin
-            drawin-switch = "sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- --flake ~/config-files/nixos switch";
+            darwin-switch = "sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- --flake ~/config-files/nix switch";
 
             # General
             myip = "curl http://ipecho.net/plain; echo";

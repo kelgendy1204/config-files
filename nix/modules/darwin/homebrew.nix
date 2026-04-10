@@ -11,6 +11,7 @@
 
         casks = [
             "menumeters"
+            "appcleaner"
         ];
     };
 }
