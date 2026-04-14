@@ -10,7 +10,6 @@
         ];
 
         casks = [
-            "menumeters"
             "appcleaner"
         ];
     };
