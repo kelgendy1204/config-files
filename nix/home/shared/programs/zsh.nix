@@ -95,6 +95,8 @@
             pr_diff = "gh pr diff";
             pr_create = "gh pr create --web";
             repo_view = "gh repo view --web";
+
+            ai_commit = "opencode run --model github-copilot/gpt-4.1 '/commit'";
         };
     };
 }
