@@ -8,6 +8,10 @@
             "environment": {
                 "CS_ACCESS_TOKEN": "$CS_ACCESS_TOKEN"
             }
+        },
+        "chrome-devtools": {
+            "type": "local",
+            "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
         }
     }
 }
