@@ -1,17 +1,31 @@
 {
     "$schema": "https://opencode.ai/config.json",
     "mcp": {
+        "chrome-devtools": {
+            "command": [
+                "npx",
+                "-y",
+                "chrome-devtools-mcp@latest"
+            ],
+            "type": "local"
+        },
         "codescene": {
-            "type": "local",
-            "command": ["cs-mcp"],
+            "command": [
+                "cs-mcp"
+            ],
             "enabled": true,
             "environment": {
                 "CS_ACCESS_TOKEN": "$CS_ACCESS_TOKEN"
-            }
+            },
+            "type": "local"
         },
-        "chrome-devtools": {
-            "type": "local",
-            "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
-        }
-    }
+        "playwright": {
+            "command": [
+                "npx",
+                "-y",
+                "@playwright/mcp@latest"
+            ],
+            "type": "local"
+        },
+    },
 }
