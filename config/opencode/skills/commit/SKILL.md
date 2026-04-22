@@ -16,4 +16,4 @@ description: >
    - Body: include ONLY when the "why" isn't obvious from the subject
    - Body explains WHY, not what
    - Keep it terse
-4. Run `git commit -m "<message>"` directly. Do NOT ask for confirmation.
+4. Proceed and run `git commit -m "<message>"` directly. Do NOT ask for confirmation.
