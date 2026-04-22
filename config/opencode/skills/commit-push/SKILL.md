@@ -1,8 +1,8 @@
 ---
-name: commit
+name: commit-push
 description: >
   Generate and execute a terse git commit from staged changes using Conventional Commits format.
-  Use when user says "commit", "make a commit", or invokes /commit.
+  Use when user says "commit and push", "make a commit and push", or invokes /commit-push.
 ---
 
 ## Steps
@@ -17,4 +17,5 @@ description: >
    - Body explains WHY, not what
    - Keep it terse
 4. Proceed and run `git commit -m "<message>"` directly. Do NOT ask for confirmation.
-5. Don't do anything else. Do NOT ask about anything else. Just commit and stop.
+5. Push the commit immediately after committing. Do NOT ask for confirmation.
+6. Don't do anything else. Do NOT ask about anything else. Just push and stop.
