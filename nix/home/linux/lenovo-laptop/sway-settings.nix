@@ -53,7 +53,7 @@
 
         # Display management
         kanshi
-        wdisplays
+        nwg-displays
 
         # Secret manager GUI
         seahorse
@@ -141,6 +141,12 @@
     # ── eww (widget) ──────────────────────────────────────────
     xdg.configFile."eww" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/eww";
+        recursive = false;
+    };
+
+    # ── Kanshi (display profiles) ─────────────────────────────
+    xdg.configFile."kanshi" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/kanshi";
         recursive = false;
     };
 }

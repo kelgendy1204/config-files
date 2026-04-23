@@ -1,0 +1,12 @@
+# Kanshi display profiles
+# This file is managed by nwg-displays. You can also edit it manually.
+# Run nwg-displays to configure monitors visually.
+#
+# Example profile structure:
+# profile laptop-only {
+#     output eDP-1 enable scale 1
+# }
+# profile docked {
+#     output eDP-1 enable scale 1 position 1920,0
+#     output "Manufacturer Model Serial" enable mode 1920x1080 position 0,0
+# }

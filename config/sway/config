@@ -194,6 +194,7 @@ exec swayidle -w \
     before-sleep 'swaylock -f'
 
 exec autotiling
+exec kanshi
 
 exec nm-applet --indicator
 exec blueman-applet
@@ -205,7 +206,7 @@ for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="pcmanfm"] floating enable
 for_window [app_id="wlogout"] floating enable
 for_window [app_id="blueman-manager"] floating enable
-for_window [app_id="wdisplays"] floating enable
+for_window [app_id="nwg-displays"] floating enable
 for_window [app_id="seahorse"] floating enable
 for_window [title="File Upload"] floating enable
 for_window [title="Save As"] floating enable
