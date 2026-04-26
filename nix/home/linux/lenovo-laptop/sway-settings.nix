@@ -38,6 +38,9 @@
         # Image viewer
         imv
 
+        # Video / audio player
+        mpv
+
         # Power menu
         wlogout
 
@@ -151,11 +154,65 @@
     };
 
     # ── Default applications (XDG MIME) ──────────────────────────────
+    # Custom desktop entry: open text files in nvim inside kitty.
+    # nvim.desktop has Terminal=true but no terminal specified, so it
+    # fails silently. This wrapper makes it explicit.
+    xdg.desktopEntries.kitty-nvim = {
+        name = "Neovim (Kitty)";
+        exec = "kitty nvim %F";
+        terminal = false;
+        mimeType = [ "text/plain" ];
+        noDisplay = true;
+    };
+
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
-            "inode/directory" = "pcmanfm.desktop";
-            "x-scheme-handler/file" = "pcmanfm.desktop";
+            # File manager
+            "inode/directory"           = "pcmanfm.desktop";
+            "x-scheme-handler/file"     = "pcmanfm.desktop";
+
+            # Text editor
+            "text/plain"                = "kitty-nvim.desktop";
+
+            # Browser
+            "text/html"                 = "google-chrome.desktop";
+            "application/xhtml+xml"     = "google-chrome.desktop";
+            "x-scheme-handler/http"     = "google-chrome.desktop";
+            "x-scheme-handler/https"    = "google-chrome.desktop";
+            "x-scheme-handler/ftp"      = "google-chrome.desktop";
+            "x-scheme-handler/about"    = "google-chrome.desktop";
+            "x-scheme-handler/unknown"  = "google-chrome.desktop";
+
+            # PDF / documents
+            "application/pdf"           = "google-chrome.desktop";
+
+            # Images
+            "image/jpeg"                = "imv.desktop";
+            "image/png"                 = "imv.desktop";
+            "image/gif"                 = "imv.desktop";
+            "image/webp"                = "imv.desktop";
+            "image/svg+xml"             = "imv.desktop";
+            "image/tiff"                = "imv.desktop";
+            "image/bmp"                 = "imv.desktop";
+
+            # Video
+            "video/mp4"                 = "mpv.desktop";
+            "video/mkv"                 = "mpv.desktop";
+            "video/webm"                = "mpv.desktop";
+            "video/x-matroska"          = "mpv.desktop";
+            "video/avi"                 = "mpv.desktop";
+            "video/quicktime"           = "mpv.desktop";
+            "video/x-msvideo"           = "mpv.desktop";
+
+            # Audio
+            "audio/mpeg"                = "mpv.desktop";
+            "audio/ogg"                 = "mpv.desktop";
+            "audio/flac"                = "mpv.desktop";
+            "audio/wav"                 = "mpv.desktop";
+            "audio/x-wav"               = "mpv.desktop";
+            "audio/aac"                 = "mpv.desktop";
+            "audio/opus"                = "mpv.desktop";
         };
     };
 }

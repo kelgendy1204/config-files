@@ -89,7 +89,10 @@
 
     "sway/window": {
         "format": "{}",
-        "max-length": 50
+        "max-length": 50,
+        "rewrite": {
+            "": "Desktop"
+        }
     },
 
     "clock": {
