@@ -32,6 +32,7 @@ input type:touchpad {
     tap enabled
     dwt enabled
     middle_emulation enabled
+    drag_lock disabled
 }
 
 input type:keyboard {

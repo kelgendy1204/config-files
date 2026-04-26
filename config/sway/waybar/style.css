@@ -5,22 +5,22 @@
 }
 
 window#waybar {
-    background-color: #11111b;
+    background-color: transparent;
     color: #cdd6f4;
-    border-bottom: 2px solid #313244;
 }
 
 #workspaces button {
     padding: 0 8px;
-    color: #6c7086;
-    background: transparent;
+    color: #cdd6f4;
+    background: #313244;
     border-radius: 6px;
     margin: 4px 2px;
 }
 
 #workspaces button.focused {
     color: #1e1e2e;
-    background: #b4befe;
+    background: #89b4fa;
+    font-weight: bold;
 }
 
 #workspaces button.urgent {
@@ -141,9 +141,17 @@ window#waybar {
     padding: 0 14px;
     margin: 4px 2px;
     border-radius: 6px;
-    background: transparent;
-    color: #a6adc8;
+    background: #313244;
+    color: #cdd6f4;
     font-style: italic;
+}
+
+#custom-playerctl {
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    background: #313244;
+    color: #a6e3a1;
 }
 
 @keyframes blink {

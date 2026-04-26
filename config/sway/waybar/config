@@ -6,7 +6,7 @@
 
     "modules-left": ["clock", "sway/mode", "sway/scratchpad", "sway/window"],
     "modules-center": ["sway/workspaces"],
-    "modules-right": ["sway/language", "cpu", "memory", "network#bandwidth","pulseaudio", "network", "backlight", "battery", "privacy", "tray"],
+    "modules-right": ["sway/language", "cpu", "memory", "network#bandwidth", "custom/playerctl", "pulseaudio", "network", "backlight", "battery", "privacy", "tray"],
 
    "sway/language": {
         "format": "{}",
@@ -121,6 +121,14 @@
         "format-ethernet": "\uf063 {bandwidthDownBits} \uf062 {bandwidthUpBits}",
         "format-disconnected": "",
         "tooltip-format": "{ifname}: \uf063 {bandwidthDownBytes} \uf062 {bandwidthUpBytes}"
+    },
+
+    "custom/playerctl": {
+        "exec": "playerctl status 2>/dev/null | sed 's/Playing/⏸/;s/Paused/▶/;s/Stopped/⏹/'",
+        "interval": 2,
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
 
     "pulseaudio": {

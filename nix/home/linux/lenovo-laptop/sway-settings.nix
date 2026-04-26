@@ -149,4 +149,13 @@
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/config-files/config/sway/kanshi";
         recursive = false;
     };
+
+    # ── Default applications (XDG MIME) ──────────────────────────────
+    xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+            "inode/directory" = "pcmanfm.desktop";
+            "x-scheme-handler/file" = "pcmanfm.desktop";
+        };
+    };
 }
