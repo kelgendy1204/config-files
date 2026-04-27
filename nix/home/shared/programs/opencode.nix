@@ -1,8 +1,9 @@
-{ config, ... }:
+{ config, pkgs-unstable, ... }:
 
 {
     programs.opencode = {
         enable = true;
+        package = pkgs-unstable.opencode;
     };
 
     xdg.configFile."opencode" = {

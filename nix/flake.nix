@@ -11,6 +11,8 @@
             inputs.nixpkgs.follows = "nixpkgs-darwin";
         };
 
+        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
         home-manager = {
             url = "github:nix-community/home-manager/release-25.11";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +24,7 @@
             self,
             nixpkgs,
             nixpkgs-darwin,
+            nixpkgs-unstable,
             nix-darwin,
             home-manager,
             ...
@@ -36,6 +39,9 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
+                            extraSpecialArgs = {
+                                pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
+                            };
                             users.khaled = {
                                 imports = [ ./home/linux/lenovo-laptop ];
                                 home.username = "khaled";
@@ -44,6 +50,9 @@
                         };
                     }
                 ];
+                specialArgs = {
+                    pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
+                };
             };
 
             darwinConfigurations.trv4147 = nix-darwin.lib.darwinSystem {
@@ -54,6 +63,9 @@
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
+                            extraSpecialArgs = {
+                                pkgs-unstable = import nixpkgs-unstable { system = "aarch64-darwin"; };
+                            };
                             users.kelgendy = {
                                 imports = [ ./home/darwin/trv4147 ];
                                 home.username = "kelgendy";
@@ -62,7 +74,10 @@
                         };
                     }
                 ];
-                specialArgs = { inherit self; };
+                specialArgs = {
+                    inherit self;
+                    pkgs-unstable = import nixpkgs-unstable { system = "aarch64-darwin"; };
+                };
             };
 
             formatter.aarch64-darwin =

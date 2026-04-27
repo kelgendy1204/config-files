@@ -2,3 +2,4 @@ config/nvim/plugin
 config/nvim/temp
 .DS_Store
 .env
+package-lock.json
