@@ -2,15 +2,21 @@
     description = "Khaled's Nix system";
 
     inputs = {
+        # Stable nixpkgs for Linux is used for nixos configuration.
         nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
-        nixpkgs-darwin.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
+        # Stable nixpkgs for Darwin is used for nix-darwin configuration.
+        nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.11-darwin";
 
         nix-darwin = {
             url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
             inputs.nixpkgs.follows = "nixpkgs-darwin";
         };
 
+        # Unstable nixpkgs for Linux, exposed as pkgs-unstable in NixOS modules and home-manager.
+        nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+        # Unstable nixpkgs for Darwin, exposed as pkgs-unstable in Darwin modules and home-manager.
         nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
         home-manager = {
@@ -24,11 +30,16 @@
             self,
             nixpkgs,
             nixpkgs-darwin,
+            nixos-unstable,
             nixpkgs-unstable,
             nix-darwin,
             home-manager,
             ...
         }:
+        let
+            linuxUnstable = import nixos-unstable { system = "x86_64-linux"; };
+            darwinUnstable = import nixpkgs-unstable { system = "aarch64-darwin"; };
+        in
         {
             nixosConfigurations.lenovo-laptop = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -40,7 +51,7 @@
                             useGlobalPkgs = true;
                             useUserPackages = true;
                             extraSpecialArgs = {
-                                pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
+                                pkgs-unstable = linuxUnstable;
                             };
                             users.khaled = {
                                 imports = [ ./home/linux/lenovo-laptop ];
@@ -51,7 +62,7 @@
                     }
                 ];
                 specialArgs = {
-                    pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
+                    pkgs-unstable = linuxUnstable;
                 };
             };
 
@@ -64,7 +75,7 @@
                             useGlobalPkgs = true;
                             useUserPackages = true;
                             extraSpecialArgs = {
-                                pkgs-unstable = import nixpkgs-unstable { system = "aarch64-darwin"; };
+                                pkgs-unstable = darwinUnstable;
                             };
                             users.kelgendy = {
                                 imports = [ ./home/darwin/trv4147 ];
@@ -76,7 +87,7 @@
                 ];
                 specialArgs = {
                     inherit self;
-                    pkgs-unstable = import nixpkgs-unstable { system = "aarch64-darwin"; };
+                    pkgs-unstable = darwinUnstable;
                 };
             };
 

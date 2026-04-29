@@ -2,8 +2,8 @@
 
 {
     imports = [
-        ./hardware-configuration.nix
         ../../modules/linux
+        ./hardware-configuration.nix
     ];
 
     networking.hostName = "lenovo-laptop";

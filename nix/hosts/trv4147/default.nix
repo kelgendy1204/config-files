@@ -1,15 +1,9 @@
-{
-    self,
-    pkgs,
-    ...
-}:
+{ self, ... }:
 
 {
     imports = [
         ../../modules/darwin
     ];
-
-    environment.systemPackages = with pkgs; [ ];
 
     users.users.kelgendy.home = "/Users/kelgendy";
 
