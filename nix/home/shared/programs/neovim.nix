@@ -1,13 +1,13 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs-unstable, ... }:
 
 {
     programs.neovim = {
         enable = true;
+        package = pkgs-unstable.neovim-unwrapped;
 
-        extraPackages = with pkgs; [
+        extraPackages = with pkgs-unstable; [
             lua51Packages.luarocks
             lua51Packages.lua
-            lazygit
             prettier
             fd
             typescript-language-server
