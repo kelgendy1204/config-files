@@ -2,17 +2,15 @@
 
 {
     imports = [
-        ./desktop
+        ../shared
+
+        # shared configuration overrides
         ./dev
         ./fonts
         ./packages
         ./programs
 
-        ./audio.nix
-        ./boot.nix
-        ./locale.nix
-        ./networking.nix
-        ./nix.nix
-        ./users.nix
+        # system specific configuration
+        ./system
     ];
 }

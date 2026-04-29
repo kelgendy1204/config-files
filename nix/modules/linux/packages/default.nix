@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-    imports = [
-        ../../shared/packages
-    ];
-
     environment.systemPackages = with pkgs; [
         gnumake
         gcc

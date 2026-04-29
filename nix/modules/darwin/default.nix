@@ -2,13 +2,9 @@
 
 {
     imports = [
-        ./dev
-        ./fonts
-        ./packages
-        ./programs
+        ../shared
 
-        ./homebrew.nix
-        ./nix.nix
-        ./security.nix
+        # system specific configuration
+        ./system
     ];
 }
