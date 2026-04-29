@@ -4,7 +4,6 @@
     imports = [
         ../../shared
 
-        # DE settings
-        ./sway-settings.nix
+        ./programs/sway.nix
     ];
 }
