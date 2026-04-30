@@ -75,15 +75,17 @@
         '';
 
         shellAliases = {
+            # Nix
+            myflake-check = "nix flake check ~/config-files/nix --impure";
+            myflake-update = "nix flake update --flake ~/config-files/nix";
+            mynix-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
+
             # NixOS
             mynix-switch = "sudo nixos-rebuild switch --flake ~/config-files/nix#lenovo-laptop";
-            mynix-check = "nix flake check ~/config-files/nix --impure";
-            mynix-update = "nix flake update --flake ~/config-files/nix";
-            mynix-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
             mynix-rollback = "sudo nixos-rebuild switch --rollback";
 
             # Darwin
-            darwin-switch = "sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- --flake ~/config-files/nix switch";
+            mydarwin-switch = "sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- --flake ~/config-files/nix switch";
 
             # General
             myip = "curl http://ipecho.net/plain; echo";

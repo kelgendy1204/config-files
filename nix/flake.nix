@@ -37,13 +37,15 @@
             ...
         }:
         let
-            linuxUnstable = import nixos-unstable { system = "x86_64-linux"; };
-            darwinUnstable = import nixpkgs-unstable { system = "aarch64-darwin"; };
+            nixpkgsConfig = { allowUnfree = true; };
+            linuxUnstable = import nixos-unstable { system = "x86_64-linux"; config = nixpkgsConfig; };
+            darwinUnstable = import nixpkgs-unstable { system = "aarch64-darwin"; config = nixpkgsConfig; };
         in
         {
             nixosConfigurations.lenovo-laptop = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
+                    { nixpkgs.config = nixpkgsConfig; }
                     ./hosts/lenovo-laptop
                     home-manager.nixosModules.default
                     {
@@ -68,6 +70,7 @@
 
             darwinConfigurations.trv4147 = nix-darwin.lib.darwinSystem {
                 modules = [
+                    { nixpkgs.config = nixpkgsConfig; }
                     ./hosts/trv4147
                     home-manager.darwinModules.default
                     {
