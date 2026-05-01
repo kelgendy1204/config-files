@@ -32,9 +32,7 @@
         },
         "playwright": {
             "command": [
-                "npx",
-                "-y",
-                "@playwright/mcp@latest"
+                "~/config-files/scripts/playwright-mcp.sh"
             ],
             "type": "local"
         },
