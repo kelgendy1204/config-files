@@ -32,7 +32,9 @@
         },
         "playwright": {
             "command": [
-                "~/config-files/scripts/playwright-mcp.sh"
+                "bash",
+                "-c",
+                "$HOME/config-files/scripts/playwright-mcp.sh"
             ],
             "type": "local"
         },
