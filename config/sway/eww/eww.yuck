@@ -30,6 +30,34 @@
               :onclick "playerctl next"
               "⏭"))))
 
+;; --- Poll uptime data ---
+(defpoll uptime-str :interval "60s" `uptime -p 2>/dev/null | sed 's/up //' || echo "unknown"`)
+
+;; --- Uptime widget definition ---
+(defwidget uptime-widget []
+  (box :class "uptime-box"
+       :orientation "vertical"
+       :space-evenly false
+       :spacing 4
+    (label :class "uptime-label"
+           :text "Uptime")
+    (label :class "uptime-value"
+           :text {uptime-str}
+           :limit-width 30
+           :truncate true)))
+
+;; --- Uptime window ---
+(defwindow uptime-window
+  :monitor 0
+  :geometry (geometry :x "20px"
+                      :y "160px"
+                      :width "220px"
+                      :height "60px"
+                      :anchor "top right")
+  :stacking "bottom"
+  :exclusive false
+  (uptime-widget))
+
 ;; --- Window (renders on desktop background layer) ---
 (defwindow media-widget
   :monitor 0
