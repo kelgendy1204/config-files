@@ -98,8 +98,8 @@
             pr_create = "gh pr create --web";
             repo_view = "gh repo view --web";
 
-            ai_commit = "opencode run '/commit'";
-            ai_commit_push = "opencode run '/commit-push'";
+            ai_commit = "opencode run -m github-copilot/gpt-5.4-mini '/commit'";
+            ai_commit_push = "opencode run -m github-copilot/gpt-5.4-mini '/commit-push'";
         };
     };
 }

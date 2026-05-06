@@ -1,6 +1,5 @@
 ---
 description: Generate and execute a terse commit message from staged changes
-model: github-copilot/gpt-5.4-mini
 agent: build
 ---
 
