@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./programs/agents.nix
         ./programs/fzf.nix
         ./programs/git.nix
         ./programs/kitty.nix
