@@ -188,7 +188,7 @@ assign [app_id="google-chrome"] 2
 
 # ── Startup applications ─────────────────────────────────────────
 # Widgets via eww
-exec eww daemon && eww open media-widget uptime-window
+exec eww daemon && eww open media-widget && eww open uptime-window
 
 exec swayidle -w \
     timeout 300 'swaylock -f' \
