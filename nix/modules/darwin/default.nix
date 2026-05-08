@@ -6,5 +6,6 @@
 
         # system specific configuration
         ./system
+        ./dev
     ];
 }

@@ -11,7 +11,6 @@
         ./programs/npm.nix
         ./programs/opencode.nix
         ./programs/tmux.nix
-        ./programs/volta.nix
         ./programs/zsh.nix
     ];
 
