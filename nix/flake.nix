@@ -8,6 +8,7 @@
         # Stable nixpkgs for Darwin is used for nix-darwin configuration.
         nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.11-darwin";
 
+        # Stable nix-darwin, used for Darwin configuration.
         nix-darwin = {
             url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
             inputs.nixpkgs.follows = "nixpkgs-darwin";
