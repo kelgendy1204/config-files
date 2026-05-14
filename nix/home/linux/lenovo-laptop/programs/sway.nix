@@ -35,6 +35,9 @@
         # File manager
         pcmanfm
 
+        # Archive manager
+        file-roller
+
         # Image viewer
         imv
 
@@ -204,6 +207,21 @@
             "video/avi"                 = "mpv.desktop";
             "video/quicktime"           = "mpv.desktop";
             "video/x-msvideo"           = "mpv.desktop";
+
+            # Archives
+            "application/zip"                       = "org.gnome.FileRoller.desktop";
+            "application/x-zip-compressed"          = "org.gnome.FileRoller.desktop";
+            "application/x-tar"                     = "org.gnome.FileRoller.desktop";
+            "application/x-compressed-tar"          = "org.gnome.FileRoller.desktop";
+            "application/x-bzip2-compressed-tar"    = "org.gnome.FileRoller.desktop";
+            "application/x-xz-compressed-tar"       = "org.gnome.FileRoller.desktop";
+            "application/x-7z-compressed"           = "org.gnome.FileRoller.desktop";
+            "application/x-rar"                     = "org.gnome.FileRoller.desktop";
+            "application/x-rar-compressed"          = "org.gnome.FileRoller.desktop";
+            "application/gzip"                      = "org.gnome.FileRoller.desktop";
+            "application/x-bzip"                    = "org.gnome.FileRoller.desktop";
+            "application/x-xz"                      = "org.gnome.FileRoller.desktop";
+            "application/zstd"                      = "org.gnome.FileRoller.desktop";
 
             # Audio
             "audio/mpeg"                = "mpv.desktop";
