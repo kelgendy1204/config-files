@@ -213,6 +213,7 @@ for_window [app_id="nwg-displays"] floating enable
 for_window [app_id="seahorse"] floating enable
 for_window [title="File Upload"] floating enable
 for_window [title="Save As"] floating enable
+for_window [app_id="galculator"] floating enable, border normal, move position cursor
 
 # ── Picture-in-Picture ────────────────────────────────────────────
 for_window [title="Picture in picture"] floating enable, sticky enable, move position 1980 1240

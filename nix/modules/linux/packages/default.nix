@@ -10,5 +10,6 @@
         tealdeer
         google-chrome
         xed-editor
+        galculator
     ];
 }
