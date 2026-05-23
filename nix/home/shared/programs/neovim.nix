@@ -11,6 +11,7 @@
             prettier
             fd
             typescript-language-server
+            github-copilot-cli
             typescript
             lua-language-server
             tree-sitter
