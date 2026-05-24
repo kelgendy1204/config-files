@@ -38,6 +38,9 @@
     # Allow swaylock to verify passwords
     security.pam.services.swaylock = {};
 
+    # GVfs — trash support, file system mounting, etc.
+    services.gvfs.enable = true;
+
     # Credential storage (gnome-keyring, auto-unlocked at login via PAM)
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.greetd.enableGnomeKeyring = true;
