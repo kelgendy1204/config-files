@@ -10,6 +10,7 @@
         ./programs/kitty.nix
         ./programs/neovim.nix
         ./programs/npm.nix
+        ./programs/obsidian.nix
         ./programs/opencode.nix
         ./programs/tmux.nix
         ./programs/zsh.nix
