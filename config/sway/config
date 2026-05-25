@@ -62,7 +62,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+d exec $menu
 bindsym $mod+b exec google-chrome-stable
-bindsym $mod+e exec pcmanfm
+bindsym $mod+e exec thunar
 bindsym $mod+Shift+c reload
 
 # ── Lock / Power ─────────────────────────────────────────────────
@@ -185,6 +185,12 @@ bindsym $mod+Shift+n exec makoctl dismiss --all
 # ── Workspace assignments ─────────────────────────────────────────
 assign [app_id="kitty"] 1
 assign [app_id="google-chrome"] 2
+assign [app_id="thunar"] 3
+
+# Workspace icons
+workspace number 1 name "1:"
+workspace number 2 name "2:󰖟"
+workspace number 3 name "3:"
 
 # ── Startup applications ─────────────────────────────────────────
 # Widgets via eww
@@ -206,7 +212,6 @@ exec eval $(gnome-keyring-daemon --start --components=secrets)
 # ── Floating rules ────────────────────────────────────────────────
 for_window [app_id="imv"] floating enable
 for_window [app_id="pavucontrol"] floating enable
-for_window [app_id="pcmanfm"] floating enable
 for_window [app_id="wlogout"] floating enable
 for_window [app_id="blueman-manager"] floating enable
 for_window [app_id="nwg-displays"] floating enable

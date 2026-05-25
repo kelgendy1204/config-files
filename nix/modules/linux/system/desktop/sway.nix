@@ -19,7 +19,14 @@
     };
 
     # Thunar file manager
-    programs.thunar.enable = true;
+    programs.thunar = {
+        enable = true;
+        plugins = with pkgs; [
+            xfce.thunar-volman          # auto-mount removable media
+            xfce.thunar-archive-plugin  # right-click extract (works with file-roller)
+            xfce.tumbler                # thumbnail previews for images/video
+        ];
+    };
 
     # XDG portal for screen sharing, file dialogs, etc.
     xdg.portal = {
