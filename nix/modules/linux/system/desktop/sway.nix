@@ -18,6 +18,9 @@
         };
     };
 
+    # Thunar file manager
+    programs.thunar.enable = true;
+
     # XDG portal for screen sharing, file dialogs, etc.
     xdg.portal = {
         enable = true;
@@ -30,6 +33,68 @@
         wayland-utils
         wl-clipboard
         xdg-utils
+
+        # Bar
+        waybar
+
+        # App launcher
+        rofi
+
+        # Notifications
+        mako
+
+        # Lock screen
+        swaylock-effects
+
+        # Wallpaper
+        waypaper
+        swaybg # dependency of waypaper
+
+        # Screenshot
+        flameshot
+
+        # Brightness & volume
+        brightnessctl
+        pamixer
+        playerctl
+
+        # Idle management
+        swayidle
+
+        # Sway autotiling helper
+        autotiling
+
+        # Archive manager
+        file-roller
+
+        # Image viewer
+        imv
+
+        # Video / audio player
+        mpv
+
+        # Power menu
+        wlogout
+
+        # Volume mixer GUI
+        pavucontrol
+
+        # Tray applets
+        networkmanagerapplet
+        blueman
+
+        # Notifications (notify-send CLI)
+        libnotify
+
+        # Display management
+        kanshi
+        nwg-displays
+
+        # Secret manager GUI
+        seahorse
+
+        # Widget system
+        eww
     ];
 
     # Enable polkit for authentication dialogs

@@ -1,73 +1,6 @@
 { pkgs, lib, config, ... }:
 
 {
-    home.packages = with pkgs; [
-        # Bar
-        waybar
-
-        # App launcher
-        rofi
-
-        # Notifications
-        mako
-
-        # Lock screen
-        swaylock-effects
-
-        # Wallpaper
-        waypaper
-        swaybg # dependency of waypaper
-
-        # Screenshot
-        flameshot
-
-        # Brightness & volume
-        brightnessctl
-        pamixer
-        playerctl
-
-        # Idle management
-        swayidle
-
-        # Sway autotiling helper
-        autotiling
-
-        # File manager
-        pcmanfm
-
-        # Archive manager
-        file-roller
-
-        # Image viewer
-        imv
-
-        # Video / audio player
-        mpv
-
-        # Power menu
-        wlogout
-
-        # Volume mixer GUI
-        pavucontrol
-
-        # Tray applets
-        networkmanagerapplet
-        blueman
-
-        # Notifications (notify-send CLI)
-        libnotify
-
-        # Display management
-        kanshi
-        nwg-displays
-
-        # Secret manager GUI
-        seahorse
-
-        # Widget system
-        eww
-    ];
-
     # GTK theme (Catppuccin)
     gtk = {
         enable = true;
@@ -172,8 +105,8 @@
         enable = true;
         defaultApplications = {
             # File manager
-            "inode/directory"           = "pcmanfm.desktop";
-            "x-scheme-handler/file"     = "pcmanfm.desktop";
+            "inode/directory"           = "thunar.desktop";
+            "x-scheme-handler/file"     = "thunar.desktop";
 
             # Text editor
             "text/plain"                = "kitty-nvim.desktop";
